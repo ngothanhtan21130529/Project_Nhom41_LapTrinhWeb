@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trang chủ</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href=".../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -12,46 +12,55 @@
 
 <body>
     <div class="container">
-        <section class="header">
-            <div class="icon">
+        <!-- Phần header của trang home -->
+        <header class="header">
+            <div class="container">
+                <div class="box">
+                    <div class="logo">
+                        <img src="./images/logo.jpg" alt="Logo" class="logo-img" />
+                    </div>
+                    <nav class="navigation">
+                        <ul class="navigation-list">
+                            <li class="navigation-item active">
+                                <a href="index.html">Trang chủ</a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="products.html">Sản phẩm</a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="contact-us.html">Liên hệ</a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="about-us.html">Về chúng tôi</a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="faqs.html">FAQS</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-btn">
+                        <ul class="header-list">
+                            <li class="header-item header-search">
+                                <form role="search" action="" method="get">
+                                    <input
+                                            type="search"
+                                            name="search"
+                                            class="search-input"
+                                            placeholder="Tìm sản phẩm"
+                                            autocomplete="off"
+                                    />
+                                    <button type="submit" class="header-search-btn">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </button>
+                                </form>
+                            </li>
+                            <li class="header-item sign-in"><a href="#">Đăng nhập</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-            </div>
-            <div class="label">
-                <ul>
-                    <li>
-                        <span class="material-icons-outlined">
-                            home
-                        </span>
-                    </li>
-                    <li>
-                        GIỚI THIỆU
-                    </li>
-                    <li>
-                        TRANG SỨC
-                    </li>
-                    <li>
-                        ĐÁ QUÝ
-                    </li>
-                    <li>
-                        <a href="#">Logo</a>
-                    </li>
-                    <li>
-                        SẢN PHẨM
-                    </li>
-                    <li>
-                        PHONG THỦY
-                    </li>
-                    <li>
-                        LIÊN HỆ
-                    </li>
-                    <li>
-                        <span class="material-icons-outlined">
-                            search
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </section>
         <section class="main">
             <div class="advertisement-img">
                 Img
