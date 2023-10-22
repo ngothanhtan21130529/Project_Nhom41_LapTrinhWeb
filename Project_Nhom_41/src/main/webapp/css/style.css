@@ -2,4 +2,121 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
+=======
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer{
+    background-color: #454242;
+}
+.social-media{
+    background-color: #f8f8f8;
+    display:  flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.zalo img{
+    width: 20px;
+    height: 20px;
+}
+.way{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 30px;
+    /* border: 1px solid black; */
+    width: 80%;
+}
+.phone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 15px;
+    gap: 10px;
+    /* border: 1px solid black; */
+}
+.social-meida-way{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.zalo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.label{
+    font-weight: bold;
+    font-size: 18px;
+}
+.social-meida-way div{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.zalo-phone-num{
+    padding-left: 10px;
+    font-size: 15px;
+}
+.end-footer{
+    background-color: #454242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+}
+.customer-care-label{
+    color: #eaeaea;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.customer-care ul li a{
+    text-decoration: none;
+    color: #e1f2f2;
+    font-size: 15px;
+}
+.customer-care ul li{
+    list-style: none;
+}
+.about-us-label{
+    color: #eaeaea;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.about-us-box ul li a{
+    text-decoration: none;
+    color: #e1f2f2;
+    font-size: 15px;
+}
+.about-us-box ul li{
+    list-style: none;
+}
+.about-us-box{
+    display: flex;
+    flex-direction: row;
+    gap:  4vw;
+}
+.customer-about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 40%;
+}
+.line{
+    width: 70%;
+    border: 0.5px solid #929191;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+}
+.disigner{
+    color: #929191;
+    font-size: 10px;
+    text-align: center;
+>>>>>>> 9dee8b97144cc979dcf96adb1fbd3d4a9429ea6b
 }
