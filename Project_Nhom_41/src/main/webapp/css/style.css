@@ -2,4 +2,55 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+header {
+    height: 200px;
+    width: 1200px;
+}
+
+header .box{
+    max-width: 100%;
+    height: 250px;
+    padding-left: 150px;
+}
+
+header .box .logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-top: 20px;
+}
+
+header .box nav{
+    float: left;
+}
+
+header .box nav ul{
+    list-style-type: none;
+}
+
+header .box nav ul li{
+    float: left;
+    padding: 20px;
+}
+
+header .box nav ul li a{
+    text-decoration: none;
+}
+
+header .box .header-btn{
+    float: right;
+}
+
+header .box .header-btn ul li{
+    float: right;
+    list-style-type: none;
+    padding: 20px;
+}
+
+header .box .header-btn ul li a{
+    text-decoration: none;
 }
