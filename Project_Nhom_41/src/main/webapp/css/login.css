@@ -1,0 +1,104 @@
+* {
+    font-size: 20px;
+    font-family: Arial, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(210deg 40% 98.04%);
+}
+
+form {
+    border:double;
+    border-width: 2px;
+    border-radius: 10px;
+    width: 564px;
+    height:500px;
+    margin-left: 500px;
+    border-color: darkgoldenrod;
+    box-shadow: 2px 2px darkgoldenrod;
+}
+#username_password{
+    margin-left:100px;
+
+}
+
+#container{
+    margin-top: 100px;
+    box-shadow: aliceblue;
+}
+#log_in{
+    margin-left: 250px;
+    margin-top:100px;
+
+}
+#pass{
+    width:260px;
+}
+input{
+    border-radius: 5px;
+    margin:10px;
+    height:30px;
+}
+button{
+    display:flex;
+    flex-direction: row;
+    gap:10px;
+
+}
+#google{
+    margin-left: 150px;
+    position:relative;
+    top:-200px;
+}
+#register{
+    margin-left:50px;
+    margin-top: -50px;
+}
+#register_forget{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:50px;
+}
+#forget_pass {
+    margin-right: 50px;
+    margin-top:-50px;
+}
+#account,#pass{
+    border-top:none;
+    border-right:none;
+    border-left: none;
+}
+button{
+   background-color: darkblue;
+    border-radius: 5px;
+
+}
+h3{
+    color:white;
+}
+a{
+    text-decoration: none;
+
+}
+img{
+    margin-left:140px;
+    margin-top:50px;
+    width:300px;
+    height:100px;
+}
+#submit{
+    margin-left:200px;
+    width:130px;
+    background-color: rgb(22 123 255);
+}
+h2{
+    margin-left:10px;
+    color:white;
+}
+#google_btn{
+    background-color: rgb(22 123 255);;
+}
