@@ -1,0 +1,62 @@
+/** {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    font-size: 16px;*/
+/*    font-family: Arial, Tahoma, sans-serif;*/
+/*    box-sizing: border-box;*/
+/*    overflow: hidden;*/
+/*}*/
+
+
+/*#head {*/
+/*    list-style-type: none;*/
+/*}*/
+
+/*.label {*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 1fr;*/
+
+/*}*/
+
+/*#head {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    gap: 10px;*/
+/*    margin-left: 100px;*/
+/*}*/
+
+/*.header {*/
+/*    background: rgb(255 255 255);*/
+/*    width: 1600px;*/
+/*    height: 50px;*/
+/*}*/
+
+/*#search {*/
+/*    border-radius: 5px;*/
+/*    height: 30px;*/
+/*    width: 300px;*/
+/*}*/
+
+/*i {*/
+/*    position: absolute;*/
+/*    left: 1470px;*/
+/*    top: 20px;*/
+/*    z-index: 2;*/
+/*}*/
+
+/*li {*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*#search_item {*/
+/*    margin-top: 12px;*/
+/*    margin-left: 400px;*/
+/*}*/
+
+/*.item:hover {*/
+/*    color: gold;*/
+/*}*/
+/*.footer{*/
+/*    position: absolute;*/
+/*    top:200px;*/
+/*}*/

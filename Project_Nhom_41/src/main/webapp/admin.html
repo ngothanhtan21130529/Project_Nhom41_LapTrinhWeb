@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<div id="container">
+<!--            <div id="login">Login</div>-->
+
+<!--            <div id="menu">-->
+<!--                <div id='logo'>-->
+<!--                    <img src="" alt="">-->
+<!--                </div>-->
+
+    <ul id="sidebar">
+        <li id="header"><h1>Admin quản lí</h1></li>
+        <li id="menu_1">
+            <i class="fa-sharp fa-solid fa-house-laptop fa-2xl"></i>
+            Trang chủ
+
+        </li>
+
+        <li id="menu_2" onclick="click_sanpham()">
+            <i class="fa-solid fa-ring fa-2xl"></i>
+            Quản lí sản phẩm
+
+        </li>
+        <li id="menu_3" onclick="click_donhang()">
+            <i class="fa-brands fa-product-hunt fa-2xl"></i>
+            Quản lí đơn hàng
+
+        </li>
+        <li id="menu_4" onclick=click_quanli()>
+            <i class="fa-solid fa-user fa-2xl"></i>
+            Quản lí người dùng
+        </li>
+        <li id="menu_5">
+            <i class="fa-solid fa-door-open fa-2xl"></i>Đăng xuất
+
+        </li>
+    </ul>
+    <div id="quan_li">
+        <p>Tính năng đang cập nhật</p>
+    </div>
+    <div id="san_pham">
+        <table border="1">
+            <tr>
+                <td>Tên sản phẩm
+                </td>
+                <td>Số lượng nhập</td>
+                <td>Số lượng bán ra</td>
+                <td>Mã sản phẩm</td>
+            </tr>
+            <tr>
+                <td>Dòng 1</td>
+                <td>Dòng 2</td>
+                <td>Dòng 3</td>
+                <td>Dòng 4</td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <select>
+            <option>Lọc theo mã</option>
+        </select>
+        <input type="search" name="search" placeholder="Tìm kiếm">
+        <button id="xoa">Xóa sản phẩm</button>
+        <button id="them">Thêm sản phẩm </button>
+        <button id="chinh_sua">Chỉnh sửa thông tin sản phẩm </button>
+    </div>
+    <div id="don_hang">
+        <table border="1">
+            <tr>
+                <td>STT</td>
+                <td>Mã đơn</td>
+                <td>Khách</td>
+                <td>Sản phẩm</td>
+                <td>Tổng tiền</td>
+                <td>Ngày giờ</td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <input type="search" name="search_theo_ma_hang" placeholder="Tìm kiếm">
+        <select name="" id="">
+            <option value="Lọc theo mã">Lọc theo mã</option>
+        </select>
+        <label for="tu_ngay">Từ ngày</label>
+        <input type="date" name="tu_ngay" id="tu_ngay">
+        <label for="den_ngay">Đến ngày</label>
+        <input type="date" name="den_ngay" id="den_ngay">
+    </div>
+</div>
+<!--    </div>-->
+<script src="admin.js"></script>
+</body>
+</html>

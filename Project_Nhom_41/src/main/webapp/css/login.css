@@ -102,3 +102,14 @@ h2{
 #google_btn{
     background-color: rgb(22 123 255);;
 }
+#remember{
+    position: relative;
+    bottom:90px;
+    display: flex;
+    flex-direction: row;
+    margin-left:50px;
+}
+#text_ghi_nho{
+    margin-top: 16.5px;
+}
+
