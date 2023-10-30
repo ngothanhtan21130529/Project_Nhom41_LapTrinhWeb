@@ -177,7 +177,7 @@ header .box .header-btn ul .header-search button{
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
-    filter: blur(1px); /* Áp dụng hiệu ứng mờ */
+    /*filter: blur(1px); !* Áp dụng hiệu ứng mờ *!*/
     position: absolute;
     top: 0;
     right: 0;
@@ -203,7 +203,9 @@ header .box .header-btn ul .header-search button{
     padding: 0 220px 0 220px;
 }
 
+container-fluid{
 
+}
 
 
 
