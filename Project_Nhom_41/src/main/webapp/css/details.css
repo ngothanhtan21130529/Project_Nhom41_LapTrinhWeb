@@ -115,6 +115,10 @@ a{
     font-size: 15px;
     font-weight: bold;
 }
+.payment-button:hover{
+    background-color: #77622d;
+    color: white;
+}
 .contact{
     display: flex;
     flex-direction: row;

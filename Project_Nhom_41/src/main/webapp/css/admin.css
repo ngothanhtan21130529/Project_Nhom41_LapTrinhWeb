@@ -1,0 +1,132 @@
+*{
+    list-style-type: none;
+    text-decoration: none;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+#sidebar{
+    width:30%;
+    height:100%;
+    position: fixed;
+    z-index: 1;
+    background: red;
+}
+
+#user-management-tab:hover {
+    background-color: aqua;
+    transition: 0.5s;
+    cursor:pointer;
+}
+#home-page{
+    transition: opacity 0.5s;
+    z-index: 2;
+    width: 60%;
+    margin-left: auto;
+    position: absolute;
+    left:35vw;
+}
+#home-page-tab:hover {
+    background-color: aqua;
+    transition: 0.5s;
+    cursor:pointer;
+}
+.sold-out{
+    margin-top: 5vh;
+}
+.revenue{
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+.sold-out-table,.revenue-table{
+    text-align: center;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+table, th, td{
+    border: 1px solid;
+}
+table{
+    border-collapse: collapse;
+}
+.title{
+    text-align: center;
+    padding-bottom: 30px;
+    font-weight: bold;
+}
+#user-management{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    transition: opacity 0.5s;
+    position: absolute;
+    z-index: 2;
+    left:35vw;
+    display: none;
+    margin-top: 5vh;
+    width: 60vw;
+}
+.user-information-table{
+    overflow: scroll;
+}
+.user-information-title{
+    height: 10%;
+}
+.user-information-action{
+    width: 15%;
+}
+.user-information-password{
+    width: 15%;
+}
+.user-information-username{
+    width: 20%;
+}
+.user-information-num{
+    width: 5%;
+}
+.low-height{
+    height: 4.5vh;
+}
+.function{
+    display: flex;
+    padding-top: 30px;
+    gap: 5px;
+    justify-content: center;
+}
+.remove-user{
+    padding: 5px 15px 5px 15px;
+}
+.add-user{
+    padding: 5px 15px 5px 15px;
+}
+.finding{
+    padding: 5px 15px 5px 15px;
+}
+#find{
+    padding: 5px 15px 5px 15px;
+}
+.user-search-table{
+    overflow: scroll;
+    margin-top: 30px;
+}
+.user-search-title{
+    height: 10%;
+}
+.user-search-action{
+    width: 15%;
+}
+.user-search-password{
+    width: 15%;
+}
+.user-search-username{
+    width: 20%;
+}
+.user-search-num{
+    width: 5%;
+}
+.low-height{
+    height: 4.5vh;
+}
