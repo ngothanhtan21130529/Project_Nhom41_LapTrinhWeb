@@ -19,6 +19,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
+    border-bottom: black solid 2px;
 }
 
 header .box{
@@ -111,6 +112,10 @@ header .box .header-btn .header-list .header-search{
     float: left;
     margin: 0;
     padding: 0;
+    /*background-color: #e2c16c;*/
+    border-radius: 25px;
+    height: 40px;
+    text-align: center;
 }
 
 header .box .header-btn .header-list .sign-in{
@@ -153,17 +158,20 @@ header .box .header-btn ul .sign-in a{
 
 header .box .header-btn ul .header-search form{
     height: 50px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .search-input{
     width: 150px;
     font-size: 12px;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
 }
 
 header .box .header-btn ul .header-search button{
     border: none;
     background-color: white;
+    padding-left: 10px;
 }
 
 .container .main .banner{
