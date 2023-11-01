@@ -3,8 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+<!--  <style>-->
+<!--    /* Reset CSS */-->
+<!--    * {-->
+<!--      margin: 0;-->
+<!--      padding: 0;-->
+<!--      box-sizing: border-box;-->
+<!--    }-->
+
+<!--    /* Styling for the breadcrumb */-->
+<!--    .breadcrumb {-->
+<!--      background-color: transparent;-->
+<!--      padding: 10px;-->
+<!--      margin: 0;-->
+<!--      list-style-type: none;-->
+<!--    }-->
+
+<!--    .breadcrumb-item {-->
+<!--      display: inline;-->
+<!--      margin-right: 5px;-->
+<!--    }-->
+
+<!--    .breadcrumb-item a {-->
+<!--      text-decoration: none;-->
+<!--      color: #007bff; /* Màu chữ link */-->
+<!--    }-->
+
+<!--    .breadcrumb-item a:hover {-->
+<!--      text-decoration: underline;-->
+<!--    }-->
+
+<!--    /* Styling for the section header */-->
+<!--    .bg-light-border-bottom {-->
+<!--      background-color: #f8f9fa; /* Màu nền */-->
+<!--      border-bottom: 1px solid #dee2e6; /* Viền đáy */-->
+<!--      padding-top: 30px;-->
+<!--      padding-bottom: 30px;-->
+<!--    }-->
+
+<!--    .container h2 {-->
+<!--      color: #343a40; /* Màu chữ tiêu đề */-->
+<!--    }-->
+
+<!--    /* Additional styling for responsive layout */-->
+<!--    @media (max-width: 768px) {-->
+<!--      .container h2 {-->
+<!--        font-size: 24px;-->
+<!--      }-->
+<!--    }-->
+<!--    .breadcrumb-item:not(:last-child)::after {-->
+<!--      content: "/";-->
+<!--      margin: 0 5px; /* Khoảng cách giữa "/" và đường link */-->
+<!--    }-->
+
+<!--  </style>-->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .filter-container {
+      background-color: #f4f4f4;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .filter-btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product {
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
+<div class="container-fluid position-relative" style="z-index: 99999;">
+  <div class="row">
+    <div class="col-md-12 shadow-sm">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-md-8">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Company Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-1">
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-globe"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">English</a>
+                  <a class="dropdown-item" href="#">Türkçe</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-1">
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-coins"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Dollar</a>
+                  <a class="dropdown-item" href="#">Euro</a>
+                  <a class="dropdown-item" href="#">Türk Lirası</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user"></i>
+                  <span>Membership</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Sign In</a>
+                  <a class="dropdown-item" href="#">Sign up</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-2">
+            <a href="#"><img src="" class="img-thumbnail p-0 border-0" /></a>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group input-group-lg">
+              <input type="text" id="" name="" class="form-control" placeholder="What search?" />
+              <select class="form-control form-control-lg rounded-0">
+                <option>Categories</option>
+                <option>Electronics</option>
+                <option>Decoration</option>
+                <option>Computers</option>
+                <option>Sports</option>
+              </select>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <button class="btn btn-outline-secondary btn-block btn-lg" type="button">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+          <div class="col-md-1">
+            <button class="btn btn-outline-secondary btn-block btn-lg" type="button">
+              <i class="fas fa-heart"></i>
+            </button>
+          </div>
+          <div class="col-md-2">
+            <div class="dropdown">
+              <button class="btn btn-outline-secondary btn-block btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Cart</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right p-3" style="width:500px;">
+                <table class="table table-sm table-striped table-bordered m-0">
+                  <tbody>
+                  <tr>
+                    <td class="text-center">
+                      <img src="https://via.placeholder.com/30x30" class="img-thumbnail p-0" alt="" />
+                    </td>
+                    <td class="text-left">
+                      <p class="m-0">
+                        <a href="#">
+                          <i class="fas fa-times"></i>
+                        </a>
+                        <span>iPhone 11 Plus</span>
+                      </p>
+                    </td>
+                    <td class="text-center">1x</td>
+                    <td class="text-right">$123.20</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <img src="https://via.placeholder.com/30x30" class="img-thumbnail p-0" alt="" />
+                    </td>
+                    <td class="text-left">
+                      <p class="m-0">
+                        <a href="#">
+                          <i class="fas fa-times"></i>
+                        </a>
+                        <span>iPhone 11 Plus</span>
+                      </p>
+                    </td>
+                    <td class="text-center">1x</td>
+                    <td class="text-right">$123.20</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <img src="https://via.placeholder.com/30x30" class="img-thumbnail p-0" alt="" />
+                    </td>
+                    <td class="text-left">
+                      <p class="m-0">
+                        <a href="#">
+                          <i class="fas fa-times"></i>
+                        </a>
+                        <span>iPhone 11 Plus</span>
+                      </p>
+                    </td>
+                    <td class="text-center">1x</td>
+                    <td class="text-right">$123.20</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" colspan="3">Sub-Total</td>
+                    <td class="text-right">$601.00</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" colspan="3">Eco Tax (-2.00)</td>
+                    <td class="text-right">$4.00</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" colspan="3">VAT (20%)</td>
+                    <td class="text-right">$120.20</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" colspan="3">Total</td>
+                    <td class="text-right">$725.20</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right" colspan="4">
+                      <a class="btn btn-secondary" href="#" role="button">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>View Cart</span>
+                      </a>
+                      <a class="btn btn-primary" href="#" role="button">
+                        <i class="fas fa-share"></i>
+                        <span>Checkout</span>
+                      </a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Electronics, Computers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Clothing, Jewelry</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home, Living</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Decoration</a>
+                      <a class="dropdown-item" href="#">Furniture</a>
+                      <a class="dropdown-item" href="#">Textile</a>
+                      <a class="dropdown-item" href="#">Lighting</a>
+                      <a class="dropdown-item" href="#">Kitchenware</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Stationery, Office</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Auto, Garden, Building</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sports, Sightseeing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Cosmetics, Care</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Hobby, Film, Music, Books</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container-fluid mb-3">
   <div class="row">
     <div class="col-md-12 bg-light border-bottom pt-5 pb-5">
@@ -800,6 +1112,68 @@
   <div class="row"></div>
   <div class="row"></div>
   <div class="row"></div>
-</div>
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <i class="float-left mr-3 fa-3x fas fa-shipping-fast"></i>
+              <p class="h6">Free shipping & Return <br/><small class="text-muted">For all orders over $500</small></p>
+            </div>
+            <div class="col-md-3">
+              <i class="float-left mr-3 fa-3x fas fa-thumbs-up"></i>
+              <p class="h6">Customer Protection <br/><small class="text-muted">From click to delivery.</small></p>
+            </div>
+            <div class="col-md-3">
+              <i class="float-left mr-3 fa-3x fas fa-umbrella"></i>
+              <p class="h6">Safe Payment <br/><small class="text-muted">Use world’s most secure payment methods.</small></p>
+            </div>
+            <div class="col-md-3">
+              <i class="float-left mr-3 fa-3x fas fa-life-ring"></i>
+              <p class="h6">Support 24/7 <br/><small class="text-muted">We answer for question all time</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="lead">We’ll never share your email address with a third-party.</p>
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Sign Up For Newsletter</span>
+            </div>
+            <input type="text" id="" name="" class="form-control" placeholder="Your email address" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-container">
+    <a href="#" class="filter-btn">All</a>
+    <a href="#" class="filter-btn">Red</a>
+    <a href="#" class="filter-btn">Blue</a>
+    <a href="#" class="filter-btn">Green</a>
+    <a href="#" class="filter-btn">Electronics</a>
+    <a href="#" class="filter-btn">Clothing</a>
+    <a href="#" class="filter-btn">Furniture</a>
+    <a href="#" class="filter-btn">Under $50</a>
+    <a href="#" class="filter-btn"> $50 - $100</a>
+    <a href="#" class="filter-btn">Over $100</a>
+  </div>
+
+  <div class="product">Product 1 (Red, Electronics, $75)</div>
+  <div class="product">Product 2 (Blue, Clothing, $30)</div>
+  <div class="product">Product 3 (Green, Furniture, $120)</div>
+  <div class="product">Product 4 (Red, Electronics, $45)</div>
+  <div class="product">Product 5 (Blue, Clothing, $80)</div>
+  <div class="product">Product 6 (Green, Furniture, $60)</div>
 </body>
 </html>
