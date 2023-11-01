@@ -69,9 +69,6 @@ table{
     margin-top: 5vh;
     width: 60vw;
 }
-.user-information-table{
-    overflow: scroll;
-}
 .user-information-title{
     height: 10%;
 }
@@ -94,22 +91,28 @@ table{
     display: flex;
     padding-top: 30px;
     gap: 5px;
-    justify-content: center;
 }
 .remove-user{
     padding: 5px 15px 5px 15px;
+    font-size: 15px;
 }
 .add-user{
     padding: 5px 15px 5px 15px;
+    font-size: 15px;
+}
+.modify-user{
+    padding: 5px 15px 5px 15px;
+    font-size: 15px;
 }
 .finding{
     padding: 5px 15px 5px 15px;
+    font-size: 15px;
 }
 #find{
     padding: 5px 15px 5px 15px;
+    font-size: 15px;
 }
 .user-search-table{
-    overflow: scroll;
     margin-top: 30px;
 }
 .user-search-title{
