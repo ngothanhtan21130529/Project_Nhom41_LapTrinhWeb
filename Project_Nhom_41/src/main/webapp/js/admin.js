@@ -1,26 +1,55 @@
-// let home_page=document.getElementById("home-page");
-// let status_1=home_page.style.visibility='hidden';
+let content_trangchu=document.getElementById("trang_chu");
+let status_trangchu=content_trangchu.style.visibility='hidden';
 
-// function change(){
-//     if(status_1==="hidden"){
-//         home_page.style.transition='opacity 2s';
-//         home_page.style.visibility='visible';
-//     }else{
-//         status_1=home_page.style.visibility='hidden';
-//     }
-// }
+let content_sanpham=document.getElementById("san_pham");
+let status_sanpham=content_sanpham.style.visibility='hidden';
 
-function change(event, menu_name){
-    var menu_content, menu_link;
+let content_donhang=document.getElementById("don_hang");
+let status_donhang=content_donhang.style.visibility='hidden';
 
-    menu_content=document.getElementsByClassName('menu-page');
-    for (let i = 0; i < menu_content.length; i++) {
-        menu_content[i].style.display='none';
+let content_nguoidung=document.getElementById("nguoi_dung");
+let status_nguoidung=content_nguoidung.style.visibility='hidden';
+function click_trangchu(){
+    if(status_trangchu==="hidden"){
+        content_trangchu.style.transition='opacity 2s';
+        content_trangchu.style.visibility='visible';
+        content_sanpham.style.visibility='hidden';
+        content_donhang.style.visibility='hidden';
+        content_nguoidung.style.visibility='hidden';
+    }else{
+        status_trangchu=content_trangchu.style.visibility='hidden';
     }
-    menu_link=document.getElementsByClassName('menu-links');
-    for (let i = 0; i < menu_link.length; i++) {
-        menu_link[i].className=menu_link[i].className.replace(' active', '');
+}
+function click_sanpham(){
+    if(status_sanpham==="hidden"){
+        content_sanpham.style.transition='opacity 2s';
+        content_sanpham.style.visibility='visible';
+        content_donhang.style.visibility='hidden';
+        content_trangchu.style.visibility='hidden';
+        content_nguoidung.style.visibility='hidden';
+    }else{
+        status_sanpham=content_sanpham.style.visibility='hidden';
     }
-    document.getElementById(menu_name).style.display='block';
-    event.currentTarget.className+=' active';
+}
+function click_donhang(){
+    if(status_donhang==="hidden"){
+        content_donhang.style.transition='opacity 2s';
+        content_donhang.style.visibility='visible';
+        content_sanpham.style.visibility='hidden';
+        content_trangchu.style.visibility='hidden';
+        content_nguoidung.style.visibility='hidden';
+    }else{
+        status_donhang=content_donhang.style.visibility='hidden';
+    }
+}
+function click_nguoidung(){
+    if(status_nguoidung==="hidden"){
+        content_nguoidung.style.transition='opacity 2s';
+        content_nguoidung.style.visibility='visible';
+        content_sanpham.style.visibility='hidden';
+        content_donhang.style.visibility='hidden';
+        content_trangchu.style.visibility='hidden';
+    }else{
+        status_nguoidung=content_nguoidung.style.visibility='hidden';
+    }
 }

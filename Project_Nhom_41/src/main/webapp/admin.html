@@ -25,23 +25,30 @@
         <!--                <img src="" alt="">-->
         <!--            </div>-->
         <ul id="sidebar">
-            <li id="home-page-tab" class="menu-links" onclick="change(event, 'home-page')">
+            <li id="header">
+                <h1>Admin quản lí</h1>
+            </li>
+            <li id="menu_1" onclick="click_trangchu()">
+                <i class="fa-sharp fa-solid fa-house-laptop fa-2xl"></i>
                 Trang chủ
             </li>
-            <li class="menu-links">
+            <li id="menu_2" onclick="click_sanpham()">
+                <i class="fa-solid fa-ring fa-2xl"></i>
                 Quản lí sản phẩm
             </li>
-            <li class="menu-links">
+            <li id="menu_3" onclick="click_donhang()">
+                <i class="fa-brands fa-product-hunt fa-2xl"></i>
                 Quản lí đơn hàng
             </li>
-            <li id="user-management-tab" class="menu-links" onclick="change(event, 'user-management')">
+            <li id="menu_4" onclick=click_nguoidung()>
+                <i class="fa-solid fa-user fa-2xl"></i>
                 Quản lí người dùng
             </li>
-            <li class="menu-links">
-                Đăng xuất
+            <li id="menu_5">
+                <i class="fa-solid fa-door-open fa-2xl"></i>Đăng xuất
             </li>
         </ul>
-        <div id="home-page" class="menu-page">
+        <div id="trang_chu" class="menu-page">
 
             <!-- Sold out table  -->
             <div class="sold-out">
@@ -189,7 +196,97 @@
             </div>
         </div>
 
-        <div id="user-management" class="menu-page">
+        <div id="san_pham">
+            <table border="1">
+                <tr>
+                    <td>Tên sản phẩm
+                    </td>
+                    <td>Số lượng nhập</td>
+                    <td>Số lượng bán ra</td>
+                    <td>Mã sản phẩm</td>
+                </tr>
+                <tr>
+                    <td>Dòng 1</td>
+                    <td>Dòng 2</td>
+                    <td>Dòng 3</td>
+                    <td>Dòng 4</td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <select>
+                <option>Lọc theo mã</option>
+            </select>
+            <input type="search" name="search" placeholder="Tìm kiếm">
+            <button id="xoa">Xóa sản phẩm</button>
+            <button id="them">Thêm sản phẩm </button>
+            <button id="chinh_sua">Chỉnh sửa thông tin sản phẩm </button>
+        </div>
+
+        <div id="don_hang">
+            <table border="1">
+                <tr>
+                    <td>STT</td>
+                    <td>Mã đơn</td>
+                    <td>Khách</td>
+                    <td>Sản phẩm</td>
+                    <td>Tổng tiền</td>
+                    <td>Ngày giờ</td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <input type="search" name="search_theo_ma_hang" placeholder="Tìm kiếm">
+            <select name="" id="">
+                <option value="Lọc theo mã">Lọc theo mã</option>
+            </select>
+            <label for="tu_ngay">Từ ngày</label>
+            <input type="date" name="tu_ngay" id="tu_ngay">
+            <label for="den_ngay">Đến ngày</label>
+            <input type="date" name="den_ngay" id="den_ngay">
+        </div>
+
+        <div id="nguoi_dung" class="menu-page">
             <table class="user-information-table">
                 <tr class="user-information-title">
                     <th class="user-information-num bold-text">Stt</th>

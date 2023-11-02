@@ -14,23 +14,15 @@
     background: red;
 }
 
-#user-management-tab:hover {
+#menu_1:hover {
     background-color: aqua;
     transition: 0.5s;
-    cursor:pointer;
+    cursor: pointer;
 }
-#home-page{
-    transition: opacity 0.5s;
-    z-index: 2;
-    width: 60%;
-    margin-left: auto;
+#trang_chu{
     position: absolute;
-    left:35vw;
-}
-#home-page-tab:hover {
-    background-color: aqua;
-    transition: 0.5s;
-    cursor:pointer;
+    z-index: 2;
+    left:500px;
 }
 .sold-out{
     margin-top: 5vh;
@@ -40,7 +32,6 @@
     padding-bottom: 5vh;
 }
 .sold-out-table,.revenue-table{
-    text-align: center;
     width: 400px;
     margin-right: auto;
     margin-left: auto;
@@ -56,18 +47,15 @@ table{
     padding-bottom: 30px;
     font-weight: bold;
 }
-#user-management{
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    transition: opacity 0.5s;
+#menu_4:hover{
+    background-color: aqua;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#nguoi_dung{
     position: absolute;
     z-index: 2;
-    left:35vw;
-    display: none;
-    margin-top: 5vh;
-    width: 60vw;
+    left:500px;
 }
 .user-information-title{
     height: 10%;
@@ -78,8 +66,11 @@ table{
 .user-information-password{
     width: 15%;
 }
-.user-information-username{
+.user-information-full-name{
     width: 20%;
+}
+.user-information-username{
+    width: 15%;
 }
 .user-information-num{
     width: 5%;
@@ -112,24 +103,61 @@ table{
     padding: 5px 15px 5px 15px;
     font-size: 15px;
 }
-.user-search-table{
-    margin-top: 30px;
+#quan_li{
+    transition: opacity 0.5s;
+    position: absolute;
+    z-index: 2;
+    left: 700px;
 }
-.user-search-title{
-    height: 10%;
+#san_pham {
+    width: 70vw;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    left: 470px;
 }
-.user-search-action{
-    width: 15%;
+#menu_2:hover {
+    background-color: aqua;
+    transition: 0.5s;
+    cursor: pointer;
+
 }
-.user-search-password{
-    width: 15%;
+#don_hang {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    left:470px;
 }
-.user-search-username{
-    width: 20%;
+#menu_3:hover {
+    background-color: aqua;
+    transition: 0.5s;
+    cursor: pointer;
 }
-.user-search-num{
-    width: 5%;
+li{
+    padding:20px;
 }
-.low-height{
-    height: 4.5vh;
+table {
+    width: 70vw;
+    row-gap: 10px;
+    column-gap: 10px;
+    text-align: center;
+    border:  1px solid;
+    overflow-y: scroll;
+    border-collapse: collapse;
+}
+td{
+    background-color:goldenrod;
+    color:white;
+}
+button{
+    border-radius: 5px;
+    background-color:palegoldenrod;
+    cursor:pointer;
+}
+input{
+    border-radius: 5px;
+}
+select{
+    border-radius: 5px;
 }
