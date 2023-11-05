@@ -8,30 +8,33 @@
 }
 
 form {
-    border-color: darkgoldenrod;
-    border: double 2px;
+    border: double 2px darkgoldenrod;
     margin-top: 200px;
-    margin-left:500px;
+    margin-left:550px;
     width:500px;
-    height:200px;
+    height:300px;
     box-shadow: darkgray 2px 2px;
+    border-radius: 5px;
 }
-#email,#xacthuc{
-    width:200px;
-    height:30px;
-    margin-left:150px;
 
-}
-label{
-    margin-left:150px;
-
-}
-h2{
-    margin-left: 180px;
-
-}
 button{
     margin-top:50px;
     margin-left:175px;
     width:150px;
+    background-color: #e2c16c;
+    cursor:pointer;
+    border-radius: 5px;
+}
+button:active{
+    background-color: #EEEA3CFF;
+}
+.item{
+    margin-left:150px;
+
+}
+h2{
+    margin-left:40px;
+}
+input{
+    width:200px;
 }
