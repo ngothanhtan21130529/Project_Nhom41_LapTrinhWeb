@@ -1,233 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Gallery</title>
     <style>
-        .slider {
-            width: 100%;
-            height: 350px;
-            position: relative;
-            margin: auto;
-            overflow-x: scroll;
-            overflow-y: hidden;
-        }
-
-        .slider::-webkit-scrollbar {
-            display: none;
-        }
-
-        .slider .slide {
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background: none;
+            padding: 10px 0;
+            margin: 0;
+            list-style: none;
             display: flex;
-            position: absolute;
-            left: 0;
-            transition: 0.3s left ease-in-out;
-          height: 350px;
         }
 
-        .slider .item {
-            margin-right: 10px;
+        .breadcrumb-item {
+            font-size: 16px;
+            margin-right: 5px;
         }
 
-        .slider .item:last-child {
-            margin-right: 0;
+        .breadcrumb-item::after {
+            content: '/';
+            margin-left: 5px;
+            color: #777;
         }
 
-        .ctrl-btn {
-            padding: 0;
-            min-width: 20px;
-            background: #fff;
-            border: none;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            position: absolute;
-            top: 50%;
-            margin-top: -27.5px;
-          height: 30px;
+        .breadcrumb-item:last-child::after {
+            content: '';
         }
 
-        i{
-          font-size: 30px;
-        }
-        .ctrl-btn.pro-prev {
-            left: 0;
-        }
-
-        .ctrl-btn.pro-next {
-            right: 0;
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease-in-out;
         }
 
-        .category {
-            width: 350px;
-          text-align: center;
+        .breadcrumb-item a:hover {
+            color: #0056b3;
         }
 
-        .category a{
-          text-decoration: none;
-        }
-        img {
-            width: 300px;
-          height: 300px;
+        /* Container Styles (Adjust according to your design) */
+        .container-fluid {
+            background-color: #f8f9fa; /* Light gray background */
         }
 
+        .container {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+        }
+
+        /* Page Title Styles */
+        .bg-light {
+            background-color: #f8f9fa !important; /* Light gray background */
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #dee2e6 !important; /* Light gray border */
+        }
+
+        .pt-5 {
+            padding-top: 3rem !important;
+        }
+
+        .pb-5 {
+            padding-bottom: 3rem !important;
+        }
+
+        h2 {
+            color: #343a40; /* Dark gray text color */
+        }
     </style>
-    <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
 </head>
-
 <body>
-<div class="slider" id="slider">
-    <div class="slide" id="slide">
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
-        </div>
-        <div class="category">
-            <a href="amber.html">
-                <img class="item"
-                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                <h3>Topaz</h3>
-            </a>
+<div class="gallery">
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-md-12 bg-light border-bottom pt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Laptops & Notebooks</h2>
+                            <ol class="breadcrumb p-0 m-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Electronics, Computers</a></li>
+                                <li class="breadcrumb-item active">Laptops & Notebooks</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="ctrl-btn pro-prev"><i class="fa-solid fa-angle-left"></i></div>
-    <div class="ctrl-btn pro-next"><i class="fa-solid fa-angle-right"></i></div>
 </div>
-<script>
-    "use strict";
-
-    productScroll();
-
-    function productScroll() {
-        let slider = document.getElementById("slider");
-        let next = document.getElementsByClassName("pro-next");
-        let prev = document.getElementsByClassName("pro-prev");
-        let slide = document.getElementById("slide");
-        let item = document.getElementById("slide");
-
-        for (let i = 0; i < next.length; i++) {
-            //refer elements by class name
-
-            let position = 0; //slider postion
-
-            prev[i].addEventListener("click", function () {
-                //click previos button
-                if (position > 0) {
-                    //avoid slide left beyond the first item
-                    position -= 1;
-                    translateX(position); //translate items
-                }
-            });
-
-            next[i].addEventListener("click", function () {
-                if (position >= 0 && position < hiddenItems()) {
-                    //avoid slide right beyond the last item
-                    position += 1;
-                    translateX(position); //translate items
-                }
-            });
-        }
-
-        function hiddenItems() {
-            //get hidden items
-            let items = getCount(item, false);
-            let visibleItems = slider.offsetWidth / 210;
-            return items - Math.ceil(visibleItems);
-        }
-    }
-
-    function translateX(position) {
-        //translate items
-        slide.style.left = position * -210 + "px";
-    }
-
-    function getCount(parent, getChildrensChildren) {
-        //count no of items
-        let relevantChildren = 0;
-        let children = parent.childNodes.length;
-        for (let i = 0; i < children; i++) {
-            if (parent.childNodes[i].nodeType != 3) {
-                if (getChildrensChildren)
-                    relevantChildren += getCount(parent.childNodes[i], true);
-                relevantChildren++;
-            }
-        }
-        return relevantChildren;
-    }
-</script>
 </body>
-
 </html>
