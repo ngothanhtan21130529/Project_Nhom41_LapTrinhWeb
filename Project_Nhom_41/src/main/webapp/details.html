@@ -12,23 +12,54 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="address-bar">
+        <div class="address-bar non-light-box">
             <a href="#">Address Products</a>
         </div>
-        <div class="details">
-            <div class="detail-box-img">
+        <div class="light-box">
+            <div class="slide-img">
+                <div class="slide-1 slide default">
+                    <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                </div>
+                <div class="slide-2 slide">
+                    <img src="img/spinel-tim-anh-kim-2.jpg" alt="">
+                </div>
+                <div class="slide-3 slide">
+                    <img src="img/spinel-tim-anh-kim-3.jpg" alt="">
+                </div>
+                <div class="slide-4 slide">
+                    <img src="img/spinel-tim-anh-kim-4.jpg" alt="">
+                </div>
+                <div class="slide-5 slide">
+                    <img src="img/spinel-tim-anh-kim-5.jpg" alt="">
+                </div>
+            </div>
+            <div class="queue">
+                <img class="col-1 row active" src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt=""
+                    onclick="change_to(event, '.slide-1','col-1')">
+                <img class="col-2 row" src="img/spinel-tim-anh-kim-2.jpg" alt="" onclick="change_to(event, '.slide-2','col-2')">
+                <img class="col-3 row" src="img/spinel-tim-anh-kim-3.jpg" alt="" onclick="change_to(event, '.slide-3','col-3')">
+                <img class="col-4 row" src="img/spinel-tim-anh-kim-4.jpg" alt="" onclick="change_to(event, '.slide-4','col-4')">
+                <img class="col-5 row" src="img/spinel-tim-anh-kim-5.jpg" alt="" onclick="change_to(event, '.slide-5','col-5')">
+            </div>
+            <div class="close" onclick="blur_img()">&times;</div>
+            <a class="prev" onclick="next_slide(-1)">&#10094;</a>
+            <a class="next" onclick="next_slide(1)">&#10095;</a>
+        </div>
+        <div class="details non-light-box">
+            <div class="detail-box-img" onclick="blur_img()">
                 <div class="large-img">
-                    <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="" class="img-1">
+                    <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="" class="img-1 img">
                 </div>
                 <div class="small-img">
-                    <img src="img/spinel-tim-anh-kim-2.jpg" alt="" class="img-2">
-                    <img src="img/spinel-tim-anh-kim-3.jpg" alt="" class="img-3">
-                    <img src="img/spinel-tim-anh-kim-4.jpg" alt="" class="img-4">
-                    <img src="" alt="" class="img-5">
+                    <img src="img/spinel-tim-anh-kim-2.jpg" alt="" class="img-2 img">
+                    <img src="img/spinel-tim-anh-kim-3.jpg" alt="" class="img-3 img">
+                    <img src="img/spinel-tim-anh-kim-4.jpg" alt="" class="img-4 img">
+                    <img src="img/spinel-tim-anh-kim-5.jpg" alt="" class="img-5 img">
                 </div>
             </div>
             <div class="details-text-box">
@@ -137,7 +168,7 @@
                 </div>
             </div>
         </div>
-        <div class="specifications">
+        <div class="specifications non-light-box">
             <div class="specifications-label">
                 THÔNG SỐ KỸ THUẬT
             </div>
@@ -206,7 +237,7 @@
                 </div>
             </div>
         </div>
-        <div class="contact-number-choosing">
+        <div class="contact-number-choosing non-light-box">
             <a href="#" class="landline">
                 <div class="landline-label">
                     Số máy bàn
@@ -243,15 +274,7 @@
                 </div>
             </a>
         </div>
-        <div class="related-products">
-            <div class="related-products-label">
-                SẢN PHẨM LIÊN QUAN
-            </div>
-            <div class="carousel-ralated-products">
-                Carousel here
-            </div>
-        </div>
-        <div class="information-products">
+        <div class="information-products non-light-box">
             <div class="infomation-products-label">
                 THÔNG TIN SẢN PHẨM
             </div>
@@ -373,8 +396,10 @@
                             </li>
                             <li>
                                 <p>
-                                    Khách chuyển khoản cọc trước <b>5.000.000 đ (Năm triệu đồng)</b> nhận hàng và <b>thanh toán
-                                    phần còn lại + phí ship (COD)</b> cho bên vận chuyển. Trong trường hợp quý khách muốn
+                                    Khách chuyển khoản cọc trước <b>5.000.000 đ (Năm triệu đồng)</b> nhận hàng và
+                                    <b>thanh toán
+                                        phần còn lại + phí ship (COD)</b> cho bên vận chuyển. Trong trường hợp quý khách
+                                    muốn
                                     hoàn trả, <b>phí ship quay lại khách tự chịu và không được hoàn cọc .</b>
                                 </p>
                             </li>
@@ -398,15 +423,19 @@
                             </li>
                             <li>
                                 <p>
-                                    Sau khi sản phẩm hoàn thành quý khách <b>thanh toán</b> phần còn lại cho chúng tôi, <b>hoàn
-                                    toàn miễn phí ship,</b> kiểm tra trước khi nhận hàng.
+                                    Sau khi sản phẩm hoàn thành quý khách <b>thanh toán</b> phần còn lại cho chúng tôi,
+                                    <b>hoàn
+                                        toàn miễn phí ship,</b> kiểm tra trước khi nhận hàng.
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    Những thiết kế có giá trị <b>dưới 50.000.000 đ ( Năm mươi triệu đồng )</b> sau khi hoàn
-                                    thành sản phẩm <b>chuyển khoản trước 50%</b> giá trị đơn hàng, trước khi chúng tôi gửi
-                                    hàng. <b>Thanh toán phần còn lại + phí ship</b> cho bên vận chuyện sau khi nhận hàng, kiểm
+                                    Những thiết kế có giá trị <b>dưới 50.000.000 đ ( Năm mươi triệu đồng )</b> sau khi
+                                    hoàn
+                                    thành sản phẩm <b>chuyển khoản trước 50%</b> giá trị đơn hàng, trước khi chúng tôi
+                                    gửi
+                                    hàng. <b>Thanh toán phần còn lại + phí ship</b> cho bên vận chuyện sau khi nhận
+                                    hàng, kiểm
                                     tra và nhận hàng trước khi thanh toán.
                                 </p>
                             </li>
@@ -504,7 +533,8 @@
                                 Không có giấy bảo hành, hóa đơn sản phẩm.
                             </li>
                             <div class="non-guarantee-case-note">
-                                <i>Ghi chú cách tính giá vàng: Giá vàng:</i> 24k*A + B ( A là hàm lượng % vàng, B là Hội vàng
+                                <i>Ghi chú cách tính giá vàng: Giá vàng:</i> 24k*A + B ( A là hàm lượng % vàng, B là Hội
+                                vàng
                                 loại đẹp nhất = 200.000đ/ chỉ)
                             </div>
                             <li>
