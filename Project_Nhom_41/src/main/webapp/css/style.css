@@ -8,7 +8,8 @@
 
 .container{
     width: 100%;
-    margin-top: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -20,6 +21,10 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: black solid 2px;
+}
+
+header .container{
+    height: 100px;
 }
 
 header .box{

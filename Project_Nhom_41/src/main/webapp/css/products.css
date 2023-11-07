@@ -1,22 +1,17 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-}
-.container{
+body{
     width: 100%;
-    margin-top: 1px;
 }
 
-.banner-jewelry{
-    margin-top: 5px;
+header .container{
+    margin: 0;
+    padding: 0;
 }
 
-h2{
-
+.pro-main{
+    margin-top: 100px;
+    position: relative;
 }
+
 
 /* Breadcrumb Styles */
 .breadcrumb {
@@ -49,40 +44,55 @@ h2{
 }
 
 .breadcrumb-item a:hover {
-    color: #0056b3;
+    color: #e2c16c;
 }
 
-/* Container Styles (Adjust according to your design) */
 .container-fluid {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    padding-left: 100px;
 }
 
-.container {
-    background-color: #ffffff; /* White background */
-    padding: 20px;
+h2{
+    margin-top: 50px;
 }
 
-/* Page Title Styles */
-.bg-light {
-    background-color: #f8f9fa !important; /* Light gray background */
+.pagination {
+    display: inline-block;
+    margin-left: 35%;
 }
 
-.border-bottom {
-    border-bottom: 1px solid #dee2e6 !important; /* Light gray border */
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 
-.pt-5 {
-    padding-top: 3rem !important;
+.pagination a.active {
+    background-color: #e2c16c;
+    color: white;
+    border-radius: 10px;
 }
 
-.pb-5 {
-    padding-bottom: 3rem !important;
+.pagination a:hover:not(.active) {
+    background-color: #e2c16c;
+    border-radius: 10px;
 }
 
-h2 {
-    color: #343a40; /* Dark gray text color */
+.filter {
+    display: inline-flex;
+    margin-top: 10px;
+    margin-left: 2%;
 }
 
+.filter i{
+    display: inline-flex;
+}
 
-
+.filter .filter-item {
+    padding-left: 30px;
+}
 
