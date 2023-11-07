@@ -43,17 +43,23 @@ function blur_img() {
     } else {
         document.body.style.overflow = 'auto';
     }
-    let slide_show = document.querySelector('.light-box');
-    if (slide_show.style.visibility != 'visible') {
-        slide_show.style.visibility = 'visible';
+    let light_box = document.querySelector('.light-box');
+    let queue=document.querySelector('.queue');
+    if (light_box.style.visibility != 'visible') {
         document.querySelector('.default').style.visibility = 'visible';
+        light_box.style.visibility = 'visible' ;
     } else {
         let slide_img = document.querySelectorAll('.slide');
         slide_img.forEach(element => {
             element.style.visibility = 'hidden';
-        })
-        slide_show.style.visibility = 'hidden';
+        });
+        light_box.style.visibility = 'hidden';
     }
+    let row=document.querySelectorAll('.row');
+    row.forEach(e=>{
+        e.classList.remove('active');
+    })
+    document.querySelector('.col-1').className+=' active';
 }
 function change_to(event, img, selector) {
     let current = document.querySelectorAll(".slide");

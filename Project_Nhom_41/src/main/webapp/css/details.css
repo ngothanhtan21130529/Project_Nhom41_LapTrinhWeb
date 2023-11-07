@@ -87,7 +87,6 @@ a {
     width: auto;
     padding: 16px;
     font-weight: bold;
-    transition: 0.6s ease;
     border-radius: 3px 0 0 3px;
 }
 
@@ -107,7 +106,6 @@ a {
     color: black;
     font-weight: bold;
     font-size: 20px;
-    transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
@@ -136,6 +134,10 @@ a {
     width: 100%;
 }
 
+.default {
+    z-index: 5;
+}
+
 .queue {
     z-index: 1;
     position: fixed;
@@ -155,6 +157,7 @@ a {
 .queue::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
+
 .row {
     padding: 3px;
     min-width: 25%;
@@ -162,9 +165,11 @@ a {
     justify-content: center;
     filter: brightness(50%);
 }
-.active{
+
+.active {
     filter: brightness(100%);
 }
+
 .row img {
     width: 100%;
 }
@@ -241,18 +246,35 @@ a {
     margin-top: 30px;
 }
 
-.payment-button {
+.payment-cart {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* background-color: #e2c16c; */
     margin-top: 10px;
+    grid-column-gap: 10px;
+    height: 30px;
+}
+
+.payment-button,
+.cart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0px;
     background-color: #e2c16c;
     font-weight: 400;
     width: 100%;
-    height: 4%;
-    font-size: 15px;
+    height: 6vh;
+    font-size: 17px;
     font-weight: bold;
+    text-align: center;
+    color: black;
+    border-radius: 3px;
 }
 
-.payment-button:hover {
+.payment-button:hover,
+.cart-button:hover,
+.payment-button:hover i {
     background-color: #77622d;
     color: white;
 }
@@ -632,16 +654,11 @@ a {
     padding-top: 2px;
 }
 
-
-
-
-
-
-
-
-
-
-
+.place-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .tab {
     overflow: hidden;
