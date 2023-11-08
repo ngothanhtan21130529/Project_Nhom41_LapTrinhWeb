@@ -15,12 +15,13 @@
 }
 
 #menu_1:hover {
->>>>>>> main
+
+
     background-color: aqua;
     transition: 0.5s;
     cursor: pointer;
 }
-=======
+
 #trang_chu{
     position: absolute;
     z-index: 2;
@@ -118,7 +119,8 @@ table{
     height: 100%;
     position: absolute;
     z-index: 2;
-     left: 470px;
+
+    left: 470px;
 }
 
 #menu_2:hover {
@@ -128,6 +130,7 @@ table{
 
 }
 
+
 #don_hang {
     width: 60%;
     height: 100%;
@@ -136,13 +139,13 @@ table{
     left:470px;
 }
 
+
 #menu_3:hover {
     background-color: aqua;
     transition: 0.5s;
     cursor: pointer;
 
 }
-
 li{
     padding:20px;
 }
