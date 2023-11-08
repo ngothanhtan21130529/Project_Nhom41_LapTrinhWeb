@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="css/Cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <ul id="head">
+                <li class="item">
+                    TRANG CHỦ
+                </li>
+                <li class="item">
+                    GIỚI THIỆU
+                </li>
+                <li class="item">
+                    TRANG SỨC
+                </li>
+<!--                <li class="item">-->
+<!--                    <img src="" alt="">-->
+<!--                </li>-->
+                <li class="item">
+                    ĐÁ QUÝ
+                </li>
+                <li class="item">
+                    SẢN PHẨM
+                </li>
+                <li class="item">
+                    LIÊN HỆ
+                </li>
+            </ul>
+            <div id="gio_hang">
+                <a href="#"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+            </div>
+            <div id="search_item">
+                <i id="glass" class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" placeholder="Search" id="search">
+                <h3><a href="#">Đăng xuất</a></h3>
+            </div>
+        </div>
+        <div id="product">
+            <table border="1">
+                <tr>
+                    <td>STT</td>
+                    <td>Tên sản phẩm</td>
+                    <td>Ảnh</td>
+                    <td >Số lượng</td>
+                    <td >Đơn giá</td>
+                    <td >Thành tiền</td>
+                    <td >Hành động</td>
+                </tr>
+                <tr>
+                    <td >1</td>
+                    <td >Ruby</td>
+                    <td ><img src="pink-sapphire.jpg" alt=""></td>
+                    <td>
+                        <div id="counter">
+                            <button id="increase">+</button>
+                            <span id="value">0</span>
+                            <button id="decrease">-</button>
+                        </div>
+                    </td>
+                    <td >1.000.000</td>
+                    <td >1.000.000</td>
+                    <td ><button id="delete"><i class="fa-solid fa-trash fa-2x"></i></button></td>
+                </tr>
+
+            </table>
+            <div id="btn">
+                <button id="btn_1">Thanh toán</button>
+                <button id="btn_2">Về trang chủ</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#head {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-left: 100px;
+
+}
+
+#head .item {
+    margin-top: 20px;
+}
+
+input {
+    width: 250px;
+    border-radius: 5px;
+    height: 30px;
+    margin-top:20px;
+}
+
+#glass {
+    position: absolute;
+    z-index: 1;
+    left: 1250px;
+    top: 30px;
+}
+
+h3 {
+    position: absolute;
+    left: 1300px;
+    top: 25px;
+}
+
+#gio_hang {
+    position: absolute;
+    z-index: 2;
+    left: 900px;
+    top: 20px;
+}
+#product{
+    margin-left:200px;
+    margin-top:50px;
+
+}
+table{
+    width:1000px;
+}
+img{
+    width:100px;
+    height:100px;
+}
+#delete{
+    background: red;
+}
+button{
+    cursor:pointer;
+}
+#btn_1,#btn_2{
+    width:100px;
+    height:20px;
+    border-radius: 5px;
+}
+#btn_1{
+    background: rgb(0 123 254);
+}
+#btn_2{
+    background:rgb(255 193 7);
+
+}
+#btn_1:active{
+    background: darkcyan;
+}
+#btn_2:active{
+    background: darksalmon;
+}
+
+
+
+

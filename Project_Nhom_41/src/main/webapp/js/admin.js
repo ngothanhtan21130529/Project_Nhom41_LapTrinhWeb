@@ -1,3 +1,4 @@
+
 let content_trangchu=document.getElementById("trang_chu");
 let status_trangchu=content_trangchu.style.visibility='hidden';
 
