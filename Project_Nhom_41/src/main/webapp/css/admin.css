@@ -11,11 +11,11 @@
     height:100%;
     position: fixed;
     z-index: 1;
-    background: red;
+    background: gray;
 }
 
 #menu_1:hover {
-    background-color: aqua;
+    background-color: #e2c16c;
     transition: 0.5s;
     cursor: pointer;
 }
@@ -48,7 +48,7 @@ table{
     font-weight: bold;
 }
 #menu_4:hover{
-    background-color: aqua;
+    background-color: #e2c16c;
     transition: 0.5s;
     cursor: pointer;
 }
@@ -117,7 +117,7 @@ table{
     left: 470px;
 }
 #menu_2:hover {
-    background-color: aqua;
+    background-color: #e2c16c;
     transition: 0.5s;
     cursor: pointer;
 
@@ -130,7 +130,7 @@ table{
     left:470px;
 }
 #menu_3:hover {
-    background-color: aqua;
+    background-color: #e2c16c;
     transition: 0.5s;
     cursor: pointer;
 }
