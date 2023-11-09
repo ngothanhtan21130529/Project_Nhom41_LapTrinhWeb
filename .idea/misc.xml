@@ -1,7 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 >>>>>>> 9dee8b97144cc979dcf96adb1fbd3d4a9429ea6b
+=======
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+>>>>>>> f4710262bed9cb7ce0ee0717c6e9e1c77b002995
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
