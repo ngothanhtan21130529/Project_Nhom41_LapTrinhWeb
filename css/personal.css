@@ -24,6 +24,11 @@ form{
     grid-template-columns: 2fr 2fr;
     box-shadow: 2px 2px grey;
 }
+.item{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 25vw;
+}
 #save{
     color:black;
     background-color:#e2c16c;
@@ -33,7 +38,8 @@ form{
     height:30px;
     cursor:pointer;
     margin-top:50px;
-    margin-left:100px;
+    margin-left: auto;
+    float: right;
 }
 #btn-change{
     color:black;
@@ -54,11 +60,21 @@ input{
 }
 .image{
     margin-left:120px;
-    margin-top:50px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
-#name,#phone,#email{
-    width:300px;
+#name,#phone,#email,#address{
+    width:100%;
 }
 .date{
     margin-top:20px;
+}
+#address{
+    margin-bottom: 10px;
+}
+#gender{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
