@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin:0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -13,15 +13,9 @@ a {
     padding-top: 3vh;
 }
 
-.address-bar {
-    padding-left: 13vw;
-    padding-right: 12vw;
-}
-
-.address-bar a {
-    font-size: 15px;
-    text-decoration: none;
-    color: black;
+.mb-3{
+    margin-top: 100px;
+    display: inline-block;
 }
 
 .details {
@@ -32,6 +26,7 @@ a {
     column-gap: 30px;
     user-select: none;
     -webkit-user-select: none;
+    margin-top: 1px;
 }
 
 .detail-box-img {
@@ -69,16 +64,17 @@ a {
     /* display: none; */
     /* visibility: hidden; */
     width: 50%;
+    top: 10%
 }
 
 .light-box {
     padding-left: 13vw;
     padding-right: 12vw;
     visibility: hidden;
-    z-index: 2;
+    z-index: 1001;
 }
 
-.close {
+.light-box .close {
     position: fixed;
     top: 5vh;
     right: 13vw;
@@ -90,20 +86,18 @@ a {
     border-radius: 3px 0 0 3px;
 }
 
-.close:hover {
-    font-weight: bold;
+.light-box .close:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.prev,
-.next {
+.light-box .prev,
+.light-box .next {
     cursor: pointer;
     position: fixed;
     top: 50%;
+    color: white;
     width: auto;
     padding: 16px;
-    margin-top: -50px;
-    color: black;
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
@@ -111,13 +105,13 @@ a {
     -webkit-user-select: none;
 }
 
-.next {
+.light-box .next {
     right: 13vw;
     border-radius: 3px 0 0 3px;
 }
 
-.prev:hover,
-.next:hover {
+.light-box .prev:hover,
+.light-box .next:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
