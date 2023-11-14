@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectRootManager">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> 9dee8b97144cc979dcf96adb1fbd3d4a9429ea6b
+=======
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+>>>>>>> f4710262bed9cb7ce0ee0717c6e9e1c77b002995
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -9,6 +23,7 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+>>>>>>> 792366a5ed8ed89bff787c5b080b77b41c9c8fd2
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

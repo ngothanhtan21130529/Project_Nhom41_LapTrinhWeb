@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#container{
+    margin-top:100px;
+    margin-left:500px;
+}
+form{
+    border:double;
+    border-width: 5px;
+    border-color: darkgoldenrod;
+    height:500px;
+    border-radius: 5px;
+    width:400px;
+    box-shadow: 2px 2px darkgoldenrod;
+    margin-left:100px;
+}
+h2{
+    margin-left:150px;
+}
+input{
+    border-radius: 5px;
+    width:200px;
+    margin-top:10px;
+}
+#thongtin{
+    margin-left:50px;
+    gap: 10px;
+    margin-top:10px;
+}
+#dieukhoan{
+    width:20px;
+
+}
+#dang_ki{
+    background-color: darkgoldenrod;
+}
+#btn{
+    width:100px;
+    border-radius: 5px;
+    margin-top:5px;
+    margin-left:5px;
+    height:30px;
+    box-shadow: 2px 2px darkgray;
+}
+#btn:hover{
+    background-color: gold;
+}
