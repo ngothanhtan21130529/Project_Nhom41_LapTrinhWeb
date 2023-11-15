@@ -25,18 +25,16 @@ input{
     width:200px;
     margin-top:10px;
 }
-#thongtin{
+#inform{
     margin-left:50px;
     gap: 10px;
     margin-top:10px;
 }
-#dieukhoan{
+#policy{
     width:20px;
 
 }
-#dang_ki{
-    background-color: darkgoldenrod;
-}
+
 #btn{
     width:100px;
     border-radius: 5px;
@@ -47,4 +45,5 @@ input{
 }
 #btn:hover{
     background-color: gold;
+    cursor:pointer;
 }

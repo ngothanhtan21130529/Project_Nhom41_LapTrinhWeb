@@ -20,7 +20,7 @@ form{
     width:700px;
     height:700px;
 }
-#matkhaumoi,#matkhaucu,#nhaplai{
+#pass,#newpass,#repeat{
     width:300px;
     margin-left:100px;
     margin-top:5px;

@@ -28,19 +28,19 @@
             <li id="header">
                 <h1>Admin quản lí</h1>
             </li>
-            <li id="menu_1" onclick="click_trangchu()">
+            <li id="menu_1" onclick="click_home()">
                 <i class="fa-sharp fa-solid fa-house-laptop fa-2xl"></i>
                 Trang chủ
             </li>
-            <li id="menu_2" onclick="click_sanpham()">
+            <li id="menu_2" onclick="click_product()">
                 <i class="fa-solid fa-ring fa-2xl"></i>
                 Quản lí sản phẩm
             </li>
-            <li id="menu_3" onclick="click_donhang()">
+            <li id="menu_3" onclick="click_order()">
                 <i class="fa-brands fa-product-hunt fa-2xl"></i>
                 Quản lí đơn hàng
             </li>
-            <li id="menu_4" onclick=click_nguoidung()>
+            <li id="menu_4" onclick=click_user()>
                 <i class="fa-solid fa-user fa-2xl"></i>
                 Quản lí người dùng
             </li>
@@ -48,7 +48,7 @@
                 <i class="fa-solid fa-door-open fa-2xl"></i>Đăng xuất
             </li>
         </ul>
-        <div id="trang_chu" class="menu-page">
+        <div id="home" class="menu-page">
 
             <!-- Sold out table  -->
             <div class="sold-out">
@@ -196,7 +196,7 @@
             </div>
         </div>
 
-        <div id="san_pham">
+        <div id="product">
             <table border="1">
                 <tr>
                     <td>Tên sản phẩm
@@ -235,12 +235,12 @@
                 <option>Lọc theo mã</option>
             </select>
             <input type="search" name="search" placeholder="Tìm kiếm" class="search">
-            <button id="xoa">Xóa sản phẩm</button>
-            <button id="them">Thêm sản phẩm </button>
-            <button id="chinh_sua">Chỉnh sửa thông tin sản phẩm </button>
+            <button id="delete">Xóa sản phẩm</button>
+            <button id="add">Thêm sản phẩm </button>
+            <button id="modify">Chỉnh sửa thông tin sản phẩm </button>
         </div>
 
-        <div id="don_hang">
+        <div id="order">
             <table border="1">
                 <tr>
                     <td>STT</td>
@@ -280,13 +280,13 @@
             <select name="" class="fillter">
                 <option value="Lọc theo mã">Lọc theo mã</option>
             </select>
-            <label for="tu_ngay">Từ ngày</label>
-            <input type="date" name="tu_ngay" id="tu_ngay">
-            <label for="den_ngay">Đến ngày</label>
-            <input type="date" name="den_ngay" id="den_ngay">
+            <label for="from">Từ ngày</label>
+            <input type="date" name="from" id="from">
+            <label for="to">Đến ngày</label>
+            <input type="date" name="to" id="to">
         </div>
 
-        <div id="nguoi_dung" class="menu-page">
+        <div id="user" class="menu-page">
             <table class="user-information-table">
                 <tr class="user-information-title">
                     <th class="user-information-num bold-text">Stt</th>

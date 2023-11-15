@@ -3,11 +3,8 @@
     padding: 0;
     list-style-type: none;
     text-decoration: none;
-<<<<<<< HEAD
     font-family: Arial,Tahoma,sans-serif;
 
-=======
->>>>>>> 9a56132622b03e7f57b6a4d61bf07d3cbe11426f
 }
 
 #header {
@@ -46,16 +43,11 @@ h2 {
 
 #form {
     margin-top: 50px;
-<<<<<<< HEAD
     margin-left: 230px;
-=======
-    margin-left:230px;
->>>>>>> 9a56132622b03e7f57b6a4d61bf07d3cbe11426f
 }
 
 input {
     margin-top: 5px;
-<<<<<<< HEAD
     width: 500px;
 }
 
@@ -161,63 +153,4 @@ img {
 #sentence{
     margin-left:575px;
 
-=======
-    width:500px;
-}
-
-#buy{
-    margin-top:10px;
-
-}
-.radio{
-    width:13px;
-    margin-top:-10px;
-}
-#search{
-    width:250px;
-}
-.pay{
-    display:flex;
-    flex-direction: row;
-}
-#submit{
-    background: #007afe;
-    color:white;
-}
-#cart{
-    position:absolute;
-    z-index: 2;
-    left:1000px;
-    bottom:445px;
-}
-#voucher{
-    width:200px;
-}
-#search_item{
-    display:flex;
-    flex-direction: row;
-    gap:5px;
-}
-h3{
-    margin-top:9px;
-}
-#table{
-    position: absolute;
-    left:750px;
-    bottom:300px;
-    border:double 2px gold;
-    width:350px;
-    height:150px;
-    border-radius: 5px;
-}
-
-#token,#price{
-    color:red;
-}
-#table_1,#table_2{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top:20px;
->>>>>>> 9a56132622b03e7f57b6a4d61bf07d3cbe11426f
 }
