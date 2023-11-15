@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 let content_home=document.getElementById("home");
 let status_home=content_home.style.visibility='hidden';
 
 let content_product=document.getElementById("product");
 let status_product=content_product.style.visibility='hidden';
+=======
+let content_trangchu=document.getElementById("trang_chu");
+let status_trangchu=content_trangchu.style.visibility='hidden';
+>>>>>>> 2c487217694f92c99450dd969d52b44a546d8ac1
 
 let content_order=document.getElementById("order");
 let status_order=content_order.style.visibility='hidden';
