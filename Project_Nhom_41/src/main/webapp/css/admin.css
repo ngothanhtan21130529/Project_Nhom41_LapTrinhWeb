@@ -19,11 +19,8 @@
     transition: 0.5s;
     cursor: pointer;
 }
-<<<<<<< HEAD
+
 #home{
-=======
-#trang_chu{
->>>>>>> 2c487217694f92c99450dd969d52b44a546d8ac1
     position: absolute;
     z-index: 2;
     left:500px;
@@ -107,18 +104,9 @@ table{
     padding: 5px 15px 5px 15px;
     font-size: 15px;
 }
-<<<<<<< HEAD
+
 
 #product {
-=======
-#quan_li{
-    transition: opacity 0.5s;
-    position: absolute;
-    z-index: 2;
-    left: 700px;
-}
-#san_pham {
->>>>>>> 2c487217694f92c99450dd969d52b44a546d8ac1
     width: 70vw;
     height: 100%;
     position: fixed;
@@ -131,11 +119,9 @@ table{
     cursor: pointer;
 
 }
-<<<<<<< HEAD
+
 #order {
-=======
-#don_hang {
->>>>>>> 2c487217694f92c99450dd969d52b44a546d8ac1
+
     width: 60%;
     height: 100%;
     position: absolute;
@@ -182,18 +168,14 @@ select{
 }
 <<<<<<< HEAD
 #delete,#add{
-=======
-#xoa,#them{
->>>>>>> 2c487217694f92c99450dd969d52b44a546d8ac1
+
     width:150px;
     height:30px;
     font-size: 14px;
 }
-<<<<<<< HEAD
+
 #modify{
-=======
-#chinh_sua{
->>>>>>> 2c487217694f92c99450dd969d52b44a546d8ac1
+
     width:200px;
     height:30px;
     font-size: 14px;
@@ -208,11 +190,9 @@ select{
     height:30px;
     font-size: 14px;
 }
-<<<<<<< HEAD
+
 #from,#to{
-=======
-#tu_ngay,#den_ngay{
->>>>>>> 2c487217694f92c99450dd969d52b44a546d8ac1
+
     width:150px;
     height:30px;
     font-size: 14px;
