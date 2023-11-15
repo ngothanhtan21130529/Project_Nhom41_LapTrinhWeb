@@ -52,7 +52,7 @@ h2 {
 input {
     margin-top: 5px;
 <<<<<<< HEAD
-    width: 500px;
+width: 500px;
 }
 
 #buy {
@@ -216,4 +216,9 @@ h3{
     justify-content: space-evenly;
     margin-top:20px;
 
+}
+
+
+.container-main{
+    margin-top: 100px;
 }
