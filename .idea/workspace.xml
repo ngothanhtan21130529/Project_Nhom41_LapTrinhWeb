@@ -41,6 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -58,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699962304577</updated>
       <workItem from="1699962305852" duration="318000" />
+      <workItem from="1699966723221" duration="115000" />
     </task>
     <servers />
   </component>
