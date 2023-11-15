@@ -38,6 +38,7 @@ form{
     height: 500px;
     border: black solid 5px;
     background-color: #fcf7dc;
+    border-radius: 10px;
 }
 
 #logo img{
