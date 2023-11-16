@@ -51,8 +51,7 @@ h2 {
 
 input {
     margin-top: 5px;
-<<<<<<< HEAD
-width: 500px;
+    width: 500px;
 }
 
 #buy {
@@ -218,7 +217,26 @@ h3{
 
 }
 
+.product-details div{
+    border: 1px solid;
+}
 
 .container-main{
-    margin-top: 100px;
+    margin-top: 130px;
+}
+
+.container-main .order .order-table{
+    max-width: auto;
+    max-height: auto; 
+    min-width: 70%;
+    margin: auto;
+}
+.container-main .order .order-table table,
+.container-main .order .order-table th,
+.container-main .order .order-table td{
+    border: 1px solid;
+}
+.container-main .order .order-table{
+    border-collapse: collapse;
+    text-align: center;
 }
