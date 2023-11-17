@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+#container{
+    box-shadow: aliceblue;
+    width: 1000px;
+    padding: 10px;
+    background-color: #F1E88BFF;
+    min-height: 630px;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+
+#container .img-register{
+    float: left;
+    width: 300px;
+    height: 600px;
+}
+
+form{
+    float: right;
+    width: 58%;
+    border: 5px black solid;
+    height: 600px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f1e7d0;
+}
+
+form img{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+#dang_ki h2{
+    padding: 20px;
+    font-size: 25px;
+}
+
+#thongtin{
+    border: black 1px solid;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: #D9C19EFF;
+    height: 395px;
+}
+
+#thongtin label{
+    float: left;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 14px;
+}
+
+#thongtin input{
+    float: right;
+    height: 30px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.commit{
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: left;
+    float: left;
+    display: flex;
+}
+
+.commit input{
+    width: 400px;
+}
+
+#btn{
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #e2c16c;
+}
+
+#dieukhoan{
+    font-size: 15px;
+    float: left;
+}
+
+#btn:hover{
+    background-color: #f5db62;
+}
+
+/*form{*/
+/*    border:double;*/
+/*    border-width: 5px;*/
+/*    border-color: darkgoldenrod;*/
+/*    height:500px;*/
+/*    border-radius: 5px;*/
+/*    width:400px;*/
+/*    box-shadow: 2px 2px darkgoldenrod;*/
+/*    margin-left:100px;*/
+/*}*/
+/*h2{*/
+/*    margin-left:150px;*/
+/*}*/
+/*input{*/
+/*    border-radius: 5px;*/
+/*    width:200px;*/
+/*    margin-top:10px;*/
+/*}*/
+/*#thongtin{*/
+/*    margin-left:50px;*/
+/*    gap: 10px;*/
+/*    margin-top:10px;*/
+/*}*/
+/*#dieukhoan{*/
+/*    width:20px;*/
+
+/*}*/
+/*#dang_ki{*/
+/*    background-color: darkgoldenrod;*/
+/*}*/
+/*#btn{*/
+/*    width:100px;*/
+/*    border-radius: 5px;*/
+/*    margin-top:5px;*/
+/*    margin-left:5px;*/
+/*    height:30px;*/
+/*    box-shadow: 2px 2px darkgray;*/
+/*}*/
+/*#btn:hover{*/
+/*    background-color: gold;*/
+/*}*/
