@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> cc50366d16182735bbe99c4f4017075877531036
 let content_home=document.getElementById("home");
 let status_home=content_home.style.visibility='hidden';
 
