@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/java/Connection/MySqlConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/java/Connection/MySqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/java/connection/MySqlConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +22,7 @@
       <list>
         <option value="CSS File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -61,6 +66,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "preferences.applicationServers",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -187,6 +197,7 @@
       <workItem from="1700551968354" duration="2164000" />
       <workItem from="1700558369941" duration="171000" />
       <workItem from="1700560770175" duration="588000" />
+      <workItem from="1700562081515" duration="1158000" />
     </task>
     <servers />
   </component>
