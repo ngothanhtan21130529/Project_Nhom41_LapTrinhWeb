@@ -34,12 +34,20 @@ public class Login extends HttpServlet {
                 while(resultSet.next()){
                     user=resultSet.getString("user_name");
                     password=resultSet.getString("password");
+                    if(user.equals(username)&&password.equals(pass)){
+                        break;
+                    }
                 }
                 resultSet.close();
                 if(username.equals(user)&&pass.equals(password)){
+
+
                     RequestDispatcher requestDispatcher= req.getRequestDispatcher("index.jsp");
-                    requestDispatcher.forward(req,resp);
-                    req.setAttribute(user,"Ngo Thanh Tan");
+                    req.setAttribute("user", "Ngo Thanh Tan");
+                  requestDispatcher.forward(req,resp);
+
+
+
                 }else{
                     resp.getWriter().println("Kết nối khong thành công");
                 }

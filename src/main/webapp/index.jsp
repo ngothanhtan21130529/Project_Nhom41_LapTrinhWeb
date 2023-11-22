@@ -208,7 +208,13 @@
                             </div>
                         </li>
 <%--                        <li class="header-item sign-in"><a href="login.html">Đăng nhập</a></li>--%>
-                        <li class="header-item sign-in"><%= request.getAttribute("user")%></li>
+                        <li class="header-item sign-in">
+                            <% String user;%>
+                            <%=  user = (String) request.getAttribute("user") %>
+
+
+                        </li>
+
                     </ul>
                 </div>
             </div>
