@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GioÌ haÌng</title>
+    <title>Giỏ hàng</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -15,12 +14,6 @@
 </head>
 <body>
 <header class="header">
-	<%
-		//HttpSession session=request.getSession();
-		String img=(String) session.getAttribute("img");
-		String name=(String) session.getAttribute("name");
-		String price=(String) session.getAttribute("price");
-	%>
     <div class="container">
         <div class="box">
             <div class="logo">
@@ -29,29 +22,29 @@
             <nav class="navigation">
                 <ul class="navigation-list">
                     <li class="navigation-item active">
-                        <a href="index.html">Trang chá»§</a>
+                        <a href="index.html">Trang chủ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="products.html">Sáº£n pháº©m</a>
+                        <a href="products.html">Sản phẩm</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="products.html">Trang sÆ°Ìc</a>
+                        <a href="products.html">Trang sức</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="products.html">ÄaÌ quyÌ</a>
+                        <a href="products.html">Đá quý</a>
                         <i class="fa-solid fa-caret-down"></i>
                         <ul class="dropdown-gem">
                             <li class="dropdown-item">
                                 <a href="products.html">Spinel</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Kim cÆ°Æ¡ng</a>
+                                <a href="products.html">Kim cương</a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="products.html">Ruby</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">HÃ´Ì phaÌch</a>
+                                <a href="products.html">Hổ phách</a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="topaz.html">Topaz</a>
@@ -72,15 +65,15 @@
                                 <a href="products.html">Garnet</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">CaÌc loaÌ£i ÄaÌ khaÌc</a>
+                                <a href="products.html">Các loại đá khác</a>
                             </li>
                         </ul>
                     </li>
                     <li class="navigation-item">
-                        <a href="contact.html">LiÃªn há»</a>
+                        <a href="contact.html">Liên hệ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="policy.html">ChiÌnh saÌch</a>
+                        <a href="policy.html">Chính sách</a>
                     </li>
                 </ul>
             </nav>
@@ -92,7 +85,7 @@
                                     type="search"
                                     name="search"
                                     class="search-input"
-                                    placeholder="TÃ¬m sáº£n pháº©m"
+                                    placeholder="Tìm sản phẩm"
                                     autocomplete="off"
                             />
                             <button type="submit" class="header-search-btn">
@@ -109,26 +102,26 @@
                             <div class="header__mt">
                                 <img
                                         src="./images/cart-empty.png"
-                                        alt="Giá» hÃ ng trá»ng"
+                                        alt="Giỏ hàng trống"
                                         class="header__mt-img"
                                 />
-                                <h4 class="header__mt-msg">ChÆ°a cÃ³ sáº£n pháº©m</h4>
+                                <h4 class="header__mt-msg">Chưa có sản phẩm</h4>
                             </div>
 
                             <div class="header__drop-no-mt">
                                 <p class="heading__drop__no-mt-msg">
-                                    Sáº£n pháº©m má»i thÃªm
+                                    Sản phẩm mới thêm
                                 </p>
 
                                 <div class="header__product-list">
                                     <div class="header__product-item">
                                         <img
-                                                src=${pro} 
+                                                src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg"
                                                 alt="Header product card 1"
                                                 class="header__product-item-img"
                                         />
                                         <span class="header__product-item-name">
-                                                    ViÃªn Topaz tÆ°Ì£ nhiÃªn trÄÌng tinh khiÃªÌt - 283ct-IRTP56
+                                                    Viên Topaz tự nhiên trắng tinh khiết - 283ct-IRTP56
                                                 </span>
                                         <span class="header__product-item-price">
                                                     129.000.000
@@ -141,7 +134,7 @@
                                                 class="header__product-item-img"
                                         />
                                         <span class="header__product-item-name">
-                                                    ViÃªn Ruby facet LuÌ£c YÃªn 063ct-IRRF152
+                                                    Viên Ruby facet Lục Yên 063ct-IRRF152
                                                 </span>
                                         <span class="header__product-item-price">
                                                     129.000.000
@@ -154,7 +147,7 @@
                                                 class="header__product-item-img"
                                         />
                                         <span class="header__product-item-name">
-                                                    NhÃ¢Ìn nam Kim CÆ°Æ¡ng VaÌng trÄÌng Au18k-MA-K
+                                                    Nhẫn nam Kim Cương Vàng trắng Au18k-MA-K
                                                 </span>
                                         <span class="header__product-item-price">
                                                     129.000
@@ -167,7 +160,7 @@
                                                 class="header__product-item-img"
                                         />
                                         <span class="header__product-item-name">
-                                                    ViÃªn Spinel sÄÌc cobalt siÃªu VIP 175ct-IRSI65
+                                                    Viên Spinel sắc cobalt siêu VIP 175ct-IRSI65
                                                 </span>
                                         <span class="header__product-item-price">
                                                     129.000.000
@@ -180,7 +173,7 @@
                                                 class="header__product-item-img"
                                         />
                                         <span class="header__product-item-name">
-                                                    Kim cÆ°Æ¡ng tÆ°Ì£ nhiÃªn
+                                                    Kim cương tự nhiên
                                                 </span>
                                         <span class="header__product-item-price">
                                                     129.000.000
@@ -189,16 +182,16 @@
                                 </div>
                                 <div class="header__drop__bottom">
                                     <p class="heading__drop__bottom-msg">
-                                        5 sáº£n pháº©m má»i thÃªm vÃ o giá» hÃ ng
+                                        5 sản phẩm mới thêm vào giỏ hàng
                                     </p>
                                     <a href="./cart.html" class="header__drop__btn">
-                                        Xem giá» hÃ ng
+                                        Xem giỏ hàng
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="header-item sign-in"><a href="login.html">ÄÄng nháº­p</a></li>
+                    <li class="header-item sign-in"><a href="login.html">Đăng nhập</a></li>
                 </ul>
             </div>
         </div>
@@ -210,12 +203,12 @@
     <div class="shopping-cart">
 
         <div class="column-labels">
-            <label class="product-image">AÌnh</label>
-            <label class="product-details">SaÌn phÃ¢Ìm</label>
-            <label class="product-price">GiaÌ</label>
-            <label class="product-quantity">SÃ´Ì lÆ°Æ¡Ì£ng</label>
-            <label class="product-removal">XoÌa</label>
-            <label class="product-line-price">TÃ´Ìng</label>
+            <label class="product-image">Ảnh</label>
+            <label class="product-details">Sản phẩm</label>
+            <label class="product-price">Giá</label>
+            <label class="product-quantity">Số lượng</label>
+            <label class="product-removal">Xóa</label>
+            <label class="product-line-price">Tổng</label>
         </div>
 
         <div class="product">
@@ -223,7 +216,7 @@
                 <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
             </div>
             <div class="product-details">
-                <div class="product-title">Kim cÆ°Æ¡ng</div>
+                <div class="product-title">Kim cương</div>
                 <p class="product-description">dafsd</p>
             </div>
             <div class="product-price">12.990.000</div>
@@ -232,7 +225,7 @@
             </div>
             <div class="product-removal">
                 <button class="remove-product">
-                    XoÌa
+                    Xóa
                 </button>
             </div>
             <div class="product-line-price">25.98</div>
@@ -243,8 +236,8 @@
                 <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
             </div>
             <div class="product-details">
-                <div class="product-title">Kim cÆ°Æ¡ng</div>
-                <p class="product-description">Kim cÆ°Æ¡ng</p>
+                <div class="product-title">Kim cương</div>
+                <p class="product-description">Kim cương</p>
             </div>
             <div class="product-price">45.000.000</div>
             <div class="product-quantity">
@@ -252,7 +245,7 @@
             </div>
             <div class="product-removal">
                 <button class="remove-product">
-                    XoÌa
+                    Xóa
                 </button>
             </div>
             <div class="product-line-price">10.000.000</div>
@@ -277,14 +270,14 @@
             </div>
         </div>
 
-        <button class="checkout"><a href="checkout.html">Thanh toaÌn</a></button>
+        <button class="checkout"><a href="checkout.html">Thanh toán</a></button>
 
     </div>
 </main>
 <section class="footer">
     <div class="social-media">
         <div class="label">
-            LIÃN Láº C THÃNG QUA Máº NG XÃ Há»I
+            LIÊN LẠC THÔNG QUA MẠNG XÃ HỘI
         </div>
         <div class="way">
             <div class="phone">
@@ -327,52 +320,52 @@
         <div class="customer-about">
             <div class="customer-care">
                 <div class="customer-care-label">
-                    CHÄM SÃC KHÃCH HÃNG
+                    CHĂM SÓC KHÁCH HÀNG
                 </div>
                 <ul>
                     <li>
-                        <a href="#">CÃ¢u há»i thÆ°á»ng gáº·p</a>
+                        <a href="#">Câu hỏi thường gặp</a>
                     </li>
                     <li>
-                        <a href="#">HÆ°á»ng dáº«n mua hÃ ng</a>
+                        <a href="#">Hướng dẫn mua hàng</a>
                     </li>
                     <li>
-                        <a href="#">Quy Äá»nh thanh toÃ¡n</a>
+                        <a href="#">Quy định thanh toán</a>
                     </li>
                     <li>
-                        <a href="#">ChÃ­nh sÃ¡ch báº£o hÃ nh</a>
+                        <a href="#">Chính sách bảo hành</a>
                     </li>
                 </ul>
             </div>
             <div class="about-us">
                 <div class="about-us">
                     <div class="about-us-label">
-                        Vá» CHÃNG TÃI
+                        VỀ CHÚNG TÔI
                     </div>
                     <div class="about-us-box">
                         <ul>
                             <li>
-                                <a href="#" class="home-page">Trang chá»§</a>
+                                <a href="#" class="home-page">Trang chủ</a>
                             </li>
                             <li>
-                                <a href="#" class="security">Báº£o máº­t</a>
+                                <a href="#" class="security">Bảo mật</a>
                             </li>
                             <li>
                                 <a href="#" class="blog">Blog</a>
                             </li>
                             <li>
-                                <a href="#" class="knowledge">Kiáº¿n thá»©c</a>
+                                <a href="#" class="knowledge">Kiến thức</a>
                             </li>
                         </ul>
                         <ul>
                             <li>
-                                <a href="#" class="introduce">Giá»i thiá»u</a>
+                                <a href="#" class="introduce">Giới thiệu</a>
                             </li>
                             <li>
-                                <a href="#" class="promotion">Khuyáº¿n mÃ£i</a>
+                                <a href="#" class="promotion">Khuyến mãi</a>
                             </li>
                             <li>
-                                <a href="#" class="contact">LiÃªn há»</a>
+                                <a href="#" class="contact">Liên hệ</a>
                             </li>
                         </ul>
                     </div>
@@ -383,7 +376,7 @@
     <!-- line -->
     <div class="line"></div>
     <div class="disigner">
-        ÄÆ°á»£c thiáº¿t káº¿ bá»i Thanh TÃ¢n, TÃº Nguyá»t, Nhá»±t TÃ¢n
+        Được thiết kế bởi Thanh Tân, Tú Nguyệt, Nhựt Tân
     </div>
 </section>
 <script>
