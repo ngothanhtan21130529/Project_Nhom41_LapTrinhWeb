@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +22,7 @@
         <div class="img-register">
             <img src="./img/banner/TTN-2.png">
         </div>
-        <form action="#" method="post">
+        <form action="./register" method="post">
             <div class="logo">
                 <img src="img/logo.png">
             </div>
@@ -29,32 +30,32 @@
                 <h2>Đăng ký</h2>
             </div>
             <div id="thongtin">
-                <label for="hoten">Họ và tên:</label>
+<%--                <label for="hoten">Họ và tên:</label>--%>
                 <br>
                 <input type="text" name="hoten" placeholder="Họ tên">
                 <br>
-                <label for="taikhoan">Tài khoản:</label>
+<%--                <label for="taikhoan">Tài khoản:</label>--%>
                 <br>
-                <input type="text" name="taikhoan" placeholder="Tài khoản">
+                <input type="text" name="user" placeholder="Tài khoản">
                 <br>
-                <label for="matkhau">Mật khẩu:</label>
+<%--                <label for="matkhau">Mật khẩu:</label>--%>
                 <br>
-                <input type="password" name="matkhau" placeholder="Mật khẩu">
+                <input type="password" name="pass" placeholder="Mật khẩu">
                 <br>
-                <label for="nhaplai">Nhập lại mật khẩu:</label>
+<%--                <label for="nhaplai">Nhập lại mật khẩu:</label>--%>
                 <br>
                 <input type="password" name="nhaplai" placeholder="Nhập lại mật khẩu">
                 <br>
-                <label for="e_mail">Email:</label>
+<%--                <label for="e_mail">Email:</label>--%>
                 <br>
-                <input type="email" name="e_mail" placeholder="Nhập email">
+                <input type="email" name="email" placeholder="Nhập email">
                 <br>
-                <label for="ngaysinh">Ngày sinh:</label>
+<%--                <label for="ngaysinh">Ngày sinh:</label>--%>
                 <br>
                 <input type="date" name="ngaysinh">
                 <br>
 
-                <label for="dienthoai">Số điện thoại:</label>
+<%--                <label for="dienthoai">Số điện thoại:</label>--%>
                 <br>
                 <input type="tel" name="dienthoai">
                 <br>

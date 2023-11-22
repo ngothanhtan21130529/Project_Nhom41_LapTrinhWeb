@@ -1,4 +1,4 @@
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@
         <div class="img-ttn">
         <img src="./img/banner/TTN.png">
         </div>
-        <form action="./login" method="post">
+        <form action="./lo_gin" method="post">
             <div id="logo">
                 <img src="./img/logo.png" alt="logo">
             </div>
@@ -48,7 +48,7 @@
             </div>
             <div id="register_forget">
                 <div id="register">
-                    <a href="register.html">Đăng ký</a>
+                    <a href="register.jsp">Đăng ký</a>
                 </div>
                 <div id="forget_pass">
                     <a href="forgot-password.html">Quên mật khẩu ?</a>
