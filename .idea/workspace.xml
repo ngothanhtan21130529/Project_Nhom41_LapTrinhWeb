@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Project_Nhom_41:war" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/products.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/css/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/java/Connection/MySqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/java/connection/MySqlConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/css/policy.css" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/css/policy.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -33,6 +36,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,7 +68,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/Github/Project_Nhom41_LapTrinhWeb",
+    "last_opened_file_path": "F:/Github/NiceAdmin",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -197,7 +207,8 @@
       <workItem from="1700551968354" duration="2164000" />
       <workItem from="1700558369941" duration="171000" />
       <workItem from="1700560770175" duration="588000" />
-      <workItem from="1700562081515" duration="1158000" />
+      <workItem from="1700562081515" duration="3409000" />
+      <workItem from="1700637233211" duration="11158000" />
     </task>
     <servers />
   </component>
