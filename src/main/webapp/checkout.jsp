@@ -418,6 +418,11 @@
       </div>
     </section>
   </div>
+  <script>
+    function test(){
+      <%%>
+    }
+  </script>
 </body>
 
 </html>
