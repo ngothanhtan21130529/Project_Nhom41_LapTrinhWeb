@@ -4,8 +4,6 @@
     list-style-type: none;
     text-decoration: none;
     font-family: Arial,Tahoma,sans-serif;
-
-
 }
 
 #header {
@@ -34,8 +32,7 @@ input {
 }
 
 #inform {
-    margin-left: 700px;
-    margin-top: 20px;
+    text-align: center;
 }
 
 h2 {
@@ -154,10 +151,8 @@ img {
 
 }
 #sentence{
-    margin-left:575px;
-
-
-    width:500px;
+    text-align: center;
+    margin-left: 40%;
 }
 
 #buy{
@@ -226,8 +221,6 @@ h3{
 }
 
 .container-main .order .order-table{
-    max-width: auto;
-    max-height: auto; 
     min-width: 70%;
     margin: auto;
 }

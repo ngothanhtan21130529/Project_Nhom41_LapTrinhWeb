@@ -1,4 +1,5 @@
 *{
+<<<<<<< HEAD
     list-style-type: none;
     text-decoration: none;
     padding:0;
@@ -6,6 +7,15 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+=======
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+>>>>>>> 5362602ee478e7a970621ab7abdaea334551f15b
 #sidebar{
     width:25%;
     height:100%;
