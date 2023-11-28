@@ -10,10 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/css/policy.css" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/css/policy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Nhom_41/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -64,16 +64,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/Github/NiceAdmin",
+    "last_opened_file_path": "F:/Github/Project_Nhom41_LapTrinhWeb/Project_Nhom_41/src/main/webapp",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.applicationServers",
     "vue.rearranger.settings.migration": "true"
   },
@@ -85,6 +89,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp" />
+      <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp\css" />
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp\img\banner" />
     </key>
   </component>
@@ -208,7 +214,11 @@
       <workItem from="1700558369941" duration="171000" />
       <workItem from="1700560770175" duration="588000" />
       <workItem from="1700562081515" duration="3409000" />
-      <workItem from="1700637233211" duration="11158000" />
+      <workItem from="1700637233211" duration="12417000" />
+      <workItem from="1701005142586" duration="613000" />
+      <workItem from="1701056733206" duration="2310000" />
+      <workItem from="1701062701889" duration="2217000" />
+      <workItem from="1701146786475" duration="2116000" />
     </task>
     <servers />
   </component>
