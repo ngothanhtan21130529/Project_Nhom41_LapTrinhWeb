@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Giỏ hàng</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cart.css">
+    <title>Giới thiệu</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+
 </head>
 <body>
 <header class="header">
@@ -98,7 +99,7 @@
                     </li>
                     <li class="header-item header__drop">
                         <a href="cart.html">
-                            <i class="fa-solid fa-cart-shopping" ></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <!-- if card have product -> add class header__drop__empty -->
                         <div class="header__drop-list">
@@ -200,266 +201,183 @@
         </div>
     </div>
 </header>
-<main class="content">
-    <h1>Shopping Cart</h1>
-
-    <div class="shopping-cart">
-
-        <div class="column-labels">
-            <label class="product-image">Ảnh</label>
-            <label class="product-details">Sản phẩm</label>
-            <label class="product-price">Giá</label>
-            <label class="product-quantity">Số lượng</label>
-            <label class="product-removal">Xóa</label>
-            <label class="product-line-price">Tổng</label>
-        </div>
-
-        <div class="product">
-            <div class="product-image">
-                <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
-            </div>
-            <div class="product-details">
-                <div class="product-title">Kim cương</div>
-                <p class="product-description">dafsd</p>
-            </div>
-            <div class="product-price">12.990.000</div>
-            <div class="product-quantity">
-                <input type="number" value="2" min="1">
-            </div>
-            <div class="product-removal">
-                <button class="remove-product">
-                    Xóa
-                </button>
-            </div>
-            <div class="product-line-price">25.98</div>
-        </div>
-
-        <div class="product">
-            <div class="product-image">
-                <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-            </div>
-            <div class="product-details">
-                <div class="product-title">Kim cương</div>
-                <p class="product-description">Kim cương</p>
-            </div>
-            <div class="product-price">45.000.000</div>
-            <div class="product-quantity">
-                <input type="number" value="1" min="1">
-            </div>
-            <div class="product-removal">
-                <button class="remove-product">
-                    Xóa
-                </button>
-            </div>
-            <div class="product-line-price">10.000.000</div>
-        </div>
-
-        <div class="totals">
-            <div class="totals-item">
-                <label>Subtotal</label>
-                <div class="totals-value" id="cart-subtotal">71.970.0000</div>
-            </div>
-            <div class="totals-item">
-                <label>Tax (5%)</label>
-                <div class="totals-value" id="cart-tax">3.60</div>
-            </div>
-            <div class="totals-item">
-                <label>Shipping</label>
-                <div class="totals-value" id="cart-shipping">15.00</div>
-            </div>
-            <div class="totals-item totals-item-total">
-                <label>Grand Total</label>
-                <div class="totals-value" id="cart-total">90.57</div>
-            </div>
-        </div>
-
-        <button class="checkout"><a href="checkout.html">Thanh toán</a></button>
-
+<div class="main">
+    <div class="banner-about">
+        <h1 class="title_1">Về chúng tôi</h1>
+        <p class="content_1">Với gần 10 năm thành lập, TTN luôn chú trọng xây dựng nền tảng của mình. Tiền thân là người
+            con của vùng đất Ngọc – Lục Yên – Yên Bái, được thừa hưởng nhiều kinh nghiệm của bậc cha chú trong làng đá.
+            Thời kỳ đầu tiên quý mến và chia sẻ, truyền đạt lại những kinh nghiệm được đúc kết từ thức tế bởi hàng chục
+            năm làm nghề.</p>
+        <p class="content_2">TTN có thế mạnh về duyệt thiết kế bản vẽ, cũng như không gian 3D. Dưới con mắt có chiều sâu
+            và kỹ thuật cao, được phát huy từ những năm học thiết kế, kỹ sư tại trường Đại Học Xây Dựng.</p>
+        <p class="content_3">TTN đã từng tham gia nhiều Triển Lãm Đá Quý Quốc tế tại nước ngoài cũng như tại Việt
+            Nam.</p>
     </div>
-</main>
-<section class="footer">
-    <div class="social-media">
-        <div class="label">
-            LIÊN LẠC THÔNG QUA MẠNG XÃ HỘI
-        </div>
-        <div class="way">
-            <div class="phone">
-                <i class="fa-solid fa-phone fa-sm" style="color: #495569;"></i>
-                <div class="phone-num">
-                    Hotline: 0856174581
-                </div>
+    <div class="container">
+        <h1>TTN Store</h1>
+        <div class="content">
+            <div class="content_main main-1">
+                <i class="fa-solid fa-bullseye"></i>
+                <h2>SỨ MỆNH</h2>
+                <p class="paragraph_1">Với khẩu hiệu Tinh Hoa Đá Quý đã truyền tải thông điệp tới Quý khách hàng rằng,
+                    TTN luôn tuyển chọn chất lượng và đạt tiêu chuẩn cao nhất, tinh túy nhất cho viên Đá Quý của mình.
+                    Với
+                    phương châm “Hãy bán cho mình trước khi bán cho Khách Hàng”. Nhằm mang lại trải nghiệm đam mê tốt
+                    nhất tới tay Quý Khách.</p>
             </div>
-            <div class="social-meida-way">
-                <div class="facebook-icon">
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f fa-xs" style="color: black;"></i>
-                    </a>
-                </div>
-                <div class="instagram-icon">
-                    <a href="#">
-                        <i class="fa-brands fa-instagram fa-xs" style="color: black"></i>
-                    </a>
-                </div>
-                <div class="tiktok-icon">
-                    <a href="#">
-                        <i class="fa-brands fa-tiktok fa-xs" style="color: black"></i>
-                    </a>
-                </div>
-                <div class="youtube-icon">
-                    <a href="#">
-                        <i class="fa-brands fa-youtube fa-xs" style="color: black"></i>
-                    </a>
-                </div>
+            <div class="content_main main-2">
+                <i class="fa-solid fa-eye"></i>
+                <h2>TẦM NHÌN</h2>
+                <p class="paragraph_1">Với tầm nhìn dài hạn xuyên suốt chung tôi nhận định phục vụ Khách Hàng đam mê đá
+                    quý là Sự Nghiệp suốt đời. Chúng tôi luôn nỗ lực thay đổi và phát triển không ngừng để đáp ứng nhu
+                    cầu
+                    của Quý khách hàng. TTN phấn đấu trở thành tập đoàn kinh doanh hàng đầu trong lĩnh vực trang sức đá
+                    quý tại Việt Nam.</p>
             </div>
-            <div class="zalo">
-                <img src="img/zalo-icon.png" alt="">
-                <div class="zalo-phone-num">
-                    Zalo: 0856174581
-                </div>
+            <div class="content_main main-3">
+                <i class="fa-solid fa-hand-holding-hand"></i>
+                <h2>NHIỆM VỤ VÀ TRÁCH NHIỆM</h2>
+                <p class="paragraph_1">Luôn cải thiện và nâng cấp chất lượng sản phẩm đẹp nhất cũng như dịch vụ tốt
+                    nhất.
+                    Luôn có trách nhiệm bảo hành chu đáo với những sản phẩm của mình bán ra.</p>
+                <P CLASS="paragraph_2">Chúng tôi luôn trân trọng sự yêu mến của Quý khách đã tin tưởng lựa chọn và giới
+                    thiệu cho bạn bè người thân biết tới thương hiệu TTN – Tinh Hoa Đá Quý.</P>
+            </div>
+            <div class="content_main main-4">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h2>TRIẾT LÝ: NGỌC SÁNG TỪ TÂM</h2>
+                <p class="paragraph_1">Xuất phát từ viên Ngọc Quý mà chúng tôi đã trải nghiệm là viên đá quý phải trong
+                    sạch
+                    nhất là phần tâm của viên đá phải ko tỳ vết, bởi nếu có chút vết tại tâm viên đá sẽ phản quang ra
+                    toàn
+                    bộ viên đá làm cho giảm vẻ đẹp đi rất nhiều, và ngược lại.</p>
+                <P CLASS="paragraph_2">Xuất phát từ tâm người bán hàng chúng tôi thấy có sự đồng điệu và trùng hợp giữa
+                    đá
+                    quý và con người có sự tương đồng giống nhau. Kinh doanh và bán hàng lĩnh vực đá quý thì cần cái tâm
+                    rất
+                    lớn, uy tín và trách nhiệm rất cao. Bởi chúng tôi xác định đây là SỰ NGHIỆP và SỨ MỆNH.</P>
             </div>
         </div>
     </div>
-    <div class="end-footer">
-        <div class="customer-about">
-            <div class="customer-care">
-                <div class="customer-care-label">
-                    CHĂM SÓC KHÁCH HÀNG
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">Câu hỏi thường gặp</a>
-                    </li>
-                    <li>
-                        <a href="#">Hướng dẫn mua hàng</a>
-                    </li>
-                    <li>
-                        <a href="#">Quy định thanh toán</a>
-                    </li>
-                    <li>
-                        <a href="#">Chính sách bảo hành</a>
-                    </li>
-                </ul>
+    <div class="member">
+        <div class="member-item">
+            <img src="./img/logo.png">
+            <h2>Trần Tú Nguyệt</h2>
+        </div>
+        <div class="member-item">
+            <img src="./img/logo.png">
+            <h2>Ngô Thanh Tân</h2>
+        </div>
+        <div class="member-item">
+            <img src="./img/logo.png">
+            <h2>Phạm Nhựt Tân</h2>
+        </div>
+    </div>
+    <section class="footer">
+        <div class="social-media">
+            <div class="label">
+                LIÊN LẠC THÔNG QUA MẠNG XÃ HỘI
             </div>
-            <div class="about-us">
+            <div class="way">
+                <div class="phone">
+                    <i class="fa-solid fa-phone fa-sm" style="color: #495569;"></i>
+                    <div class="phone-num">
+                        Hotline: 0856174581
+                    </div>
+                </div>
+                <div class="social-meida-way">
+                    <div class="facebook-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f fa-xs" style="color: black;"></i>
+                        </a>
+                    </div>
+                    <div class="instagram-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-instagram fa-xs" style="color: black"></i>
+                        </a>
+                    </div>
+                    <div class="tiktok-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-tiktok fa-xs" style="color: black"></i>
+                        </a>
+                    </div>
+                    <div class="youtube-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-youtube fa-xs" style="color: black"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="zalo">
+                    <img src="img/zalo-icon.png" alt="">
+                    <div class="zalo-phone-num">
+                        Zalo: 0856174581
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="end-footer">
+            <div class="customer-about">
+                <div class="customer-care">
+                    <div class="customer-care-label">
+                        CHĂM SÓC KHÁCH HÀNG
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">Câu hỏi thường gặp</a>
+                        </li>
+                        <li>
+                            <a href="#">Hướng dẫn mua hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Quy định thanh toán</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách bảo hành</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="about-us">
-                    <div class="about-us-label">
-                        VỀ CHÚNG TÔI
-                    </div>
-                    <div class="about-us-box">
-                        <ul>
-                            <li>
-                                <a href="#" class="home-page">Trang chủ</a>
-                            </li>
-                            <li>
-                                <a href="#" class="security">Bảo mật</a>
-                            </li>
-                            <li>
-                                <a href="#" class="blog">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#" class="knowledge">Kiến thức</a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="#" class="introduce">Giới thiệu</a>
-                            </li>
-                            <li>
-                                <a href="#" class="promotion">Khuyến mãi</a>
-                            </li>
-                            <li>
-                                <a href="#" class="contact">Liên hệ</a>
-                            </li>
-                        </ul>
+                    <div class="about-us">
+                        <div class="about-us-label">
+                            VỀ CHÚNG TÔI
+                        </div>
+                        <div class="about-us-box">
+                            <ul>
+                                <li>
+                                    <a href="#" class="home-page">Trang chủ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="security">Bảo mật</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="blog">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="knowledge">Kiến thức</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#" class="introduce">Giới thiệu</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="promotion">Khuyến mãi</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="contact">Liên hệ</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- line -->
-    <div class="line"></div>
-    <div class="disigner">
-        Được thiết kế bởi Thanh Tân, Tú Nguyệt, Nhựt Tân
-    </div>
-</section>
-<script>
-    /* Set rates + misc */
-    var taxRate = 0.05;
-    var shippingRate = 15.00;
-    var fadeTime = 300;
-
-
-    /* Assign actions */
-    $('.product-quantity input').change( function() {
-        updateQuantity(this);
-    });
-
-    $('.product-removal button').click( function() {
-        removeItem(this);
-    });
-
-
-    /* Recalculate cart */
-    function recalculateCart()
-    {
-        var subtotal = 0;
-
-        /* Sum up row totals */
-        $('.product').each(function () {
-            subtotal += parseFloat($(this).children('.product-line-price').text());
-        });
-
-        /* Calculate totals */
-        var tax = subtotal * taxRate;
-        var shipping = (subtotal > 0 ? shippingRate : 0);
-        var total = subtotal + tax + shipping;
-
-        /* Update totals display */
-        $('.totals-value').fadeOut(fadeTime, function() {
-            $('#cart-subtotal').html(subtotal.toFixed(2));
-            $('#cart-tax').html(tax.toFixed(2));
-            $('#cart-shipping').html(shipping.toFixed(2));
-            $('#cart-total').html(total.toFixed(2));
-            if(total == 0){
-                $('.checkout').fadeOut(fadeTime);
-            }else{
-                $('.checkout').fadeIn(fadeTime);
-            }
-            $('.totals-value').fadeIn(fadeTime);
-        });
-    }
-
-
-    /* Update quantity */
-    function updateQuantity(quantityInput)
-    {
-        /* Calculate line price */
-        var productRow = $(quantityInput).parent().parent();
-        var price = parseFloat(productRow.children('.product-price').text());
-        var quantity = $(quantityInput).val();
-        var linePrice = price * quantity;
-
-        /* Update line price display and recalc cart totals */
-        productRow.children('.product-line-price').each(function () {
-            $(this).fadeOut(fadeTime, function() {
-                $(this).text(linePrice.toFixed(2));
-                recalculateCart();
-                $(this).fadeIn(fadeTime);
-            });
-        });
-    }
-
-
-    /* Remove item from cart */
-    function removeItem(removeButton)
-    {
-        /* Remove row from DOM and recalc cart total */
-        var productRow = $(removeButton).parent().parent();
-        productRow.slideUp(fadeTime, function() {
-            productRow.remove();
-            recalculateCart();
-        });
-    }
-</script>
+        <!-- line -->
+        <div class="line"></div>
+        <div class="disigner">
+            Được thiết kế bởi Thanh Tân, Tú Nguyệt, Nhựt Tân
+        </div>
+    </section>
+</div>
 </body>
 </html>
