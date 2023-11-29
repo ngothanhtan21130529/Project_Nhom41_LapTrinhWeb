@@ -4,6 +4,11 @@
     list-style-type: none;
     text-decoration: none;
     font-family: Arial,Tahoma,sans-serif;
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+
+
+=======
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
 }
 
 #header {
@@ -32,7 +37,12 @@ input {
 }
 
 #inform {
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+    margin-left: 700px;
+    margin-top: 20px;
+=======
     text-align: center;
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
 }
 
 h2 {
@@ -151,8 +161,15 @@ img {
 
 }
 #sentence{
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+    margin-left:575px;
+
+
+    width:500px;
+=======
     text-align: center;
     margin-left: 40%;
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
 }
 
 #buy{
@@ -221,6 +238,11 @@ h3{
 }
 
 .container-main .order .order-table{
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+    max-width: auto;
+    max-height: auto; 
+=======
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
     min-width: 70%;
     margin: auto;
 }

@@ -91,3 +91,9 @@ function show_slide(n) {
     slides[slide_index].style.visibility = 'visible';
     dots[slide_index].className += ' active';
 }
+function setHiddenFieldValues(){
+	var name=document.querySelector('.product-name');
+	var price=document.querySelector('.price');
+	var img=document.querySelector('.first-img').src;
+	var nameHidden=document.querySelector('.nameHidden');
+}
