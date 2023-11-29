@@ -29,7 +29,7 @@ public class CategoryDAO implements DAOInterface<Category> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -52,7 +52,7 @@ public class CategoryDAO implements DAOInterface<Category> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -72,7 +72,7 @@ public class CategoryDAO implements DAOInterface<Category> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -99,7 +99,7 @@ public class CategoryDAO implements DAOInterface<Category> {
                 res=new Category(id, name, createdAt, updatedAt);
             }
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -126,7 +126,7 @@ public class CategoryDAO implements DAOInterface<Category> {
                 res.add(category);
             }
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
