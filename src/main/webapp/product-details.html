@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="css/details.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+<header class="header non-light-box">
+    <div class="container">
+        <div class="box">
+            <div class="logo">
+                <img src="./img/logo.png" alt="Logo" class="logo-img"/>
+            </div>
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-item active">
+                        <a href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="products.html">Sản phẩm</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="products.html">Trang sức</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="products.html">Đá quý</a>
+                        <i class="fa-solid fa-caret-down"></i>
+                        <ul class="dropdown-gem">
+                            <li class="dropdown-item">
+                                <a href="products.html">Spinel</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Kim cương</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Ruby</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Hổ phách</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="topaz.html">Topaz</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Aquamarine</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Tourmaline</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Jade</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Emerald</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Garnet</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="products.html">Các loại đá khác</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="contact.html">Liên hệ</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="policy.html">Chính sách</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="about.html">Giới thiệu</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-btn">
+                <ul class="header-list">
+                    <li class="header-item header-search">
+                        <form role="search" action="" method="get">
+                            <input
+                                    type="search"
+                                    name="search"
+                                    class="search-input"
+                                    placeholder="Tìm sản phẩm"
+                                    autocomplete="off"
+                            />
+                            <button type="submit" class="header-search-btn">
+                                <i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+                            </button>
+                        </form>
+                    </li>
+                    <li class="header-item header__drop">
+                        <a href="cart.html">
+                            <i class="fa-solid fa-cart-shopping" ></i>
+                        </a>
+                        <!-- if card have product -> add class header__drop__empty -->
+                        <div class="header__drop-list">
+                            <div class="header__mt">
+                                <img
+                                        src="./images/cart-empty.png"
+                                        alt="Giỏ hàng trống"
+                                        class="header__mt-img"
+                                />
+                                <h4 class="header__mt-msg">Chưa có sản phẩm</h4>
+                            </div>
+
+                            <div class="header__drop-no-mt">
+                                <p class="heading__drop__no-mt-msg">
+                                    Sản phẩm mới thêm
+                                </p>
+
+                                <div class="header__product-list">
+                                    <div class="header__product-item">
+                                        <img
+                                                src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg"
+                                                alt="Header product card 1"
+                                                class="header__product-item-img"
+                                        />
+                                        <span class="header__product-item-name">
+                                                    Viên Topaz tự nhiên trắng tinh khiết - 283ct-IRTP56
+                                                </span>
+                                        <span class="header__product-item-price">
+                                                    129.000.000
+                                                </span>
+                                    </div>
+                                    <div class="header__product-item">
+                                        <img
+                                                src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
+                                                alt="Header product card 1"
+                                                class="header__product-item-img"
+                                        />
+                                        <span class="header__product-item-name">
+                                                    Viên Ruby facet Lục Yên 063ct-IRRF152
+                                                </span>
+                                        <span class="header__product-item-price">
+                                                    129.000.000
+                                                </span>
+                                    </div>
+                                    <div class="header__product-item">
+                                        <img
+                                                src="./img/gemstone/jewels/Nhan-nam-Kim-Cuong-Vang-trang-Au18k-MA-K-6000000.jpg"
+                                                alt="Header product card 1"
+                                                class="header__product-item-img"
+                                        />
+                                        <span class="header__product-item-name">
+                                                    Nhẫn nam Kim Cương Vàng trắng Au18k-MA-K
+                                                </span>
+                                        <span class="header__product-item-price">
+                                                    129.000
+                                                </span>
+                                    </div>
+                                    <div class="header__product-item">
+                                        <img
+                                                src="img/gemstone/spinel/Vien-Spinel-sac-cobalt-sieu-VIP-175ct-IRSI65-231117500000.jpg"
+                                                alt="Header product card 1"
+                                                class="header__product-item-img"
+                                        />
+                                        <span class="header__product-item-name">
+                                                    Viên Spinel sắc cobalt siêu VIP 175ct-IRSI65
+                                                </span>
+                                        <span class="header__product-item-price">
+                                                    129.000.000
+                                                </span>
+                                    </div>
+                                    <div class="header__product-item">
+                                        <img
+                                                src="./img/gemstone/diamond/Anh-dai-dien-Kim-Cuong-tu-nhien.jpg"
+                                                alt="Header product card 1"
+                                                class="header__product-item-img"
+                                        />
+                                        <span class="header__product-item-name">
+                                                    Kim cương tự nhiên
+                                                </span>
+                                        <span class="header__product-item-price">
+                                                    129.000.000
+                                                </span>
+                                    </div>
+                                </div>
+                                <div class="header__drop__bottom">
+                                    <p class="heading__drop__bottom-msg">
+                                        5 sản phẩm mới thêm vào giỏ hàng
+                                    </p>
+                                    <a href="cart.html" class="header__drop__btn">
+                                        Xem giỏ hàng
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header-item sign-in"><a href="login.html">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="container-fluid mb-3 non-light-box">
+        <div class="row">
+            <div class="col-md-12 bg-light border-bottom pt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ol class="breadcrumb p-0 m-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                                <li class="breadcrumb-item"><a href="products.html">Sản phẩm</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="light-box">
+        <div class="slide-img">
+            <div class="slide-1 slide default">
+                <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+            </div>
+            <div class="slide-2 slide">
+                <img src="img/spinel-tim-anh-kim-2.jpg" alt="">
+            </div>
+            <div class="slide-3 slide">
+                <img src="img/spinel-tim-anh-kim-3.jpg" alt="">
+            </div>
+            <div class="slide-4 slide">
+                <img src="img/spinel-tim-anh-kim-4.jpg" alt="">
+            </div>
+            <div class="slide-5 slide">
+                <img src="img/spinel-tim-anh-kim-5.jpg" alt="">
+            </div>
+        </div>
+        <div class="queue">
+            <img class="col-1 row active" src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt=""
+                 onclick="change_to(event, '.slide-1','col-1')">
+            <img class="col-2 row" src="img/spinel-tim-anh-kim-2.jpg" alt=""
+                 onclick="change_to(event, '.slide-2','col-2')">
+            <img class="col-3 row" src="img/spinel-tim-anh-kim-3.jpg" alt=""
+                 onclick="change_to(event, '.slide-3','col-3')">
+            <img class="col-4 row" src="img/spinel-tim-anh-kim-4.jpg" alt=""
+                 onclick="change_to(event, '.slide-4','col-4')">
+            <img class="col-5 row" src="img/spinel-tim-anh-kim-5.jpg" alt=""
+                 onclick="change_to(event, '.slide-5','col-5')">
+        </div>
+        <div class="close" onclick="blur_img()">&times;</div>
+        <a class="prev" onclick="next_slide(-1)" style="color: black">&#10094;</a>
+        <a class="next" onclick="next_slide(1)" style="color: black">&#10095;</a>
+    </div>
+    <div class="details non-light-box">
+        <div class="detail-box-img" onclick="blur_img()">
+            <div class="large-img">
+                <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="" class="img-1 img">
+            </div>
+            <div class="small-img">
+                <img src="img/spinel-tim-anh-kim-2.jpg" alt="" class="img-2 img">
+                <img src="img/spinel-tim-anh-kim-3.jpg" alt="" class="img-3 img">
+                <img src="img/spinel-tim-anh-kim-4.jpg" alt="" class="img-4 img">
+                <img src="img/spinel-tim-anh-kim-5.jpg" alt="" class="img-5 img">
+            </div>
+        </div>
+        <div class="details-text-box">
+            <div class="product-id">
+                Mã: KG-SPF-027
+            </div>
+            <div class="product-name">
+                Spinel tím ánh kim
+            </div>
+
+            <div class="black-line"></div>
+
+            <div class="rating">
+                <i class="fa-solid fa-star fa-sm" style="color: #f4ab00;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: #f4ab00;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: #f4ab00;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: #f4ab00;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: #f4ab00;"></i>
+            </div>
+            <div class="price">
+                18.000.000<u>đ</u>
+            </div>
+            <div class="description-product">
+                <p>
+                    Spinel tím ánh kim thể hiện sự cá tính mạnh mẽ, màu sắc này rất được các cô gái Tây ưa chuộng.
+                    Tuy
+                    nhiên, bạn có thể dùng nó để bản thân mình trở nên khác biệt hơn. Hãy mix nó cùng với mái tóc
+                    móc
+                    tím của bạn nhé!
+                </p>
+            </div>
+            <div class="criteria-product">
+                <ul>
+                    <li>
+                        Độ trong, sạch, lỗi: sạch 100%, lỗi rạn
+                    </li>
+                    <li>
+                        Kiểm định và bảo hành trọn đời.
+                    </li>
+                    <li>
+                        Miễn phí vận chuyển toàn quốc
+                    </li>
+                    <li>
+                        Ship đảm bảo Quốc tế
+                    </li>
+                </ul>
+            </div>
+            <div class="recommendation">
+                <p>
+                    Hình ảnh, video trên website có thể chưa thể hiện vẻ đẹp, rõ nét nhất của thiết kế, kính mời quý
+                    Anh/Chị liên hệ trực tiếp tham quan, trải nghiệm thực tế theo số ĐT: <a href="#">0856 174
+                    581</a> hoặc qua
+                    Zalo/Wechat: <a href="#">0856 174 581</a>để biết thêm chi tiết.
+                </p>
+            </div>
+            <div class="advice">
+                Tư vấn và thiết kế miễn phí 100%, đặt hàng theo mẫu khi quý khách mua Mẫu 3D của sản phẩm Spinel tím
+                ánh kim KG-SPF-027
+            </div>
+            <div class="payment-cart">
+                <a href="#" class="payment-button">
+                    THANH TOÁN
+                </a>
+                <a href="#" class="cart-button">
+                    GIỎ HÀNG
+                </a>
+            </div>
+            <div class="contact">
+                <div class="phone">
+                    <i class="fa-solid fa-phone fa-sm" style="color: #495569;"></i>
+                    Hotline:
+                    <div class="phone-num">
+                        0856 174 581
+                    </div>
+                </div>
+                <div class="zalo">
+                    Zalo:
+                    <div class="zalo-num">0856 174 581</div>
+                </div>
+            </div>
+            <div class="social-contact">
+                <div class="contact-method">
+                    <div class="facebook-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook fa-lg" style="color: #3a589d;"></i>
+                        </a>
+                    </div>
+                    <div class="twitter-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-square-twitter fa-lg" style="color: #2478ba;"></i>
+                        </a>
+                    </div>
+                    <div class="google-plus-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-google-plus fa-lg" style="color: #dd4e31;"></i>
+                        </a>
+                    </div>
+                    <div class="mail-icon">
+                        <a href="#">
+                            <i class="fa-solid fa-envelope fa-lg" style="color: #111;"></i>
+                        </a>
+                    </div>
+                    <div class="linkedin-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin fa-lg" style="color: #0072b7;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="share-on-social-media">
+                    SHARE ON SOCIAL MEDIA
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="specifications non-light-box">
+        <div class="specifications-label">
+            THÔNG SỐ KỸ THUẬT
+        </div>
+        <div class="type">
+            <div class="type-label">
+                Loại đá:
+            </div>
+            <div class="type-output">
+                &nbsp; Spinel
+            </div>
+        </div>
+        <div class="opacity">
+            <div class="opacity-label">
+                Độ trong:
+            </div>
+            <div class="opacity-output">
+                &nbsp; chất bán trong
+            </div>
+        </div>
+        <div class="color">
+            <div class="color-label">
+                Màu sắc:
+            </div>
+            <div class="color-output">
+                &nbsp; Tím ánh kim
+            </div>
+        </div>
+        <div class="status">
+            <div class="status-label">
+                Tình trạng:
+            </div>
+            <div class="status-output">
+                &nbsp; Tự nhiên 100%
+            </div>
+        </div>
+        <div class="cubes">
+            <div class="cubes-label">
+                Hình khối:
+            </div>
+            <div class="cubes-output">
+                &nbsp; Oval chữ nhật
+            </div>
+        </div>
+        <div class="size">
+            <div class="size-label">
+                Kích thước:
+            </div>
+            <div class="size-output">
+                &nbsp; 7.27 x 6.27 – 5.09 mm
+            </div>
+        </div>
+        <div class="weight">
+            <div class="weight-label">
+                Trọng lượng:
+            </div>
+            <div class="weight-output">
+                &nbsp; 1.89 carat
+            </div>
+        </div>
+        <div class="accreditation">
+            <div class="accreditation-label">
+                Kiểm định:
+            </div>
+            <div class="accreditation-output">
+                &nbsp; Được kiểm định đầy đủ và viết phiếu bảo hành trọn đời về màu sắc và chất lượng
+            </div>
+        </div>
+    </div>
+    <div class="contact-number-choosing non-light-box">
+        <a href="#" class="landline">
+            <div class="landline-label">
+                Số máy bàn
+            </div>
+            <div class="landline-num">
+                08856 174 581
+            </div>
+        </a>
+        <a href="#" class="hotline">
+            <div class="hotline-label">
+                Hotline
+            </div>
+            <div class="hotline-num">
+                0856 174 581
+            </div>
+            <div class="time-line">
+                (8h00 - 21h00)
+            </div>
+        </a>
+        <a href="#" class="counselors">
+            <div class="counselors-label">
+                Tư vấn viên
+            </div>
+            <div class="counselors-num">
+                0988 458 352
+            </div>
+        </a>
+        <a href="#" class="chat-zalo-whatapp-wechat">
+            <div class="chat-zalo-whatapp-wechat-label">
+                Chat Zalo/Whatapp/Wechat
+            </div>
+            <div class="chat-zalo-whatapp-wechat-num">
+                0856 174 581
+            </div>
+        </a>
+    </div>
+    <div class="information-products non-light-box">
+        <div class="infomation-products-label">
+            THÔNG TIN SẢN PHẨM
+        </div>
+        <div class="infomation-products-box">
+            <div class="infomation-content">
+                Nội dung
+                <div class="scroll-down">
+                    <button class="scroll-down-button" onclick="scroll_down()">
+                        <i class="fa-solid fa-list fa-2xs" style="color: #7c889c;"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="table-content" class="table-contents">
+                <ol>
+                    <li>
+                        <a href="#">
+                            Thông tin viên Spinel tím ánh kim KG-SPF-027
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Giá bán viên Spinel tím ánh kim KG-SPF-027 bao nhiêu?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Mua viên Spinel tím ánh kim KG-SPF-027 ở đâu?
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="information-products-praragraph">
+            <div class="information-products-title">
+                Thông tin cơ bản Spinel tím ánh kim KG-SPF-027
+            </div>
+            <div class="information-products-text">
+                <p>
+                    <a href="#"><i>Viên Spinel</i></a> tím ánh kim đẹp xuất xứ tại mỏ đá Lục Yên tự nhiên 100%. Chất
+                    bán trong, liên kết
+                    vĩnh
+                    cửu. Viên Spinel tím ánh kim với trọng lượng 1.89 carat với kích thước: 7.27 x 6.27 – 5.09 mm.
+                    Viên
+                    đá hội tụ đầy
+                    đủ tất cả các yếu tố để lên một chiếc nhẫn hoặc mặt dây chuyền.
+                </p>
+            </div>
+            <div class="information-products-img">
+                <div class="information-products-img-img">
+                    <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                </div>
+                <div class="note">
+                    Viên Spinel tím ánh kim 1.89 carat KG-SPF-027 hình 1
+                </div>
+            </div>
+        </div>
+        <div class="price-product">
+            <div class="price-product-title">
+                Giá bán viên Spinel tím ánh kim 1.89 carat KG-SPF-027 bao nhiêu?
+            </div>
+            <div class="price-product-menu">
+                <ul>
+                    <li>
+                        Giá niêm yết: 18.000.000đ, xem thêm nhiều mẫu đá hơn <a href="#">Tại Đây</a>
+                    </li>
+                    <li>
+                        Bất kỳ sản phẩm nào được bán bởi thương hiệu IRuby đều được tư vấn, thiết kế hoàn thiện miễn
+                        phí 100%.
+                    </li>
+                    <li>
+                        Bảo hành viên Spinel tím ánh kim 1.89 carat miễn phí trọn đời sản phẩm.
+                    </li>
+                    <li>
+                        Cam kết kiểm định, đúng theo thông tin trên website.
+                    </li>
+                </ul>
+            </div>
+            <div class="price-product-img">
+                <div class="price-product-img-img">
+                    <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                </div>
+                <div class="note">
+                    Viên Spinel tím ánh kim 1.89 carat KG-SPF-027 hình 2
+                </div>
+            </div>
+        </div>
+        <div class="where-to-buy">
+            <div class="where-to-buy-label">
+                Mua viên Spinel tím ánh kim 1.89 carat KG-SPF-027 ở đâu?
+            </div>
+            <div class="tab">
+                <button class="tablinks" onclick="open_tab(event,'contact-tab')" id="default-open">
+                    Liên hệ
+                </button>
+                <button class="tablinks" onclick="open_tab(event, 'deliver')">
+                    Giao hàng
+                </button>
+                <button class="tablinks" onclick="open_tab(event, 'guarantee')">
+                    Bảo hành
+                </button>
+            </div>
+            <div id="contact-tab" class="tab-content">
+                <div class="place-map">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1986922460546!2d106.78813967465993!3d10.872487157415222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276398969f7b%3A0x9672b7efd0893fc4!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBOw7RuZyBMw6JtIFRQLiBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1698824490776!5m2!1svi!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div id="deliver" class="tab-content">
+                <h3>Chính sách giao hàng, thanh toán toàn quốc và quốc tế</h3>
+                <ol>
+                    <li class="policy-1">
+                        Áp dụng với khách mua đá quý (đá viên, đá lẻ)
+                    </li>
+                    <ul>
+                        <li>
+                            <p class="policy-line-bold" style="font-size: 18px;">
+                                Khách hàng chuyển khoản trước 100% giá trị tiền đá, miễn phí ship và kiểm tra hàng
+                                trước khi nhận (áp dụng cho gửi thường, gửi nhanh phí tính theo quy định bên vận
+                                chuyển). Trong trường hợp quý khách muốn nhận gấp chúng tôi sẽ ship hỏa tốc, phí
+                                ship áp dụng theo bên vận chuyển quy định.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Khách chuyển khoản cọc trước <b>5.000.000 đ (Năm triệu đồng)</b> nhận hàng và
+                                <b>thanh toán
+                                    phần còn lại + phí ship (COD)</b> cho bên vận chuyển. Trong trường hợp quý khách
+                                muốn
+                                hoàn trả, <b>phí ship quay lại khách tự chịu và không được hoàn cọc .</b>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Chúng tôi có trách nhiệm cung cấp hình ảnh và thông tin sản phẩm đúng với thực tế,
+                                cũng như lưu giữ những hình ảnh trước khi sản phẩm được gửi đến quý khách.
+                            </p>
+                        </li>
+                    </ul>
+                    <li class="policy-2">
+                        Áp dụng với khách mua đá và thiết kế trang sức
+                    </li>
+                    <ul>
+                        <li>
+                            <p class="policy-line-bold" style="font-size: 18px;">
+                                Sau khi chọn đá và lên thiết kế cọc số tiền tương đương với % giá trị thiết kế ( áp
+                                dụng cho tất cả các trường hợp thanh toán ), để bên thiết kế lên bản vẽ và bắt đầu
+                                tiến trình.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Sau khi sản phẩm hoàn thành quý khách <b>thanh toán</b> phần còn lại cho chúng tôi,
+                                <b>hoàn
+                                    toàn miễn phí ship,</b> kiểm tra trước khi nhận hàng.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Những thiết kế có giá trị <b>dưới 50.000.000 đ ( Năm mươi triệu đồng )</b> sau khi
+                                hoàn
+                                thành sản phẩm <b>chuyển khoản trước 50%</b> giá trị đơn hàng, trước khi chúng tôi
+                                gửi
+                                hàng. <b>Thanh toán phần còn lại + phí ship</b> cho bên vận chuyện sau khi nhận
+                                hàng, kiểm
+                                tra và nhận hàng trước khi thanh toán.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Chúng tôi gửi hàng chuyển phát nhanh, hoặc theo xe hàng tới tất cả cách tỉnh thành,
+                                quận, huyện, phường, xã trong cả nước
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Quý khách ở tỉnh vui lòng thanh toán tiền cước cho nhà vận chuyển, theo bảng giá quy
+                                định của nhà vận chuyển mà chúng tôi sẽ thỏa thuận trước với quý khách
+                            </p>
+                        </li>
+                    </ul>
+                </ol>
+                <div class="deliver-ending">
+                    IRUBY.VN xin chân thành cảm ơn sự ủng hộ và hợp tác của quý khách!
+                </div>
+            </div>
+            <div id="guarantee" class="tab-content">
+                <div class="gold-and-diamon-jewelry">
+                    <div class="gold-and-diamon-jewelry-label">
+                        Trang sức vàng, Kim Cương
+                    </div>
+                    <ul>
+                        <li>
+                            Bảo hành 6 tháng lỗi kỹ thuật, nước xi, sau 6 tháng tính phí theo mức phí.
+                        </li>
+                        <li>
+                            Bảo hành miễn phí đánh bóng, siêu âm vô thời hạn, thay đá tổng hợp, CZ và ECZ trong suốt
+                            thời gian bảo hành.
+                        </li>
+                        <li>
+                            Đối với sản phẩm bị Oxy hóa, xuống màu sẽ được siêu âm làm sạch bằng máy chuyên dụng
+                            (siêu âm, không xi)
+                        </li>
+                        <li>
+                            Trong trường hợp sản phẩm bị Oxy hóa do hóa chất, tác động bên ngoài tính phí theo từng
+                            mức độ.
+                        </li>
+                        <li>
+                            Vàng thu lại theo tuổi vàng và thời giá.
+                        </li>
+                        <li>
+                            Công sản xuất không thu lại.
+                        </li>
+                        <li>
+                            Ghi chú: Giá vàng khi sản xuất bao gồm hao phí thi công (gọt rũa đánh bóng…) không thể
+                            thu hồi là 7%.
+                        </li>
+                    </ul>
+                </div>
+                <div class="colored-gemstones">
+                    <div class="colored-gemstones-label">
+                        Đá Quý Màu
+                    </div>
+                    <ul>
+                        <li>
+                            Bảo hành vĩnh viễn về màu sắc và chất lượng của đá
+                        </li>
+                        <li>
+                            Đá chủ nhập lại 70% trong 3 năm đầu, năm thứ 4 – 5 thu lại 80%
+                        </li>
+                        <li>
+                            Từ năm thứ 5 tới năm 10 thu lại 90% giá trị và sau 10 năm thu lại 100% giá trị viên đá
+                        </li>
+                        <li>
+                            Đổi nâng cấp sản phẩm khác được tính 80% cộng phần chênh lệch.
+                        </li>
+                        <li>
+                            Tất cả những viên đá đều được kiểm định và viết giấy bảo hành trọn đời.
+                        </li>
+                        <li>
+                            Áp dụng với những viên đá có giá trị từ 10 triệu đồng trở lên.
+                        </li>
+                    </ul>
+                </div>
+                <div class="non-guarantee-case">
+                    <div class="non-guarantee-case-label">
+                        Trường hợp không được bảo hành
+                    </div>
+                    <ul>
+                        <li>
+                            Nứt vỡ, sứt, thay đổi hình dạng do va đập rơi trong quá trình sử dụng
+                        </li>
+                        <li>
+                            Thay đổi kích thước kết cấu viên đá so với ban đầu
+                        </li>
+                        <li>
+                            Sản phẩm được trì chú theo chủ nhân
+                        </li>
+                        <li>
+                            Không có giấy bảo hành, hóa đơn sản phẩm.
+                        </li>
+                        <div class="non-guarantee-case-note">
+                            <i>Ghi chú cách tính giá vàng: Giá vàng:</i> 24k*A + B ( A là hàm lượng % vàng, B là Hội
+                            vàng
+                            loại đẹp nhất = 200.000đ/ chỉ)
+                        </div>
+                        <li>
+                            Vàng 10K: A= 0.487, B = 200.000đ
+                        </li>
+                        <li>
+                            Vàng 14K: A=0.653, B = 200.000đ
+                        </li>
+                        <li>
+                            Vàng 18K: A=0.82, B = 200.000đ
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="footer">
+    <div class="social-media">
+        <div class="label">
+            LIÊN LẠC THÔNG QUA MẠNG XÃ HỘI
+        </div>
+        <div class="way">
+            <div class="phone">
+                <i class="fa-solid fa-phone fa-sm" style="color: #495569;"></i>
+                <div class="phone-num">
+                    Hotline: 0856174581
+                </div>
+            </div>
+            <div class="social-meida-way">
+                <div class="facebook-icon">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f fa-xs" style="color: black;"></i>
+                    </a>
+                </div>
+                <div class="instagram-icon">
+                    <a href="#">
+                        <i class="fa-brands fa-instagram fa-xs" style="color: black"></i>
+                    </a>
+                </div>
+                <div class="tiktok-icon">
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok fa-xs" style="color: black"></i>
+                    </a>
+                </div>
+                <div class="youtube-icon">
+                    <a href="#">
+                        <i class="fa-brands fa-youtube fa-xs" style="color: black"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="zalo">
+                <img src="img/zalo-icon.png" alt="">
+                <div class="zalo-phone-num">
+                    Zalo: 0856174581
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end-footer">
+        <div class="customer-about">
+            <div class="customer-care">
+                <div class="customer-care-label">
+                    CHĂM SÓC KHÁCH HÀNG
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">Câu hỏi thường gặp</a>
+                    </li>
+                    <li>
+                        <a href="#">Hướng dẫn mua hàng</a>
+                    </li>
+                    <li>
+                        <a href="#">Quy định thanh toán</a>
+                    </li>
+                    <li>
+                        <a href="#">Chính sách bảo hành</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-us">
+                <div class="about-us">
+                    <div class="about-us-label">
+                        VỀ CHÚNG TÔI
+                    </div>
+                    <div class="about-us-box">
+                        <ul>
+                            <li>
+                                <a href="#" class="home-page">Trang chủ</a>
+                            </li>
+                            <li>
+                                <a href="#" class="security">Bảo mật</a>
+                            </li>
+                            <li>
+                                <a href="#" class="blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#" class="knowledge">Kiến thức</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#" class="introduce">Giới thiệu</a>
+                            </li>
+                            <li>
+                                <a href="#" class="promotion">Khuyến mãi</a>
+                            </li>
+                            <li>
+                                <a href="#" class="contact">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- line -->
+    <div class="line"></div>
+    <div class="disigner">
+        Được thiết kế bởi Thanh Tân, Tú Nguyệt, Nhựt Tân
+    </div>
+</section>
+<script src="js/details.js"></script>
+</body>
+
+</html>

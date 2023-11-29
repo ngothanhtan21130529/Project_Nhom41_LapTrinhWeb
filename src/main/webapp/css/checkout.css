@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial,Tahoma,sans-serif;
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+
+
+=======
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#head {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-left: 100px;
+}
+
+input {
+    width: 250px;
+    border-radius: 5px;
+    height: 30px;
+}
+
+#glass {
+    position: absolute;
+    z-index: 1;
+    left: 1250px;
+    top: 9px;
+}
+
+#inform {
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+    margin-left: 700px;
+    margin-top: 20px;
+=======
+    text-align: center;
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
+}
+
+h2 {
+    margin-left: -150px;
+}
+
+#form {
+    margin-top: 50px;
+    margin-left: 230px;
+
+
+}
+
+input {
+    margin-top: 5px;
+    width: 500px;
+}
+
+#buy {
+    margin-top: 10px;
+
+}
+
+.radio {
+    width: 13px;
+    margin-top: -10px;
+}
+
+#search {
+    width: 250px;
+}
+
+.pay {
+    display: flex;
+    flex-direction: row;
+}
+
+#submit {
+    background: #007afe;
+    color: white;
+}
+
+#cart {
+    position: absolute;
+    z-index: 2;
+    left: 1000px;
+    bottom: 445px;
+}
+
+#voucher {
+    width: 200px;
+}
+
+#search_item {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+h3 {
+    margin-top: 9px;
+}
+
+#table {
+    position: absolute;
+    left: 750px;
+    bottom: 300px;
+    border: double 2px gold;
+    width: 350px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+#token, #price {
+    color: red;
+}
+
+#table_1, #table_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+img {
+    width: 250px;
+}
+
+#banking {
+    text-align: center;
+}
+
+#banking h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+#banking_content li{
+    list-style: none;
+    font-size: 20px;
+}
+#inform_banking{
+    margin-left: 100px;
+    margin-right: 300px;
+}
+#banking_content li span{
+    font-weight: bold;
+}
+#inform_banking span{
+    font-weight: bold;
+    margin-top: 100px;
+    font-size: 20px;
+}
+#checkout_img img{
+    width:900px;
+    margin-left:200px;
+
+}
+#sentence{
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+    margin-left:575px;
+
+
+    width:500px;
+=======
+    text-align: center;
+    margin-left: 40%;
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
+}
+
+#buy{
+    margin-top:10px;
+
+}
+.radio{
+    width:13px;
+    margin-top:-10px;
+}
+#search{
+    width:250px;
+}
+.pay{
+    display:flex;
+    flex-direction: row;
+}
+#submit{
+    background: #007afe;
+    color:white;
+}
+#cart{
+    position:absolute;
+    z-index: 2;
+    left:1000px;
+    bottom:445px;
+}
+#voucher{
+    width:200px;
+}
+#search_item{
+    display:flex;
+    flex-direction: row;
+    gap:5px;
+}
+h3{
+    margin-top:9px;
+}
+#table{
+    position: absolute;
+    left:750px;
+    bottom:300px;
+    border:double 2px gold;
+    width:350px;
+    height:150px;
+    border-radius: 5px;
+}
+
+#token,#price{
+    color:red;
+}
+#table_1,#table_2{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top:20px;
+
+}
+
+.product-details div{
+    border: 1px solid;
+}
+
+.container-main{
+    margin-top: 130px;
+}
+
+.container-main .order .order-table{
+<<<<<<< HEAD:Project_Nhom_41/src/main/webapp/css/checkout.css
+    max-width: auto;
+    max-height: auto; 
+=======
+>>>>>>> a42ba191a9b23e04b6c495494e567103761d939e:src/main/webapp/css/checkout.css
+    min-width: 70%;
+    margin: auto;
+}
+.container-main .order .order-table table,
+.container-main .order .order-table th,
+.container-main .order .order-table td{
+    border: 1px solid;
+}
+.container-main .order .order-table{
+    border-collapse: collapse;
+    text-align: center;
+}
