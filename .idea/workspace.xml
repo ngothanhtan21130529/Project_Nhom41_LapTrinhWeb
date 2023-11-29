@@ -10,12 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/MySqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/MySqlConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ImgDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ImgDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +26,15 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="19130155_TranTuNguyet" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,7 +71,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Github/Project_Nhom41_LapTrinhWeb/src/main/webapp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Github/Project_Nhom41_LapTrinhWeb/src/main/java/connection&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -92,6 +91,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\src\main\java\connection" />
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\src\main\webapp" />
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp" />
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp\css" />
@@ -224,8 +224,7 @@
       <workItem from="1701062701889" duration="2217000" />
       <workItem from="1701146786475" duration="2116000" />
       <workItem from="1701171519158" duration="1526000" />
-      <workItem from="1701238344962" duration="763000" />
-      <workItem from="1701241389569" duration="6691000" />
+      <workItem from="1701251351079" duration="991000" />
     </task>
     <servers />
   </component>
