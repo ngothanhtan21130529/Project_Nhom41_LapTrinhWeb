@@ -5,8 +5,10 @@
 }
 .ui{
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 300px 1fr;
+    height: 100vh;
 }
-/* .nav-bar{
-    grid-column: ;
-} */
+.nav-bar{
+    grid-column: 1/2;
+    border: 1px solid black;
+}
