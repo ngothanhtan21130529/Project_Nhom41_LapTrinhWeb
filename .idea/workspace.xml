@@ -9,14 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/MySqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/MySqlConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/products.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +51,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2YAJ8q9eDspNRUTFhOj7RVIkZcx" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
