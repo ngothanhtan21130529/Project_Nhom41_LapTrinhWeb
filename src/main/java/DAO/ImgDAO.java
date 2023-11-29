@@ -30,7 +30,7 @@ public class ImgDAO implements DAOInterface<Img> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -55,7 +55,7 @@ public class ImgDAO implements DAOInterface<Img> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -75,7 +75,7 @@ public class ImgDAO implements DAOInterface<Img> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -102,7 +102,7 @@ public class ImgDAO implements DAOInterface<Img> {
                 res=new Img(id, imgUrl, name, createdAt, updatedAt);
             }
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -130,7 +130,7 @@ public class ImgDAO implements DAOInterface<Img> {
                 res.add(img);
             }
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

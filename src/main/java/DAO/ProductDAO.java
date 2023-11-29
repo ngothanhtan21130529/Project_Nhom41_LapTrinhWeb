@@ -28,7 +28,7 @@ public class ProductDAO implements DAOInterface<Product> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -57,7 +57,7 @@ public class ProductDAO implements DAOInterface<Product> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -77,7 +77,7 @@ public class ProductDAO implements DAOInterface<Product> {
             System.out.println("Execute querry success: "+sql);
             System.out.println("There "+res+" line changed!");
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -108,7 +108,7 @@ public class ProductDAO implements DAOInterface<Product> {
                 res=new Product(id, new Category(categoryId), new Img(imgId), name, available, price, status, createdAt, updatedAt);
             }
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -140,7 +140,7 @@ public class ProductDAO implements DAOInterface<Product> {
                 res.add(product);
             }
 
-            MySqlConnection.closeConnection(con);
+            MySqlConnection.getConnection().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -148,7 +148,7 @@ public class ProductDAO implements DAOInterface<Product> {
     }
     public int count(String txtSearch){
         try {
-            String querry="select count(product.id) from products where products.name like ?";
+            String querry="select count(products.id) from products where products.name like ?";
             Connection con=MySqlConnection.getConnection();
             PreparedStatement ps=con.prepareStatement(querry);
             ps.setString(1,"%"+txtSearch+"%");
