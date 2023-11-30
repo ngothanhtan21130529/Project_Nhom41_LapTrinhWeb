@@ -1,6 +1,9 @@
 package DAO;
 
 import connection.MySqlConnection;
+import model.Category;
+import model.Image;
+import model.Product;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,9 +20,8 @@ public class ProductDAO implements DAOInterface<Product> {
             Connection con = MySqlConnection.getConnection();
             Statement st = con.createStatement();
             String sql = "insert into products (id, categories_id, img_id, name, available, price, status, create_at, update_at"+
-                    "value('"+product.getId()+"', '"+product.getCategory().getId()+"', '"+product.getImg().getId()+"', '"
-                    +product.getName()+"', '"+product.isAvailable()+"', '"+product.getPrice()+"', '"+product.getStatus()+"', '"
-                    +product.getCreateAt()+"', '"+product.getUpadatedAt()+"')''";
+                    "value('"+product.getId()+"', '"+product.getCategoryID()+"', '"+product.getThumbnail()+"', '"
+                    +product.getProductName()+"', '"+product.getPrice()+"', '"+product.getStatus()+"')''";
             res=st.executeUpdate(sql);
 
             System.out.println("Execute querry success: "+sql);
@@ -40,14 +42,11 @@ public class ProductDAO implements DAOInterface<Product> {
             Statement st = con.createStatement();
             String sql = "update products"+
                     "set"+
-                    " category_id='"+product.getCategory().getId()+"'"+
-                    ", img_id='"+product.getImg().getId()+"'"+
-                    ", name='"+product.getName()+"'"+
-                    ", available='"+product.isAvailable()+"'"+
+                    " category_id='"+product.getCategoryID()+"'"+
+                    ", thumbnail='"+product.getThumbnail()+"'"+
+                    ", name='"+product.getProductName()+"'"+
                     ", price='"+product.getPrice()+"'"+
                     ", status='"+product.getStatus()+"'"+
-                    ", created_at='"+product.getCreateAt()+"'"+
-                    ", updated_at='"+product.getUpadatedAt()+"'"+
                     " where id='"+product.getId()+"\'";
             res=st.executeUpdate(sql);
 
@@ -94,15 +93,12 @@ public class ProductDAO implements DAOInterface<Product> {
             while (rs.next()){
                 int id=rs.getInt("id");
                 int categoryId=rs.getInt("category_id");
-                int imgId=rs.getInt("img_id");
                 String name=rs.getString("name");
-                Boolean available=rs.getBoolean("available");
                 int price=rs.getInt("price");
                 String status=rs.getString("status");
-                Date createdAt=rs.getDate("create_at");
-                Date updatedAt=rs.getDate("update_at");
+                String imageURL=rs.getString("thumbnail");
 
-                res=new Product(id, new Category(categoryId), new Img(imgId), name, available, price, status, createdAt, updatedAt);
+                res=new Product(id, categoryId, name, price, status, imageURL);
             }
 
             MySqlConnection.getConnection().close();
@@ -125,15 +121,12 @@ public class ProductDAO implements DAOInterface<Product> {
             while (rs.next()){
                 int id=rs.getInt("id");
                 int categoryId=rs.getInt("category_id");
-                int imgId=rs.getInt("img_id");
                 String name=rs.getString("name");
-                Boolean available=rs.getBoolean("available");
                 int price=rs.getInt("price");
                 String status=rs.getString("status");
-                Date createdAt=rs.getDate("create_at");
-                Date updatedAt=rs.getDate("update_at");
+                String imageURL=rs.getString("thumbnail");
 
-                Product product=new Product(id, new Category(categoryId), new Img(imgId), name, available, price, status, createdAt, updatedAt);
+                Product product=new Product(id, categoryId, name, price, status, imageURL);
                 res.add(product);
             }
 

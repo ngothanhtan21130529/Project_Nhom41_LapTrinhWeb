@@ -13,6 +13,10 @@ public class Image implements Serializable {
         this.productDetailID = productDetailID;
     }
 
+    public Image(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
