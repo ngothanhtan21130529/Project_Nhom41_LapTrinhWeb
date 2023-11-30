@@ -12,7 +12,6 @@ public class MySqlConnection {
         String url = "jdbc:mysql://localhost:3306/gemstore";
         String user = "root";
         String password = "";
-
         return DriverManager.getConnection(url, user, password);
     }
 
