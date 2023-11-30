@@ -9,18 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gem-store.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Gem-store.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ImageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ImgDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/testDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/testDAO.java" afterDir="false" />
-    </list>
+    <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +206,7 @@
       <workItem from="1701171519158" duration="1526000" />
       <workItem from="1701251351079" duration="991000" />
       <workItem from="1701252929080" duration="31000" />
-      <workItem from="1701328737295" duration="10334000" />
+      <workItem from="1701328737295" duration="11624000" />
     </task>
     <servers />
   </component>
