@@ -1,7 +1,6 @@
 package test;
 
 import DAO.CategoryDAO;
-import model.Category;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;

@@ -1,9 +1,8 @@
 package model;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Img implements Serializable {
+public class Img  implements Serializable{
     private int id;
     private String imgUrl;
     private String name;
