@@ -33,8 +33,6 @@
                 <br>
                 <label for="password">Mật khẩu:</label>
                 <input type="password" name="password" placeholder="password" value="" id="password">
-
-
             </div>
 
             <div id="login">
@@ -61,18 +59,5 @@
             </div>
         </form>
     </div>
-<!--    <script>-->
-<!--        let account=document.getElementById("account").value;-->
-<!--        let password=document.getElementById("pass").value;-->
-<!--        function check(){-->
-<!--            if((account!=undefined)&&(password!=undefined)){-->
-<!--            document.location.href='index.html';-->
-<!--            }else{-->
-<!--                alert("khong được")-->
-<!--            }-->
-
-<!--        }-->
-<!--        document.getElementById('submit').addEventListener('click',check);-->
-<!--    </script>-->
 </body>
 </html>
