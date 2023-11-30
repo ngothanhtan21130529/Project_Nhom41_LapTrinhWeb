@@ -1,7 +1,6 @@
 package DAO;
 
 import connection.MySqlConnection;
-import model.Category;
 
 import java.sql.*;
 import java.util.ArrayList;
