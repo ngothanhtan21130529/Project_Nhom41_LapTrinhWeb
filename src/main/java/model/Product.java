@@ -1,22 +1,34 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 
-public class Product implements Serializable {
+public class Product implements Serializable{
     private int id;
-    private int categoryID;
-    private String productName;
+    private Category category;
+    private Img img;
+    private String name;
+    private boolean available;
     private int price;
     private String status;
-    private String thumbnail;
+    private Date createAt;
+    private Date upadatedAt;
 
-    public Product(int id, int categoryID, String productName, int price, String status, String thumbnail) {
+    public Product(int id, Category category, Img img, String name, boolean available, int price,
+                   String status, Date createAt, Date upadatedAt) {
         this.id = id;
-        this.categoryID = categoryID;
-        this.productName = productName;
+        this.category = category;
+        this.img = img;
+        this.name = name;
+        this.available = available;
         this.price = price;
         this.status = status;
-        this.thumbnail = thumbnail;
+        this.createAt = createAt;
+        this.upadatedAt = upadatedAt;
+    }
+
+    public Product() {
+        super();
     }
 
     public int getId() {
@@ -27,20 +39,36 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public int getCategoryID() {
-        return categoryID;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategoryID(int categoryID) {
-        this.categoryID = categoryID;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public String getProductName() {
-        return productName;
+    public Img getImg() {
+        return img;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setImg(Img img) {
+        this.img = img;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     public int getPrice() {
@@ -59,11 +87,20 @@ public class Product implements Serializable {
         this.status = status;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
+    public Date getCreateAt() {
+        return createAt;
     }
 
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
     }
+
+    public Date getUpadatedAt() {
+        return upadatedAt;
+    }
+
+    public void setUpadatedAt(Date upadatedAt) {
+        this.upadatedAt = upadatedAt;
+    }
+
 }
