@@ -1,6 +1,7 @@
 package DAO;
 
 import connection.MySqlConnection;
+import model.Category;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,8 +22,8 @@ public class CategoryDAO implements DAOInterface<Category> {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, category.getId());
             ps.setString(2, category.getCategoryName());
-            ps.setTimestamp(3, category.getCreateAt());
-            ps.setTimestamp(4, category.getUpdateAt());
+            ps.setTimestamp(3, category.getCreatedAt());
+            ps.setTimestamp(4, category.getUpdatedAt());
             res=ps.executeUpdate();
 
             System.out.println("Execute querry success: "+sql);
@@ -44,8 +45,8 @@ public class CategoryDAO implements DAOInterface<Category> {
                     "where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, category.getCategoryName());
-            ps.setTimestamp(2, category.getCreateAt());
-            ps.setTimestamp(3, category.getUpdateAt());
+            ps.setTimestamp(2, category.getCreatedAt());
+            ps.setTimestamp(3, category.getUpdatedAt());
             res=ps.executeUpdate();
 
             System.out.println("Execute querry success: "+sql);
@@ -94,8 +95,9 @@ public class CategoryDAO implements DAOInterface<Category> {
                 String name=rs.getString("categories_name");
                 Timestamp createdAt=rs.getTimestamp("create_at");
                 Timestamp updatedAt=rs.getTimestamp("update_at");
+                Timestamp deletedAt=rs.getTimestamp("delete_at");
 
-                res=new Category(id, name, createdAt, updatedAt);
+                res = new Category(id, category.getCategoryName(), createdAt, updatedAt, deletedAt);
             }
 
             MySqlConnection.getConnection().close();
@@ -120,8 +122,9 @@ public class CategoryDAO implements DAOInterface<Category> {
                 String name=rs.getString("categories_name");
                 Timestamp createdAt=rs.getTimestamp("create_at");
                 Timestamp updatedAt=rs.getTimestamp("update_at");
+                Timestamp deletedAt=rs.getTimestamp("delete_at");
 
-                Category category=new Category(id, name, createdAt, updatedAt);
+                Category category=new Category(id, name, createdAt, updatedAt, deletedAt);
                 res.add(category);
             }
 
