@@ -1,7 +1,6 @@
 package DAO;
 
 import connection.MySqlConnection;
-import model.Img;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

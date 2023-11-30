@@ -2,7 +2,7 @@ CREATE TABLE `users` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(50),
   `password` varchar(30),
-  `full_name` varchar(30),
+  `name` varchar(30),
   `email` varchar(30),
   `phone` varchar(10),
   `created_at` datetime,
@@ -16,7 +16,7 @@ CREATE TABLE `users` (
 CREATE TABLE `products` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `category_id` int,
-  `product_name` varchar(100),
+  `name` varchar(100),
   `price` int,
   `status` varchar(30),
   `thumbnail` varchar(500)
@@ -38,7 +38,8 @@ CREATE TABLE `product_details` (
   `opacity` text,
   `status` varchar(30),
   `product_id` int,
-  `inventories_id` int
+  `inventories_id` int,
+  `images` varchar(500)
 );
 
 CREATE TABLE `order_details` (
@@ -54,7 +55,7 @@ CREATE TABLE `order_details` (
 
 CREATE TABLE `categories` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `category_name` varchar(50),
+  `name` varchar(50),
   `created_at` datetime,
   `updated_at` datetime,
   `deleted_at` datetime,
