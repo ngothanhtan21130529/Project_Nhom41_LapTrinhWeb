@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Category {
+public class Category implements Serializable {
     private int id;
     private String categoryName;
     private Timestamp createAt;
