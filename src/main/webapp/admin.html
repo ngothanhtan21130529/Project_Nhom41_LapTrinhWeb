@@ -20,26 +20,26 @@
         <div class="top-bar">
             <div class="left-top-bar">
                 <ul>
-                    <li style="border-right: 1px solid #939393;">
+                    <li style="border-right: 1px solid #939393;" class="top-bar-element">
                         Administrator
                     </li>
-                    <li style="border-right: 1px solid #939393;">
+                    <li style="border-right: 1px solid #939393;" class="top-bar-element">
                         <a href="index.html">
                             <i class="fa-solid fa-tent-arrow-turn-left fa-sm" style="color: #B4B4B4 ;"></i>
                             Vào trang web
                         </a>
                     </li>
-                    <li style="border-right: 1px solid #939393;">
+                    <li style="border-right: 1px solid #939393;" class="top-bar-element">
                         <a href="contact.html">
                             Liên hệ
                         </a>
                     </li>
-                    <li style="cursor: pointer;">
+                    <li style="cursor: pointer;" class="top-bar-element">
                         Đơn hàng
                     </li>
                 </ul>
             </div>
-            <div class="right-top-bar">
+            <div class="right-top-bar" class="top-bar-element">
                 Xin chào admin
             </div>
         </div>
@@ -55,84 +55,89 @@
                 </div>
                 <div class="categories-management">
                     <button class="categories-management-button gray-color">
-                        <i class="fa-solid fa-table-cells-large fa-sm" style="color: #4b638b;"></i>
+                        <i class="fa-solid fa-table-cells-large fa-sm" style="color: #428bca;"></i>
                         Quản trị danh mục
                     </button>
                     <ul>
-                        <li>
+                        <li class="element">
                             <div>Loại danh mục</div>
                         </li>
-                        <li>
+                        <li class="element">
                             <div>Sản phẩm</div>
                         </li>
                     </ul>
                 </div>
                 <div class="ui-management">
                     <button class="ui-management-button gray-color">
-                        <i class="fa-solid fa-list fa-sm" style="color: #3a5583;"></i>
+                        <i class="fa-solid fa-list fa-sm" style="color: #428bca;"></i>
                         Quản trị giao diện
                     </button>
                     <ul>
-                        <li>
+                        <li class="element">
                             <div>Hỗ trợ trực tuyến</div>
                         </li>
-                        <li>
+                        <li class="element">
                             <div>Thông tin</div>
                         </li>
                     </ul>
                 </div>
                 <div class="information-management">
                     <button class="information-management-button gray-color">
-                        <i class="fa-solid fa-dollar-sign fa-sm" style="color: #354f7e;"></i>
+                        <i class="fa-solid fa-dollar-sign fa-sm" style="color: #428bca;"></i>
                         Quản trị thông tin
                     </button>
                     <ul>
-                        <li>
+                        <li class="element">
                             <div>Danh sách đơn hàng</div>
                         </li>
-                        <li>
+                        <li class="element">
                             <div>Khách hàng liên hệ</div>
                         </li>
                     </ul>
                 </div>
                 <div class="user-configuration">
                     <button class="user-configuration-button gray-color">
-                        <i class="fa-solid fa-user fa-sm" style="color: #3e5b8e;"></i>
+                        <i class="fa-solid fa-user fa-sm" style="color: #428bca;"></i>
                         Cấu hình người dùng
                     </button>
                     <ul>
-                        <li>
+                        <li class="element">
                             <div>Quản lý người dùng</div>
                         </li>
-                        <li>
+                        <li class="element">
                             <div>Thông tin người dùng</div>
                         </li>
-                        <li>
+                        <li class="element">
                             <div>Thoát</div>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="content-bar">
-                <div class="hompage-admin-tab content-tab ">
+                <div class="hompage-admin-tab">
                     <div class="go-to-homepage-website gray-color active">
                         <a class="homepage-website">
                             <i class="fa-solid fa-house fa-sm" style="color: #428bca;"></i>
                             Trang chủ website
                         </a>
                     </div>
-                    Nếu cần hỗ trợ kỹ thuật, quý khách vui lòng thực hiện một trong ba cách sau:
-                    <ol>
-                        <li>
-                            Truy cập: https://dkmh.hcmuaf.edu.vn/#/home và gởi yêu cầu hỗ trợ
-                        </li>
-                        <li>
-                            Gởi email cho phòng kỹ thuật: info@st.hcmuaf.edu.vn
-                        </li>
-                        <li>
-                            Gọi số Hotline hỗ trợ khách hàng: 028 3896 6780
-                        </li>
-                    </ol>
+                    <div class="note content-tab">
+                        <div class="text">
+                            Nếu cần hỗ trợ kỹ thuật, quý khách vui lòng thực hiện một trong ba cách sau:
+                        </div>
+                        <ol>
+                            <li>
+                                Truy cập: <a href="https://dkmh.hcmuaf.edu.vn/#/home"
+                                    target="_blank">https://dkmh.hcmuaf.edu.vn</a> và gởi yêu cầu hỗ trợ.
+                            </li>
+                            <li>
+                                Gởi email cho phòng kỹ thuật: <span>info@st.hcmuaf.edu.vn</span>.
+                            </li>
+                            <li>
+                                Gọi số Hotline hỗ trợ khách hàng: <span>028 3896 6780</span>.
+                            </li>
+                        </ol>
+                    </div>
                 </div>
                 <div class="categories-tab content-tab">
                     <div class="categories-main-tab">
@@ -148,8 +153,10 @@
                                 </select>
                             </div>
                             <div class="adding-box box">
-                                <i class="fa-solid fa-plus fa-sm" style="color: #4a6aa1;"></i>
-                                Thêm mới
+                                <button>
+                                    <i class="fa-solid fa-plus fa-lg" style="color: white;"></i>
+                                    Thêm mới
+                                </button>
                             </div>
                         </div>
                         <div class="categories-table">
@@ -158,80 +165,76 @@
                                     <th><input type="checkbox" name="" id=""></th>
                                     <th>STT</th>
                                     <th>Danh mục</th>
-                                    <th>Hình ảnh</th>
                                     <th>Hiển thị</th>
-                                    <th>Tác vụ</th>
+                                    <th style="width: 10%;">Tác vụ</th>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name="" id=""></td>
                                     <td>1</td>
                                     <td>Đá quý</td>
-                                    <td></td>
                                     <td><input type="checkbox" name="" id=""></td>
                                     <td>
-                                        <i class="fa-solid fa-pen-to-square fa-sm" style="color: #5b85cd;"></i>
-                                        <i class="fa-solid fa-x fa-lg" style="color: #394760;"></i>
+                                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                        <i class="fa-solid fa-x fa-lg" style="color: #5b85cd;"></i>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <div class="categories-adding-tab">
-                        <div class="adding-tab-box">
-                            <div class="categories-adding-tab-general-infomation">
-                                <div class="general-infomation-label">
-                                    THÔNG TIN CHUNG
-                                </div>
-                                <div class="img">
+                        <div class="categories-adding-tab-general-infomation">
+                            <div class="general-infomation-label">
+                                THÔNG TIN CHUNG
+                            </div>
+                            <div class="img">
+                                <div class="img-label">
                                     Hình ảnh:
                                 </div>
-                                <div class="img-input">
-                                    <button class="choosing-button">
-                                        Chọn tệp
-                                    </button>
-                                    <div class="img-url">
-                                        Không có tệp nào được chọn
+                                <div class="img-input input-box">
+                                    <form action="">
+                                        <input class="choosing-button" type="file" id="img" name="img" accept="image/*">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="categories-detail-information">
+                            <div class="title">
+                                <div class="categories-detail-title">
+                                    Tiêu đề:
+                                </div>
+                                <select class="categories-detail-title-input-box input-box">
+                                    <option value="">Chọn danh mục</option>
+                                    <option value="gem">Đá quý</option>
+                                    <option value="jewelry">Trang sức</option>
+                                </select>
+                            </div>
+                            <div class="product-categories-numerial-order">
+                                <div class="numerial-order-label">
+                                    Số thứ tự:
+                                </div>
+                                <div class="numerial-order-input input-box">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="categories-action">
+                                <div class="categories-action-label">
+                                    Tác vụ:
+                                </div>
+                                <div class="categories-action-choose">
+                                    <input type="checkbox" name="" id="">
+                                    &nbsp;
+                                    <div class="categories-action-choose-label">
+                                        Hiển thị
                                     </div>
                                 </div>
                             </div>
-                            <div class="categories-detail-information">
-                                <div class="title">
-                                    <div class="categories-detail-title">
-                                        Tiêu đề:
-                                    </div>
-                                    <section class="categories-detail-title-input-box">
-                                        <option value="">Chọn danh mục</option>
-                                        <option value="gem">Đá quý</option>
-                                        <option value="jewelry">Trang sức</option>
-                                    </section>
-                                </div>
-                                <div class="product-categories-numerial-order">
-                                    <div class="numerial-order-label">
-                                        Số thứ tự:
-                                    </div>
-                                    <div class="numerial-order-input">
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="categories-action">
-                                    <div class="categories-action-label">
-                                        Tác vụ:
-                                    </div>
-                                    <div class="categories-action-choose">
-                                        <input type="checkbox" name="" id="">
-                                        <div class="categories-action-choose-label">
-                                            Hiển thị
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="save-or-exit-box">
-                                    <button class="save-button">
-                                        Lưu
-                                    </button>
-                                    <button class="exit-button">
-                                        Thoát
-                                    </button>
-                                </div>
+                            <div class="save-or-exit-box">
+                                <button class="save-button">
+                                    Lưu
+                                </button>
+                                <button class="exit-button">
+                                    Thoát
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -250,13 +253,15 @@
                                 </select>
                             </div>
                             <div class="see-all-box box">
-                                <div class="see-all-box-content">
+                                <button class="see-all-box-content">
                                     Xem tất cả sản phẩm
-                                </div>
+                                </button>
                             </div>
                             <div class="adding-box box">
-                                <i class="fa-solid fa-plus fa-sm" style="color: #4a6aa1;"></i>
-                                Thêm mới
+                                <button>
+                                    <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
+                                    Thêm mới
+                                </button>
                             </div>
                         </div>
                         <div class="product-table">
@@ -264,9 +269,9 @@
                                 <tr>
                                     <th><input type="checkbox" name="" id=""></th>
                                     <th>STT</th>
-                                    <th>Danh mục</th>
-                                    <th>Tiêu đề</th>
-                                    <th>Hình ảnh</th>
+                                    <th style="width: 10%;">Danh mục</th>
+                                    <th style="width: 10%;">Tiêu đề</th>
+                                    <th style="width: 30%;">Hình ảnh</th>
                                     <th>Hiển thị</th>
                                     <th>Tác vụ</th>
                                 </tr>
@@ -275,7 +280,9 @@
                                     <td>1</td>
                                     <td>Đá quý</td>
                                     <td>Đá quý loại A</td>
-                                    <td><img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt=""></td>
+                                    <td>
+                                        <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                                    </td>
                                     <td><input type="checkbox" name="" id=""></td>
                                     <td>
                                         <i class="fa-solid fa-pen-to-square fa-sm" style="color: #5b85cd;"></i>
@@ -303,14 +310,9 @@
                                     <div class="img-label">
                                         Hình ảnh:
                                     </div>
-                                    <div class="img-input">
-                                        <button class="choosing-button">
-                                            Chọn tệp
-                                        </button>
-                                        <div class="img-url">
-                                            Không có tệp nào được chọn
-                                        </div>
-                                    </div>
+                                    <form action="" class="img-adding-url">
+                                        <input class="choosing-button" type="file" id="img" name="img" accept="image/*">
+                                    </form>
                                 </div>
                                 <div class="categories-product">
                                     <div class="categories-product-label">
@@ -504,6 +506,102 @@
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>">
                         </div>
+                        <div class="save-or-exit-box">
+                            <button class="save-button">
+                                Lưu
+                            </button>
+                            <button class="exit-button">
+                                Thoát
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="information-management content-tab">
+                    <div class="order-list">
+                        <div class="order-list-function-box function-box">
+                            <div class="searching-box box">
+                                <input type="text" placeholder="Tìm kiếm">
+                            </div>
+                            <div class="search-by-box box">
+                                <select name="search-by" id="">
+                                    <option value="">Tìm theo</option>
+                                    <option value="find-by-id">Số thứ tự</option>
+                                    <option value="find-by-categories">Tên danh mục</option>
+                                    <option value="find-by-categories">Tên sản phẩm</option>
+                                </select>
+                            </div>
+                            <div class="adding-box box">
+                                <button>
+                                    <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
+                                    Thêm mới
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-list-table">
+                            <table>
+                                <tr>
+                                    <th><input type="checkbox" name="" id=""></th>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Hình thức</th>
+                                    <th>Trạng thái</th>
+                                    <th>Xem chi tiết</th>
+                                    <th>Tác vụ</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>1</td>
+                                    <td>Nhựt Tân</td>
+                                    <td>21-3-2021</td>
+                                    <td>Chuyển khoảng</td>
+                                    <td>Chưa nhận</td>
+                                    <td><a href="#">Xem chi tiết</a></td>
+                                    <td><i class="fa-solid fa-x fa-sm" style="color: #5b78a9;"></i></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="customer-contact">
+                        <div class="customer-contact-function-box function-box">
+                            <div class="searching-box box">
+                                <input type="text" placeholder="Tìm kiếm">
+                            </div>
+                            <div class="search-by-box box">
+                                <select name="search-by" id="">
+                                    <option value="">Tìm theo</option>
+                                    <option value="find-by-id">Số thứ tự</option>
+                                    <option value="find-by-name">Tên khách hàng</option>
+                                    <option value="find-by-keywords">Từ khóa</option>
+                                </select>
+                            </div>
+                            <div class="adding-box box">
+                                <button>
+                                    <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
+                                    Thêm mới
+                                </button>
+                            </div>
+                        </div>
+                        <div class="customer-contact-table">
+                            <table>
+                                <tr>
+                                    <th><input type="checkbox" name="" id=""></th>
+                                    <th>Mã liên hệ</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Ngày liên hệ</th>
+                                    <th>Nội dung</th>
+                                    <th>Tác vụ</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>1</td>
+                                    <td>Nhựt Tân</td>
+                                    <td>21-3-2021</td>
+                                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, nostrum.</td>
+                                    <td><i class="fa-solid fa-x fa-sm" style="color: #5b78a9;"></i></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="user-management-tab content-tab">
@@ -519,8 +617,10 @@
                             </select>
                         </div>
                         <div class="adding-box box">
-                            <i class="fa-solid fa-plus fa-sm" style="color: #4a6aa1;"></i>
-                            Thêm mới
+                            <button>
+                                <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
+                                Thêm mới
+                            </button>
                         </div>
                     </div>
                     <div class="user-management-table">
