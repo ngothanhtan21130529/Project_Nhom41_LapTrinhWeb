@@ -40,74 +40,7 @@
                 thủ công tinh tế. Khám phá sự đẹp tinh khôi của tự nhiên tại TTN Shop ngay hôm nay!</p>
         </div>
         <div class="categogies-grid-container">
-            <div class="gemstone-categogies">
-                <h2> ĐÁ QUÝ</h2>
-                <div class="grid-container">
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="ruby">
-                            <h3>Ruby</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="Type 2 Image">
-                            <h3>Topaz</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <jsp:include page="category.jsp"></jsp:include>
             <div class="jewelry-categogies">
                 <h2> TRANG SỨC </h2>
                 <div class="banner-jewelry">
