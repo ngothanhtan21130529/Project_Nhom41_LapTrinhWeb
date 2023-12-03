@@ -4,12 +4,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-input, textarea, select, option{
-    padding: 5px;
-    font-size: 15px;
-    border: 1px solid #bfbfbf;
-    border-radius: 3px;
-}
+
 .top-bar {
     display: flex;
     background-color: black;
@@ -77,12 +72,6 @@ input, textarea, select, option{
     width: 100%;
     font-size: 22px;
 }
-.homepage-website{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
 
 .ui {
     display: grid;
@@ -111,20 +100,17 @@ input, textarea, select, option{
     margin-left: 30px;
 }
 
-.hompage-admin-tab{
-    padding-right: 20px;
-}
-
-.hompage-admin-tab .note {
+.content-bar .hompage-admin-tab .note {
     border: 1px solid #a0ad9b;
     background-color: #dff0d8;
+    margin-top: 20px;
+    margin-left: 20px;
     padding-left: 60px;
     border-radius: 7px;
     padding-bottom: 70px;
-    padding-top: 15px;
 }
 
-.hompage-admin-tab .note .text {
+.content-bar .hompage-admin-tab .note .text {
     color: #3d8e18;
     font-weight: bold;
 }
@@ -167,10 +153,6 @@ input, textarea, select, option{
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
 }
 
 .adding-box.box button:hover {
@@ -197,144 +179,127 @@ td i {
     cursor: pointer;
     padding: 10px;
 }
-.categories-adding-tab .categories-adding-tab-general-infomation{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    border: 1px solid #bfbfbf;
+
+.categories-adding-tab {
+    border: 2px solid #bfbfbf;
     background-color: #f2f2f2;
     padding: 15px 30px 15px 30px;
+    font-size: 23px;
 }
-.categories-adding-tab .categories-adding-tab-general-infomation .general-infomation-label{
+
+.categories-adding-tab-general-infomation .general-infomation-label {
     font-weight: bold;
-    color: #16479c;
-    grid-column: 1/3;
-    grid-row: 1/2;
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .img-label{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
 }
-.categories-adding-tab .categories-adding-tab-general-infomation .img-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .img-input{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .img-input form input{
-    width: 100%;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-detail-title{
-    grid-column: 1/2;
-    grid-row: 3/4;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-detail-title p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-detail-title-input-box{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-label{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-input{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-input input{
-    width: 10%;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-label{
-    grid-column: 1/2;
-    grid-row: 5/6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-choose{
+
+.categories-adding-tab .categories-adding-tab-general-infomation .img {
     display: flex;
     flex-direction: row;
+    padding-top: 15px;
     align-items: center;
-    gap: 10px;
 }
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-choose div input{
-    width: 20px;
-    height: 20px;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-choose{
-    grid-column: 2/3;
-    grid-row: 5/6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.categories-adding-tab .categories-adding-tab-general-infomation .save-or-exit-box{
-    grid-column: 2/3;
-    grid-row: 6/7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+
 .categories-adding-tab .categories-adding-tab-general-infomation .img .img-label,
-.categories-adding-tab .categories-adding-tab-general-infomation .title .categories-detail-title,
-.categories-adding-tab .categories-adding-tab-general-infomation .product-categories-numerial-order .numerial-order-label,
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action .categories-action-label {
+.categories-adding-tab .categories-detail-information .title .categories-detail-title,
+.categories-adding-tab .categories-detail-information .product-categories-numerial-order .numerial-order-label,
+.categories-adding-tab .categories-detail-information .categories-action .categories-action-label {
     font-weight: 500;
     color: #16479c;
 }
 
-.save-or-exit-box button {
+
+.categories-adding-tab .categories-adding-tab-general-infomation {
+    border-bottom: 1px solid #cacaca;
+    padding-bottom: 15px;
+}
+
+.categories-adding-tab .categories-detail-information .title {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cacaca;
+    align-items: center;
+}
+
+.categories-adding-tab .categories-detail-information .title,
+.categories-adding-tab .categories-detail-information .categories-action,
+.categories-adding-tab .categories-detail-information .categories-action .categories-action-choose {
+    display: flex;
+    flex-direction: row;
+}
+
+.categories-adding-tab-general-infomation .img .img-input,
+.categories-adding-tab .categories-detail-information .title .categories-detail-title-input-box {
+    margin-left: auto;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: white;
+}
+
+.categories-adding-tab .categories-detail-information .product-categories-numerial-order,
+.categories-adding-tab .categories-detail-information .categories-action {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cacaca;
+    display: flex;
+}
+
+.categories-adding-tab .categories-detail-information .product-categories-numerial-order {
+    align-items: center;
+}
+
+.categories-adding-tab .categories-detail-information .product-categories-numerial-order .numerial-order-input {
+    margin-left: auto;
+}
+
+.categories-adding-tab .categories-detail-information .product-categories-numerial-order .numerial-order-input input {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.input-box {
+    border: 1px solid #bfbfbf;
+    width: 70%;
+    border-radius: 3px;
+}
+
+.categories-adding-tab .categories-detail-information .categories-action .categories-action-choose {
+    margin-left: auto;
+    width: 70%;
+    align-items: center;
+}
+
+.categories-action .categories-action-choose input {
+    width: 20px;
+    height: 20px;
+}
+
+.categories-tab .categories-adding-tab .categories-detail-information .save-or-exit-box {
+    display: grid;
+    grid-template-columns: 20vw 6vw 6vw 1fr;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.categories-tab .categories-adding-tab .categories-detail-information .save-or-exit-box .save-button {
+    grid-column: 2/3;
+}
+
+.categories-tab .categories-adding-tab .categories-detail-information .save-or-exit-box .exit-button {
+    grid-column: 3/4;
+}
+
+.categories-tab .categories-adding-tab .categories-detail-information .save-or-exit-box button {
     background-color: #428bca;
     border: 3px solid #2f86d3;
     border-radius: 3px;
     transition: 0.6s;
 }
 
-.save-or-exit-box button:hover {
+.categories-tab .categories-adding-tab .categories-detail-information .save-or-exit-box button:hover {
     background-color: #002f57;
     border: 3px solid #002d55;
     color: white;
@@ -360,670 +325,50 @@ td i {
     width: 50%;
     height: 50%;
 }
-.product-adding-tab .product-adding-tab-general-infomation{
-    border: 1px solid #bfbfbf;
-    background-color: #f2f2f2;
-    padding: 15px 30px 15px 30px;
-    font-size: 23px;
-}
-.product-adding-tab .product-adding-tab-general-infomation{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-}
 .product-adding-tab .product-adding-tab-general-infomation .general-infomation-label{
-    grid-column: 1/3;
     font-weight: bold;
     color: #16479c;
     border-bottom: 1px solid #cacaca;
     padding-bottom: 10px;
 }
 .product-adding-tab .product-adding-tab-general-infomation .img-current-label{
-    grid-column: 1/2;
-    grid-row: 2/3;
+    font-weight: 500;
+    color: #16479c;
     height: 100%;
     border-bottom: 1px solid #cacaca;
     padding-bottom: 10px;
-    padding-top: 10px;
-}
-.product-adding-tab .product-adding-tab-general-infomation .img-current-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 .product-adding-tab .product-adding-tab-general-infomation .img-current-url{
-    grid-column: 2/3;
-    grid-row: 2/3;
     border-bottom: 1px solid #cacaca;
     padding-bottom: 10px;
-    padding-top: 10px;
 }
 .product-adding-tab .product-adding-tab-general-infomation .img-current-url img{
     width: 20%;
+    border: 1px solid;
 }
 .product-adding-tab .product-adding-tab-general-infomation .img-adding-label{
-    grid-column: 1/2;
-    grid-row: 3/4;
     font-weight: 500;
     color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
 }
-.product-adding-tab .product-adding-tab-general-infomation .img-adding-url{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-adding-tab-general-infomation .img-adding-url input{
-    width: 100%;
+.product-adding-tab .product-adding-tab-general-infomation .img-adding-input{
 }
 .product-adding-tab .product-adding-tab-general-infomation .categories-product-label{
-    grid-column: 1/2;
-    grid-row: 4/5;
     font-weight: 500;
     color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
 }
 .product-adding-tab .product-adding-tab-general-infomation .categories-product-input{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
 }
 .product-adding-tab .product-adding-tab-general-infomation .product-code-label{
-    grid-column: 1/2;
-    grid-row: 5/6;
     font-weight: 500;
     color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
 }
 .product-adding-tab .product-adding-tab-general-infomation .product-code-input{
-    grid-column: 2/3;
-    grid-row: 5/6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
 }
 .product-adding-tab .product-adding-tab-general-infomation .product-price-label{
-    grid-column: 1/2;
-    grid-row: 6/7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-adding-tab-general-infomation .product-price-label p{
     font-weight: 500;
     color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-60%);
 }
 .product-adding-tab .product-adding-tab-general-infomation .product-price-input-output{
-    grid-column: 2/3;
-    grid-row: 6/7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-    font-size: 20px;
-}
-.product-adding-tab .product-tab-detail-information{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-}
-.product-adding-tab .product-tab-detail-information .details-infomation-label{
-    grid-column: 1/3;
-    padding-top: 30px;
-    color: #16479c;
-    font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-tab-detail-information .title-product{
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-tab-detail-information .title-input-box{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-tab-detail-information .product-description-label{
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-tab-detail-information .product-description-input{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-tab-detail-information .product-description-input input,
-.product-adding-tab .product-tab-detail-information .product-description-input textarea{
-    width: 100%;
-}
-.product-adding-tab .product-tab-detail-information .product-content-information-label{
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-tab-detail-information .product-action-label{
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.product-adding-tab .product-tab-detail-information .product-action-choose{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.product-adding-tab .product-tab-detail-information .product-action-choose input{
-    width: 20px;
-    height: 20px;
-}
-.product-adding-tab .product-tab-detail-information .save-or-exit-box{
-    grid-column: 2/3;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.online-support-tab.content-tab .change-method-contact-tab{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    border: 1px solid #bfbfbf;
-    background-color: #f2f2f2;
-    padding: 15px 30px 15px 30px;
-    font-size: 23px;
-}
-.online-support-tab .change-method-contact-tab .change-method-contact-label{
-    grid-column: 1/3;
-    grid-row: 1/2;
-    font-weight: bold;
-    color: #16479c;
-    border-bottom: 1px solid #cacaca;
-    padding-bottom: 10px;
-}
-.online-support-tab .change-method-contact-tab .change-telephone-num-label{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.online-support-tab .change-method-contact-tab .change-telephone-num{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.online-support-tab .change-method-contact-tab .change-counselors-phone-num-label{
-    grid-column: 1/2;
-    grid-row: 3/4;
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.online-support-tab .change-method-contact-tab .change-counselors-phone-num{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.online-support-tab .change-method-contact-tab .change-zalo-num-label{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.online-support-tab .change-method-contact-tab .change-zalo-num{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    font-weight: 500;
-    color: #16479c;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.online-support-tab .change-method-contact-tab .save-or-exit-box{
-    grid-column: 2/3;
-    grid-row: 5/6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.information-tab{
-    margin-top: -5vh;
-}
-.information-tab.content-tab .company-information{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    border: 1px solid #bfbfbf;
-    background-color: #f2f2f2;
-    padding: 15px 30px 15px 30px;
-    font-size: 23px;
-}
-.information-tab .company-information .company-name-label{
-    grid-column: 1/2;
-    grid-row: 1/2;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .company-name-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .company-name-input{
-    grid-column: 2/3;
-    grid-row: 1/2;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .company-name-input input{
-    width: 100%;
-}
-.information-tab .company-information .company-address-label{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .company-address-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .company-address-input{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .company-address-input input{
-    width: 100%;
-}
-.information-tab .company-information .favicon-label{
-    grid-column: 1/2;
-    grid-row: 3/4;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .favicon-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .favicon-img{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .browser-icon-label{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .browser-icon-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .browser-icon-choosing-box{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .browser-icon-choosing-box form input{
-    width: 100%;
-}
-.information-tab .company-information .general-information-label{
-    font-weight: bold;
-    color: #16479c;
-    grid-column: 1/3;
-    grid-row: 5/6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .email-label{
-    grid-column: 1/2;
-    grid-row: 6/7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .email-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .email-input{
-    grid-column: 2/3;
-    grid-row: 6/7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .email-input form input{
-    width: 100%;
-}
-.information-tab .company-information .copyright-label{
-    grid-column: 1/2;
-    grid-row: 7/8;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .copyright-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .copyright-input{
-    grid-column: 2/3;
-    grid-row: 7/8;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .copyright-input form input{
-    width: 100%;
-}
-.information-tab .company-information .facebook-link-label{
-    grid-column: 1/2;
-    grid-row: 8/9;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .facebook-link-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .facebook-link-input{
-    grid-column: 2/3;
-    grid-row: 8/9;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .facebook-link-input form input{
-    width: 100%;
-}
-.information-tab .company-information .tiktok-link-label{
-    grid-column: 1/2;
-    grid-row: 9/10;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .tiktok-link-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .tiktok-link-input{
-    grid-column: 2/3;
-    grid-row: 9/10;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .tiktok-link-input form input{
-    width: 100%;
-}
-.information-tab .company-information .youtube-link-label{
-    grid-column: 1/2;
-    grid-row: 10/11;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .youtube-link-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .youtube-link-input{
-    grid-column: 2/3;
-    grid-row: 10/11;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .youtube-link-input form input{
-    width: 100%;
-}
-.information-tab .company-information .iframe-map-label{
-    grid-column: 1/2;
-    grid-row: 11/12;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .iframe-map-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.information-tab .company-information .iframe-map-input{
-    grid-column: 2/3;
-    grid-row: 11/12;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cacaca;
-}
-.information-tab .company-information .iframe-map-input form input{
-    width: 100%;
-}
-.information-tab .company-information .save-or-exit-box{
-    grid-column: 2/3;
-    grid-row: 12/13;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-}
-.user-information .account-role-label{
-    grid-column: 1/2;
-    grid-row: 1/2;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-role-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.user-information .account-role-select{
-    grid-column: 2/3;
-    grid-row: 1/2;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-username-label{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-username-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.user-information .account-username{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-username input{
-    width: 40%;
-}
-.user-information .account-fullname-label{
-    grid-column: 1/2;
-    grid-row: 3/4;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-fullname-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.user-information .account-fullname-input{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-fullname-input input{
-    width: 40%;
-}
-.user-information .account-password-label{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-password-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.user-information .account-password-input{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .account-password-input input{
-    width: 40%;
-}
-.user-information .retype-account-password-label{
-    grid-column: 1/2;
-    grid-row: 5/6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .retype-account-password-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.user-information .retype-account-password-input{
-    grid-column: 2/3;
-    grid-row: 5/6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .retype-account-password-input input{
-    width: 40%;
-}
-.user-information .visible-label{
-    grid-column: 1/2;
-    grid-row: 6/7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .visible-label p{
-    font-weight: 500;
-    color: #16479c;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.user-information .visible-checkbox{
-    grid-column: 2/3;
-    grid-row: 6/7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.user-information .visible-checkbox input{
-    width: 20px;
-    height: 20px;
-}
-.user-information .save-or-exit-box{
-    grid-column: 2/3;
-    grid-row: 7/8;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 
@@ -1037,15 +382,15 @@ td i {
 
 
 
-/*.categories-main-tab,*/
-/*.categories-adding-tab,*/
-/*.product-main-tab,*/
-/*.product-adding-tab,*/
-/*.online-support-tab,*/
-/*.information-tab,*/
-/*.information-management .order-list,*/
-/*.information-management .customer-contact,*/
-/*.user-management-tab,*/
-/*.user-information{*/
-/*    display: none;*/
-/*}*/
+
+
+
+
+
+
+.hompage-admin-tab,
+.categories-main-tab,
+.categories-adding-tab,
+.product-main-tab {
+    display: none;
+}
