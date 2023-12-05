@@ -73,10 +73,10 @@
                     Quản trị giao diện
                 </button>
                 <ul>
-                    <li class="element">
+                    <li class="element" onclick="changeToOnlineSupportTab()">
                         <div>Hỗ trợ trực tuyến</div>
                     </li>
-                    <li class="element">
+                    <li class="element" onclick="changeToInformationTab()">
                         <div>Thông tin</div>
                     </li>
                 </ul>
@@ -87,10 +87,10 @@
                     Quản trị thông tin
                 </button>
                 <ul>
-                    <li class="element">
+                    <li class="element" onclick="changeToOrderListTab()">
                         <div>Danh sách đơn hàng</div>
                     </li>
-                    <li class="element">
+                    <li class="element" onclick="changeToCustomerContactTab()">
                         <div>Khách hàng liên hệ</div>
                     </li>
                 </ul>
@@ -101,10 +101,10 @@
                     Cấu hình người dùng
                 </button>
                 <ul>
-                    <li class="element">
+                    <li class="element" onclick="changeToUserManagement()">
                         <div>Quản lý người dùng</div>
                     </li>
-                    <li class="element">
+                    <li class="element" onclick="changeToUserInformationTab()">
                         <div>Thông tin người dùng</div>
                     </li>
                     <li class="element">
@@ -262,7 +262,7 @@
                                 Xem tất cả sản phẩm
                             </button>
                         </div>
-                        <div class="adding-box box">
+                        <div class="adding-box box" onclick="changeToProductAddingTab()">
                             <button>
                                 <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
                                 Thêm mới
@@ -535,8 +535,8 @@
                     </div>
                 </div>
             </div>
-            <div class="information-management content-tab">
-                <div class="order-list">
+            <div class="information-management">
+                <div class="order-list content-tab">
                     <div class="order-list-function-box function-box">
                         <div class="searching-box box">
                             <input type="text" placeholder="Tìm kiếm">
@@ -581,7 +581,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="customer-contact">
+                <div class="customer-contact content-tab">
                     <div class="customer-contact-function-box function-box">
                         <div class="searching-box box">
                             <input type="text" placeholder="Tìm kiếm">
@@ -723,7 +723,7 @@
                     <button class="save-button">
                         Lưu
                     </button>
-                    <button class="exit-button">
+                    <button class="exit-button" onclick="changeToHomepage()">
                         Thoát
                     </button>
                 </div>

@@ -518,6 +518,12 @@ td i {
 .product-adding-tab .product-tab-detail-information {
     display: grid;
     grid-template-columns: 300px 1fr;
+    border: 1px solid #bfbfbf;
+    background-color: #f2f2f2;
+    padding: 15px 30px 15px 30px;
+    font-size: 23px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .product-adding-tab .product-tab-detail-information .details-infomation-label {
@@ -684,7 +690,7 @@ td i {
 }
 
 .information-tab {
-    margin-top: -5vh;
+    margin-bottom: 5vh;
 }
 
 .information-tab.content-tab .company-information {
@@ -992,6 +998,11 @@ td i {
 .user-information {
     display: grid;
     grid-template-columns: 300px 1fr;
+    border: 1px solid #bfbfbf;
+    background-color: #f2f2f2;
+    padding: 15px 30px 15px 30px;
+    font-size: 23px;
+    margin: 20px;
 }
 
 .user-information .account-role-label {
