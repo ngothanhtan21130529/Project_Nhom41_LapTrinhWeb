@@ -16,14 +16,15 @@ public class CategoryDAO implements DAOInterface<Category> {
         int res=0;
         try {
             Connection con = MySqlConnection.getConnection();
-            String sql = "insert into categories (id, categories_name, create_at, update_at)"+
-                    "values(?,?,?,?)";
+            String sql = "insert into categories (id, categories_name, create_at, update_at, img_url)"+
+                    "values(?,?,?,?,?)";
 //            System.out.println(sql);
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, category.getId());
             ps.setString(2, category.getCategoryName());
             ps.setTimestamp(3, category.getCreatedAt());
             ps.setTimestamp(4, category.getUpdatedAt());
+            ps.setString(5, category.getImgURL());
             res=ps.executeUpdate();
 
             System.out.println("Execute querry success: "+sql);
@@ -41,12 +42,13 @@ public class CategoryDAO implements DAOInterface<Category> {
         int res=0;
         try {
             Connection con = MySqlConnection.getConnection();
-            String sql = "update categories set categories_name=?, create_at=?, update_at=?"+
+            String sql = "update categories set categories_name=?, create_at=?, update_at=?, img_url=?"+
                     "where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, category.getCategoryName());
             ps.setTimestamp(2, category.getCreatedAt());
             ps.setTimestamp(3, category.getUpdatedAt());
+            ps.setString(4, category.getImgURL());
             res=ps.executeUpdate();
 
             System.out.println("Execute querry success: "+sql);
@@ -96,8 +98,9 @@ public class CategoryDAO implements DAOInterface<Category> {
                 Timestamp createdAt=rs.getTimestamp("create_at");
                 Timestamp updatedAt=rs.getTimestamp("update_at");
                 Timestamp deletedAt=rs.getTimestamp("delete_at");
+                String imgURL = rs.getString("img_url");
 
-                res = new Category(id, category.getCategoryName(), createdAt, updatedAt, deletedAt);
+                res = new Category(id, category.getCategoryName(), createdAt, updatedAt, deletedAt, imgURL);
             }
 
             MySqlConnection.getConnection().close();
@@ -123,8 +126,9 @@ public class CategoryDAO implements DAOInterface<Category> {
                 Timestamp createdAt=rs.getTimestamp("create_at");
                 Timestamp updatedAt=rs.getTimestamp("update_at");
                 Timestamp deletedAt=rs.getTimestamp("delete_at");
+                String imgURL = rs.getString("img_url");
 
-                Category category=new Category(id, name, createdAt, updatedAt, deletedAt);
+                Category category=new Category(id, name, createdAt, updatedAt, deletedAt, imgURL);
                 res.add(category);
             }
 
@@ -133,5 +137,27 @@ public class CategoryDAO implements DAOInterface<Category> {
             throw new RuntimeException(e);
         }
         return res;
+    }
+
+    public ArrayList<Category> getListCategory(){
+        ArrayList<Category> categories = new ArrayList<>();
+        try {
+            Connection con = MySqlConnection.getConnection();
+            String sql = "SELECT c.id, c.category_name, i.img_url FROM categories c " +
+                    "JOIN images i ON c.id = i.category_id";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String categoryName = rs.getString("category_name");
+                String imgURL = rs.getString("img_url");
+
+                Category category = new Category(id, categoryName, imgURL);
+                categories.add(category);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return categories;
     }
 }

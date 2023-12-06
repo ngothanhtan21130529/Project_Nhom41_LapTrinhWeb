@@ -9,17 +9,22 @@ public class Category implements Serializable {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Timestamp deletedAt;
+    private String imgURL;
 
-    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt) {
+    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String imgURL) {
         this.id = id;
         this.categoryName = categoryName;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
+        this.imgURL = imgURL;
     }
 
     public Category(int id) {
         this.id = id;
+    }
+
+    public Category(int id, String categoryName, String imgURL) {
     }
 
     public int getId() {
@@ -60,5 +65,13 @@ public class Category implements Serializable {
 
     public void setDeletedAt(Timestamp deletedAt) {
         this.deletedAt = deletedAt;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 }

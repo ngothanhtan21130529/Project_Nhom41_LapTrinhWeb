@@ -77,7 +77,8 @@ CREATE TABLE `roles` (
 CREATE TABLE `images` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `img_url` text,
-  `product_details_id` int
+  `product_details_id` int,
+  `category_id` int
 );
 
 CREATE TABLE `inventories` (
@@ -112,3 +113,5 @@ ALTER TABLE `orders` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 ALTER TABLE `order_details` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 ALTER TABLE `images` ADD FOREIGN KEY (`product_details_id`) REFERENCES `product_details` (`id`);
+
+ALTER TABLE `images` ADD FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
