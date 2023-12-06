@@ -1,3 +1,6 @@
+<%@ page import="model.Category" %>
+<%@ page import="DAO.CategoryDAO" %>
+<%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
   User: trant
@@ -10,13 +13,10 @@
 <div class="gemstone-categories">
     <h2> ĐÁ QUÝ</h2>
     <div class="grid-container">
-        <c:forEach var="category" items="${categories}">
-            <div class="category">
-                <a href="product-details.html">
-                    <img src="${category.imgUrl}" alt="${category.categoryName}">
-                    <h3>${category.categoryName}</h3>
-                </a>
-            </div>
-        </c:forEach>
+        <% ArrayList<Category> categoryDAO=new CategoryDAO().getListCategory();
+            for (Category c : categoryDAO) { %>
+                <h1><%= c.getCategoryName()%></h1>
+                <img src="<%= c.getImgURL()%>">
+            <%}%>
     </div>
 </div>

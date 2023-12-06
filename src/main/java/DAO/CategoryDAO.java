@@ -16,7 +16,7 @@ public class CategoryDAO implements DAOInterface<Category> {
         int res=0;
         try {
             Connection con = MySqlConnection.getConnection();
-            String sql = "insert into categories (id, categories_name, create_at, update_at, img_url)"+
+            String sql = "insert into categories (id, category_name, create_at, update_at, img_url)"+
                     "values(?,?,?,?,?)";
 //            System.out.println(sql);
             PreparedStatement ps = con.prepareStatement(sql);
@@ -143,10 +143,11 @@ public class CategoryDAO implements DAOInterface<Category> {
         ArrayList<Category> categories = new ArrayList<>();
         try {
             Connection con = MySqlConnection.getConnection();
-            String sql = "SELECT c.id, c.category_name, i.img_url FROM categories c " +
-                    "JOIN images i ON c.id = i.category_id";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
+            String sql = "SELECT categories.id, categories.category_name, images.img_url " +
+                    "FROM categories " +
+                    "JOIN images ON categories.id = images.category_id";
+            Statement ps = con.createStatement();
+            ResultSet rs = ps.executeQuery(sql);
             while (rs.next()){
                 int id = rs.getInt("id");
                 String categoryName = rs.getString("category_name");
@@ -155,9 +156,14 @@ public class CategoryDAO implements DAOInterface<Category> {
                 Category category = new Category(id, categoryName, imgURL);
                 categories.add(category);
             }
+            con.close();
+            ps.close();
+            rs.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return categories;
     }
+
+
 }

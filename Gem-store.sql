@@ -24,7 +24,7 @@ CREATE TABLE `products` (
 
 CREATE TABLE `product_details` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(100),
+  `product_name` varchar(100),
   `price` int,
   `sale` int,
   `hot` boolean,
@@ -71,7 +71,7 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `roles` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(30)
+  `role_name` varchar(30)
 );
 
 CREATE TABLE `images` (
@@ -92,10 +92,18 @@ CREATE TABLE `feedbacks` (
   `email` varchar(50),
   `phone` varchar(15),
   `title` varchar(100),
-  `content` varchar(500),
+  `feedback_content` varchar(500),
   `status` varchar(30),
   `created_at` datetime,
   `updated_at` datetime
+);
+
+CREATE TABLE `comments` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `user_id` int,
+  `product_details_id` int,
+  `comment_content` text,
+  `img_url` text
 );
 
 ALTER TABLE `users` ADD FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`);
@@ -115,3 +123,7 @@ ALTER TABLE `order_details` ADD FOREIGN KEY (`product_id`) REFERENCES `products`
 ALTER TABLE `images` ADD FOREIGN KEY (`product_details_id`) REFERENCES `product_details` (`id`);
 
 ALTER TABLE `images` ADD FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
+
+ALTER TABLE `comments` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+ALTER TABLE `comments` ADD FOREIGN KEY (`product_details_id`) REFERENCES `product_details` (`id`);
