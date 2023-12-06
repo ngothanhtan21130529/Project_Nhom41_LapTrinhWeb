@@ -146,7 +146,7 @@ public class CategoryDAO implements DAOInterface<Category> {
             String sql = "SELECT categories.id, categories.category_name, images.img_url " +
                     "FROM categories " +
                     "JOIN images ON categories.id = images.category_id";
-            Statement ps = con.createStatement();
+            PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery(sql);
             while (rs.next()){
                 int id = rs.getInt("id");
@@ -164,6 +164,5 @@ public class CategoryDAO implements DAOInterface<Category> {
         }
         return categories;
     }
-
 
 }
