@@ -8,15 +8,15 @@ public class Product implements Serializable {
     private String productName;
     private int price;
     private String status;
-    private String thumbnail;
+    private int thumbnailID;
 
-    public Product(int id, int categoryID, String productName, int price, String status, String thumbnail) {
+    public Product(int id, int categoryID, String productName, int price, String status, int thumbnailID) {
         this.id = id;
         this.categoryID = categoryID;
         this.productName = productName;
         this.price = price;
         this.status = status;
-        this.thumbnail = thumbnail;
+        this.thumbnailID = thumbnailID;
     }
 
     public int getId() {
@@ -59,11 +59,12 @@ public class Product implements Serializable {
         this.status = status;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
+    public int getThumbnailID() {
+        return thumbnailID;
     }
 
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
+    public void setThumbnailID(int thumbnailID) {
+        this.thumbnailID = thumbnailID;
     }
 }
+
