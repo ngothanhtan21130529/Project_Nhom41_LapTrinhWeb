@@ -9,14 +9,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link href="../css/category.css" rel="stylesheet" type="text/css">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
 <div class="gemstone-categories">
     <h2> ĐÁ QUÝ</h2>
     <div class="grid-container">
-        <% ArrayList<Category> categoryDAO=new CategoryDAO().getListCategory();
+        <% ArrayList<Category> categoryDAO = new CategoryDAO().getListCategory();
             for (Category c : categoryDAO) { %>
-                <h1><%= c.getCategoryName()%></h1>
+        <div class="category">
+            <a href="product.jsp">
                 <img src="<%= c.getImgURL()%>">
-            <%}%>
+                <h1><%= c.getCategoryName()%>
+                </h1>
+            </a>
+        </div>
+        <%}%>
     </div>
 </div>
