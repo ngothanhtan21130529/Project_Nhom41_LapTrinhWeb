@@ -9,25 +9,17 @@ public class Category implements Serializable {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Timestamp deletedAt;
-    private String imgURL;
+    private String status;
+    private int imgID;
 
-    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String imgURL) {
+    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, int imgID) {
         this.id = id;
         this.categoryName = categoryName;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
-        this.imgURL = imgURL;
-    }
-
-    public Category(int id) {
-        this.id = id;
-    }
-
-    public Category(int id, String categoryName, String imgURL) {
-        this.id = id;
-        this.categoryName = categoryName;
-        this.imgURL = imgURL;
+        this.status = status;
+        this.imgID = imgID;
     }
 
     public int getId() {
@@ -70,26 +62,19 @@ public class Category implements Serializable {
         this.deletedAt = deletedAt;
     }
 
-    public String getImgURL() {
-        return imgURL;
+    public String getStatus() {
+        return status;
     }
 
-    public void setImgURL(String imgURL) {
-        this.imgURL = imgURL;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", categoryName='" + categoryName + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", deletedAt=" + deletedAt +
-                ", imgURL='" + imgURL + '\'' +
-                '}';
+    public int getImgID() {
+        return imgID;
     }
 
-    public Category() {
+    public void setImgID(int imgID) {
+        this.imgID = imgID;
     }
 }

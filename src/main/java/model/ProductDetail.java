@@ -19,9 +19,10 @@ public class ProductDetail implements Serializable {
     private String opacity;
     private String status;
     private int productID;
-    private int inventoryID;
+    private int inventoriesID;
+    private int imgID;
 
-    public ProductDetail(int id, String productName, int price, int sale, boolean hot, String description, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String color, String weight, String size, String opacity, String status, int productID, int inventoryID) {
+    public ProductDetail(int id, String productName, int price, int sale, boolean hot, String description, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String color, String weight, String size, String opacity, String status, int productID, int inventoriesID, int imgID) {
         this.id = id;
         this.productName = productName;
         this.price = price;
@@ -37,7 +38,8 @@ public class ProductDetail implements Serializable {
         this.opacity = opacity;
         this.status = status;
         this.productID = productID;
-        this.inventoryID = inventoryID;
+        this.inventoriesID = inventoriesID;
+        this.imgID = imgID;
     }
 
     public int getId() {
@@ -160,11 +162,19 @@ public class ProductDetail implements Serializable {
         this.productID = productID;
     }
 
-    public int getInventoryID() {
-        return inventoryID;
+    public int getInventoriesID() {
+        return inventoriesID;
     }
 
-    public void setInventoryID(int inventoryID) {
-        this.inventoryID = inventoryID;
+    public void setInventoriesID(int inventoriesID) {
+        this.inventoriesID = inventoriesID;
+    }
+
+    public int getImgID() {
+        return imgID;
+    }
+
+    public void setImgID(int imgID) {
+        this.imgID = imgID;
     }
 }

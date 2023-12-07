@@ -1,4 +1,4 @@
-package controller.controllerWeb;
+package controller.controllerAuth;
 
 public class LogoutController {
 }

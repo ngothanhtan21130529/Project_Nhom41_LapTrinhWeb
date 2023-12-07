@@ -10,12 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/controllerAdmin/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gem-store.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Gem-store.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/controllerAuth/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/controllerAuth/LogoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ProductDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ProductDetail.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +31,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,6 +104,9 @@
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp" />
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp\css" />
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp\img\banner" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\src\main\java\controller\controllerAuth" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.69">
@@ -246,7 +254,7 @@
       <workItem from="1701841369353" duration="7289000" />
       <workItem from="1701853790141" duration="3091000" />
       <workItem from="1701920721281" duration="3630000" />
-      <workItem from="1701930116340" duration="2457000" />
+      <workItem from="1701930116340" duration="11448000" />
     </task>
     <servers />
   </component>
