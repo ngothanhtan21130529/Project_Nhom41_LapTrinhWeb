@@ -1,6 +1,7 @@
 package test;
 
 import DAO.CategoryDAO;
+import DAO.ProductDAO;
 import model.Category;
 
 import java.sql.Timestamp;
@@ -28,5 +29,7 @@ public class testDAO {
 //            System.out.println(category);
 //        }
 //        System.out.println(CategoryDAO.getInstance().getListCategory());
+
+        System.out.println(ProductDAO.getInstance().count("a"));
     }
 }
