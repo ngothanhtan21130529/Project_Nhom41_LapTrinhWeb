@@ -5,37 +5,31 @@ import java.sql.Timestamp;
 
 public class User implements Serializable {
     private int id;
-    private String userName;
+    private String username;
     private String password;
-    private String name;
+    private String fullName;
     private String email;
     private String phone;
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private String status;
     private String avatar;
-    private Role role;
+    private int roleID;
     private Timestamp birthday;
 
-    public User(int id, String userName, String password, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, Role role, Timestamp birthday) {
+    public User(int id, String username, String password, String fullName, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, int roleID, Timestamp birthday) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.password = password;
-        this.name = name;
+        this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.status = status;
         this.avatar = avatar;
-        this.role=role;
+        this.roleID = roleID;
         this.birthday = birthday;
-    }
-
-    public User(String userName,String password,Role role) {
-        this.userName=userName;
-        this.password=password;
-        this.role=role;
     }
 
     public int getId() {
@@ -46,12 +40,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -62,12 +56,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
@@ -118,12 +112,12 @@ public class User implements Serializable {
         this.avatar = avatar;
     }
 
-    public Role getRole() {
-        return role;
+    public int getRoleID() {
+        return roleID;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleID(int roleID) {
+        this.roleID = roleID;
     }
 
     public Timestamp getBirthday() {

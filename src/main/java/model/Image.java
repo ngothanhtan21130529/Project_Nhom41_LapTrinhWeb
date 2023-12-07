@@ -5,16 +5,12 @@ import java.io.Serializable;
 public class Image implements Serializable {
     private int id;
     private String imgURL;
-    private int productDetailID;
+    private String imageName;
 
-    public Image(int id, String imgURL, int productDetailID) {
+    public Image(int id, String imgURL, String imageName) {
         this.id = id;
         this.imgURL = imgURL;
-        this.productDetailID = productDetailID;
-    }
-
-    public Image(int id) {
-        this.id = id;
+        this.imageName = imageName;
     }
 
     public int getId() {
@@ -33,11 +29,11 @@ public class Image implements Serializable {
         this.imgURL = imgURL;
     }
 
-    public int getProductDetailID() {
-        return productDetailID;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setProductDetailID(int productDetailID) {
-        this.productDetailID = productDetailID;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 }
