@@ -25,6 +25,9 @@ public class Category implements Serializable {
     }
 
     public Category(int id, String categoryName, String imgURL) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.imgURL = imgURL;
     }
 
     public int getId() {
@@ -73,5 +76,20 @@ public class Category implements Serializable {
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
+                ", imgURL='" + imgURL + '\'' +
+                '}';
+    }
+
+    public Category() {
     }
 }

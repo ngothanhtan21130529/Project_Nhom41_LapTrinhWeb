@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -398,7 +399,7 @@ form[role='search'] {
     color: yellow;
     text-align: center;
     margin-top: 150px;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Playfair Display', serif;
 }
 
 .container .main .banner p{
@@ -768,4 +769,10 @@ h2{
 .slider .slide .category a img{
     width: 300px;
     height: 300px;
+}
+
+.status{
+    margin-top: -50px;
+    position: absolute;
+    margin-left: 90px;
 }

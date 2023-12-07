@@ -152,5 +152,11 @@ public class ProductDAO implements DAOInterface<Product> {
         return 0;
     }
 
-
+//    public ArrayList<Product> getListProduct(){
+//        ArrayList<Product> products = new ArrayList<>();
+//        try {
+//            Connection con = new MySqlConnection.getConnection();
+//            String sql = "SELECT products.id, products.product_name, products.product"
+//        }
+//    }
 }

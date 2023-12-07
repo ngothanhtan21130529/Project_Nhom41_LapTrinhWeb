@@ -1,70 +1,69 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<fmt:setLocale value="vi_VN"/>
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
 
 <header class="header">
     <div class="container">
         <div class="box">
             <div class="logo">
-                <img src="./img/logo.png" alt="Logo" class="logo-img"/>
+                <img src="../img/logo.png" alt="Logo" class="logo-img"/>
             </div>
             <nav class="navigation">
                 <ul class="navigation-list">
                     <li class="navigation-item active">
-                        <a href="index.html">Trang chủ</a>
+                        <a href="index.jsp">Trang chủ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="products.html">Sản phẩm</a>
+                        <a href="products.jsp">Sản phẩm</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="products.html">Trang sức</a>
+                        <a href="products.jsp">Trang sức</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="products.html">Đá quý</a>
+                        <a href="category.jsp">Đá quý</a>
                         <i class="fa-solid fa-caret-down"></i>
                         <ul class="dropdown-gem">
                             <li class="dropdown-item">
-                                <a href="products.html">Spinel</a>
+                                <a href="products.jsp">Spinel</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Kim cương</a>
+                                <a href="products.jsp">Kim cương</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Ruby</a>
+                                <a href="products.jsp">Ruby</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Hổ phách</a>
+                                <a href="products.jsp">Hổ phách</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="topaz.html">Topaz</a>
+                                <a href="products.jsp">Topaz</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Aquamarine</a>
+                                <a href="products.jsp">Aquamarine</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Tourmaline</a>
+                                <a href="products.jsp">Tourmaline</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Jade</a>
+                                <a href="products.jsp">Jade</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Emerald</a>
+                                <a href="products.jsp">Emerald</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Garnet</a>
+                                <a href="products.jsp">Garnet</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="products.html">Các loại đá khác</a>
+                                <a href="products.jsp">Các loại đá khác</a>
                             </li>
                         </ul>
                     </li>
                     <li class="navigation-item">
-                        <a href="contact.html">Liên hệ</a>
+                        <a href="contact.jsp">Liên hệ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="policy.html">Chính sách</a>
+                        <a href="policy.jsp">Chính sách</a>
                     </li>
                 </ul>
             </nav>
@@ -85,7 +84,7 @@
                         </form>
                     </li>
                     <li class="header-item header__drop">
-                        <a href="cart.html">
+                        <a href="cart.jsp">
                             <i class="fa-solid fa-cart-shopping" ></i>
                         </a>
                         <!-- if card have product -> add class header__drop__empty -->
@@ -175,14 +174,14 @@
                                     <p class="heading__drop__bottom-msg">
                                         5 sản phẩm mới thêm vào giỏ hàng
                                     </p>
-                                    <a href="cart.html" class="header__drop__btn">
+                                    <a href="cart.jsp" class="header__drop__btn">
                                         Xem giỏ hàng
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="header-item sign-in"><a href="login.html">Đăng nhập</a></li>
+                    <li class="header-item sign-in"><a href="../login/login.jsp">Đăng nhập</a></li>
                 </ul>
             </div>
         </div>
