@@ -138,7 +138,7 @@ public class ProductDAO implements DAOInterface<Product> {
     }
     public int count(String txtSearch){
         try {
-            String querry="select count(products.id) from products where products.name like ?";
+            String querry="select count(products.id) from products where products.product_name like ?";
             Connection con=MySqlConnection.getConnection();
             PreparedStatement ps=con.prepareStatement(querry);
             ps.setString(1,"%"+txtSearch+"%");
