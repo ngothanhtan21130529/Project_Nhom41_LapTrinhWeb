@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Random;
 
 @WebServlet(name = "SendEmailController", value = "/sendemail")
 public class SendEmailController extends HttpServlet {
@@ -50,6 +51,7 @@ public class SendEmailController extends HttpServlet {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
             message.setSubject("Testing Subject");
             message.setText("Welcome to gpcoder.com");
+            genenerateCode();
 
             // send message
             Transport.send(message);
@@ -58,5 +60,18 @@ public class SendEmailController extends HttpServlet {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+    }
+    protected String genenerateCode(){
+        Random random=new Random();
+        //chuỗi mẫu để tạo chuỗi ngau nhien
+        String character= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        String res="";
+        //tạo StringBuilder để thực hiện việc tạo chuỗi ngau nhien
+        StringBuilder sb=new StringBuilder(10);
+        for(int i=0;i<sb.length();i++){
+            char randomchar=character.charAt(random.nextInt(character.length()));
+          res= String.valueOf(sb.append(randomchar));
+        }
+        return res;
     }
 }
