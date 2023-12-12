@@ -7,7 +7,7 @@
     <div class="container">
         <div class="box">
             <div class="logo">
-                <img src="img/logo.png" alt="Logo" class="logo-img"/>
+                <img src="../img/logo.png" alt="Logo" class="logo-img"/>
             </div>
             <nav class="navigation">
                 <ul class="navigation-list">
