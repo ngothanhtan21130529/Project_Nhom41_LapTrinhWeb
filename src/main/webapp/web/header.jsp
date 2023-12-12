@@ -7,7 +7,7 @@
     <div class="container">
         <div class="box">
             <div class="logo">
-                <img src="../img/logo.png" alt="Logo" class="logo-img"/>
+                <img src="img/logo.png" alt="Logo" class="logo-img"/>
             </div>
             <nav class="navigation">
                 <ul class="navigation-list">
@@ -70,10 +70,11 @@
             <div class="header-btn">
                 <ul class="header-list">
                     <li class="header-item header-search">
-                        <form role="search" action="" method="get">
+                        <form role="search" action="../SearchController" method="get">
+                            <input type="hidden" name="index" value="1">
                             <input
                                     type="search"
-                                    name="search"
+                                    name="txtSearch"
                                     class="search-input"
                                     placeholder="Tìm sản phẩm"
                                     autocomplete="off"
