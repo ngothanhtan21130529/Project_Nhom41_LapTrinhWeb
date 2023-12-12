@@ -1,5 +1,5 @@
 
-*{
+doby{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -471,16 +471,28 @@ form[role='search'] {
     text-align: center;
 }
 
-.category a {
-    text-decoration: none;
-    color: #333;
-}
-
 .category img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
+.product{
+    color: #baaa3f;
+    text-align: left;
+}
+
+.price{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+.product_name {
+    color: #f3cc2c;
+}
+
 
 h2 {
     margin-bottom: 10px;
@@ -775,4 +787,6 @@ h2{
     margin-top: -50px;
     position: absolute;
     margin-left: 90px;
+    color: black;
+    font-weight: bold;
 }

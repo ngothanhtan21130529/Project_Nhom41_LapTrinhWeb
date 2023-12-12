@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -24,7 +25,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
@@ -49,46 +49,7 @@
                         <img class="mySlides" src="./img/banner/jewelry-3.png" style="width:100%">
                     </div>
                 </div>
-                <div class="grid-container">
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="ruby">
-                            <h3>Ruby</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                 alt="ruby">
-                            <h3>Ruby</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="type2_image.jpg" alt="Type 2 Image">
-                            <h3>Hổ phách</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="type2_image.jpg" alt="Type 2 Image">
-                            <h3>Hổ phách</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="type2_image.jpg" alt="Type 2 Image">
-                            <h3>Hổ phách</h3>
-                        </a>
-                    </div>
-                    <div class="category">
-                        <a href="product-details.html">
-                            <img src="type2_image.jpg" alt="Type 2 Image">
-                            <h3>Hổ phách</h3>
-                        </a>
-                    </div>
-                </div>
+                <jsp:include page="products.jsp"></jsp:include>
             </div>
             <div class="categogies-new">
                 <h2> SẢN PHẨM MỚI</h2>

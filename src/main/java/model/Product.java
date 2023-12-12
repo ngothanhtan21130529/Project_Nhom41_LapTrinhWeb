@@ -9,6 +9,7 @@ public class Product implements Serializable {
     private int price;
     private String status;
     private int thumbnailID;
+    private String imgURL;
 
     public Product(int id, int categoryID, String productName, int price, String status, int thumbnailID) {
         this.id = id;
@@ -17,6 +18,14 @@ public class Product implements Serializable {
         this.price = price;
         this.status = status;
         this.thumbnailID = thumbnailID;
+    }
+
+    public Product(int id, String productName, int price, String status, String imgURL) {
+        this.id = id;
+        this.productName = productName;
+        this.price = price;
+        this.status = status;
+        this.imgURL = imgURL;
     }
 
     public int getId() {
@@ -65,6 +74,14 @@ public class Product implements Serializable {
 
     public void setThumbnailID(int thumbnailID) {
         this.thumbnailID = thumbnailID;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 }
 
