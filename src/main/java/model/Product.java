@@ -28,6 +28,12 @@ public class Product implements Serializable {
         this.imgURL = imgURL;
     }
 
+    public Product(String thumbnail, String productName, int price) {
+        this.productName = productName;
+        this.price = price;
+        this.thumbnail = thumbnail;
+    }
+
     public int getId() {
         return id;
     }
@@ -82,6 +88,15 @@ public class Product implements Serializable {
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productName='" + productName + "\n" +
+                ", price=" + price +
+                ", thumbnail='" + thumbnail + "\t" +
+                "}\n";
     }
 }
 
