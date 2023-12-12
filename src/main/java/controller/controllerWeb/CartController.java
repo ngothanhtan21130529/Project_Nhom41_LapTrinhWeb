@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class CartController {
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String productImage=request.getParameter("product-image");
         String productName=request.getParameter("product-name");
         String productPrice=request.getParameter("product-price");
@@ -16,5 +16,6 @@ public class CartController {
         session.setAttribute("img", productImage);
         session.setAttribute("name", productName);
         session.setAttribute("price", productPrice);
+
     }
 }

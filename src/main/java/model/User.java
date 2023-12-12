@@ -14,10 +14,10 @@ public class User implements Serializable {
     private Timestamp updatedAt;
     private String status;
     private String avatar;
-    private int roleID;
+    private Role role;
     private Timestamp birthday;
 
-    public User(int id, String userName, String password, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, int roleID, Timestamp birthday) {
+    public User(int id, String userName, String password, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, Role role, Timestamp birthday) {
         this.id = id;
         this.userName = userName;
         this.password = password;
@@ -28,8 +28,14 @@ public class User implements Serializable {
         this.updatedAt = updatedAt;
         this.status = status;
         this.avatar = avatar;
-        this.roleID = roleID;
+        this.role=role;
         this.birthday = birthday;
+    }
+
+    public User(String userName,String password,Role role) {
+        this.userName=userName;
+        this.password=password;
+        this.role=role;
     }
 
     public int getId() {
@@ -112,12 +118,12 @@ public class User implements Serializable {
         this.avatar = avatar;
     }
 
-    public int getRoleID() {
-        return roleID;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoleID(int roleID) {
-        this.roleID = roleID;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public Timestamp getBirthday() {

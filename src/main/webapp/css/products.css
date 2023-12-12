@@ -96,3 +96,18 @@ h2{
     padding-left: 30px;
 }
 
+.product{
+    color: #baaa3f;
+    text-align: left;
+}
+
+.price{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+.product_name {
+    color: #f3cc2c;
+}

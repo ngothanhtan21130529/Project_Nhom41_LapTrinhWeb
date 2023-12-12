@@ -1,10 +1,9 @@
 package DAO;
 
 import connection.MySqlConnection;
-import model.Category;
-import model.Image;
 import model.Product;
 
+import javax.servlet.annotation.WebServlet;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;

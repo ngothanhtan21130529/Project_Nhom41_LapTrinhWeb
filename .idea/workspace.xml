@@ -9,9 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="tiếp tục làm chức năng tìm kiếm">
+    <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/controllerAdmin/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +33,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -95,9 +106,7 @@
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\Project_Nhom_41\src\main\webapp\img\banner" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Project_Nhom41_LapTrinhWeb\src\main\webapp\web" />
-      <recent name="D:\Project_Nhom41_LapTrinhWeb\src\main\webapp\WEB-INF" />
-      <recent name="D:\Project_Nhom41_LapTrinhWeb\src\main\java\controller\controllerWeb" />
+      <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\src\main\java\controller\controllerAuth" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.69">
@@ -238,27 +247,13 @@
       <workItem from="1701328737295" duration="11624000" />
       <workItem from="1701620239764" duration="6841000" />
       <workItem from="1701763500701" duration="3509000" />
-      <workItem from="1701934514402" duration="312000" />
-      <workItem from="1701934978574" duration="14541000" />
-      <workItem from="1701996583629" duration="5111000" />
-      <workItem from="1702113619557" duration="5234000" />
-      <workItem from="1702178487000" duration="2900000" />
-      <workItem from="1702189018681" duration="12564000" />
-      <workItem from="1702216384550" duration="7355000" />
-      <workItem from="1702271759706" duration="7971000" />
-      <workItem from="1702301977618" duration="10000" />
-      <workItem from="1702303638365" duration="6556000" />
-      <workItem from="1702342874188" duration="656000" />
-      <workItem from="1702350249972" duration="5210000" />
-      <workItem from="1702367528877" duration="4487000" />
-    </task>
-    <task id="LOCAL-00001" summary="tiếp tục làm chức năng tìm kiếm">
-      <option name="closed" value="true" />
-      <created>1702342980772</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1702342980772</updated>
+      <workItem from="1701841369353" duration="7289000" />
+      <workItem from="1701853790141" duration="3091000" />
+      <workItem from="1701920721281" duration="3630000" />
+      <workItem from="1701930116340" duration="17614000" />
+      <workItem from="1702195658459" duration="1454000" />
+      <workItem from="1702276420273" duration="644000" />
+      <workItem from="1702357492360" duration="12525000" />
     </task>
     <task id="LOCAL-00002" summary="tiếp tục làm chức năng tìm kiếm">
       <option name="closed" value="true" />

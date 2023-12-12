@@ -3,6 +3,7 @@ package controller.controllerAdmin;
 import DAO.CategoryDAO;
 import model.Category;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +16,14 @@ import java.util.ArrayList;
 public class CategoryController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryDAO categoryDAO = new CategoryDAO();
-        ArrayList<Category> categories = categoryDAO.getListCategory();
-
-        request.setAttribute("categories",categories);
+        ArrayList<Category> categories = CategoryDAO.getListCategory();
+        request.setAttribute("categories", categories);
 
         request.getRequestDispatcher("category.jsp").forward(request, response);
+    }
+
+    protected  void  doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String categoryName = request.getParameter("category");
+        response.sendRedirect(request.getContextPath() + "/category");
     }
 }
