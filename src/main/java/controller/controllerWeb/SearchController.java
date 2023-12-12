@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "SearchController", value = "/SearchController")
@@ -30,6 +31,7 @@ public class SearchController extends HttpServlet {
             List<Product>productList=ProductDAO.getInstance().search(txtSearch,index,pageSize);
             request.setAttribute("end",endPage);
             request.setAttribute("list", productList);
+            request.setAttribute("txtSearch", txtSearch);
             request.getRequestDispatcher("/web/search-result.jsp").forward(request, response);
         }catch (Exception e){
             e.printStackTrace();

@@ -70,7 +70,7 @@
             <div class="header-btn">
                 <ul class="header-list">
                     <li class="header-item header-search">
-                        <form role="search" action="../SearchController" method="get">
+                        <form role="search" action="${pageContext.request.contextPath}/SearchController" method="get">
                             <input type="hidden" name="index" value="1">
                             <input
                                     type="search"

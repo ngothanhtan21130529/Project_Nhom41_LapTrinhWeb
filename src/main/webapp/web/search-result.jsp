@@ -49,7 +49,7 @@
             <a href="ruby.html">
                 <img src="<%= list.get(i).getThumbnail()%>"
                      alt="ruby">
-<%--                <div class="status">Đặt hàng</div>--%>
+                <%--                <div class="status">Đặt hàng</div>--%>
                 <h3><%=list.get(i).getProductName()%>></h3>
                 <div class="price"><%=list.get(i).getPrice()%><span>VNĐ</span></div>
             </a>
@@ -59,7 +59,8 @@
     <div class="pagination">
         <%int end = (int) request.getAttribute("end");%>
         <%for (int i = 1; i <= end; i++) {%>
-        <a href="#"><%=i%>
+        <a href="SearchController?index=<%=i%>&txtSearch=<%=request.getAttribute("txtSearch")%>">
+            <%=i%>
         </a>
         <%}%>
     </div>
