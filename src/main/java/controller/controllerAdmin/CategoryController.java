@@ -1,6 +1,5 @@
 package controller.controllerAdmin;
 
-//import DAO.CategoryDAO;
 import model.Category;
 
 import javax.servlet.ServletException;
@@ -13,10 +12,5 @@ import java.util.ArrayList;
 
 @WebServlet("/category")
 public class CategoryController extends HttpServlet {
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        CategoryDAO categoryDAO = new CategoryDAO();
-//        ArrayList<Category> categories = categoryDAO.getListCategory();
-//        request.setAttribute("categories",categories);
-//        request.getRequestDispatcher("category.jsp").forward(request, response);
-//    }
+
 }
