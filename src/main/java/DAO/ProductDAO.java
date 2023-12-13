@@ -96,7 +96,6 @@ public class ProductDAO implements DAOInterface<Product> {
             ps.setInt(4,size);
             ps.setInt(5, index);
             ps.setInt(6, size);
-            System.out.println(querry);
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
                 Product product=new Product(rs.getString(2),
@@ -104,7 +103,6 @@ public class ProductDAO implements DAOInterface<Product> {
                         rs.getInt(4)
                 );
                 productList.add(product);
-//                return productList;
             }
         }catch (Exception e){
             e.printStackTrace();

@@ -21,7 +21,6 @@ public class SearchController extends HttpServlet {
         try{
             String txtSearch=request.getParameter("txtSearch");
             int count= ProductDAO.getInstance().count(txtSearch);
-            System.out.println(count);
             String indexString=request.getParameter("index");
             int index=Integer.parseInt(indexString);
             int pageSize=3;
@@ -32,6 +31,7 @@ public class SearchController extends HttpServlet {
             request.setAttribute("end",endPage);
             request.setAttribute("list", productList);
             request.setAttribute("txtSearch", txtSearch);
+            request.setAttribute("index", index);
             request.getRequestDispatcher("/web/search-result.jsp").forward(request, response);
         }catch (Exception e){
             e.printStackTrace();

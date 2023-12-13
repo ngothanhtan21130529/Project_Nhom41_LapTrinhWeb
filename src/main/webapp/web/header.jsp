@@ -82,6 +82,7 @@
                             <input type="hidden" name="index" value="1">
                             <input
                                     type="search"
+                                    value="${txtSearch}"
                                     name="txtSearch"
                                     class="search-input"
                                     placeholder="Tìm sản phẩm"
@@ -94,7 +95,7 @@
                     </li>
                     <li class="header-item header__drop">
                         <a href="cart.jsp">
-                            <i class="fa-solid fa-cart-shopping" ></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <!-- if card have product -> add class header__drop__empty -->
                         <div class="header__drop-list">
