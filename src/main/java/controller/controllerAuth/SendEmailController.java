@@ -17,7 +17,7 @@ import java.util.Random;
 @WebServlet(name = "SendEmailController", value = "/sendemail")
 public class SendEmailController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         final String HOST_NAME = "smtp.gmail.com";
 
@@ -63,10 +63,8 @@ public class SendEmailController extends HttpServlet {
     }
     protected String genenerateCode(){
         Random random=new Random();
-        //chuỗi mẫu để tạo chuỗi ngau nhien
         String character= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         String res="";
-        //tạo StringBuilder để thực hiện việc tạo chuỗi ngau nhien
         StringBuilder sb=new StringBuilder(10);
         for(int i=0;i<sb.length();i++){
             char randomchar=character.charAt(random.nextInt(character.length()));
