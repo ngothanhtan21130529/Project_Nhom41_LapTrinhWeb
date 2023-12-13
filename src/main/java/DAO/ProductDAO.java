@@ -39,6 +39,31 @@ public class ProductDAO implements DAOInterface<Product> {
         return null;
     }
 
+    public static ArrayList<Product> getListProduct(){
+        ArrayList<Product> products = new ArrayList<>();
+        try{
+            Connection con = MySqlConnection.getConnection();
+            String sql = "SELECT p.id, p.product_name, p.price, p.status, i.img_url " +
+                    "FROM products p " +
+                    "JOIN images i ON p.thumbnail_id = i.id";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql );
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String productName = rs.getString("product_name");
+                int price = rs.getInt("price");
+                String status = rs.getString("status");
+                String imgURL = rs.getString("img_url");
+
+                Product product = new Product(id, productName, price, status, imgURL);
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return products;
+    }
+
     public int count(String txtSearch){
         try {
             String querry="select count(products.id) from products where products.product_name like ?";
@@ -71,7 +96,6 @@ public class ProductDAO implements DAOInterface<Product> {
             ps.setInt(4,size);
             ps.setInt(5, index);
             ps.setInt(6, size);
-            System.out.println(querry);
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
                 Product product=new Product(rs.getString(2),
@@ -79,7 +103,6 @@ public class ProductDAO implements DAOInterface<Product> {
                         rs.getInt(4)
                 );
                 productList.add(product);
-//                return productList;
             }
         }catch (Exception e){
             e.printStackTrace();

@@ -36,35 +36,42 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<div class="galery">
-    <%--        header--%>
-    <jsp:include page="header.jsp"></jsp:include>
-    <%--        main--%>
-    <div class="">
-        <%
-            ArrayList<Product> list = (ArrayList<Product>) request.getAttribute("list");
-            for (int i = 0; i < list.size(); i++) {
-        %>
-        <div class="category">
-            <a href="ruby.html">
-                <img src="<%= list.get(i).getThumbnail()%>"
-                     alt="ruby">
-                <%--                <div class="status">Đặt hàng</div>--%>
-                <h3><%=list.get(i).getProductName()%>></h3>
-                <div class="price"><%=list.get(i).getPrice()%><span>VNĐ</span></div>
-            </a>
+<div class="pro-main">
+    <div class="galery">
+        <%--        header--%>
+        <jsp:include page="header.jsp"></jsp:include>
+        <%--        main--%>
+        <div class="products">
+            <div class="grid-container">
+                <%
+                    ArrayList<Product> list = (ArrayList<Product>) request.getAttribute("list");
+                    for (int i = 0; i < list.size(); i++) {
+                %>
+                <div class="category">
+                    <a href="<%= list.get(i).getImgURL()%>">
+                        <img src="<%= list.get(i).getImgURL()%>"
+                             alt="ruby">
+                        <%--                <div class="status">Đặt hàng</div>--%>
+                        <h3><%=list.get(i).getProductName()%>></h3>
+                        <div class="price"><%=list.get(i).getPrice()%><span>VNĐ</span></div>
+                    </a>
+                </div>
+                <%}%>
+            </div>
         </div>
-        <%}%>
     </div>
     <div class="pagination">
         <%int end = (int) request.getAttribute("end");%>
         <%for (int i = 1; i <= end; i++) {%>
-        <a href="SearchController?index=<%=i%>&txtSearch=<%=request.getAttribute("txtSearch")%>">
+        <a id="<%=i%>" href="SearchController?index=<%=i%>&txtSearch=<%=request.getAttribute("txtSearch")%>">
             <%=i%>
         </a>
         <%}%>
     </div>
     <jsp:include page="footer.jsp"></jsp:include>
 </div>
+<script>
+    document.getElementById("<%=request.getAttribute("index")%>").classList.add('active');
+</script>
 </body>
 </html>

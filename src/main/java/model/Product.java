@@ -28,10 +28,10 @@ public class Product implements Serializable {
         this.imgURL = imgURL;
     }
 
-    public Product(String thumbnail, String productName, int price) {
+    public Product(String imgURL, String productName, int price) {
         this.productName = productName;
         this.price = price;
-        this.thumbnail = thumbnail;
+        this.imgURL = imgURL;
     }
 
     public int getId() {
@@ -95,7 +95,7 @@ public class Product implements Serializable {
         return "Product{" +
                 "productName='" + productName + "\n" +
                 ", price=" + price +
-                ", thumbnail='" + thumbnail + "\t" +
+                ", imgURL='" + imgURL + "\t" +
                 "}\n";
     }
 }
