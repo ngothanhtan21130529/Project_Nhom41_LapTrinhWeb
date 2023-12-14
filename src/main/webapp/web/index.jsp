@@ -31,7 +31,7 @@
         <div class="categogies-grid-container">
             <jsp:include page="category.jsp"></jsp:include>
             <div class="jewelry-categogies">
-                <h2> TRANG SỨC </h2>
+                <h2 class="title-h2"> TRANG SỨC </h2>
                 <div class="banner-jewelry">
                     <div class="w3-content w3-section" style="max-width:100%">
                         <img class="mySlides" src="./img/banner/jewelry.png" style="width:100%">
@@ -42,100 +42,10 @@
                 <jsp:include page="products.jsp"></jsp:include>
             </div>
             <div class="categogies-new">
-                <h2> SẢN PHẨM MỚI</h2>
-                <div class="slider" id="slider">
-                    <div class="slide" id="slide">
-                        <div class="category">
-                            <a href="product-details.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="product-details.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                        <div class="category">
-                            <a href="amber.html">
-                                <img class="item"
-                                     src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg">
-                                <h3>Topaz</h3>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ctrl-btn pro-prev"><i class="fa-solid fa-angle-left"></i></div>
-                    <div class="ctrl-btn pro-next"><i class="fa-solid fa-angle-right"></i></div>
-                </div>
+                <h2 class="title-h2"> SẢN PHẨM MỚI</h2>
+                <jsp:include page="products-new.jsp"></jsp:include>
             </div>
         </div>
-        <jsp:include page="products.jsp"></jsp:include>
     </div>
     <%--footer--%>
     <jsp:include page="footer.jsp"></jsp:include>
@@ -156,67 +66,6 @@
         }
         x[myIndex - 1].style.display = "block";
         setTimeout(carousel, 2000); // 2 giây chuyển
-    }
-
-    "use strict";
-
-    productScroll();
-
-    function productScroll() {
-        let slider = document.getElementById("slider");
-        let next = document.getElementsByClassName("pro-next");
-        let prev = document.getElementsByClassName("pro-prev");
-        let slide = document.getElementById("slide");
-        let item = document.getElementById("slide");
-
-        for (let i = 0; i < next.length; i++) {
-            //refer elements by class name
-
-            let position = 0; //slider postion
-
-            prev[i].addEventListener("click", function () {
-                //click previos button
-                if (position > 0) {
-                    //avoid slide left beyond the first item
-                    position -= 1;
-                    translateX(position); //translate items
-                }
-            });
-
-            next[i].addEventListener("click", function () {
-                if (position >= 0 && position < hiddenItems()) {
-                    //avoid slide right beyond the last item
-                    position += 1;
-                    translateX(position); //translate items
-                }
-            });
-        }
-
-        function hiddenItems() {
-            //get hidden items
-            let items = getCount(item, false);
-            let visibleItems = slider.offsetWidth / 210;
-            return items - Math.ceil(visibleItems);
-        }
-    }
-
-    function translateX(position) {
-        //translate items
-        slide.style.left = position * -210 + "px";
-    }
-
-    function getCount(parent, getChildrensChildren) {
-        //count no of items
-        let relevantChildren = 0;
-        let children = parent.childNodes.length;
-        for (let i = 0; i < children; i++) {
-            if (parent.childNodes[i].nodeType != 3) {
-                if (getChildrensChildren)
-                    relevantChildren += getCount(parent.childNodes[i], true);
-                relevantChildren++;
-            }
-        }
-        return relevantChildren;
     }
 </script>
 </body>
