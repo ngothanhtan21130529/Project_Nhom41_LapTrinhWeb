@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -86,11 +86,12 @@ input, textarea, select, option {
     gap: 10px;
 }
 
-.ui {
+* > .ui {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 20% 80%;
     height: 100vh;
 }
+
 
 .nav-bar {
     grid-column: 1/2;
@@ -181,12 +182,24 @@ input, textarea, select, option {
     color: white;
 }
 
+table tr td img {
+    width: 50%;
+    height: 50%;
+}
+table tr th, table tr td {
+    width: auto;
+}
+.product-table{
+    overflow: auto;
+}
+
 table,
 th,
 td {
     border: 1px solid #bfbfbf;
     border-collapse: collapse;
     text-align: center;
+    min-width: 10vw;
 }
 
 table {
@@ -376,11 +389,6 @@ td i {
     background-color: #002f57;
     border: 3px solid #002d55;
     color: white;
-}
-
-.product-tab .product-main-tab .product-table table tr td img {
-    width: 50%;
-    height: 50%;
 }
 
 .product-adding-tab .product-adding-tab-general-infomation {
@@ -1541,4 +1549,4 @@ td i {
 .infor-tab-element,
 .user-config-element {
     display: none;
-}
+} 
