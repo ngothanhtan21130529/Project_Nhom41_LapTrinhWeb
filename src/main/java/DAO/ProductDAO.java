@@ -66,9 +66,9 @@ public class ProductDAO implements DAOInterface<Product> {
 
     public int count(String txtSearch){
         try {
-            String querry="select count(products.id) from products where products.product_name like ?";
+            String query="select count(products.id) from products where products.product_name like ?";
             Connection con=MySqlConnection.getConnection();
-            PreparedStatement ps=con.prepareStatement(querry);
+            PreparedStatement ps=con.prepareStatement(query);
             ps.setString(1,"%"+txtSearch+"%");
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
@@ -83,13 +83,13 @@ public class ProductDAO implements DAOInterface<Product> {
     public ArrayList<Product> search(String txtSearch, int index, int size){
         ArrayList<Product>productList=new ArrayList<>();
         try {
-            String querry="with res as (select row_number() over (order by p.id asc) " +
+            String query="with res as (select row_number() over (order by p.id asc) " +
                     "as r, i.img_url, p.product_name, p.price from products p " +
                     "join images i on p.thumbnail_id=i.id " +
                     "where p.product_name like ?) " +
                     "select * from res where r between (?*?)-(?-1) and (?*?)";
             Connection con=MySqlConnection.getConnection();
-            PreparedStatement ps=con.prepareStatement(querry);
+            PreparedStatement ps=con.prepareStatement(query);
             ps.setString(1,"%"+txtSearch+"%");
             ps.setInt(2,index);
             ps.setInt(3,size);

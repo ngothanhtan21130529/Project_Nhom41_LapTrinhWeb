@@ -29,6 +29,8 @@ public class Category implements Serializable {
         this. imgURL = imgURL;
     }
 
+
+
     public int getId() {
         return id;
     }
