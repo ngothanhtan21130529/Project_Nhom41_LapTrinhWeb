@@ -71,7 +71,6 @@ header .box nav .navigation-list .navigation-item .dropdown-gem{
     z-index: 1;
     columns: 2; /* Chia thành 2 cột */
     column-gap: 20px; /* Khoảng cách giữa các cột */
-    padding: 0;
 }
 
 header .box nav .navigation-list .navigation-item .dropdown-gem .dropdown-item{
@@ -99,7 +98,6 @@ header .box nav .navigation-list .navigation-item:hover .dropdown-gem{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0;
 }
 
 .header-item {
@@ -290,8 +288,8 @@ header .box nav .navigation-list .navigation-item:hover .dropdown-gem{
 /* css for header search */
 .header-search {
     flex: 1;
+    margin-right: 10px;
     cursor: default;
-    margin: 0;
 }
 
 .header-search:hover {
@@ -302,7 +300,6 @@ form[role='search'] {
     display: flex;
     justify-content: flex-end;
     position: relative;
-    margin: 0;
 }
 
 .search-input::-webkit-search-decoration,
@@ -344,5 +341,4 @@ form[role='search'] {
 
 .sign-in a{
     text-decoration: none;
-    padding-bottom: 18%;
 }
