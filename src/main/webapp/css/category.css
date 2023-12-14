@@ -1,3 +1,9 @@
+
+.categogies-grid-container{
+    margin: 0;
+    padding: 0;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -5,36 +11,139 @@
     padding: 20px;
 }
 
-.category {
+.grid-container .category {
     background-color: #fff;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
-.category .category_name {
-    text-decoration: none;
-    color: #333;
-}
-
-.category img {
+.grid-container .category img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
-h2 {
-    margin-bottom: 10px;
-}
-
-.categogies-grid-container {
-    margin: 0;
-    padding: 0;
-}
-
-h2 {
+.category-name{
+    color: black;
     text-align: center;
-    margin-top: 50px;
-    font-size: 40px;
+    font-weight: bold;
+}
+
+.status{
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 7.5%;
+    color: black;
+    font-weight: bold;
+}
+
+.price{
+    color: #796803;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+}
+
+.title-h2 {
+    color: black;
+    font-family: 'Playfair Display', serif;
+    text-align: center ;
+    font-size: 50px;
+}
+
+.category-item{
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product{
+    color: black;
+    text-align: left;
+    text-decoration: none;
+}
+
+.product_name {
+    color: black;
+}
+
+.product .product_name:hover{
+    color: #796803;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.slider {
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+    margin: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider .slide {
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: 0.3s left ease-in-out;
+    min-height: 450px;
+}
+
+.slider .item {
+    margin-right: 10px;
+}
+
+.slider .item:last-child {
+    margin-right: 0;
+}
+
+.ctrl-btn {
+    padding: 0;
+    min-width: 20px;
+    background: #fff;
+    border: none;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -71.5px;
+    height: 30px;
+}
+
+.ctrl-btn i{
+    font-size: 30px;
+}
+.ctrl-btn.pro-prev {
+    left: 0;
+}
+
+.ctrl-btn.pro-next {
+    right: 0;
+}
+
+.ctrl-btn:hover{
+    background-color: #eeeeee;
+}
+
+.slider .slide .category{
+    width: 350px;
+    text-align: center;
+}
+
+.slider .slide .category a {
+    text-decoration: none;
+}
+
+.slider .slide .category a img{
+    width: 300px;
+    height: 300px;
 }
