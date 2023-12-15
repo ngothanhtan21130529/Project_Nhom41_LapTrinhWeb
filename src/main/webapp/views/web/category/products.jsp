@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
+<<<<<<<< HEAD:src/main/webapp/views/web/category/products.jsp
     <link href="../../../css/style.css" rel="stylesheet" type="text/css">
     <link href="../../../css/banner.css" rel="stylesheet" type="text/css">
     <link href="../../../css/products.css" rel="stylesheet" type="text/css">
@@ -32,6 +33,18 @@
     <div class="main">
         <div class="banner">
             <img class="background-image" src="../../../img/banner/banner.png" alt="Background Image">
+========
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/banner.css" rel="stylesheet" type="text/css">
+    <link href="../../css/products.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <jsp:include page="../header.jsp" ></jsp:include>
+    <div class="main">
+        <div class="banner">
+            <img class="background-image" src="../../img/banner/banner.png" alt="Background Image">
+>>>>>>>> 3903fc4 (commit):src/main/webapp/views/product/products.jsp
             <div class="content">
                 <h1 class="title-name"> ĐÁ QUÝ </h1>
                 <p class="intro">TTN Shop tự hào là điểm đến lý tưởng cho những người yêu thích đá quý. Với một bộ sưu tập
@@ -76,7 +89,11 @@
                     </select>
                 </div>
             </div>
+<<<<<<<< HEAD:src/main/webapp/views/web/category/products.jsp
             <jsp:include page="../product/products-list.jsp"></jsp:include>
+========
+            <jsp:include page="products-list.jsp"></jsp:include>
+>>>>>>>> 3903fc4 (commit):src/main/webapp/views/product/products.jsp
             <div class="pagination">
                 <a href="#">&laquo;</a>
                 <a href="#">1</a>
@@ -89,6 +106,10 @@
             </div>
         </div>
     </div>
+<<<<<<<< HEAD:src/main/webapp/views/web/category/products.jsp
     <jsp:include page="../../footer.jsp"></jsp:include>
+========
+    <jsp:include page="../footer.jsp"></jsp:include>
+>>>>>>>> 3903fc4 (commit):src/main/webapp/views/product/products.jsp
 </body>
 </html>
