@@ -9,9 +9,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<<<<<<<< HEAD:src/main/webapp/views/web/product/jewelrys-list.jsp
 <link href="../../../css/category.css" rel="stylesheet" type="text/css">
 
 
+========
+<link href="../../css/category.css" rel="stylesheet" type="text/css">
+>>>>>>>> 3903fc4 (commit):src/main/webapp/views/product/jewelrys-list.jsp
 <div class="grid-container">
 <%
     ArrayList<Product> productDAO = new ProductDAO().getListProduct();
