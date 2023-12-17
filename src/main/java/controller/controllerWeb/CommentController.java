@@ -22,6 +22,7 @@ public class CommentController extends HttpServlet {
         try {
             CommentDAO.getInstance().insertComment(new Comment(1,1,1,null,null));
             resp.sendRedirect("");
+            resp.getWriter().println("Thêm thành công");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
