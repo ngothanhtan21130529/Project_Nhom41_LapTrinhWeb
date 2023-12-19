@@ -14,7 +14,11 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
+<<<<<<<< HEAD:src/main/webapp/views/index.jsp
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../font/fontawesome-free-6.4.2/css/all.css">
+========
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
+>>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/index.jsp
     <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath()%>/css/banner.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath()%>/css/products.css" rel="stylesheet" type="text/css">
@@ -26,7 +30,7 @@
     <%--main--%>
     <div class="main">
         <div class="banner">
-            <img class="background-image" src="../img/banner/banner.png" alt="Background Image">
+            <img class="background-image" src="img/banner/banner.png" alt="Background Image">
             <div class="content">
                 <h1 class="title-name"> TTN STORE </h1>
                 <p class="intro">TTN Shop tự hào là điểm đến lý tưởng cho những người yêu thích đá quý. Với một bộ sưu tập
@@ -35,7 +39,11 @@
             </div>
         </div>
         <div class="categogies-grid-container">
+<<<<<<<< HEAD:src/main/webapp/views/index.jsp
 <%--            <jsp:include page="/category/category.jsp"></jsp:include>--%>
+========
+            <jsp:include page="/category/category.jsp"></jsp:include>
+>>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/index.jsp
             <div class="jewelry-categogies">
                 <h2 class="title-h2"> TRANG SỨC </h2>
                 <div class="banner-jewelry">
