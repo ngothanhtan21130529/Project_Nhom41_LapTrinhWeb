@@ -10,142 +10,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAdmin/ProductDetailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAuth/LoginGoogleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAuth/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerWeb/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerWeb/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerWeb/PaginationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/ImageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/ProductDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/taglib.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/banner.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/tablist.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/tablist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/aquamarine.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/category.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/diamond.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/emerald.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/garnet.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/gemstone.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/jade.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/jewelrys.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/peridot.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/products.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/ruby.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/sapphire.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/spinel.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/topaz.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/tourmarline.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/pagination.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/policy.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/jewelrys-list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/product-details.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/templateLanguages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/CategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CommentDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/DAOInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/MySqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/database/MySqlConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerAdmin/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAdmin/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerAdmin/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAdmin/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerAuth/ChangePasswordController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerAuth/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAuth/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerAuth/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAuth/LogoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerAuth/RegisterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerAuth/SendEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAuth/SendEmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/CartController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/CartQuantityController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/CartRemoveController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/CommentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/ContactController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/controllerWeb/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerWeb/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ProductDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/change-password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Montserrat-Italic-VariableFont_wght.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Montserrat-VariableFont_wght.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/Roboto-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/font/static/Montserrat-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forgot-password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/frofile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal-inform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/policy.html" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/aquamarine.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/category.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/diamond.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/emerald.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/garnet.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/gemstone.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/jade.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/jewelrys.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/peridot.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/products.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/ruby.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/spinel.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/topaz.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/tourmarline.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/contact.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pagination.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/policy.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/jewelrys-list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/product-details.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/products-list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/products-new.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/search-result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/banner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fillter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/cart/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/category.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/products-new.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-new.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/products.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/search-result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/search-result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/aquamarine.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/aquamarine.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/gemstone.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/gemstone.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/jewelrys.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/jewelrys.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product/jewelrys-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/jewelrys-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-new.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-new.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/search-result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/search-result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/pagination.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/gemstone.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/gemstone.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/product-details.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/products-new.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/products-new.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/search-result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/search-result.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +80,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="19130155_TranTuNguyet" />
+        <entry key="$PROJECT_DIR$" value="19130155_TranTuNguyetlocal" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -191,35 +106,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "211130530__PhamNhutTan",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/Github/Project_Nhom41_LapTrinhWeb/src/main/webapp",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.applicationServers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;211130530__PhamNhutTan&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Github/Project_Nhom41_LapTrinhWeb/src/main/webapp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.applicationServers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\src\main\webapp" />
