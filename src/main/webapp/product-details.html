@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/details.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/tablist.css">
 
 </head>
 
@@ -386,77 +387,64 @@
             </div>
         </div>
     </div>
-    <div class="specifications non-light-box">
-        <div class="specifications-label">
-            THÔNG SỐ KỸ THUẬT
-        </div>
-        <div class="type">
-            <div class="type-label">
-                Loại đá:
+    <div class="information-products">
+        <div class="tab">
+            <button class="tablinks" onclick="toggleTab(event, 'Tab1')"> Thông số kỹ thuật <i
+                    class="fas fa-chevron-down"></i></button>
+            <div id="Tab1" class="tabcontent">
+                <div class="column">
+                    <ul>
+                        <li><span>Loại đá:</span> Ruby</li>
+                        <li><span>Màu đá:</span> Đỏ</li>
+                        <li><span>Trọng lượng:</span> 1 carat</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><span>Kích thước:</span> 2.5x12-3.5mm</li>
+                        <li><span>Độ trong:</span> Chất ngọc làm sạch</li>
+                        <li><span>Mô tả:</span> ...</li>
+                    </ul>
+                </div>
             </div>
-            <div class="type-output">
-                &nbsp; Spinel
-            </div>
-        </div>
-        <div class="opacity">
-            <div class="opacity-label">
-                Độ trong:
-            </div>
-            <div class="opacity-output">
-                &nbsp; chất bán trong
-            </div>
-        </div>
-        <div class="color">
-            <div class="color-label">
-                Màu sắc:
-            </div>
-            <div class="color-output">
-                &nbsp; Tím ánh kim
-            </div>
-        </div>
-        <div class="status">
-            <div class="status-label">
-                Tình trạng:
-            </div>
-            <div class="status-output">
-                &nbsp; Tự nhiên 100%
-            </div>
-        </div>
-        <div class="cubes">
-            <div class="cubes-label">
-                Hình khối:
-            </div>
-            <div class="cubes-output">
-                &nbsp; Oval chữ nhật
-            </div>
-        </div>
-        <div class="size">
-            <div class="size-label">
-                Kích thước:
-            </div>
-            <div class="size-output">
-                &nbsp; 7.27 x 6.27 – 5.09 mm
-            </div>
-        </div>
-        <div class="weight">
-            <div class="weight-label">
-                Trọng lượng:
-            </div>
-            <div class="weight-output">
-                &nbsp; 1.89 carat
-            </div>
-        </div>
-        <div class="accreditation">
-            <div class="accreditation-label">
-                Kiểm định:
-            </div>
-            <div class="accreditation-output">
-                &nbsp; Được kiểm định đầy đủ và viết phiếu bảo hành trọn đời về màu sắc và chất lượng
-            </div>
-        </div>
-    </div>
-    <div class="comment">
 
+            <button class="tablinks" onclick="toggleTab(event, 'Tab2')"> Bình luận <i class="fas fa-chevron-down"></i>
+            </button>
+            <div id="Tab2" class="tabcontent">
+                <div class="comment">
+                    <div class="customer-name">tran tu nguyet</div>
+                    <div class="media-upload">
+                        <img class="image-upload" src="img/twitter_profile_image.png" alt="Image">
+                        <video class="video-upload" controls>
+                            <source src="video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="comment-text">Đẹp dữ lắm.</p>
+                    <button class="btn-comment" onclick="openPopup()">Viết bình luận</button>
+                </div>
+
+                <div id="popup" class="popup">
+                    <button class="btn-close" onclick="closePopup()"><i class="fas fa-times"></i></i></button>
+                    <textarea placeholder="Viết bình luận"></textarea>
+                    <div class="input-comment">
+                        <input class="input-text" type="text" placeholder="Nhập tên">
+                        <input class="input-file" type="file" accept="image/*">
+                    </div>
+                    <button class="btn-submit">Gửi</button>
+                </div>
+            </div>
+
+            <button class="tablinks" onclick="toggleTab(event, 'Tab3')"> Câu hỏi thường gặp <i
+                    class="fas fa-chevron-down"></i></button>
+            <div id="Tab3" class="tabcontent">
+                <h3>Mua Online có ưu đãi gì đặc biệt cho tôi?</h3>
+                <p>- Ưu đãi độc quyền Online với hình thức thanh toán đa dạng.</p>
+                <p>- Đặt giữ hàng Online, nhận tại cửa hàng.</p>
+                <h3>Có thu mua lại trang sức không?</h3>
+                <p>TTN có thu mua lại trang sức, nếu quý khách hàng muốn bán lại trang sức có thể liên hệ thông
+                    qua các phương thức liên hệ bên dưới. Chi tiết: <a href="contact.jsp">tại đây</a></p>
+            </div>
+        </div>
     </div>
     <div class="contact-number-choosing non-light-box">
         <a href="#" class="landline">
@@ -494,288 +482,6 @@
                 0856 174 581
             </div>
         </a>
-    </div>
-    <div class="information-products non-light-box">
-        <div class="infomation-products-label">
-            THÔNG TIN SẢN PHẨM
-        </div>
-        <div class="infomation-products-box">
-            <div class="infomation-content">
-                Nội dung
-                <div class="scroll-down">
-                    <button class="scroll-down-button" onclick="scroll_down()">
-                        <i class="fa-solid fa-list fa-2xs" style="color: #7c889c;"></i>
-                    </button>
-                </div>
-            </div>
-            <div id="table-content" class="table-contents">
-                <ol>
-                    <li>
-                        <a href="#">
-                            Thông tin viên Spinel tím ánh kim KG-SPF-027
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Giá bán viên Spinel tím ánh kim KG-SPF-027 bao nhiêu?
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Mua viên Spinel tím ánh kim KG-SPF-027 ở đâu?
-                        </a>
-                    </li>
-                </ol>
-            </div>
-        </div>
-        <div class="information-products-praragraph">
-            <div class="information-products-title">
-                Thông tin cơ bản Spinel tím ánh kim KG-SPF-027
-            </div>
-            <div class="information-products-text">
-                <p>
-                    <a href="#"><i>Viên Spinel</i></a> tím ánh kim đẹp xuất xứ tại mỏ đá Lục Yên tự nhiên 100%. Chất
-                    bán trong, liên kết
-                    vĩnh
-                    cửu. Viên Spinel tím ánh kim với trọng lượng 1.89 carat với kích thước: 7.27 x 6.27 – 5.09 mm.
-                    Viên
-                    đá hội tụ đầy
-                    đủ tất cả các yếu tố để lên một chiếc nhẫn hoặc mặt dây chuyền.
-                </p>
-            </div>
-            <div class="information-products-img">
-                <div class="information-products-img-img">
-                    <img src="../img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
-                </div>
-                <div class="note">
-                    Viên Spinel tím ánh kim 1.89 carat KG-SPF-027 hình 1
-                </div>
-            </div>
-        </div>
-        <div class="price-product">
-            <div class="price-product-title">
-                Giá bán viên Spinel tím ánh kim 1.89 carat KG-SPF-027 bao nhiêu?
-            </div>
-            <div class="price-product-menu">
-                <ul>
-                    <li>
-                        Giá niêm yết: 18.000.000đ, xem thêm nhiều mẫu đá hơn <a href="#">Tại Đây</a>
-                    </li>
-                    <li>
-                        Bất kỳ sản phẩm nào được bán bởi thương hiệu IRuby đều được tư vấn, thiết kế hoàn thiện miễn
-                        phí 100%.
-                    </li>
-                    <li>
-                        Bảo hành viên Spinel tím ánh kim 1.89 carat miễn phí trọn đời sản phẩm.
-                    </li>
-                    <li>
-                        Cam kết kiểm định, đúng theo thông tin trên website.
-                    </li>
-                </ul>
-            </div>
-            <div class="price-product-img">
-                <div class="price-product-img-img">
-                    <img src="../img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
-                </div>
-                <div class="note">
-                    Viên Spinel tím ánh kim 1.89 carat KG-SPF-027 hình 2
-                </div>
-            </div>
-        </div>
-        <div class="where-to-buy">
-            <div class="where-to-buy-label">
-                Mua viên Spinel tím ánh kim 1.89 carat KG-SPF-027 ở đâu?
-            </div>
-            <div class="tab">
-                <button class="tablinks" onclick="open_tab(event,'contact-tab')" id="default-open">
-                    Liên hệ
-                </button>
-                <button class="tablinks" onclick="open_tab(event, 'deliver')">
-                    Giao hàng
-                </button>
-                <button class="tablinks" onclick="open_tab(event, 'guarantee')">
-                    Bảo hành
-                </button>
-            </div>
-            <div id="contact-tab" class="tab-content">
-                <div class="place-map">
-                    <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1986922460546!2d106.78813967465993!3d10.872487157415222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276398969f7b%3A0x9672b7efd0893fc4!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBOw7RuZyBMw6JtIFRQLiBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1698824490776!5m2!1svi!2s"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-            <div id="deliver" class="tab-content">
-                <h3>Chính sách giao hàng, thanh toán toàn quốc và quốc tế</h3>
-                <ol>
-                    <li class="policy-1">
-                        Áp dụng với khách mua đá quý (đá viên, đá lẻ)
-                    </li>
-                    <ul>
-                        <li>
-                            <p class="policy-line-bold" style="font-size: 18px;">
-                                Khách hàng chuyển khoản trước 100% giá trị tiền đá, miễn phí ship và kiểm tra hàng
-                                trước khi nhận (áp dụng cho gửi thường, gửi nhanh phí tính theo quy định bên vận
-                                chuyển). Trong trường hợp quý khách muốn nhận gấp chúng tôi sẽ ship hỏa tốc, phí
-                                ship áp dụng theo bên vận chuyển quy định.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Khách chuyển khoản cọc trước <b>5.000.000 đ (Năm triệu đồng)</b> nhận hàng và
-                                <b>thanh toán
-                                    phần còn lại + phí ship (COD)</b> cho bên vận chuyển. Trong trường hợp quý khách
-                                muốn
-                                hoàn trả, <b>phí ship quay lại khách tự chịu và không được hoàn cọc .</b>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Chúng tôi có trách nhiệm cung cấp hình ảnh và thông tin sản phẩm đúng với thực tế,
-                                cũng như lưu giữ những hình ảnh trước khi sản phẩm được gửi đến quý khách.
-                            </p>
-                        </li>
-                    </ul>
-                    <li class="policy-2">
-                        Áp dụng với khách mua đá và thiết kế trang sức
-                    </li>
-                    <ul>
-                        <li>
-                            <p class="policy-line-bold" style="font-size: 18px;">
-                                Sau khi chọn đá và lên thiết kế cọc số tiền tương đương với % giá trị thiết kế ( áp
-                                dụng cho tất cả các trường hợp thanh toán ), để bên thiết kế lên bản vẽ và bắt đầu
-                                tiến trình.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Sau khi sản phẩm hoàn thành quý khách <b>thanh toán</b> phần còn lại cho chúng tôi,
-                                <b>hoàn
-                                    toàn miễn phí ship,</b> kiểm tra trước khi nhận hàng.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Những thiết kế có giá trị <b>dưới 50.000.000 đ ( Năm mươi triệu đồng )</b> sau khi
-                                hoàn
-                                thành sản phẩm <b>chuyển khoản trước 50%</b> giá trị đơn hàng, trước khi chúng tôi
-                                gửi
-                                hàng. <b>Thanh toán phần còn lại + phí ship</b> cho bên vận chuyện sau khi nhận
-                                hàng, kiểm
-                                tra và nhận hàng trước khi thanh toán.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Chúng tôi gửi hàng chuyển phát nhanh, hoặc theo xe hàng tới tất cả cách tỉnh thành,
-                                quận, huyện, phường, xã trong cả nước
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Quý khách ở tỉnh vui lòng thanh toán tiền cước cho nhà vận chuyển, theo bảng giá quy
-                                định của nhà vận chuyển mà chúng tôi sẽ thỏa thuận trước với quý khách
-                            </p>
-                        </li>
-                    </ul>
-                </ol>
-                <div class="deliver-ending">
-                    IRUBY.VN xin chân thành cảm ơn sự ủng hộ và hợp tác của quý khách!
-                </div>
-            </div>
-            <div id="guarantee" class="tab-content">
-                <div class="gold-and-diamon-jewelry">
-                    <div class="gold-and-diamon-jewelry-label">
-                        Trang sức vàng, Kim Cương
-                    </div>
-                    <ul>
-                        <li>
-                            Bảo hành 6 tháng lỗi kỹ thuật, nước xi, sau 6 tháng tính phí theo mức phí.
-                        </li>
-                        <li>
-                            Bảo hành miễn phí đánh bóng, siêu âm vô thời hạn, thay đá tổng hợp, CZ và ECZ trong suốt
-                            thời gian bảo hành.
-                        </li>
-                        <li>
-                            Đối với sản phẩm bị Oxy hóa, xuống màu sẽ được siêu âm làm sạch bằng máy chuyên dụng
-                            (siêu âm, không xi)
-                        </li>
-                        <li>
-                            Trong trường hợp sản phẩm bị Oxy hóa do hóa chất, tác động bên ngoài tính phí theo từng
-                            mức độ.
-                        </li>
-                        <li>
-                            Vàng thu lại theo tuổi vàng và thời giá.
-                        </li>
-                        <li>
-                            Công sản xuất không thu lại.
-                        </li>
-                        <li>
-                            Ghi chú: Giá vàng khi sản xuất bao gồm hao phí thi công (gọt rũa đánh bóng…) không thể
-                            thu hồi là 7%.
-                        </li>
-                    </ul>
-                </div>
-                <div class="colored-gemstones">
-                    <div class="colored-gemstones-label">
-                        Đá Quý Màu
-                    </div>
-                    <ul>
-                        <li>
-                            Bảo hành vĩnh viễn về màu sắc và chất lượng của đá
-                        </li>
-                        <li>
-                            Đá chủ nhập lại 70% trong 3 năm đầu, năm thứ 4 – 5 thu lại 80%
-                        </li>
-                        <li>
-                            Từ năm thứ 5 tới năm 10 thu lại 90% giá trị và sau 10 năm thu lại 100% giá trị viên đá
-                        </li>
-                        <li>
-                            Đổi nâng cấp sản phẩm khác được tính 80% cộng phần chênh lệch.
-                        </li>
-                        <li>
-                            Tất cả những viên đá đều được kiểm định và viết giấy bảo hành trọn đời.
-                        </li>
-                        <li>
-                            Áp dụng với những viên đá có giá trị từ 10 triệu đồng trở lên.
-                        </li>
-                    </ul>
-                </div>
-                <div class="non-guarantee-case">
-                    <div class="non-guarantee-case-label">
-                        Trường hợp không được bảo hành
-                    </div>
-                    <ul>
-                        <li>
-                            Nứt vỡ, sứt, thay đổi hình dạng do va đập rơi trong quá trình sử dụng
-                        </li>
-                        <li>
-                            Thay đổi kích thước kết cấu viên đá so với ban đầu
-                        </li>
-                        <li>
-                            Sản phẩm được trì chú theo chủ nhân
-                        </li>
-                        <li>
-                            Không có giấy bảo hành, hóa đơn sản phẩm.
-                        </li>
-                        <div class="non-guarantee-case-note">
-                            <i>Ghi chú cách tính giá vàng: Giá vàng:</i> 24k*A + B ( A là hàm lượng % vàng, B là Hội
-                            vàng
-                            loại đẹp nhất = 200.000đ/ chỉ)
-                        </div>
-                        <li>
-                            Vàng 10K: A= 0.487, B = 200.000đ
-                        </li>
-                        <li>
-                            Vàng 14K: A=0.653, B = 200.000đ
-                        </li>
-                        <li>
-                            Vàng 18K: A=0.82, B = 200.000đ
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <section class="footer">
@@ -883,7 +589,84 @@
         Được thiết kế bởi Thanh Tân, Tú Nguyệt, Nhựt Tân
     </div>
 </section>
-<script src="../js/details.js"></script>
+<script src="js/details.js">
+    // Function to toggle a specific tab
+    function toggleTab(evt, tabName) {
+        var tabcontent = document.getElementById(tabName);
+
+        if (tabcontent.style.display === "none") {
+            // Hide all tab content
+            var tabcontents = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].style.display = "none";
+            }
+
+            // Remove the "active" class from all tab buttons
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the specific tab content and mark the button as active
+            tabcontent.style.display = "block";
+            evt.currentTarget.classList.add("active");
+        } else {
+            // Toggle off the specific tab content and remove the "active" class from the button
+            tabcontent.style.display = "none";
+            evt.currentTarget.classList.remove("active");
+        }
+    }
+
+    //     popup
+    function openPopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+    }
+
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+</script>
+<script>
+    // Function to toggle a specific tab
+    function toggleTab(evt, tabName) {
+        var tabcontent = document.getElementById(tabName);
+
+        if (tabcontent.style.display === "none") {
+            // Hide all tab content
+            var tabcontents = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].style.display = "none";
+            }
+
+            // Remove the "active" class from all tab buttons
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the specific tab content and mark the button as active
+            tabcontent.style.display = "block";
+            evt.currentTarget.classList.add("active");
+        } else {
+            // Toggle off the specific tab content and remove the "active" class from the button
+            tabcontent.style.display = "none";
+            evt.currentTarget.classList.remove("active");
+        }
+    }
+
+    //     popup
+    function openPopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+    }
+
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+</script>
 </body>
 
 </html>
