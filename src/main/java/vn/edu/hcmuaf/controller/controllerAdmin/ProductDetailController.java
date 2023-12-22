@@ -1,7 +1,7 @@
-package vn.edu.hcmuaf.controller.controllerAdmin;
+package controller.controllerAdmin;
 
-import vn.edu.hcmuaf.dao.ProductDAO;
-import vn.edu.hcmuaf.model.Product;
+import DAO.ProductDAO;
+import model.Product;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

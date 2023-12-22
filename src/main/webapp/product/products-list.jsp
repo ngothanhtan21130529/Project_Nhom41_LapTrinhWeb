@@ -11,13 +11,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link href="../css/category.css" rel="stylesheet" type="text/css">
 
+<%--<%--%>
+<%--    DecimalFormat decimalFormat = new DecimalFormat("###,###,### VNĐ");--%>
+<%--%>--%>
+
+<%--<div class="grid-container">--%>
+<%--    <% ArrayList<Product> productDAO = new ProductDAO().getListProduct();--%>
+<%--        for (Product p : productDAO) { %>--%>
+<%--    <div class="category">--%>
+<%--        <a class="product" href="product-details.jsp">--%>
+<%--            <img src="<%= p.getImgURL()%>">--%>
+<%--            <div class="status"><%= p.getStatus() %></div>--%>
+<%--            <h3 class="product_name"><%= p.getProductName() %></h3>--%>
+<%--            <div class="price"><%= decimalFormat.format(p.getPrice()) %></div>--%>
+<%--        </a>--%>
+<%--    </div>--%>
+<%--    <% } %>--%>
+<%--</div>--%>
+
 <%
     DecimalFormat decimalFormat = new DecimalFormat("###,###,### VNĐ");
 %>
 
 <div class="grid-container">
-    <% ArrayList<Product> productDAO = new ProductDAO().getListProduct();
-        for (Product p : productDAO) { %>
+    <%
+        ArrayList<Product> productDAO = new ProductDAO().getListProduct();
+        for (Product p : productDAO) {
+            if (!"Ngừng bán".equals(p.getStatus())) {
+    %>
     <div class="category">
         <a class="product" href="product-details.jsp">
             <img src="<%= p.getImgURL()%>">
@@ -26,5 +47,8 @@
             <div class="price"><%= decimalFormat.format(p.getPrice()) %></div>
         </a>
     </div>
-    <% } %>
+    <%
+            }
+        }
+    %>
 </div>
