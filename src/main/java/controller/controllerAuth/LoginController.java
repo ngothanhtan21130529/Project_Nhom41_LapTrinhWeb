@@ -11,44 +11,38 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name="LoginController",value="/CheckLogin")
+@WebServlet(name="LoginController",value="/login")
 public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //lấy giá trị đầu vào từ form
+        String username=req.getParameter("username");
+        String pass=req.getParameter("password");
+        //tạo UserDAO
+        UserDAO userDAO=UserDAO.getInstance();
+        User user= null;
         try {
-            checkLogin(req,resp);
+            user = userDAO.selectInformation(username,pass);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-    protected void checkLogin(HttpServletRequest request,HttpServletResponse response) throws SQLException, ServletException, IOException {
-        //lấy giá trị đầu vào từ form
-        String username=request.getParameter("name");
-        String pass=request.getParameter("pass");
-        //tạo UserDAO
-        UserDAO userDAO=UserDAO.getInstance();
-        List<User> list=userDAO.selectInformation();
-        //duyệt qua từng phần tử
-        for(User user:list){
-            if(user.getName().equals(username)&&user.getPassword().equals(pass)&&user.getRole().getRoleName().equals("Admin")){
-                HttpSession session=request.getSession();
-                RequestDispatcher requestDispatcher=session.getServletContext().getRequestDispatcher("admin.jsp");
-                requestDispatcher.forward(request,response);
-                break;
-            } else if (user.getName().equals(username)&&user.getPassword().equals(pass)&&user.getRole().getRoleName().equals("User")) {
-                HttpSession session=request.getSession();
-                RequestDispatcher requestDispatcher=session.getServletContext().getRequestDispatcher("index.jsp");
-                requestDispatcher.forward(request,response);
-                break;
-            }else{
-                RequestDispatcher requestDispatcher=request.getRequestDispatcher("login.jsp");
-                requestDispatcher.forward(request,response);
-                break;
-            }
+        if(user.getRole().getRoleName().equals("Admin")){
+            HttpSession session= req.getSession();
+            resp.sendRedirect("/web/admin.jsp");
+        }else if (user.getRole().getRoleName().equals("User")){
+            HttpSession session=req.getSession();
+            resp.sendRedirect("/web/index.jsp");
+        }else{
+            HttpSession session=req.getSession();
+            resp.getWriter().println("Đăng nhập thất bại");
+        }
 
         }
 
-    }
+
+
+
+
     protected void createCookies(HttpServletRequest request,HttpServletResponse response,String username,String password){
         String remember=request.getParameter("checkbox");
         if(remember!=null) {
@@ -57,5 +51,10 @@ public class LoginController extends HttpServlet {
             response.addCookie(user);
             response.addCookie(pass);
         }
+    }
+
+    public static void main(String[] args) {
+
+
     }
 }

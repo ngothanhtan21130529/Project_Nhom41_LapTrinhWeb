@@ -28,18 +28,19 @@ public class User implements Serializable {
         this.updatedAt = updatedAt;
         this.status = status;
         this.avatar = avatar;
-        this.role=role;
+        this.role = role;
         this.birthday = birthday;
     }
 
-    public User(String userName,String password) {
-        this.userName=userName;
-        this.password=password;
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
     }
-    public User(String userName,String password,Role role){
-        this.userName=userName;
-        this.password=password;
-        this.role=role;
+
+    public User(String userName, String password, Role role) {
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
     }
 
     public int getId() {
@@ -137,4 +138,18 @@ public class User implements Serializable {
     public void setBirthday(Timestamp birthday) {
         this.birthday = birthday;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        User name = new User("1", "2", new Role(1, "admin"));
+    }
 }
+

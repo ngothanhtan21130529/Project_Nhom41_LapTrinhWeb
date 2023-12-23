@@ -21,7 +21,7 @@
         <div class="img-ttn">
         <img src="./img/banner/TTN.png">
         </div>
-        <form action="./lo_gin" method="post">
+        <form action="<%=request.getContextPath()%>/login" method="post">
             <div id="logo">
                 <img src="./img/logo.png" alt="logo">
             </div>
@@ -39,13 +39,6 @@
             <div id="login">
                 <button id="submit"><h2>Đăng nhập</h2></button>
             </div>
-
-            <div id="google">
-                <button id="google_btn">
-                    <i class="fab fa-google"></i>
-                    <h3>Đăng nhập với google</h3>
-                </button>
-            </div>
             <div id="register_forget">
                 <div id="register">
                     <a href="register.jsp">Đăng ký</a>
@@ -55,7 +48,7 @@
                 </div>
             </div>
             <div id="remember">
-                <input type="checkbox" id="checkbox">
+                <input type="checkbox" id="checkbox" name="checkbox">
                 <h3 id="text_ghi_nho">Ghi nhớ đăng nhập</h3>
             </div>
         </form>

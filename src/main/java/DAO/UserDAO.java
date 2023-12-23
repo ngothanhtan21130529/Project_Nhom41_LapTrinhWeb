@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO implements DAOInterface<User> {
-    public static UserDAO getInstance(){
+    public static UserDAO getInstance() {
         return new UserDAO();
     }
+
     @Override
     public int insert(User user) throws SQLException {
 
@@ -39,16 +40,28 @@ public class UserDAO implements DAOInterface<User> {
     public ArrayList<User> selectByCondition(String condition) {
         return null;
     }
-    public List<User> selectInformation() throws SQLException {
-        List<User> userlist=new ArrayList<>();
-        String sql="Select username,password,roles.name from users join roles on users.role_id=roles.id where username=? and password=?";
-        PreparedStatement preparedStatement= MySqlConnection.getConnection().prepareStatement(sql);
-        ResultSet rs=preparedStatement.executeQuery(sql);
-        while(rs.next()){
-            User user=new User(rs.getString(1),rs.getString(2),new Role(rs.getString(3)));
-            userlist.add(user);
+
+    public static User  selectInformation(String username,String password) throws SQLException {
+
+        String sql = "Select username,password,role_name from users join roles on users.roles_id=roles.id where username=? and password=?";
+        PreparedStatement preparedStatement = MySqlConnection.getConnection().prepareStatement(sql);
+        preparedStatement.setString(1,username);
+        preparedStatement.setString(2,password);
+        ResultSet rs = preparedStatement.executeQuery();
+        User user = null;
+        while (rs.next()) {
+
+         user=   new User(rs.getString("username"),rs.getString("password"),new Role(rs.getString("role_name")));
 
         }
-        return  userlist;
+        rs.close();
+       return user;
     }
-}
+
+
+    public static void main(String[] args) throws SQLException {
+        System.out.println(selectInformation("tranthaihung2k4","tranthaihung2k4"));
+    }
+
+    }
+
