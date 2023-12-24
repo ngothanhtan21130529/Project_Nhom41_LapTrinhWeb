@@ -1,3 +1,9 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Category" %>
+<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="DAO.ProductDAO" %>
+<%@ page import="DAO.CategoryDAO" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -46,7 +52,7 @@
     <div class="ui">
         <div class="nav-bar">
             <div class="go-to-homepage-admin gray-color">
-                <div class="hompage-admin" onclick="changeToHomepage()">
+                <div class="hompage-admin">
                     <a>
                         <i class="fa-solid fa-house fa-sm" style="color: #428bca;"></i>
                         Trang chủ admin
@@ -157,7 +163,7 @@
             <div class="categories-tab">
                 <div class="categories-main-tab content-tab">
                     <div class="categories-tab-function-box function-box">
-                        <form>
+                        <form action="" method="get">
                             <div class="searching-box box">
                                 <input type="text" placeholder="Tìm kiếm">
                             </div>
@@ -190,22 +196,43 @@
                                 <th>Hiển thị</th>
                                 <th>Tác vụ</th>
                             </tr>
+                            <%
+                                ArrayList<Category> categories = (ArrayList<Category>) request.getAttribute("categoriesList");
+                                for (int i = 0; i < categories.size(); i++) {
+                            %>
                             <tr>
-                                <td>1</td>
-                                <td>Đá quý</td>
-                                <td>
-                                    <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                                <td><%=categories.get(i).getId()%>
                                 </td>
-                                <td>14-12-2023</td>
-                                <td>14-12-2023</td>
-                                <td>14-12-2023</td>
-                                <td><input type="checkbox" name=""></td>
+                                <td><%=categories.get(i).getCategoryName()%>
+                                </td>
+                                <td>
+                                    <img src="<%=categories.get(i).getImgURL()%>" alt="">
+                                </td>
+                                <td><%=categories.get(i).getCreatedAt()%>
+                                </td>
+                                <td><%=categories.get(i).getUpdatedAt()%>
+                                </td>
+                                <td><%=categories.get(i).getDeletedAt()%>
+                                </td>
+                                <td>
+                                    <%=categories.get(i).getStatus()%>
+                                </td>
                                 <td>
                                     <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
                                     <i class="fa-solid fa-x fa-lg" style="color: #5b85cd;"></i>
                                 </td>
                             </tr>
+                            <%}%>
                         </table>
+                        <div class="pagination">
+                            <%
+                                int end = (int) request.getAttribute("endPage");
+                                for (int i = 1; i <= end; i++) {
+                            %>
+                            <a href="ListCategory?index=<%=i%>"><%=i%>
+                            </a>
+                            <%}%>
+                        </div>
                     </div>
                 </div>
                 <div class="categories-adding-tab content-tab">
@@ -319,7 +346,7 @@
                                 <td>Đá quý</td>
                                 <td>Đá quý loại A</td>
                                 <td>
-                                    <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                                    <img src="../img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
                                 </td>
                                 <td>12000000</td>
                                 <td><input type="checkbox" name=""></td>
@@ -361,7 +388,7 @@
                             </p>
                         </div>
                         <div class="img-current-url">
-                            <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                            <img src="../img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
                         </div>
                         <div class="img-adding-label">
                             Hình ảnh:
@@ -453,7 +480,7 @@
                         </p>
                     </div>
                     <div class="slide-show-current-img-1-input">
-                        <img src="img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
+                        <img src="../img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
                     </div>
                     <div class="slide-show-pic-1-label">
                         <p>
@@ -471,7 +498,7 @@
                         </p>
                     </div>
                     <div class="slide-show-current-img-2-input">
-                        <img src="img/spinel-tim-anh-kim-2.jpg" alt="">
+                        <img src="../img/spinel-tim-anh-kim-2.jpg" alt="">
                     </div>
                     <div class="slide-show-pic-2-label">
                         <p>
@@ -489,7 +516,7 @@
                         </p>
                     </div>
                     <div class="slide-show-current-img-3-input">
-                        <img src="img/spinel-tim-anh-kim-3.jpg" alt="">
+                        <img src="../img/spinel-tim-anh-kim-3.jpg" alt="">
                     </div>
                     <div class="slide-show-pic-3-label">
                         <p>
@@ -507,7 +534,7 @@
                         </p>
                     </div>
                     <div class="slide-show-current-img-4-input">
-                        <img src="img/spinel-tim-anh-kim-4.jpg" alt="">
+                        <img src="../img/spinel-tim-anh-kim-4.jpg" alt="">
                     </div>
                     <div class="slide-show-pic-4-label">
                         <p>
@@ -955,119 +982,6 @@
                     </div>
                 </div>
             </div>
-            <div class="information-tab content-tab">
-                <div class="company-information">
-                    <div class="company-name-label">
-                        <p>
-                            Tên công ty:
-                        </p>
-                    </div>
-                    <div class="company-name-input">
-                        <input type="text" class="company-name-input" value="công ty đá quý NLU">
-                    </div>
-                    <div class="company-address-label">
-                        <p>
-                            Địa chỉ công ty:
-                        </p>
-                    </div>
-                    <div class="company-address-input">
-                        <input type="text" class="company-address-input"
-                               value="Khu phố 6, phường Linh Trung, tp Thủ đức">
-                    </div>
-                    <div class="favicon-label">
-                        <p>
-                            Favicon:
-                        </p>
-                    </div>
-                    <div class="favicon-img">
-                        <img src="img/favicon.png" alt="">
-                    </div>
-                    <div class="browser-icon-label">
-                        <p>
-                            Icon trình duyệt:
-                        </p>
-                    </div>
-                    <div class="browser-icon-choosing-box">
-                        <form action="">
-                            <input class="choosing-button" type="file" name="img" accept="image/*">
-                        </form>
-                    </div>
-                    <div class="general-information-label">
-                        THÔNG TIN CHUNG
-                    </div>
-                    <div class="email-label">
-                        <p>
-                            Email:
-                        </p>
-                    </div>
-                    <div class="email-input">
-                        <form action="">
-                            <input type="text" class="email-input" value="info@st.hcmuaf.edu.vn">
-                        </form>
-                    </div>
-                    <div class="copyright-label">
-                        <p>
-                            Bản quyền:
-                        </p>
-                    </div>
-                    <div class="copyright-input">
-                        <form action="">
-                            <input type="text" class="copyright-input" value="Bản quyền thuộc về NLU">
-                        </form>
-                    </div>
-                    <div class="facebook-link-label">
-                        <p>
-                            Facebook:
-                        </p>
-                    </div>
-                    <div class="facebook-link-input">
-                        <form action="">
-                            <input type="text" class="facebook-link-input"
-                                   value="https://www.facebook.com/NongLamUniversity">
-                        </form>
-                    </div>
-                    <div class="tiktok-link-label">
-                        <p>
-                            Tiktok:
-                        </p>
-                    </div>
-                    <div class="tiktok-link-input">
-                        <form action="">
-                            <input type="text" class="tiktok-link-input"
-                                   value="https://www.tiktok.com/@nonglam.university">
-                        </form>
-                    </div>
-                    <div class="youtube-link-label">
-                        <p>
-                            Youtube:
-                        </p>
-                    </div>
-                    <div class="youtube-link-input">
-                        <form action="">
-                            <input type="text" class="youtube-link-input"
-                                   value="https://www.youtube.com/@NongLamUniversity">
-                        </form>
-                    </div>
-                    <div class="iframe-map-label">
-                        <p>
-                            Iframe Map:
-                        </p>
-                    </div>
-                    <div class="iframe-map-input">
-                        <form action="">
-                            <input type="text">
-                        </form>
-                    </div>
-                    <div class="save-or-exit-box">
-                        <button class="save-button">
-                            Lưu
-                        </button>
-                        <button class="exit-button">
-                            Thoát
-                        </button>
-                    </div>
-                </div>
-            </div>
             <div class="information-management">
                 <div class="order-list content-tab">
                     <div class="order-list-function-box function-box">
@@ -1189,7 +1103,6 @@
                 <div class="user-management-table">
                     <table>
                         <tr>
-                            <th><input type="checkbox" name=""></th>
                             <th>ID</th>
                             <th>Họ tên</th>
                             <th>Chức vụ</th>
@@ -1197,7 +1110,6 @@
                             <th>Tác vụ</th>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name=""></td>
                             <td>1</td>
                             <td>Administrator</td>
                             <td>Administrator</td>
@@ -1278,7 +1190,7 @@
         </div>
     </div>
 </div>
-<script src="./js/admin.js"></script>
+<script src="${pageContext.request.contextPath}/js/admin.js" type="text/javascript"></script>
 </body>
 
 </html>

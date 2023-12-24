@@ -15,7 +15,7 @@ public class ProductDAO implements DAOInterface<Product> {
     }
 
     @Override
-    public int insert(Product product) throws SQLException {
+    public int insert(Product product){
         return 0;
     }
 
@@ -47,7 +47,7 @@ public class ProductDAO implements DAOInterface<Product> {
                     "FROM products p " +
                     "JOIN images i ON p.thumbnail_id = i.id";
             PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery(sql );
+            ResultSet rs = ps.executeQuery(sql);
             while (rs.next()){
                 int id = rs.getInt("id");
                 String productName = rs.getString("product_name");

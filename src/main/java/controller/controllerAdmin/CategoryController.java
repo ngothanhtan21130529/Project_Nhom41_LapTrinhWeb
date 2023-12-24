@@ -11,14 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/category")
 public class CategoryController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryDAO categoryDAO = new CategoryDAO();
         ArrayList<Category> categories = CategoryDAO.getListCategory();
+        int index=1;
         request.setAttribute("categories", categories);
-
+        request.setAttribute("index", index);
         request.getRequestDispatcher("/web/category.jsp").forward(request, response);
     }
 

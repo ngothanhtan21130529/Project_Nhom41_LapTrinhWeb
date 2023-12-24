@@ -12,6 +12,7 @@ public class Category implements Serializable {
     private String status;
     private int imgID;
     private String imgURL;
+    private Image image;
 
     public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, int imgID) {
         this.id = id;
@@ -23,13 +24,43 @@ public class Category implements Serializable {
         this.imgID = imgID;
     }
 
+    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, Image image) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+        this.status = status;
+        this.image = image;
+    }
+
     public Category(int id, String categoryName, String imgURL) {
         this.id = id;
         this.categoryName = categoryName;
         this. imgURL = imgURL;
     }
 
+    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, String imgURL) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+        this.status = status;
+        this.imgURL = imgURL;
+    }
 
+    public Category(int id) {
+        this.id = id;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
 
     public int getId() {
         return id;
@@ -93,5 +124,12 @@ public class Category implements Serializable {
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + categoryName + " " + createdAt +
+                " " + updatedAt + " " + deletedAt + " " + status +
+                " " + imgID + " " + imgURL;
     }
 }

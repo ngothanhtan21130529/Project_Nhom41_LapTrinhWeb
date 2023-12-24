@@ -23,7 +23,7 @@ public class SearchController extends HttpServlet {
             int count= ProductDAO.getInstance().count(txtSearch);
             String indexString=request.getParameter("index");
             int index=Integer.parseInt(indexString);
-            int pageSize=3;
+            int pageSize=2;
             int endPage=0;
             endPage=count/pageSize;
             if(count%pageSize!=0) endPage++;
