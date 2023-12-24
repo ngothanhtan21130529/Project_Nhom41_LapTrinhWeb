@@ -38,8 +38,6 @@ public class CommentDAO implements DAOInterface{
     }
     public void insertComment(Comment comment) throws SQLException {
        Connection c= MySqlConnection.getConnection();
-       String sql="INSERT INTO comment() values(?,?,?)";
-        PreparedStatement preparedStatement=c.prepareStatement(sql);
-        preparedStatement.executeUpdate();
+
     }
 }

@@ -25,7 +25,13 @@ public class Feedback implements Serializable {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
-
+    public Feedback(String fullName, String email, String phone, String title, String content){
+        this.fullName = fullName;
+        this.email = email;
+        this.phone = phone;
+        this.title = title;
+        this.content = content;
+    }
     public int getId() {
         return id;
     }

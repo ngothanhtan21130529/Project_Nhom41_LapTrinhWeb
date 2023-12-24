@@ -18,6 +18,7 @@ public class LoginController extends HttpServlet {
         //lấy giá trị đầu vào từ form
         String username=req.getParameter("username");
         String pass=req.getParameter("password");
+        boolean remember= Boolean.parseBoolean(req.getParameter("checkbox"));
         //tạo UserDAO
         UserDAO userDAO=UserDAO.getInstance();
         User user= null;
@@ -30,8 +31,17 @@ public class LoginController extends HttpServlet {
             HttpSession session= req.getSession();
             resp.sendRedirect("/web/admin.jsp");
         }else if (user.getRole().getRoleName().equals("User")){
+            if(remember){
+
+                Cookie account=new Cookie("username",username);
+                Cookie password=new Cookie("password",pass);
+                account.setMaxAge(12*24);
+                password.setMaxAge(12*24);
+                resp.addCookie(account);
+                resp.addCookie(password);
+            }
             HttpSession session=req.getSession();
-            resp.sendRedirect("/web/index.jsp");
+            resp.sendRedirect("/web/admin.jsp");
         }else{
             HttpSession session=req.getSession();
             resp.getWriter().println("Đăng nhập thất bại");
@@ -43,15 +53,7 @@ public class LoginController extends HttpServlet {
 
 
 
-    protected void createCookies(HttpServletRequest request,HttpServletResponse response,String username,String password){
-        String remember=request.getParameter("checkbox");
-        if(remember!=null) {
-            Cookie user = new Cookie("username", username);
-            Cookie pass = new Cookie("pass", password);
-            response.addCookie(user);
-            response.addCookie(pass);
-        }
-    }
+
 
     public static void main(String[] args) {
 
