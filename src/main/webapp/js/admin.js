@@ -1,3 +1,5 @@
+document.querySelector('.categories-management-button').addEventListener('click', scrollDownCategoriesManagement);
+
 function changeToHomepage() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -6,20 +8,16 @@ function changeToHomepage() {
     document.querySelector('.hompage-admin-tab').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ website';
 }
+
 function changeToCategoriesTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
         e.style.display = 'none';
     });
-    // let colorText = document.querySelector('.category-type');
-    // if(colorText.style.color==''){
-    //     colorText.style.color='#428bca'
-    // }else{
-    //     colorText.style.color='';
-    // }
     document.querySelector('.categories-main-tab').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị danh mục > Loại danh mục';
 }
+
 function changeToCategoriesAddingTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -30,6 +28,7 @@ function changeToCategoriesAddingTab() {
 
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị danh mục > Loại danh mục > Sửa';
 }
+
 function changeToProductTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -38,6 +37,7 @@ function changeToProductTab() {
     document.querySelector('.product-main-tab').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị danh mục > Sản phẩm';
 }
+
 function changeToProductAddingTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -46,14 +46,43 @@ function changeToProductAddingTab() {
     document.querySelector('.product-adding-tab').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị danh mục > Sản phẩm > Sửa';
 }
-function changeToSlideShowMangement() {
+
+function changeToProductSlideShow() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
         e.style.display = 'none';
     });
-    document.querySelector('.slide-show-tab').style.display = 'grid';
+    document.querySelector('.product-slide-show').style.display = 'grid';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị giao diện > Slide Show';
 }
+
+function changeToJewelrySlideShow() {
+    let contentTab = document.querySelectorAll('.content-tab');
+    contentTab.forEach(e => {
+        e.style.display = 'none';
+    });
+    document.querySelector('.jewelry-slide-show').style.display = 'grid';
+    document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị giao diện > Slide Show';
+}
+
+function changeToGemSlideShow() {
+    let contentTab = document.querySelectorAll('.content-tab');
+    contentTab.forEach(e => {
+        e.style.display = 'none';
+    });
+    document.querySelector('.gem-slide-show').style.display = 'grid';
+    document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị giao diện > Slide Show';
+}
+
+function changeToHomePageSlideShow() {
+    let contentTab = document.querySelectorAll('.content-tab');
+    contentTab.forEach(e => {
+        e.style.display = 'none';
+    });
+    document.querySelector('.homepage-slide-show').style.display = 'grid';
+    document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị giao diện > Slide Show';
+}
+
 function changeToOnlineSupportTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -62,6 +91,7 @@ function changeToOnlineSupportTab() {
     document.querySelector('.online-support-tab').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị giao diện > Hỗ trợ trực tuyến';
 }
+
 function changeToInformationTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -70,6 +100,7 @@ function changeToInformationTab() {
     document.querySelector('.information-tab').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị giao diện > Thông tin';
 }
+
 function changeToOrderListTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -78,6 +109,7 @@ function changeToOrderListTab() {
     document.querySelector('.order-list').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị thông tin > Danh sách đơn hàng';
 }
+
 function changeToCustomerContactTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -86,6 +118,7 @@ function changeToCustomerContactTab() {
     document.querySelector('.customer-contact').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị thông tin > Khách hàng liên hệ';
 }
+
 function changeToUserManagement() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -94,6 +127,7 @@ function changeToUserManagement() {
     document.querySelector('.user-management-tab').style.display = 'block';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Cấu hình người dùng > Quản lý người dùng';
 }
+
 function changeToUserInformationTab() {
     let contentTab = document.querySelectorAll('.content-tab');
     contentTab.forEach(e => {
@@ -102,42 +136,47 @@ function changeToUserInformationTab() {
     document.querySelector('.user-information').style.display = 'grid';
     document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Cấu hình người dùng > Thông tin người dùng';
 }
-function scrollDownCategoriesManagement(){
+
+
+function scrollDownCategoriesManagement() {
     let screens = document.querySelectorAll('.categories-tab-element');
-    screens.forEach(e=>{
+    screens.forEach(e => {
         if (e.style.display == 'none') {
             e.style.display = 'block';
-        }else{
+        } else {
             e.style.display = 'none';
         }
     });
 }
-function scrollDownUIMangement(){
+
+function scrollDownUIMangement() {
     let screens = document.querySelectorAll('.ui-tab-element');
-    screens.forEach(e=>{
+    screens.forEach(e => {
         if (e.style.display == 'none') {
             e.style.display = 'block';
-        }else{
+        } else {
             e.style.display = 'none';
         }
     });
 }
-function scrollDownInformationManagement(){
+
+function scrollDownInformationManagement() {
     let screens = document.querySelectorAll('.infor-tab-element');
-    screens.forEach(e=>{
+    screens.forEach(e => {
         if (e.style.display == 'none') {
             e.style.display = 'block';
-        }else{
+        } else {
             e.style.display = 'none';
         }
     });
 }
-function scrollDownUserConfiguration(){
+
+function scrollDownUserConfiguration() {
     let screens = document.querySelectorAll('.user-config-element');
-    screens.forEach(e=>{
+    screens.forEach(e => {
         if (e.style.display == 'none') {
             e.style.display = 'block';
-        }else{
+        } else {
             e.style.display = 'none';
         }
     });
