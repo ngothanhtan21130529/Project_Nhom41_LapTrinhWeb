@@ -41,7 +41,7 @@ header .box .logo img{
 header .box nav{
     float: left;
     margin-top: 30px;
-    padding-left: 50px;
+    padding-left: 20px;
     width: 55%;
 }
 
@@ -71,6 +71,8 @@ header .box nav .navigation-list .navigation-item .dropdown-gem{
     z-index: 1;
     columns: 2; /* Chia thành 2 cột */
     column-gap: 20px; /* Khoảng cách giữa các cột */
+    padding: 0;
+    margin: 0;
 }
 
 header .box nav .navigation-list .navigation-item .dropdown-gem .dropdown-item{
