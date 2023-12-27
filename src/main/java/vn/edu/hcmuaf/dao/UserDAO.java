@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO implements DAOInterface<User> {
-    public static UserDAO getInstance() {
+
+    public static UserDAO getInstance(){
         return new UserDAO();
     }
 
@@ -41,51 +42,17 @@ public class UserDAO implements DAOInterface<User> {
         return null;
     }
 
-    public  User selectInformation(String username, String password) throws SQLException {
-
-        String sql = "Select username,password,role_name from users join roles on users.roles_id=roles.id where username=? and password=?";
-        PreparedStatement preparedStatement = MySqlConnection.getConnection().prepareStatement(sql);
-        preparedStatement.setString(1, username);
-        preparedStatement.setString(2, password);
-        ResultSet rs = preparedStatement.executeQuery();
-        User user = null;
-        while (rs.next()) {
-            user = new User(rs.getString("username"), rs.getString("password"), new Role(rs.getString("role_name")));
-        }
-        rs.close();
-        preparedStatement.close();
-        MySqlConnection.getConnection().close();
-        return user;
-    }
-
-    public  boolean insertUser(User user) throws SQLException {
-        String sql = "insert into users(username,password) values(?,?)";
-        PreparedStatement pr=MySqlConnection.getConnection().prepareStatement(sql);
-        pr.setString(1, user.getUserName());
-        pr.setString(2, user.getPassword());
-        int res=pr.executeUpdate();
-        if(res>0){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-    public String getEmail(String email) throws SQLException {
-        String sql="Select email from users where email=?";
-        PreparedStatement pr=MySqlConnection.getConnection().prepareStatement(sql);
-        pr.setString(1,email);
-        ResultSet rs=pr.executeQuery();
-        String res=null;
+    public List<User> selectInformation() throws SQLException {
+        List<User> userlist=new ArrayList<>();
+        String sql="Select username,password,roles.name from users join roles on users.role_id=roles.id where username=? and password=?";
+        PreparedStatement preparedStatement= MySqlConnection.getConnection().prepareStatement(sql);
+        ResultSet rs=preparedStatement.executeQuery(sql);
         while(rs.next()){
-             res=rs.getString("email");
+            User user=new User(rs.getString(1),rs.getString(2),new Role(rs.getString(3)));
+            userlist.add(user);
+
         }
-        return res;
+        return  userlist;
     }
-
-    public static void main(String[] args) throws SQLException {
-
-    }
-
 }
 

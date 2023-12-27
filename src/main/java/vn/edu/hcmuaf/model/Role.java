@@ -29,10 +29,4 @@ public class Role implements Serializable {
         this.roleName = roleName;
     }
 
-    @Override
-    public String toString() {
-        return "Role{" +
-                "roleName='" + roleName + '\'' +
-                '}';
-    }
 }
