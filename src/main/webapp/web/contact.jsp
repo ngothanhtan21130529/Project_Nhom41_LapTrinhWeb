@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên hệ</title>
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/contact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<%--    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">--%>
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="box">
                 <div class="logo">
-                    <img src="./img/logo.png" alt="Logo" class="logo-img"/>
+                    <img src="<%=request.getContextPath()%>/img/logo.png" alt="Logo" class="logo-img"/>
                 </div>
                 <nav class="navigation">
                     <ul class="navigation-list">
@@ -115,7 +115,7 @@
                             <div class="header__drop-list">
                                 <div class="header__mt">
                                     <img
-                                            src="./images/cart-empty.png"
+                                            src="<%=request.getContextPath()%>/images/cart-empty.png"
                                             alt="Giỏ hàng trống"
                                             class="header__mt-img"
                                     />
@@ -130,7 +130,7 @@
                                     <div class="header__product-list">
                                         <div class="header__product-item">
                                             <img
-                                                    src="./img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg"
+                                                    src="<%=request.getContextPath()%>/img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg"
                                                     alt="Header product card 1"
                                                     class="header__product-item-img"
                                             />
@@ -143,7 +143,7 @@
                                         </div>
                                         <div class="header__product-item">
                                             <img
-                                                    src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
+                                                    src="<%=request.getContextPath()%>/img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
                                                     alt="Header product card 1"
                                                     class="header__product-item-img"
                                             />
@@ -156,7 +156,7 @@
                                         </div>
                                         <div class="header__product-item">
                                             <img
-                                                    src="./img/gemstone/jewels/Nhan-nam-Kim-Cuong-Vang-trang-Au18k-MA-K-6000000.jpg"
+                                                    src="<%=request.getContextPath()%>/img/gemstone/jewels/Nhan-nam-Kim-Cuong-Vang-trang-Au18k-MA-K-6000000.jpg"
                                                     alt="Header product card 1"
                                                     class="header__product-item-img"
                                             />
@@ -182,7 +182,7 @@
                                         </div>
                                         <div class="header__product-item">
                                             <img
-                                                    src="./img/gemstone/diamond/Anh-dai-dien-Kim-Cuong-tu-nhien.jpg"
+                                                    src="<%=request.getContextPath()%>/img/gemstone/diamond/Anh-dai-dien-Kim-Cuong-tu-nhien.jpg"
                                                     alt="Header product card 1"
                                                     class="header__product-item-img"
                                             />
@@ -213,7 +213,7 @@
     </header>
     <div class="place">
         <div class="place-img">
-            <img src="img/dai-hoc-long-lam.jpg" alt="">
+            <img src="<%=request.getContextPath()%>img/dai-hoc-long-lam.jpg" alt="">
         </div>
         <div class="place-map">
             <iframe

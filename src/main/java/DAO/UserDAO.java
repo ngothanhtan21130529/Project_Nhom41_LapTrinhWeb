@@ -41,7 +41,7 @@ public class UserDAO implements DAOInterface<User> {
         return null;
     }
 
-    public static User selectInformation(String username, String password) throws SQLException {
+    public  User selectInformation(String username, String password) throws SQLException {
 
         String sql = "Select username,password,role_name from users join roles on users.roles_id=roles.id where username=? and password=?";
         PreparedStatement preparedStatement = MySqlConnection.getConnection().prepareStatement(sql);
@@ -50,11 +50,11 @@ public class UserDAO implements DAOInterface<User> {
         ResultSet rs = preparedStatement.executeQuery();
         User user = null;
         while (rs.next()) {
-
             user = new User(rs.getString("username"), rs.getString("password"), new Role(rs.getString("role_name")));
-
         }
         rs.close();
+        preparedStatement.close();
+        MySqlConnection.getConnection().close();
         return user;
     }
 
@@ -84,7 +84,7 @@ public class UserDAO implements DAOInterface<User> {
     }
 
     public static void main(String[] args) throws SQLException {
-        System.out.println(selectInformation("tranthaihung2k4", "tranthaihung2k4"));
+
     }
 
 }

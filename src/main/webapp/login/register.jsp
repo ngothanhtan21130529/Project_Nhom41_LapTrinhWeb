@@ -15,50 +15,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
-    <link href="../css/register.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/css/register.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 <div id="container">
     <div class="img-register">
-        <img src="./img/banner/TTN-2.png">
+        <img src="<%=request.getContextPath()%>/img/banner/TTN-2.png">
     </div>
     <form action="<%=request.getContextPath()%>/register" method="post">
         <div class="logo">
-            <img src="img/logo.png">
+            <img src="<%=request.getContextPath()%>/img/logo.png">
         </div>
-        <div id="dang_ki">
+        <div id="register">
             <h2>Đăng ký</h2>
         </div>
-        <div id="thongtin">
-            <%--                <label for="hoten">Họ và tên:</label>--%>
+        <div id="inform">
+            <label for="fullname">Họ và tên:</label>
             <br>
-            <input type="text" name="fullname" placeholder="Họ tên">
+            <input type="text" name="fullname" placeholder="Họ tên" id="fullname">
             <br>
-            <%--                <label for="taikhoan">Tài khoản:</label>--%>
+            <label for="user">Tài khoản:</label>
             <br>
-            <input type="text" name="user" placeholder="Tài khoản">
+            <input type="text" name="user" placeholder="Tài khoản" id="user">
             <br>
-            <%--                <label for="matkhau">Mật khẩu:</label>--%>
+            <label for="password">Mật khẩu:</label>
             <br>
-            <input type="password" name="pass" placeholder="Mật khẩu">
+            <input type="password" name="pass" placeholder="Mật khẩu" id="password">
             <br>
-            <%--                <label for="nhaplai">Nhập lại mật khẩu:</label>--%>
+            <label for="repeat">Nhập lại mật khẩu:</label>
             <br>
-            <input type="password" name="repeat" placeholder="Nhập lại mật khẩu">
+            <input type="password" name="repeat" placeholder="Nhập lại mật khẩu" id="repeat">
             <br>
-            <%--                <label for="e_mail">Email:</label>--%>
+            <label for="email">Email:</label>
             <br>
-            <input type="email" name="email" placeholder="Nhập email">
+            <input type="email" name="email" placeholder="Nhập email" id="email">
             <br>
-            <%--                <label for="ngaysinh">Ngày sinh:</label>--%>
+            <label for="date">Ngày sinh:</label>
             <br>
-            <input type="date" name="date">
+            <input type="date" name="date" id="date">
             <br>
 
-            <%--                <label for="dienthoai">Số điện thoại:</label>--%>
+            <label for="phone">Số điện thoại:</label>
             <br>
-            <input type="tel" name="phone">
+            <input type="tel" name="phone" id="phone">
             <br>
             <div class="commit">
                 <input type="checkbox" name="policy" id="policy">Tôi cam kết đã đọc và chấp nhận tất cả điều khoản
@@ -66,7 +66,7 @@
             </div>
             <button id="btn">Đăng ký</button>
         </div>
-        <div><%=(session!=null)&&(String)session.getAttribute("announce")!=null?(String)session.getAttribute("announce"):""%></div>
+
 
     </form>
 </div>

@@ -5,25 +5,19 @@
     <meta charset="UTF-8">
     <title>ChangePassword</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="./css/changepass.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/change-pass.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="container">
     <form action="<%=request.getContextPath()%>/changepassword" method="post">
         <section id="head"><h1>Đổi mật khẩu</h1></section>
-        <label for="email">Nhap Email</label>
-        <br>
+        <label for="email" class="email-label">Nhập Email</label>
+        <label for="currentpassword" class="current-password-label">Mật khẩu cũ</label>
         <input type="email" name="email" id="email" placeholder="Email">
-        <label for="currentpassword">Mật khẩu cũ</label>
-        <br>
         <input type="password" name="currentpassword" placeholder="Mật khẩu cũ" id="currentpassword">
-        <br>
-        <label for="newpassword">Mật khẩu mới</label>
-        <br>
-        <input type="password" name="newpassword" placeholder="Mật khẩu mới " id="newpassword">
-        <br>
-        <label for="repeatpassword">Nhập lại mật khẩu mới</label>
-        <br>
+        <label for="newpassword" class="new-password-label">Mật khẩu mới</label>
+        <label for="repeatpassword" class="retype-password-label">Nhập lại mật khẩu mới</label>
+        <input type="password" name="newpassword" placeholder="Mật khẩu mới" id="newpassword">
         <input type="password" name="repeatpassword" placeholder="Mật khẩu mới" id="repeatpassword">
         <div id="btn">
             <button>

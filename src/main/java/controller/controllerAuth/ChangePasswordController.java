@@ -26,9 +26,11 @@ public class ChangePasswordController extends HttpServlet {
             if(userDAO.getEmail(mail).equals(mail)){
                 if(!currentpass.equals(newpass)&&newpass.equals(repeatpassword)){
                     HttpSession session= req.getSession();
-                    req.setAttribute("account",mail);
-                    req.setAttribute("pass",newpass);
-                    resp.sendRedirect(req.getContextPath()+"/result");
+                    if(session!=null){
+                        session.setAttribute("account",mail);
+                        session.setAttribute("pass",newpass);
+                        resp.sendRedirect(req.getContextPath()+"/result");
+                    }
                 }
             }else{
                 resp.getWriter().println("That bai");

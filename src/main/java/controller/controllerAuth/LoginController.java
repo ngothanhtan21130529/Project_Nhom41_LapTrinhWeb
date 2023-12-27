@@ -19,35 +19,48 @@ import java.util.Properties;
 public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //get values from form
-        String username = req.getParameter("username");
-        String pass = req.getParameter("password");
-        boolean remember = Boolean.parseBoolean(req.getParameter("checkbox"));
-        //create object userDAO
-        UserDAO userDAO = UserDAO.getInstance();
-        User user = null;
+
         try {
-            user = userDAO.selectInformation(username, pass);
+            checkLogin(req, resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
         }
-        //admin role
-        if (user.getRole().getRoleName().equals("Admin")) {
-            HttpSession session = req.getSession();
-            resp.sendRedirect("/web/admin.jsp");
-            //user role
-        } else if (user.getRole().getRoleName().equals("User")) {
-            // set cookies
-            if (remember) {
-                Cookie account = new Cookie("username", username);
-                Cookie password = new Cookie("password", pass);
-                account.setMaxAge(12 * 24);
-                password.setMaxAge(12 * 24);
-                resp.addCookie(account);
-                resp.addCookie(password);
-                HttpSession httpSession = req.getSession();
-//                resp.sendRedirect("/web/verify.jsp");
-                //send otp to email
+
+
+    }
+
+    protected void checkLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException, MessagingException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String checkbox = request.getParameter("checkbox");
+        UserDAO userDAO = UserDAO.getInstance();
+        User user = userDAO.selectInformation(username, password);
+        if (username == null && password == null) {
+            HttpSession session = request.getSession();
+            if (session != null) {
+                session.setAttribute("announce", "Tài khoản mật khẩu không được để trống");
+                RequestDispatcher requestDispatcher = session.getServletContext().getRequestDispatcher(request.getContextPath() + "/login/login.jsp");
+                requestDispatcher.forward(request, response);
+            }
+        } else if (username.equals(user.getUserName()) && password.equals(user.getPassword())
+                && user.getRole().getRoleName().equals("Admin")) {
+            HttpSession session = request.getSession();
+            if (session != null) {
+                response.sendRedirect(request.getContextPath() + "/web/admin.jsp");
+            }
+
+
+        } else if (username.equals(user.getUserName()) && password.equals(user.getPassword()) &&
+                user.getRole().getRoleName().equals("User")) {
+            if (checkbox != null) {
+                setCookies(request, response, username, password);
+            }
+            HttpSession session = request.getSession();
+            if (session != null) {
+                session.setAttribute("name", username);
+
                 final String HOST_NAME = "smtp.gmail.com";
 
                 final int SSL_PORT = 465; // Port for SSL
@@ -57,8 +70,8 @@ public class LoginController extends HttpServlet {
                 final String APP_EMAIL = "ngoken102@gmail.com"; // your email
 
                 final String APP_PASSWORD = "vowv pfvn kavl hvqq"; // your password
-
-                final String RECEIVE_EMAIL = null;
+//them 1 buoc truy van la lay ra email cua tai khoan moi vua dang nhap
+                final String RECEIVE_EMAIL = "ngoken102@gmail.com";
                 // Get properties object
                 Properties props = new Properties();
                 props.put("mail.smtp.auth", "true");
@@ -68,7 +81,7 @@ public class LoginController extends HttpServlet {
                 props.put("mail.smtp.port", SSL_PORT);
 
                 // get Session
-                Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+                Session mail_session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
                         return new PasswordAuthentication(APP_EMAIL, APP_PASSWORD);
                     }
@@ -76,32 +89,36 @@ public class LoginController extends HttpServlet {
 
                 // compose message
                 try {
-                    MimeMessage message = new MimeMessage(session);
+                    MimeMessage message = new MimeMessage(mail_session);
                     message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
-                    message.setSubject("/web/verify.jsp");
-                    message.setText("test");
+                    message.setSubject("Xác thực email");
+                    String link="<a>http://localhost:8080/Project_Nhom_41_war/verify</a>";
+                    message.setContent(link,"text/html");
                     // send message
                     Transport.send(message);
-
-//                    resp.getWriter().println("ĐÃ TEST THÀNH CÔNG");
+                    response.getWriter().println("Gửi mail thành công");
                 } catch (MessagingException e) {
                     throw new RuntimeException(e);
                 }
-            } else {
-                HttpSession session = req.getSession();
-//                resp.sendRedirect("/web/verify.jsp");
+
             }
-            //if fail
-        } else {
-            HttpSession session = req.getSession();
-            resp.getWriter().println("Đăng nhập thất bại");
         }
 
+
     }
 
 
-    public static void main(String[] args) {
 
-
+    protected void setCookies(HttpServletRequest servletRequest, HttpServletResponse servletResponse, String username, String password) {
+        Cookie useraccount = new Cookie("username", username);
+        Cookie pass = new Cookie("pass", password);
+        useraccount.setMaxAge(24 * 24);
+        pass.setMaxAge(24 * 24);
+        servletResponse.addCookie(useraccount);
+        servletResponse.addCookie(pass);
     }
 }
+
+
+
+

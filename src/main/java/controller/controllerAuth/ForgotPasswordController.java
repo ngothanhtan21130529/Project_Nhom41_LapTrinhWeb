@@ -24,49 +24,49 @@ public class ForgotPasswordController extends HttpServlet {
         UserDAO userDAO = UserDAO.getInstance();
         try {
             String mail = userDAO.getEmail(email);
-          if(email.equals(mail)){
-              final String HOST_NAME = "smtp.gmail.com";
+            if (email.equals(mail)) {
+                final String HOST_NAME = "smtp.gmail.com";
 
-              final int SSL_PORT = 465; // Port for SSL
+                final int SSL_PORT = 465; // Port for SSL
 
-              final int TSL_PORT = 587; // Port for TLS/STARTTLS
+                final int TSL_PORT = 587; // Port for TLS/STARTTLS
 
-              final String APP_EMAIL = "ngoken102@gmail.com"; // your email
+                final String APP_EMAIL = "ngoken102@gmail.com"; // your email
 
-              final String APP_PASSWORD = "vowv pfvn kavl hvqq"; // your password
+                final String APP_PASSWORD = "vowv pfvn kavl hvqq"; // your password
 
-              final String RECEIVE_EMAIL = email;
-              // Get properties object
-              Properties props = new Properties();
-              props.put("mail.smtp.auth", "true");
-              props.put("mail.smtp.host", HOST_NAME);
-              props.put("mail.smtp.socketFactory.port", SSL_PORT);
-              props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-              props.put("mail.smtp.port", SSL_PORT);
+                final String RECEIVE_EMAIL = email;
+                // Get properties object
+                Properties props = new Properties();
+                props.put("mail.smtp.auth", "true");
+                props.put("mail.smtp.host", HOST_NAME);
+                props.put("mail.smtp.socketFactory.port", SSL_PORT);
+                props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+                props.put("mail.smtp.port", SSL_PORT);
 
-              // get Session
-              Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
-                  protected PasswordAuthentication getPasswordAuthentication() {
-                      return new PasswordAuthentication(APP_EMAIL, APP_PASSWORD);
-                  }
-              });
+                // get Session
+                Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(APP_EMAIL, APP_PASSWORD);
+                    }
+                });
 
-              // compose message
-              try {
-                  MimeMessage message = new MimeMessage(session);
-                  message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
-                  message.setSubject("Doi mat khau");
-                  message.setText(genenerateCode());
-                  // send message
-                  Transport.send(message);
+                // compose message
+                try {
+                    MimeMessage message = new MimeMessage(session);
+                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
+                    message.setSubject("Doi mat khau");
+                    message.setText(genenerateCode());
+                    // send message
+                    Transport.send(message);
 
-                  resp.getWriter().println("ĐÃ TEST THÀNH CÔNG");
-              } catch (MessagingException e) {
-                  throw new RuntimeException(e);
-              }
-          }else{
-              resp.getWriter().println("That bai");
-          }
+                    resp.getWriter().println("ĐÃ TEST THÀNH CÔNG");
+                } catch (MessagingException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                resp.getWriter().println("That bai");
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -78,10 +78,9 @@ public class ForgotPasswordController extends HttpServlet {
         Random random = new Random();
         String character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         String res = "";
-        StringBuilder sb = new StringBuilder(10);
-        for (int i = 0; i < sb.length(); i++) {
-            char randomchar = character.charAt(random.nextInt(character.length()));
-            res = String.valueOf(sb.append(randomchar));
+        for (int i = 0; i < 5; i++) {
+            char result=character.charAt(random.nextInt(character.length()));
+            res=res+result;
         }
         return res;
     }
