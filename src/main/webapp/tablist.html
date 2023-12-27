@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/tablist.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="tab">
+    <button class="tablinks" onclick="toggleTab(event, 'Tab1')"> Thông số kỹ thuật <i
+            class="fas fa-chevron-down"></i></button>
+    <div id="Tab1" class="tabcontent">
+        <div class="column">
+            <ul>
+                <li><span>Loại đá:</span> Ruby</li>
+                <li><span>Màu đá:</span> Đỏ</li>
+                <li><span>Trọng lượng:</span> 1 carat</li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul>
+                <li><span>Kích thước:</span> 2.5x12-3.5mm</li>
+                <li><span>Độ trong:</span> Chất ngọc làm sạch</li>
+                <li><span>Mô tả:</span> ...</li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="tablinks" onclick="toggleTab(event, 'Tab2')"> Bình luận <i class="fas fa-chevron-down"></i>
+    </button>
+    <div id="Tab2" class="tabcontent">
+        <div class="comment">
+            <div class="customer-name">tran tu nguyet</div>
+            <div class="media-upload">
+                <img class="image-upload" src="img/twitter_profile_image.png" alt="Image">
+                <video class="video-upload" controls>
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p class="comment-text">Đẹp dữ lắm.</p>
+            <button class="btn-comment" onclick="openPopup()">Viết bình luận</button>
+        </div>
+
+        <div id="popup" class="popup">
+            <button class="btn-close" onclick="closePopup()"><i class="fas fa-times"></i></i></button>
+            <textarea placeholder="Viết bình luận"></textarea>
+            <div class="input-comment">
+                <input class="input-text" type="text" placeholder="Nhập tên">
+                <input class="input-file" type="file" accept="image/*">
+            </div>
+            <button class="btn-submit">Gửi</button>
+        </div>
+    </div>
+
+    <button class="tablinks" onclick="toggleTab(event, 'Tab3')"> Câu hỏi thường gặp <i
+            class="fas fa-chevron-down"></i></button>
+    <div id="Tab3" class="tabcontent">
+        <h3>Mua Online có ưu đãi gì đặc biệt cho tôi?</h3>
+        <p>- Ưu đãi độc quyền Online với hình thức thanh toán đa dạng.</p>
+        <p>- Đặt giữ hàng Online, nhận tại cửa hàng.</p>
+        <h3>Có thu mua lại trang sức không?</h3>
+        <p>TTN có thu mua lại trang sức, nếu quý khách hàng muốn bán lại trang sức có thể liên hệ thông
+            qua các phương thức liên hệ bên dưới. Chi tiết: <a href="views/contact.jsp">tại đây</a></p>
+    </div>
+</div>
+<script>
+    // Function to toggle a specific tab
+    function toggleTab(evt, tabName) {
+        var tabcontent = document.getElementById(tabName);
+
+        if (tabcontent.style.display === "none") {
+            // Hide all tab content
+            var tabcontents = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].style.display = "none";
+            }
+
+            // Remove the "active" class from all tab buttons
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the specific tab content and mark the button as active
+            tabcontent.style.display = "block";
+            evt.currentTarget.classList.add("active");
+        } else {
+            // Toggle off the specific tab content and remove the "active" class from the button
+            tabcontent.style.display = "none";
+            evt.currentTarget.classList.remove("active");
+        }
+    }
+
+    //     popup
+    function openPopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+    }
+
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+</script>
+</body>
+</html>
