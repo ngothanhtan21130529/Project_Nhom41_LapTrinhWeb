@@ -60,53 +60,12 @@ public class LoginController extends HttpServlet {
             HttpSession session = request.getSession();
             if (session != null) {
                 session.setAttribute("name", username);
-
-                final String HOST_NAME = "smtp.gmail.com";
-
-                final int SSL_PORT = 465; // Port for SSL
-
-                final int TSL_PORT = 587; // Port for TLS/STARTTLS
-
-                final String APP_EMAIL = "ngoken102@gmail.com"; // your email
-
-                final String APP_PASSWORD = "vowv pfvn kavl hvqq"; // your password
-//them 1 buoc truy van la lay ra email cua tai khoan moi vua dang nhap
-                final String RECEIVE_EMAIL = "ngoken102@gmail.com";
-                // Get properties object
-                Properties props = new Properties();
-                props.put("mail.smtp.auth", "true");
-                props.put("mail.smtp.host", HOST_NAME);
-                props.put("mail.smtp.socketFactory.port", SSL_PORT);
-                props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-                props.put("mail.smtp.port", SSL_PORT);
-
-                // get Session
-                Session mail_session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(APP_EMAIL, APP_PASSWORD);
-                    }
-                });
-
-                // compose message
-                try {
-                    MimeMessage message = new MimeMessage(mail_session);
-                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
-                    message.setSubject("Xác thực email");
-                    String link="<a>http://localhost:8080/Project_Nhom_41_war/verify</a>";
-                    message.setContent(link,"text/html");
-                    // send message
-                    Transport.send(message);
-                    response.getWriter().println("Gửi mail thành công");
-                } catch (MessagingException e) {
-                    throw new RuntimeException(e);
-                }
-
+                sendEmail();
             }
         }
 
 
     }
-
 
 
     protected void setCookies(HttpServletRequest servletRequest, HttpServletResponse servletResponse, String username, String password) {
@@ -116,6 +75,47 @@ public class LoginController extends HttpServlet {
         pass.setMaxAge(24 * 24);
         servletResponse.addCookie(useraccount);
         servletResponse.addCookie(pass);
+    }
+
+    protected void sendEmail() {
+        final String HOST_NAME = "smtp.gmail.com";
+
+        final int SSL_PORT = 465; // Port for SSL
+
+        final int TSL_PORT = 587; // Port for TLS/STARTTLS
+
+        final String APP_EMAIL = "ngoken102@gmail.com"; // your email
+
+        final String APP_PASSWORD = "vowv pfvn kavl hvqq"; // your password
+//them 1 buoc truy van la lay ra email cua tai khoan moi vua dang nhap
+        final String RECEIVE_EMAIL = "ngoken102@gmail.com";
+        // Get properties object
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.host", HOST_NAME);
+        props.put("mail.smtp.socketFactory.port", SSL_PORT);
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.port", SSL_PORT);
+
+        // get Session
+        Session mail_session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(APP_EMAIL, APP_PASSWORD);
+            }
+        });
+
+        // compose message
+        try {
+            MimeMessage message = new MimeMessage(mail_session);
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
+            message.setSubject("Xác thực email");
+            String link = "<a href=\"http://localhost:8080/Project_Nhom_41_war/verify\">Xác nhận đăng nhập</a>";
+            message.setContent(link, "text/html;charset=utf-8");
+            // send message
+            Transport.send(message);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
