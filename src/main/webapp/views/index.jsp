@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="categogies-grid-container">
-<%--            <jsp:include page="/category/category.jsp"></jsp:include>--%>
+            <jsp:include page="web/category/category.jsp"></jsp:include>
             <div class="jewelry-categogies">
                 <h2 class="title-h2"> TRANG SỨC </h2>
                 <div class="banner-jewelry">

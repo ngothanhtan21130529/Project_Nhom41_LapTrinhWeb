@@ -3,29 +3,27 @@ package vn.edu.hcmuaf.service;
 import vn.edu.hcmuaf.dao.CategoryDAO;
 import vn.edu.hcmuaf.model.Category;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class CategoryService {
-    private CategoryDAO dao;
+    private CategoryDAO categoryDAO;
 
-    public CategoryService() {
-        this.dao=new CategoryDAO();
-    }
-
-    public CategoryService(CategoryDAO dao) {
-        this.dao = dao;
+    public CategoryService() throws SQLException {
+        this.categoryDAO = new CategoryDAO();
     }
 
-    public void addCategory(Category category){
-        dao.insert(category);
+    public ArrayList<Category> getAllCategories() {
+        return categoryDAO.getAllCategories();
     }
 
-    public void deleteCategory(Category category){
-        dao.delete(category);
+    public ArrayList<String> getAllCategoryNames() {
+        return categoryDAO.getAllCategoryNames();
     }
 
-    public void updateCategory(Category category){
-        dao.update(category);
+    public String getCategoryImage(int categoryId) {
+        return categoryDAO.getImage(categoryId);
     }
-    public int getMaxID(){
-        return dao.getMaxID()+1;
-    }
+
 }
