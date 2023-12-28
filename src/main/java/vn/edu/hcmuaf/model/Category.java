@@ -1,19 +1,19 @@
 package vn.edu.hcmuaf.model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Category implements Serializable {
     private int id;
     private String categoryName;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
-    private Timestamp deletedAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
     private String status;
     private int imgID;
-    private String imgURL;
+    private String imgUrl;
 
-    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, int imgID) {
+    public Category(int id, String categoryName, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, String status, int imgID) {
         this.id = id;
         this.categoryName = categoryName;
         this.createdAt = createdAt;
@@ -26,75 +26,45 @@ public class Category implements Serializable {
     public Category(int id, String categoryName, String imgURL) {
         this.id = id;
         this.categoryName = categoryName;
-        this. imgURL = imgURL;
+        this.imgUrl = imgUrl;
     }
 
-    public Category(int id, String categoryName) {
-        this.id=id;
-        this.categoryName=categoryName;
-    }
+    public Category() {}
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) { this.id = id; }
 
-    public String getCategoryName() {
-        return categoryName;
-    }
+    public String getCategoryName() { return categoryName; }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
+    public void setCategoryName(String categoryName) { this.categoryName = categoryName; }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
+    public LocalDateTime getCreatedAt() { return createdAt; }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
+    public LocalDateTime getUpdatedAt() { return updatedAt; }
 
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 
-    public Timestamp getDeletedAt() {
-        return deletedAt;
-    }
+    public LocalDateTime getDeletedAt() { return deletedAt; }
 
-    public void setDeletedAt(Timestamp deletedAt) {
-        this.deletedAt = deletedAt;
-    }
+    public void setDeletedAt(LocalDateTime deletedAt) { this.deletedAt = deletedAt; }
 
-    public String getStatus() {
-        return status;
-    }
+    public String getStatus() { return status; }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    public void setStatus(String status) { this.status = status; }
 
-    public int getImgID() {
-        return imgID;
-    }
+    public int getImgID() { return imgID; }
 
-    public void setImgID(int imgID) {
-        this.imgID = imgID;
-    }
+    public void setImgID(int imgID) { this.imgID = imgID; }
 
-    public String getImgURL() {
-        return imgURL;
-    }
+    public String getImgURL() { return imgUrl; }
 
-    public void setImgURL(String imgURL) {
-        this.imgURL = imgURL;
+    public void setImgURL(String imgURL) { this.imgUrl = imgURL; }
+
+    public String getImageUrl() {
+
+        return imgUrl;
     }
 }
