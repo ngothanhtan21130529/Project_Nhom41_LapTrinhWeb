@@ -43,7 +43,7 @@
 <div class="gemstone-categories">
     <h2 class="title-h2"> ĐÁ QUÝ</h2>
     <div class="grid-container">
-
+        <jsp:useBean id="categoryList" scope="request" type="java.util.List"></jsp:useBean>
         <c:forEach items="${categoryList}" var="category" >
 <%--            <c:if test="${categoryNames.contains(category.categoryName)}">--%>
 <%--                <div class="category">--%>
