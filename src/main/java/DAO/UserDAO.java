@@ -15,7 +15,7 @@ public class UserDAO implements DAOInterface<User> {
         return new UserDAO();
     }
     @Override
-    public int insert(User user) throws SQLException {
+    public int insert(User user){
 
         return 0;
     }

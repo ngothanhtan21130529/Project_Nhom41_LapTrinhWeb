@@ -10,6 +10,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ImageDAO implements DAOInterface<Image>{
+
+    public static ImageDAO getInstance(){
+        return new ImageDAO();
+    }
+
     @Override
     public int insert(Image i){
         try {
@@ -76,4 +81,19 @@ public class ImageDAO implements DAOInterface<Image>{
         return null;
     }
 
+    public static int getMaxID(){
+        int max=0;
+        try {
+            String sql = "SELECT MAX(i.id) FROM images i;";
+            Connection con = MySqlConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            while (rs.next()){
+                max=rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return max;
+    }
 }

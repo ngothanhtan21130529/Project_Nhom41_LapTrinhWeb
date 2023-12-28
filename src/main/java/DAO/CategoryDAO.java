@@ -13,20 +13,21 @@ import java.util.List;
 
 public class CategoryDAO implements DAOInterface<Category> {
 
+    public static CategoryDAO getInstance(){
+        return new CategoryDAO();
+    }
+
     @Override
     public int insert(Category c) {
         try {
             Connection con = MySqlConnection.getConnection();
             String sql = "insert into categories (id, category_name, created_at, updated_at, deleted_at, status, img_id)" +
-                    "values(?,?,?,?,?,?,?)";
+                    "values(?,?,CURRENT_TIMESTAMP,null,null,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, c.getId());
             ps.setString(2, c.getCategoryName());
-            ps.setTimestamp(3, c.getCreatedAt());
-            ps.setTimestamp(4, c.getUpdatedAt());
-            ps.setTimestamp(5, c.getDeletedAt());
-            ps.setString(6, c.getStatus());
-            ps.setInt(7, c.getImage().getId());
+            ps.setString(3, c.getStatus());
+            ps.setInt(4, c.getImage().getId());
             int res = ps.executeUpdate();
             ps.close();
             con.close();
@@ -179,10 +180,58 @@ public class CategoryDAO implements DAOInterface<Category> {
         return categories;
     }
 
-    public static void main(String[] args) {
-        CategoryDAO category = new CategoryDAO();
-//        System.out.println(category.insert(new Category(6, "Florine", new Timestamp(new Date().getTime()), new Timestamp(new Date().getTime()), new Timestamp(new Date().getTime()), "ok", new Image(3))));
-//        System.out.println(category.update(new Category(6, "clmm", new Timestamp(new Date().getTime()), new Timestamp(new Date().getTime()), new Timestamp(new Date().getTime()), "not ok", new Image(1))));
-//        System.out.println(category.delete(new Category(6)));
+    public static Category findByID(Category c, int index, int size) {
+        try {
+            String query = "with res as (select row_number() over (order by c.id asc) \n" +
+                    "             as r, c.id, c.category_name, i.img_url, c.created_at,\n" +
+                    "             c.updated_at, c.deleted_at, c.status\n" +
+                    "             from categories c join images i on c.img_id=i.id \n" +
+                    "             where c.id like ?) \n" +
+                    "             select * from res where r between (?*?)-(?-1) and (?*?);";
+            Connection con = MySqlConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Category category = new Category(
+                        rs.getInt("id"),
+                        rs.getString("category_name"),
+                        rs.getTimestamp("created_at"),
+                        rs.getTimestamp("updated_at"),
+                        rs.getTimestamp("deleted_at"),
+                        rs.getString("status"),
+                        rs.getString("img_url")
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<Category> getListCategoryFull() {
+        ArrayList<Category> categories = new ArrayList<>();
+        try {
+            String query = "select c.id, c.category_name, i.img_url, c.created_at, \n" +
+                    "c.updated_at, c.deleted_at, c.status \n" +
+                    "from categories c join images i;";
+            Connection con = MySqlConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Category category = new Category(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getTimestamp(3),
+                        rs.getTimestamp(4),
+                        rs.getTimestamp(5),
+                        rs.getString(6),
+                        rs.getString(7)
+                );
+                categories.add(category);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return categories;
     }
 }

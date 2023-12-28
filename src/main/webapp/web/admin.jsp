@@ -163,26 +163,27 @@
             <div class="categories-tab">
                 <div class="categories-main-tab content-tab">
                     <div class="categories-tab-function-box function-box">
-                        <form action="" method="get">
+                        <form action="<%=request.getContextPath()%>/CategorySearch" method="get">
                             <div class="searching-box box">
-                                <input type="text" placeholder="Tìm kiếm">
+                                <input type="text" placeholder="Tìm kiếm" name="categories-search">
                             </div>
                             <div class="search-by-box box">
-                                <select name="search-by">
+                                <select name="search-by-categories">
                                     <option value="">Tìm theo</option>
                                     <option value="find-by-id">Số thứ tự</option>
                                     <option value="find-by-categories">Tên danh mục</option>
                                 </select>
                             </div>
+                            <button type="submit" style="display: none"></button>
                         </form>
-                        <div class="adding-box box" onclick="changeToCategoriesAddingTab()">
-                            <button>
-                                <i class="fa-solid fa-plus fa-lg" style="color: white;"></i>
-                                <p>
-                                    Thêm mới
-                                </p>
-                            </button>
-                        </div>
+                            <div class="adding-box box" onclick="changeToCategoriesAddingTab()">
+                                <button>
+                                    <i class="fa-solid fa-plus fa-lg" style="color: white;"></i>
+                                    <p>
+                                        Thêm mới
+                                    </p>
+                                </button>
+                            </div>
                     </div>
                     <div class="categories-table">
                         <table>
@@ -191,31 +192,31 @@
                                 <th>Danh mục</th>
                                 <th style="width: 20%;">Hình ảnh</th>
                                 <th>Ngày tạo</th>
-                                <th>Ngày sữa</th>
-                                <th>Ngày xoá</th>
+                                <th>Ngày sửa</th>
+                                <th>Ngày ẩn</th>
                                 <th>Hiển thị</th>
                                 <th>Tác vụ</th>
                             </tr>
                             <%
-                                ArrayList<Category> categories = (ArrayList<Category>) request.getAttribute("categoriesList");
-                                for (int i = 0; i < categories.size(); i++) {
+                                ArrayList<Category> categories1 = (ArrayList<Category>) request.getAttribute("categoriesList1");
+                                for (int i = 0; i < categories1.size(); i++) {
                             %>
                             <tr>
-                                <td><%=categories.get(i).getId()%>
+                                <td><%=categories1.get(i).getId()%>
                                 </td>
-                                <td><%=categories.get(i).getCategoryName()%>
-                                </td>
-                                <td>
-                                    <img src="<%=categories.get(i).getImgURL()%>" alt="">
-                                </td>
-                                <td><%=categories.get(i).getCreatedAt()%>
-                                </td>
-                                <td><%=categories.get(i).getUpdatedAt()%>
-                                </td>
-                                <td><%=categories.get(i).getDeletedAt()%>
+                                <td><%=categories1.get(i).getCategoryName()%>
                                 </td>
                                 <td>
-                                    <%=categories.get(i).getStatus()%>
+                                    <img src="<%=categories1.get(i).getImgURL()%>" alt="">
+                                </td>
+                                <td><%=categories1.get(i).getCreatedAt()%>
+                                </td>
+                                <td><%=categories1.get(i).getUpdatedAt()%>
+                                </td>
+                                <td><%=categories1.get(i).getDeletedAt()%>
+                                </td>
+                                <td>
+                                    <%=categories1.get(i).getStatus()%>
                                 </td>
                                 <td>
                                     <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
@@ -236,62 +237,59 @@
                     </div>
                 </div>
                 <div class="categories-adding-tab content-tab">
-                    <div class="categories-adding-tab-general-infomation">
-                        <div class="general-infomation-label">
-                            THÔNG TIN CHUNG
-                        </div>
-                        <div class="img-label">
-                            <p>
-                                Hình ảnh:
-                            </p>
-                        </div>
-                        <div class="img-input input-box">
-                            <form action="">
-                                <input class="choosing-button" type="file" name="img" accept="image/*">
-                            </form>
-                        </div>
-                        <div class="categories-detail-title">
-                            <p>
-                                Tiêu đề:
-                            </p>
-                        </div>
-                        <div class="categories-detail-title-input-box">
-                            <select class="input-box">
-                                <option value="">Chọn danh mục</option>
-                                <option value="gem">Đá quý</option>
-                                <option value="jewelry">Trang sức</option>
-                            </select>
-                        </div>
-                        <div class="numerial-order-label">
-                            <p>
-                                Số thứ tự:
-                            </p>
-                        </div>
-                        <div class="numerial-order-input input-box">
-                            <input type="text">
-                        </div>
-                        <div class="categories-action-label">
-                            <p>
-                                Tác vụ:
-                            </p>
-                        </div>
-                        <div class="categories-action-choose">
-                            <div>
-                                <input type="checkbox" name="">
+                    <form method="post" action="<%=request.getContextPath()%>/UploadController" enctype="multipart/form-data">
+                        <div class="categories-adding-tab-general-infomation">
+                            <div class="general-infomation-label">
+                                THÔNG TIN CHUNG
                             </div>
-                            <div class="categories-action-choose-label">
-                                Hiển thị
+                            <div class="img-label">
+                                <p>
+                                    Hình ảnh:
+                                </p>
+                            </div>
+                            <div class="img-input input-box" style="width: 100%">
+                                <input class="choosing-button" type="file" name="category-img" accept="image/*"
+                                       style="width: 100%">
+                            </div>
+                            <div class="categories-detail-title">
+                                <p>
+                                    Tiêu đề:
+                                </p>
+                            </div>
+                            <div class="categories-detail-title-input-box">
+                                <input class="input-box" name="categories-name-input">
+                            </div>
+                            <div class="numerial-order-label">
+                                <p>
+                                    Số thứ tự:
+                                </p>
+                            </div>
+                            <div class="numerial-order-input input-box">
+                                <input type="text" name="categories-order-input">
+                            </div>
+                            <div class="categories-action-label">
+                                <p>
+                                    Tác vụ:
+                                </p>
+                            </div>
+                            <div class="categories-action-choose">
+                                <div>
+                                    <input type="checkbox" name="categories-displayment">
+                                </div>
+                                <div class="categories-action-choose-label">
+                                    Hiển thị
+                                </div>
+                            </div>
+                            <div class="save-or-exit-box">
+                                <button class="save-button" type="submit">
+                                    Lưu
+                                </button>
+                                <button class="exit-button">
+                                    Thoát
+                                </button>
                             </div>
                         </div>
-                        <div class="save-or-exit-box">
-                            <button class="save-button">
-                                Lưu
-                            </button>
-                            <button class="exit-button">
-                                Thoát
-                            </button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="product-tab">

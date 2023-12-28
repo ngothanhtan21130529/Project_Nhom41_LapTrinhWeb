@@ -27,9 +27,8 @@ public class ListCategory extends HttpServlet {
             int count= CategoryDAO.count();
             int endPage=count/3;
             if(endPage%3!=0) endPage++;
-            ArrayList<Category>categories=CategoryDAO.search(index);
-            request.getAttribute("categories-table");
-            request.setAttribute("categoriesList",categories);
+            ArrayList<Category>categories1=CategoryDAO.search(index);
+            request.setAttribute("categoriesList1",categories1);
             request.setAttribute("startPage",index);
             request.setAttribute("endPage",endPage);
             request.getRequestDispatcher("/web/admin.jsp").forward(request, response);

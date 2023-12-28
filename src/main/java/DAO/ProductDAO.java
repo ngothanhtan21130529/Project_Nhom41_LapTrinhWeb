@@ -1,6 +1,7 @@
 package DAO;
 
 import connection.MySqlConnection;
+import model.Category;
 import model.Product;
 
 import javax.servlet.annotation.WebServlet;
@@ -109,4 +110,30 @@ public class ProductDAO implements DAOInterface<Product> {
         }
         return productList;
     }
+
+//    public ArrayList<Product> getListProductFull() {
+//        ArrayList<Product> products = new ArrayList<>();
+//        try {
+//            String sql = "select p.id, p.product_name, p.category_id, p.thumbnail_id, \n" +
+//                    "p.price, p.sale, p.hot, p.description, p.created_at, \n" +
+//                    "p.updated_at, p.deleted_at, p.color, p.weight, p.size, \n" +
+//                    "p.opacity, i.quantity, p.status\n" +
+//                    "from products p JOIN inventories i;";
+//            Connection con = MySqlConnection.getConnection();
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ResultSet rs = ps.executeQuery();
+//            while (rs.next()) {
+//                Product product = new Product(
+//                        rs.getInt(1),
+//                        rs.getString(2),
+//                        rs.getInt(3),
+//                        rs.getInt(4),
+//
+//                        )
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return products;
+//    }
 }

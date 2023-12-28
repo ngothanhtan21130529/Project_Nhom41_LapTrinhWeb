@@ -24,12 +24,9 @@ public class Category implements Serializable {
         this.imgID = imgID;
     }
 
-    public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, Image image) {
+    public Category(int id, String categoryName, String status, Image image) {
         this.id = id;
         this.categoryName = categoryName;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.deletedAt = deletedAt;
         this.status = status;
         this.image = image;
     }
