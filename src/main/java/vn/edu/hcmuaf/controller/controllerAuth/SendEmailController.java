@@ -1,8 +1,9 @@
 package vn.edu.hcmuaf.controller.controllerAuth;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.*;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +26,7 @@ public class SendEmailController extends HttpServlet {
 
         final String APP_EMAIL = "ngoken102@gmail.com"; // your email
 
-        final String APP_PASSWORD = "ehds asyt yqmu rhpv"; // your password
+        final String APP_PASSWORD = ""; // your password
 
         final String RECEIVE_EMAIL = "nttan101103@gmail.com";
         // Get properties object
@@ -47,14 +48,21 @@ public class SendEmailController extends HttpServlet {
         try {
             MimeMessage message = new MimeMessage(session);
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
-            message.setSubject("Testing Subject");
-            message.setText("Welcome to gpcoder.com");
-            genenerateCode();
+            try {
+                message.setSubject("Testing Subject");
+                message.setText("Welcome to gpcoder.com");
+                // send message
+                Transport.send(message);
+                resp.getWriter().println("ĐÃ TEST THÀNH CÔNG");
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }
 
-            // send message
-            Transport.send(message);
 
-          resp.getWriter().println("ĐÃ TEST THÀNH CÔNG");
+
+
+
+
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
