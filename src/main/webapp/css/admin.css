@@ -224,7 +224,7 @@ td i {
     padding: 10px;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation {
+.categories-adding-tab form .categories-adding-tab-general-infomation {
     display: grid;
     grid-template-columns: 300px 1fr;
     border: 1px solid #bfbfbf;
@@ -232,7 +232,7 @@ td i {
     padding: 15px 30px 15px 30px;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .general-infomation-label {
+.categories-adding-tab form .categories-adding-tab-general-infomation .general-infomation-label {
     font-weight: bold;
     color: #16479c;
     grid-column: 1/3;
@@ -242,7 +242,7 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .img-label {
+.categories-adding-tab form .categories-adding-tab-general-infomation .img-label {
     grid-column: 1/2;
     grid-row: 2/3;
     padding-top: 10px;
@@ -250,7 +250,7 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .img-label p {
+.categories-adding-tab form .categories-adding-tab-general-infomation .img-label p {
     font-weight: 500;
     color: #16479c;
     position: relative;
@@ -258,7 +258,7 @@ td i {
     transform: translateY(-50%);
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .img-input {
+.categories-adding-tab form .categories-adding-tab-general-infomation .img-input {
     grid-column: 2/3;
     grid-row: 2/3;
     padding-top: 10px;
@@ -266,11 +266,11 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .img-input form input {
+.categories-adding-tab form .categories-adding-tab-general-infomation .img-input form input {
     width: 100%;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-detail-title {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-detail-title {
     grid-column: 1/2;
     grid-row: 3/4;
     padding-top: 10px;
@@ -278,7 +278,7 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-detail-title p {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-detail-title p {
     font-weight: 500;
     color: #16479c;
     position: relative;
@@ -286,7 +286,7 @@ td i {
     transform: translateY(-50%);
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-detail-title-input-box {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-detail-title-input-box {
     grid-column: 2/3;
     grid-row: 3/4;
     padding-top: 10px;
@@ -294,7 +294,7 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-label {
+.categories-adding-tab form .categories-adding-tab-general-infomation .numerial-order-label {
     grid-column: 1/2;
     grid-row: 4/5;
     padding-top: 10px;
@@ -302,7 +302,7 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-label p {
+.categories-adding-tab form .categories-adding-tab-general-infomation .numerial-order-label p {
     font-weight: 500;
     color: #16479c;
     position: relative;
@@ -310,7 +310,7 @@ td i {
     transform: translateY(-50%);
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-input {
+.categories-adding-tab form .categories-adding-tab-general-infomation .numerial-order-input {
     grid-column: 2/3;
     grid-row: 4/5;
     padding-top: 10px;
@@ -318,11 +318,11 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .numerial-order-input input {
+.categories-adding-tab form .categories-adding-tab-general-infomation .numerial-order-input input {
     width: 10%;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-label {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-action-label {
     grid-column: 1/2;
     grid-row: 5/6;
     padding-top: 10px;
@@ -330,7 +330,7 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-label p {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-action-label p {
     font-weight: 500;
     color: #16479c;
     position: relative;
@@ -338,19 +338,19 @@ td i {
     transform: translateY(-50%);
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-choose {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-action-choose {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-choose div input {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-action-choose div input {
     width: 20px;
     height: 20px;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action-choose {
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-action-choose {
     grid-column: 2/3;
     grid-row: 5/6;
     padding-top: 10px;
@@ -358,17 +358,17 @@ td i {
     border-bottom: 1px solid #cacaca;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .save-or-exit-box {
+.categories-adding-tab form .categories-adding-tab-general-infomation .save-or-exit-box {
     grid-column: 2/3;
     grid-row: 6/7;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.categories-adding-tab .categories-adding-tab-general-infomation .img .img-label,
-.categories-adding-tab .categories-adding-tab-general-infomation .title .categories-detail-title,
-.categories-adding-tab .categories-adding-tab-general-infomation .product-categories-numerial-order .numerial-order-label,
-.categories-adding-tab .categories-adding-tab-general-infomation .categories-action .categories-action-label {
+.categories-adding-tab form .categories-adding-tab-general-infomation .img-label,
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-detail-title,
+.categories-adding-tab form .categories-adding-tab-general-infomation .numerial-order-label,
+.categories-adding-tab form .categories-adding-tab-general-infomation .categories-action-label {
     font-weight: 500;
     color: #16479c;
 }
