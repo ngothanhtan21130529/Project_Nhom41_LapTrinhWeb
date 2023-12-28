@@ -5,15 +5,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<<<<<<<< HEAD:src/main/webapp/views/web/product/products-new.jsp
-<<<<<<<< HEAD:src/main/webapp/views/web/product/products-new.jsp
 <link href="../../../css/category.css" rel="stylesheet" type="text/css">
-========
-<link href="../../css/category.css" rel="stylesheet" type="text/css">
->>>>>>>> 3903fc4 (commit):src/main/webapp/views/product/products-new.jsp
-========
-<link href="../css/category.css" rel="stylesheet" type="text/css">
->>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/product/products-new.jsp
 
 <%
     DecimalFormat decimalFormat = new DecimalFormat("###,###,### VNĐ");

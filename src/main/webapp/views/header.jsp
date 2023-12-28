@@ -8,27 +8,19 @@
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet">
-<<<<<<<< HEAD:src/main/webapp/views/header.jsp
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../font/fontawesome-free-6.4.2/css/all.css">
-========
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
->>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/header.jsp
 <link href="<%=request.getContextPath()%>/css/header.css" rel="stylesheet" type="text/css">
 
 <header class="header">
     <div class="container">
         <div class="box">
             <div class="logo">
-                <img src="img/logo.png" alt="Logo" class="logo-img"/>
+                <img src="../img/logo.png" alt="Logo" class="logo-img"/>
             </div>
             <nav class="navigation">
                 <ul class="navigation-list">
                     <li class="navigation-item active">
-<<<<<<<< HEAD:src/main/webapp/views/header.jsp
                         <a href="<%=request.getContextPath()%>/views/index.jsp">Trang chủ</a>
-========
-                        <a href="<%=request.getContextPath()%>/index.jsp">Trang chủ</a>
->>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/header.jsp
                     </li>
                     <li class="navigation-item">
                         <a href="<%=request.getContextPath()%>/category/products.jsp">Sản phẩm</a>
@@ -73,7 +65,6 @@
                         </ul>
                     </li>
                     <li class="navigation-item">
-<<<<<<<< HEAD:src/main/webapp/views/header.jsp
                         <a href="<%=request.getContextPath()%>/views/contact.jspct.jsp">Liên hệ</a>
                     </li>
                     <li class="navigation-item">
@@ -81,15 +72,6 @@
                     </li>
                     <li class="navigation-item">
                         <a href="<%=request.getContextPath()%>/views/policy.jspcy.jsp">Giới thiệu</a>
-========
-                        <a href="<%=request.getContextPath()%>/contact.jsp">Liên hệ</a>
-                    </li>
-                    <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/policy.jsp">Chính sách</a>
-                    </li>
-                    <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/policy.jsp">Giới thiệu</a>
->>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/header.jsp
                     </li>
                 </ul>
             </nav>
