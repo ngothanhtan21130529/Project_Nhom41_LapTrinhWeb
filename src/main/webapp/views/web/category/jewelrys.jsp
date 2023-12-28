@@ -27,17 +27,10 @@
 
 </head>
 <body>
-<<<<<<<< HEAD:src/main/webapp/views/web/category/jewelrys.jsp
 <jsp:include page="/views/header.jsp" ></jsp:include>
 <div class="main">
     <div class="banner">
         <img class="background-image" src="../../../img/banner/banner.png" alt="Background Image">
-========
-<jsp:include page="/header.jsp" ></jsp:include>
-<div class="main">
-    <div class="banner">
-        <img class="background-image" src="../img/banner/banner.png" alt="Background Image">
->>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/category/jewelrys.jsp
         <div class="content">
             <h1 class="title-name"> TRANG SỨC </h1>
             <p class="intro">TTN Shop tự hào là điểm đến lý tưởng cho những người yêu thích đá quý. Với một bộ sưu tập
@@ -95,10 +88,6 @@
         </div>
     </div>
 </div>
-<<<<<<<< HEAD:src/main/webapp/views/web/category/jewelrys.jsp
 <jsp:include page="/views/footer.jsp"></jsp:include>
-========
-<jsp:include page="/footer.jsp"></jsp:include>
->>>>>>>> 740dc56 (thêm các trang loại sản phẩm còn lại):src/main/webapp/category/jewelrys.jsp
 </body>
 </html>
