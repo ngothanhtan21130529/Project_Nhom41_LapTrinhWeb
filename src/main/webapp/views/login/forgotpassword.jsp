@@ -8,12 +8,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Quên mật khẩu</title>
+    <meta charset="UTF-8">
+    <title>Quên Mật Khẩu</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/forgotpassword.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <form action="<%=request.getContextPath()%>/forgotpassword" method="post">
-        <input type="text">
-        <input type="submit">
-    </form>
+<form action="<%=request.getContextPath()%>/forgotpassword" method="post">
+    <div class="title"><h1>Quên mật khẩu</h1></div>
+    <div class="item">
+        <input type="email" name="email" id="email" placeholder="Nhập email" style="width: 300px;border-radius: 6px">
+    </div>
+    <div id="btn">
+        <div>
+            <button type="submit">Xác nhận</button>
+        </div>
+        <a href="<%=request.getContextPath()%>/views/login/login.jsp" id="login">Đăng nhập</a>
+        <a href="<%=request.getContextPath()%>/views/login/register.jsp" id="register">Đăng kí</a>
+    </div>
+
+</form>
+</div>
 </body>
 </html>
