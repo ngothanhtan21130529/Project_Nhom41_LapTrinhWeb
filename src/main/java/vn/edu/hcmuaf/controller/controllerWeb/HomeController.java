@@ -12,15 +12,11 @@ import java.io.IOException;
 public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        RequestDispatcher rd = req.getRequestDispatcher("/views/index.jsp");
-        rd.forward(req, resp);
-
+        req.getRequestDispatcher("/views/index.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
     }
 }
