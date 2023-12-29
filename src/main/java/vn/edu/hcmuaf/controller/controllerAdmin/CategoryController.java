@@ -33,11 +33,16 @@ public class CategoryController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Category> categories = categoryService.getAllCategories();
-        System.out.println("------------" + categories.size());
+//        System.out.println("------------" + categories.size());
 
         request.setAttribute("categoryList", categories);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/views/web/category/category.jsp");
         dispatcher.forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 }

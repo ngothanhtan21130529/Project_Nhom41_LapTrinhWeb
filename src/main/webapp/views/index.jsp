@@ -22,7 +22,7 @@
 <body>
 <div class="container">
     <%--header--%>
-    <jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="/views/header.jsp"></jsp:include>
     <%--main--%>
     <div class="main">
         <div class="banner">
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="categogies-grid-container">
-            <jsp:include page="web/category/category.jsp"></jsp:include>
+            <jsp:include page="/views/web/category/category.jsp" />
             <div class="jewelry-categogies">
                 <h2 class="title-h2"> TRANG SỨC </h2>
                 <div class="banner-jewelry">
@@ -59,12 +59,12 @@
             </div>
             <div class="categogies-new">
                 <h2 class="title-h2"> SẢN PHẨM MỚI</h2>
-<%--                <jsp:include page="product/products-new.jsp"></jsp:include>--%>
+<%--                <jsp:include page="<%=request.getContextPath()%>/products-new.jsp"></jsp:include>--%>
             </div>
         </div>
     </div>
     <%--footer--%>
-    <jsp:include page="footer.jsp"></jsp:include>
+<%--    <jsp:include page="footer.jsp"></jsp:include>--%>
 </div>
 <script>
     var myIndex = 0;
