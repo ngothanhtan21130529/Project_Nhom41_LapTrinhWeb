@@ -8,12 +8,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserDAO implements DAOInterface<User> {
-    public static UserDAO getInstance(){
+    public static UserDAO getInstance() {
         return new UserDAO();
     }
+
     @Override
     public int insert(User user) throws SQLException {
 
@@ -39,16 +39,73 @@ public class UserDAO implements DAOInterface<User> {
     public ArrayList<User> selectByCondition(String condition) {
         return null;
     }
-    public List<User> selectInformation() throws SQLException {
-        List<User> userlist=new ArrayList<>();
-        String sql="Select username,password,roles.name from users join roles on users.role_id=roles.id where username=? and password=?";
-        PreparedStatement preparedStatement= MySqlConnection.getConnection().prepareStatement(sql);
-        ResultSet rs=preparedStatement.executeQuery(sql);
-        while(rs.next()){
-            User user=new User(rs.getString(1),rs.getString(2),new Role(rs.getString(3)));
-            userlist.add(user);
+
+    public User selectInformation(String username, String password) throws SQLException {
+
+        String sql = "Select username,password,role_name from users join roles on users.roles_id=roles.id where username=? and password=?";
+        PreparedStatement preparedStatement = MySqlConnection.getConnection().prepareStatement(sql);
+        preparedStatement.setString(1, username);
+        preparedStatement.setString(2, password);
+        ResultSet rs = preparedStatement.executeQuery();
+        User user = null;
+        while (rs.next()) {
+            user = new User(rs.getString("username"), rs.getString("password"), new Role(rs.getString("role_name")));
+        }
+        rs.close();
+        preparedStatement.close();
+        MySqlConnection.getConnection().close();
+        return user;
+    }
+
+    public boolean insertUser(User user) throws SQLException {
+        String sql = "Insert into users(username,password,full_name,email,phone,created_at,birthday)values(?,?,?,?,?,CURRENT_TIMESTAMP,?)";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1, user.getUserName());
+        pr.setString(2, user.getPassword());
+        pr.setString(3, user.getName());
+        pr.setString(4, user.getEmail());
+        pr.setString(5, user.getPhone());
+        pr.setTimestamp(6, user.getBirthday());
+        int execute = pr.executeUpdate();
+        if (execute > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+
+    }
+
+    public boolean updatePassword(String username, String newpassword) throws SQLException {
+        String sql = "Update table users set password=? where username=?";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1, newpassword);
+        pr.setString(2, username);
+        int res = pr.executeUpdate();
+        if (res > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public String getEmail(String email) throws SQLException {
+        String sql = "Select email form users where email=?";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1, email);
+        ResultSet rs = pr.executeQuery();
+        String emailres=null;
+        while (rs.next()) {
+            emailres = rs.getString("email");
 
         }
-        return  userlist;
+        return emailres;
     }
+
+    public static void main(String[] args) throws SQLException {
+
+    }
+
 }
+

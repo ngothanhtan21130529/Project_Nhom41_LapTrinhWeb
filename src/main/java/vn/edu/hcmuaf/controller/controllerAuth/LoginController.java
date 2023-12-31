@@ -1,9 +1,8 @@
 package vn.edu.hcmuaf.controller.controllerAuth;
 
-import vn.edu.hcmuaf.dao.UserDAO;
 import vn.edu.hcmuaf.model.User;
+import vn.edu.hcmuaf.service.LoginService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,41 +11,46 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
-@WebServlet(name="LoginController",value="/CheckLogin")
+@WebServlet(name = "LoginController", value = "/login")
 public class LoginController extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            checkLogin(req,resp);
+            checkLogin(req, resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    protected void checkLogin(HttpServletRequest request,HttpServletResponse response) throws SQLException, ServletException, IOException {
-        //lấy giá trị đầu vào từ form
-        String username=request.getParameter("name");
-        String pass=request.getParameter("pass");
-        //tạo UserDAO
-        UserDAO userDAO=UserDAO.getInstance();
-        List<User> list=userDAO.selectInformation();
-        //duyệt qua từng phần tử
-        for(User user:list){
-            if(user.getName().equals(username)&&user.getPassword().equals(pass)&&user.getRole().getRoleName().equals("Admin")){
-                HttpSession session=request.getSession();
-                RequestDispatcher requestDispatcher=session.getServletContext().getRequestDispatcher("admin.jsp");
-                requestDispatcher.forward(request,response);
-                break;
-            } else if (user.getName().equals(username)&&user.getPassword().equals(pass)&&user.getRole().getRoleName().equals("User")) {
-                HttpSession session=request.getSession();
-                RequestDispatcher requestDispatcher=session.getServletContext().getRequestDispatcher("index.jsp");
-                requestDispatcher.forward(request,response);
-                break;
-            }else{
-                RequestDispatcher requestDispatcher=request.getRequestDispatcher("login.jsp");
-                requestDispatcher.forward(request,response);
-                break;
+
+    protected void checkLogin(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        LoginService loginService=new LoginService();
+        String username = request.getParameter("username");
+        String pass = request.getParameter("password");
+
+        User user = loginService.getUser(username,pass);
+        if (user == null || pass == null) {
+            HttpSession session = request.getSession();
+            if (session != null) {
+                session.setAttribute("informed", "Tài khoản hoặc mật khẩu không được để trống");
+                response.sendRedirect(request.getContextPath() + "/views/login/login.jsp");
+            } else {
+                session = request.getSession(true);
+                session.setAttribute("informed", "Tài khoản hoặc mật khẩu không được để trống");
+                response.sendRedirect(request.getContextPath() + "/views/login/login.jsp");
+            }
+        } else if (user == null && pass == null) {
+            if (user == null || pass == null) {
+                HttpSession session = request.getSession();
+                if (session != null) {
+                    session.setAttribute("informed", "Tài khoản hoặc mật khẩu không được để trống");
+                    response.sendRedirect(request.getContextPath() + "view/login/login.jsp");
+                } else {
+                    session = request.getSession(true);
+                    session.setAttribute("informed", "Tài khoản hoặc mật khẩu không được để trống");
+                    response.sendRedirect(request.getContextPath() + "view/login/login.jsp");
+                }
             }
 
         }

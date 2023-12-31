@@ -19,55 +19,59 @@
 </head>
 
 <body>
-    <div id="container">
-        <div class="img-register">
-            <img src="./img/banner/TTN-2.png">
-        </div>
-        <form action="./register" method="post">
-            <div class="logo">
-                <img src="img/logo.png">
-            </div>
-            <div id="dang_ki">
-                <h2>Đăng ký</h2>
-            </div>
-            <div id="thongtin">
-<%--                <label for="hoten">Họ và tên:</label>--%>
-                <br>
-                <input type="text" name="hoten" placeholder="Họ tên">
-                <br>
-<%--                <label for="taikhoan">Tài khoản:</label>--%>
-                <br>
-                <input type="text" name="user" placeholder="Tài khoản">
-                <br>
-<%--                <label for="matkhau">Mật khẩu:</label>--%>
-                <br>
-                <input type="password" name="pass" placeholder="Mật khẩu">
-                <br>
-<%--                <label for="nhaplai">Nhập lại mật khẩu:</label>--%>
-                <br>
-                <input type="password" name="nhaplai" placeholder="Nhập lại mật khẩu">
-                <br>
-<%--                <label for="e_mail">Email:</label>--%>
-                <br>
-                <input type="email" name="email" placeholder="Nhập email">
-                <br>
-<%--                <label for="ngaysinh">Ngày sinh:</label>--%>
-                <br>
-                <input type="date" name="ngaysinh">
-                <br>
-
-<%--                <label for="dienthoai">Số điện thoại:</label>--%>
-                <br>
-                <input type="tel" name="dienthoai">
-                <br>
-                <div class="commit">
-                <input type="checkbox" name="dieukhoan" id="dieukhoan">Tôi cam kết đã đọc và chấp nhận tất cả điều khoản và điều kiện của dịch vụ/sản phẩm này.
-                </div>
-                <button id="btn" >Đăng ký</button>
-
-            </div>
-        </form>
+<div><h1 style="color:red"><%=(session!=null)&&session.getAttribute("announced")!=null?session.getAttribute("announced"):""%></h1></div>
+<div id="container">
+    <div class="img-register">
+        <img src="./img/banner/TTN-2.png">
     </div>
+    <form action="<%=request.getContextPath()%>/register" method="post">
+
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+        <div id="register">
+            <h2>Đăng ký</h2>
+        </div>
+        <div id="inform">
+            <label for="fullname">Họ và tên:</label>
+            <br>
+            <input type="text" name="fullname" placeholder="Họ tên" id="fullname">
+            <br>
+            <label for="user">Tài khoản:</label>
+            <br>
+            <input type="text" name="user" placeholder="Tài khoản" id="user">
+            <br>
+            <label for="password">Mật khẩu:</label>
+            <br>
+            <input type="password" name="pass" placeholder="Mật khẩu" id="password">
+            <br>
+            <label for="repeat">Nhập lại mật khẩu:</label>
+            <br>
+            <input type="password" name="repeat" placeholder="Nhập lại mật khẩu" id="repeat">
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" name="email" placeholder="Nhập email" id="email">
+            <br>
+            <label for="date">Ngày sinh:</label>
+            <br>
+            <input type="date" name="date" id="date">
+            <br>
+
+            <label for="phone">Số điện thoại:</label>
+            <br>
+            <input type="tel" name="phone" id="phone">
+            <br>
+            <div class="commit">
+                <input type="checkbox" name="policy" id="policy">Tôi cam kết đã đọc và chấp nhận tất cả điều khoản
+                và điều kiện của dịch vụ/sản phẩm này.
+            </div>
+            <button id="btn">Đăng ký</button>
+        </div>
+
+
+    </form>
+</div>
 </body>
 
 </html>

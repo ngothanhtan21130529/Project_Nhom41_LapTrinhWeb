@@ -38,6 +38,15 @@ public class User implements Serializable {
         this.role=role;
     }
 
+   public User(String name,String userName,String password,String email,Timestamp birthday,String phone){
+        this.name=name;
+        this.userName=userName;
+        this.password=password;
+        this.email=email;
+        this.birthday=birthday;
+        this.phone=phone;
+   }
+
     public int getId() {
         return id;
     }
