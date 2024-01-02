@@ -15,4 +15,9 @@ public class RegisterService {
         }
 
     }
+    public int getMaxID() throws SQLException {
+        UserDAO userDAO = UserDAO.getInstance();
+        int maxID = userDAO.getMaxID();
+        return maxID;
+    }
 }

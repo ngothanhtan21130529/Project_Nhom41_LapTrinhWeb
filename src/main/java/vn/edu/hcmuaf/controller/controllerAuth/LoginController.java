@@ -25,11 +25,11 @@ public class LoginController extends HttpServlet {
     }
 
     protected void checkLogin(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        LoginService loginService=new LoginService();
+        LoginService loginService = new LoginService();
         String username = request.getParameter("username");
         String pass = request.getParameter("password");
 
-        User user = loginService.getUser(username,pass);
+        User user = loginService.getUser(username, pass);
         if (user == null || pass == null) {
             HttpSession session = request.getSession();
             if (session != null) {
@@ -51,9 +51,25 @@ public class LoginController extends HttpServlet {
                     session.setAttribute("informed", "Tài khoản hoặc mật khẩu không được để trống");
                     response.sendRedirect(request.getContextPath() + "view/login/login.jsp");
                 }
+
             }
 
-        }
+        } else if (user.getUserName().equals(username) && user.getPassword().equals(pass)) {
+            if (user.getRole().getRoleName().equals("Admin")) {
+                HttpSession session = request.getSession();
+                if (session != null) {
+                    session.setAttribute("username", user.getUserName());
+                    response.sendRedirect(request.getContextPath() + "views/admin/admin.jsp");
+                }
 
+            } else if (user.getRole().getRoleName().equals("User")) {
+                HttpSession session = request.getSession();
+                if (session != null) {
+                    session.setAttribute("username", user.getUserName());
+                    response.sendRedirect(request.getContextPath() + "views/index.jsp");
+                }
+
+            }
+        }
     }
 }

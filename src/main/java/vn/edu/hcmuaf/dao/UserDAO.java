@@ -58,14 +58,16 @@ public class UserDAO implements DAOInterface<User> {
     }
 
     public boolean insertUser(User user) throws SQLException {
-        String sql = "Insert into users(username,password,full_name,email,phone,created_at,birthday)values(?,?,?,?,?,CURRENT_TIMESTAMP,?)";
+        String sql = "Insert into users(id,username,password,full_name,email,phone,created_at,birthday)values(?,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
+
         PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
-        pr.setString(1, user.getUserName());
-        pr.setString(2, user.getPassword());
-        pr.setString(3, user.getName());
-        pr.setString(4, user.getEmail());
-        pr.setString(5, user.getPhone());
-        pr.setTimestamp(6, user.getBirthday());
+        pr.setInt(1, user.getId());
+        pr.setString(2, user.getUserName());
+        pr.setString(3, user.getPassword());
+        pr.setString(4, user.getName());
+        pr.setString(5, user.getEmail());
+        pr.setString(6, user.getPhone());
+        pr.setTimestamp(7, user.getBirthday());
         int execute = pr.executeUpdate();
         if (execute > 0) {
             return true;
@@ -95,12 +97,24 @@ public class UserDAO implements DAOInterface<User> {
         PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
         pr.setString(1, email);
         ResultSet rs = pr.executeQuery();
-        String emailres=null;
+        String emailres = null;
         while (rs.next()) {
             emailres = rs.getString("email");
 
         }
         return emailres;
+    }
+
+    public int getMaxID() throws SQLException {
+        String sql = "Select max(id) from users";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        ResultSet rs = pr.executeQuery();
+        int maxid = 0;
+        while (rs.next()) {
+            maxid = rs.getInt("max(id)");
+        }
+        maxid++;
+        return maxid;
     }
 
     public static void main(String[] args) throws SQLException {
