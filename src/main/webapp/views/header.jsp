@@ -29,7 +29,7 @@
                         <a href="<%=request.getContextPath()%>/category/jewelrys.jsp">Trang sức</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/category/gemstone.jsp">Đá quý</a>
+                        <a href="/views/web/category/gemstone.jsp">Đá quý</a>
                         <i class="fa-solid fa-caret-down"></i>
                         <ul class="dropdown-gem">
                             <li class="dropdown-item">

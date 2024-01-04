@@ -19,27 +19,19 @@ CREATE TABLE `products` (
   `product_name` varchar(100),
   `price` int,
   `status` varchar(30),
-  `thumbnail_id` int
-);
-
-CREATE TABLE `product_details` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `product_name` varchar(100),
-  `price` int,
+  `thumbnail_id` int,
   `sale` int,
   `hot` boolean,
   `description` text,
   `created_at` datetime,
   `updated_at` datetime,
   `deleted_at` datetime,
-  `color` text,
-  `weight` text,
-  `size` text,
-  `opacity` text,
-  `status` varchar(30),
-  `product_id` int,
-  `inventories_id` int,
-  `img_id` int
+  `color` varchar(50),
+  `weight` varchar(50),
+  `opacity` varchar(50),
+  `size` varchar(50),
+  `cutting_grinding_type` varchar(100),
+  `material` varchar(100)
 );
 
 CREATE TABLE `order_details` (
@@ -79,11 +71,13 @@ CREATE TABLE `roles` (
 CREATE TABLE `images` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `img_url` text,
-  `image_name` varchar(100)
+  `image_name` varchar(100),
+  `type` varchar(50)
 );
 
 CREATE TABLE `inventories` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
+  `product_id` int,
   `quantity` int
 );
 
@@ -102,7 +96,7 @@ CREATE TABLE `feedbacks` (
 CREATE TABLE `comments` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `user_id` int,
-  `product_details_id` int,
+  `product_id` int,
   `comment_content` text,
   `img_url` text
 );
@@ -111,11 +105,7 @@ ALTER TABLE `users` ADD FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`);
 
 ALTER TABLE `products` ADD FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
 
-ALTER TABLE `product_details` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
-
 ALTER TABLE `order_details` ADD FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
-
-ALTER TABLE `product_details` ADD FOREIGN KEY (`inventories_id`) REFERENCES `inventories` (`id`);
 
 ALTER TABLE `orders` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
@@ -123,10 +113,10 @@ ALTER TABLE `order_details` ADD FOREIGN KEY (`product_id`) REFERENCES `products`
 
 ALTER TABLE `comments` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
-ALTER TABLE `comments` ADD FOREIGN KEY (`product_details_id`) REFERENCES `product_details` (`id`);
-
 ALTER TABLE `categories` ADD FOREIGN KEY (`img_id`) REFERENCES `images` (`id`);
+
+ALTER TABLE `inventories` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 ALTER TABLE `products` ADD FOREIGN KEY (`thumbnail_id`) REFERENCES `images` (`id`);
 
-ALTER TABLE `product_details` ADD FOREIGN KEY (`img_id`) REFERENCES `images` (`id`);
+ALTER TABLE `comments` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
