@@ -1,5 +1,6 @@
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -20,6 +21,7 @@
     <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath()%>/css/banner.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath()%>/css/products.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/css/category.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
@@ -39,20 +41,7 @@
             </div>
         </div>
         <div class="categogies-grid-container">
-            <div class="gemstone-categories">
-                <h2 class="title-h2"> ĐÁ QUÝ</h2>
-                <div class="grid-container">
-                    <jsp:useBean id="categoryList" scope="request" type="java.util.List"/>
-                    <c:forEach items="${categoryList}" var="category" >
-                        <div class="category">
-                            <a class="category-item" href="<%= request.getContextPath() %>/category/${category.categoryName.toLowerCase()}.jsp">
-                                <img src="<c:out value="${category.imgURL}" />">
-                                <h1 class="category_name"><c:out value="${category.categoryName}" /></h1>
-                            </a>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
+            <jsp:include page="web/category/category.jsp"/>
             <div class="jewelry-categogies">
                 <h2 class="title-h2"> TRANG SỨC </h2>
                 <div class="banner-jewelry">
