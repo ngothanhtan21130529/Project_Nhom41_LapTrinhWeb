@@ -1,8 +1,9 @@
 package vn.edu.hcmuaf.controller.controllerAuth;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.*;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +30,7 @@ public class SendEmailController extends HttpServlet {
 
         final String RECEIVE_EMAIL = "nttan101103@gmail.com";
         // Get properties object
-        Properties props = new Properties();
+        Properties props=new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.host", HOST_NAME);
         props.put("mail.smtp.socketFactory.port", SSL_PORT);

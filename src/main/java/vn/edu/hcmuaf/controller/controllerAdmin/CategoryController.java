@@ -21,19 +21,9 @@ public class CategoryController extends HttpServlet {
         categoryService = new CategoryService();
     }
 
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        try {
-            this.categoryService = new CategoryService();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Category> categories = categoryService.getAllCategories();
-//        System.out.println("------------" + categories.size());
 
         request.setAttribute("categoryList", categories);
 
@@ -41,8 +31,4 @@ public class CategoryController extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
 }
