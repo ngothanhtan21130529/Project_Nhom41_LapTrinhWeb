@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@include file="/common/taglib.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -20,7 +22,7 @@
             <nav class="navigation">
                 <ul class="navigation-list">
                     <li class="navigation-item active">
-                        <a href="<%=request.getContextPath()%>/views/index.jsp">Trang chủ</a>
+                        <a href="/home">Trang chủ</a>
                     </li>
                     <li class="navigation-item">
                         <a href="<%=request.getContextPath()%>/category/products.jsp">Sản phẩm</a>
