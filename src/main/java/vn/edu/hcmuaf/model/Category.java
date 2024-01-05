@@ -67,4 +67,18 @@ public class Category implements Serializable {
 
         return imgUrl;
     }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
+                ", status='" + status + '\'' +
+                ", imgID=" + imgID +
+                ", imgUrl='" + imgUrl + '\'' +
+                '}';
+    }
 }

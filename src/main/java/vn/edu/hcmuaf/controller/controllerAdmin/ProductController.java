@@ -21,7 +21,7 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String productName = request.getParameter("product");
-    response.sendRedirect(request.getContextPath() + "/product");
+        String productName = request.getParameter("products");
+    response.sendRedirect(request.getContextPath() + "/products");
     }
 }
