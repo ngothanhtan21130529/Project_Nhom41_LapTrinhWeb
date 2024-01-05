@@ -88,9 +88,10 @@ public class ProductDAO implements DAOInterface<Product> {
         return null;
     }
 
-    public static ArrayList<Product> getListProduct() {
+    public ArrayList<Product> getListProduct() {
         ArrayList<Product> products = new ArrayList<>();
         try {
+            // Kết nối cơ sở dữ liệu
             Connection con = MySqlConnection.getConnection();
             String sql = "SELECT p.id, p.product_name, p.price, p.status, i.img_url, inv.quantity " +
                     "FROM products p " +
@@ -98,7 +99,8 @@ public class ProductDAO implements DAOInterface<Product> {
                     "LEFT JOIN inventories inv ON p.id = inv.product_id";
             try (
                     PreparedStatement ps = con.prepareStatement(sql);
-                    ResultSet rs = ps.executeQuery(sql)) {
+                    ResultSet rs = ps.executeQuery()) {
+                // Xử lý kết quả truy vấn
                 while (rs.next()) {
                     int id = rs.getInt("id");
                     String productName = rs.getString("product_name");
