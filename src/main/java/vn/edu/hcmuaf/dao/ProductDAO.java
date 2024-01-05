@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.dao;
 
 import vn.edu.hcmuaf.database.MySqlConnection;
+import vn.edu.hcmuaf.database.Queries;
 import vn.edu.hcmuaf.model.Product;
 
 import java.sql.Connection;
@@ -44,12 +45,8 @@ public class ProductDAO implements DAOInterface<Product> {
         try {
             // Kết nối cơ sở dữ liệu
             Connection con = MySqlConnection.getConnection();
-            String sql = "SELECT p.id, p.product_name, p.price, p.status, i.img_url, inv.quantity " +
-                    "FROM products p " +
-                    "JOIN images i ON p.thumbnail_id = i.id " +
-                    "LEFT JOIN inventories inv ON p.id = inv.product_id";
             try (
-                    PreparedStatement ps = con.prepareStatement(sql);
+                    PreparedStatement ps = con.prepareStatement(Queries.GET_LIST_PRODUCTS);
                     ResultSet rs = ps.executeQuery()) {
                 // Xử lý kết quả truy vấn
                 while (rs.next()) {
@@ -57,14 +54,14 @@ public class ProductDAO implements DAOInterface<Product> {
                     String productName = rs.getString("product_name");
                     int price = rs.getInt("price");
                     String imgURL = rs.getString("img_url");
-                    Integer quantity = (Integer) rs.getObject("quantity");
-
-                    String status;
-                    if (quantity == null) {
-                        status = "Ngừng bán";
-                    } else {
-                        status = (quantity >= 1) ? "Đặt hàng" : "Hết hàng";
-                    }
+                    int quantity = rs.getInt("quantity");
+                    String status = rs.getString("status");
+//                    String status;
+//                    if (quantity == null) {
+//                        status = "Ngừng bán";
+//                    } else {
+//                        status = (quantity >= 1) ? "Đặt hàng" : "Hết hàng";
+//                    }
 
                     Product product = new Product(id, productName, price, status, imgURL);
                     products.add(product);

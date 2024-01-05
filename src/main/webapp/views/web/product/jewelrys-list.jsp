@@ -19,9 +19,6 @@
     for (Product product : productDAO) {
         if (product.getProductName().startsWith("TRANG SỨC")) {
 %>
-
-<%--    <%--%>
-<%--        for (Product p : productDAO) { %>--%>
     <div class="category">
         <a class="product" href="product-details.jsp">
             <img src="<%= product.getImgURL()%>">
@@ -34,7 +31,6 @@
         </a>
     </div>
     <%
-//                }
             }
         }
     %>

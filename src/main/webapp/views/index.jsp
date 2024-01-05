@@ -51,7 +51,7 @@
                         <img class="mySlides" src="../img/banner/jewelry-3.png" style="width:100%">
                     </div>
                 </div>
-                <%--                <jsp:include page="product/jewelrys-list.jsp"></jsp:include>--%>
+                <jsp:include page="web/product/products-list.jsp"></jsp:include>
                 <div class="pagination">
                     <a href="#">&laquo;</a>
                     <a href="#">1</a>
