@@ -22,58 +22,58 @@
             <nav class="navigation">
                 <ul class="navigation-list">
                     <li class="navigation-item active">
-                        <a href="/home">Trang chủ</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=home">Trang chủ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/category/products.jsp">Sản phẩm</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=products">Sản phẩm</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/category/jewelrys.jsp">Trang sức</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=products">Trang sức</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="/views/web/category/gemstone.jsp">Đá quý</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=products"> Đá quý </a>
                         <i class="fa-solid fa-caret-down"></i>
                         <ul class="dropdown-gem">
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/spinel.jsp">Spinel</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Spinel</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/diamond.jsp">Kim cương</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Kim cương</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/ruby.jsp">Ruby</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Ruby</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/peridot.jsp">Hổ phách</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Hổ phách</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/topaz.jsp">Topaz</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Topaz</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/aquamarine.jsp">Aquamarine</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Aquamarine</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/tourmaline.jsp">Tourmaline</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Tourmaline</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/jade.jsp">Jade</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Jade</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/emerald.jsp">Emerald</a>
+                                <a href="${pageContext.request.contextPath}/headerController?action=products">Emerald</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<%=request.getContextPath()%>/category/garnet.jsp">Garnet</a>
+                                <<a href="${pageContext.request.contextPath}/headerController?action=products">Garnet</a>
                             </li>
                         </ul>
                     </li>
                     <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/views/contact.jspct.jsp">Liên hệ</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=contact">Liên hệ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/views/policy.jspcy.jsp">Chính sách</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=policy">Chính sách</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="<%=request.getContextPath()%>/views/policy.jspcy.jsp">Giới thiệu</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=about">Giới thiệu</a>
                     </li>
                 </ul>
             </nav>

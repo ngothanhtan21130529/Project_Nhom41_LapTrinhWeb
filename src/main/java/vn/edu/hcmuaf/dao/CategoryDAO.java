@@ -114,4 +114,12 @@ private Connection connection;
         return imgURL;
     }
 
+    public static void main(String[] args) throws SQLException {
+        CategoryDAO dao=new CategoryDAO();
+        ArrayList<Category> arr=dao.getAllCategories();
+        for (Category c: arr){
+            System.out.println(c);
+        }
+    }
+
 }
