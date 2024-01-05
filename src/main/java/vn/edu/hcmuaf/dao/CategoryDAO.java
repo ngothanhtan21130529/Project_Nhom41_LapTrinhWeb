@@ -36,26 +36,6 @@ public class CategoryDAO implements DAOInterface {
         return null;
     }
 
-//    public List<Category> getAllCategories() {
-//        List<Category> categories = new ArrayList<>();
-//
-//        try (Connection connection = MySqlConnection.getConnection();
-//             PreparedStatement ps = connection.prepareStatement(Queries.GET_ALL_CATEGORIES);
-//             ResultSet resultSet = ps.executeQuery()) {
-//
-//            while (resultSet.next()) {
-//                Category category = new Category();
-//                category.setId(resultSet.getInt("id"));
-//                category.setCategoryName(resultSet.getString("category_name"));
-//                category.setImgURL(resultSet.getString("img_url"));
-//                categories.add(category);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return categories;
-//    }
 private Connection connection;
 
     public CategoryDAO() throws SQLException {
@@ -114,12 +94,6 @@ private Connection connection;
         return imgURL;
     }
 
-    public static void main(String[] args) throws SQLException {
-        CategoryDAO dao=new CategoryDAO();
-        ArrayList<Category> arr=dao.getAllCategories();
-        for (Category c: arr){
-            System.out.println(c);
-        }
-    }
+
 
 }
