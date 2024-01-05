@@ -8,15 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "VerifyRegisterController", value = "/verifyregister")
-public class VerifyRegisterController extends HttpServlet {
-
-
+@WebServlet(name = "VerifyLoginControllerUser", value = "/verifylogin/user")
+public class VerifyLoginControllerUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session=req.getSession();
-        if(session!=null){
-            resp.sendRedirect(req.getContextPath()+"/views/login/informedregister.jsp");
+        HttpSession httpSession = req.getSession();
+        if (httpSession != null) {
+            resp.sendRedirect(resp.encodeURL(req.getContextPath() + "/views/index.jsp"));
         }
     }
 }

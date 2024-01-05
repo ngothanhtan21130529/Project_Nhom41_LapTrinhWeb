@@ -13,14 +13,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(name="CartQuantityController",value="/totalprices")
-public class OrderController extends HttpServlet {
+@WebServlet(value="/orderdetails")
+public class OrderDetailsController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session=req.getSession();
         ArrayList<Product> products=(ArrayList<Product>) session.getAttribute("list");
         String[] quantity= req.getParameterValues("quantity");
-
         Map<String,Product> orders=new HashMap<String, Product>();
         for(int i=0;i< products.size();i++){
             for(int j=0;j< quantity.length;j++){
@@ -30,11 +29,10 @@ public class OrderController extends HttpServlet {
                 }
             }
         }
-        orders.put(quantity[0],products.get(0) );
         int totalprice=0;
         if(session!=null){
             for(int i=0;i<products.size();i++){
-                totalprice=totalprice+(products.get(i).getPrice());
+                totalprice=totalprice+(products.get(i).getPrice()*Integer.parseInt(quantity[i]));
             }
         }
 

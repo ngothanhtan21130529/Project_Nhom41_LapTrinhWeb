@@ -32,9 +32,11 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
-    public User(String userName,String password,Role role) {
+    public User(int id, String userName, String password, String email, Role role) {
+        this.id = id;
         this.userName=userName;
         this.password=password;
+        this.email=email;
         this.role=role;
     }
 
@@ -56,6 +58,13 @@ public class User implements Serializable {
         this.role=role;
         this.birthday=birthday;
    }
+
+    public User(String username, String password, Role role) {
+        this.userName=username;
+        this.password=password;
+        this.role=role;
+    }
+
     public int getId() {
         return id;
     }

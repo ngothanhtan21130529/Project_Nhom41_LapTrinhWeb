@@ -25,21 +25,21 @@ public class ChangePasswordController extends HttpServlet {
             if (!currentpassword.equals(newpassword) && newpassword.equals(repeatpassword)) {
                 try {
                     if (changePasswordService.updatePassword(username, newpassword)) {
-                        resp.sendRedirect(req.getContextPath()+"/views/login/informedchangepassword.jsp");
-                    }else{
-                        resp.sendRedirect(req.getContextPath()+"/views/login/changepassword.jsp");
+                        req.setAttribute("notify", "Đổi mật khẩu thành công");
+                        req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
+                    } else {
+                        req.setAttribute("notify", "Đổi mật khẩu thất bại");
+                        req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
+
                     }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-            }else{
-                session.setAttribute("notify","Mật khẩu phải trùng khớp với nhau");
-                resp.sendRedirect(req.getContextPath()+"/views/login/changepassword.jsp");
+            } else {
+                req.setAttribute("notify", "Mật khẩu phải trùng khớp với nhau");
+                req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
             }
 
-        }else{
-            session= req.getSession(true);
-            resp.sendRedirect(req.getContextPath()+"/views/login/changepassword.jsp");
         }
     }
 }

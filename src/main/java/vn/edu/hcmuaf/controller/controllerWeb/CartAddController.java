@@ -22,6 +22,7 @@ public class CartAddController extends HttpServlet {
             if(!Cart.products.contains(product)){
                 Cart.products.add(product);
                 session.setAttribute("list",Cart.products);
+                response.sendRedirect(request.getContextPath()+"/views/web/cart.jsp");
             }
         }
 

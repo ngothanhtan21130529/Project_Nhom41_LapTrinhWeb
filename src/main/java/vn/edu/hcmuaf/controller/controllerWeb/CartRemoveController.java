@@ -25,6 +25,8 @@ public class CartRemoveController extends HttpServlet {
             if(list!=null){
                 if(list.contains(product)){
                     list.remove(product);
+                    session.setAttribute("list",list);
+                    resp.sendRedirect(req.getContextPath()+"/views/web/cart/cart.jsp");
                 }
             }
 
