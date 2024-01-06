@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+//this page for manage orders
 @WebServlet("/ordermanage")
 public class OrderManageController extends HttpServlet {
     @Override

@@ -14,7 +14,7 @@
 
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/ordersuccess" method="post">
+<form action="${pageContext.request.contextPath}/checkorder" method="post">
     <label for="fullname">Họ tên</label>
     <input type="text" id="fullname" name="fullname">
     <label for="email">Email</label>
@@ -25,6 +25,9 @@
     <input type="text" name="address" id="address">
     <input type="submit" value="Đặt hàng" id="submit">
 </form>
+<div id="note">
+    <h2>Lưu ý:Vui lòng nhập đúng email mà bạn đã đăng ký với tài khoản trước đó</h2>
+</div>
 </body>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </html>

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+//this page for checking user confirms login or not login to order
 @WebServlet(value = "/orderdetails")
 public class OrderDetailsController extends HttpServlet {
     @Override
