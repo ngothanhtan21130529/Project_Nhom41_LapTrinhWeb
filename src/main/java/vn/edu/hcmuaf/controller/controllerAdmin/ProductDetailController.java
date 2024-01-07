@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ProductDetailController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,7 +17,12 @@ public class ProductDetailController extends HttpServlet {
         int productId = Integer.parseInt(request.getParameter("id"));
 
         // Gọi phương thức từ ProductDAO để lấy thông tin chi tiết sản phẩm
-        ProductDAO productDAO = ProductDAO.getInstance();
+        ProductDAO productDAO = null;
+        try {
+            productDAO = ProductDAO.getInstance();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         Product product = productDAO.getProductByID(productId);
 
         // Đặt dữ liệu sản phẩm vào request attribute

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class PaginationController extends HttpServlet {
     @Override
@@ -17,9 +18,13 @@ public class PaginationController extends HttpServlet {
         //dùng 2 vòng lặp 1 vòng là duyệt qua từng trang vòng thứ 2 là duyệt qua các phần tử
         //cứ mỗi khi qua 1 trang mới chúng ta sẽ lấy thứ tự phần cuối ở trang trước cộng thêm 1 để duyệt
         //điều kiện dừng để duyệt đúng số lượng phần tử cần cho mỗi trang là lấy thứ tự của trang đang duyệt nhân cho số lượng phần tử chia đều cho mỗi trang
-        pagination(req,resp);
+        try {
+            pagination(req,resp);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
-    protected void pagination(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    protected void pagination(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException, SQLException {
         //đang test
         String test=request.getParameter("test");
         ProductDAO productDAO=ProductDAO.getInstance();

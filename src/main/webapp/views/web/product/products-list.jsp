@@ -1,13 +1,6 @@
 <%@ page import="vn.edu.hcmuaf.model.Product" %>
-<%@ page import="vn.edu.hcmuaf.dao.ProductDAO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.text.DecimalFormat" %><%--
-  Created by IntelliJ IDEA.
-  User: trant
-  Date: 11/21/2023
-  Time: 5:37 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="/common/taglib.jsp"%>
@@ -15,24 +8,20 @@
 
 <%
     DecimalFormat decimalFormat = new DecimalFormat("###,###,### VNĐ");
+    ArrayList<Product> products = (ArrayList<Product>) request.getAttribute("products");
 %>
 
 <div class="grid-container">
-    <%
-        ArrayList<Product> productDAO = new ProductDAO().getListProduct();
-        for (Product p : productDAO) {
-            if (!"Ngừng bán".equals(p.getStatus())) {
-    %>
-    <div class="category">
-        <a class="product" href="product-details.jsp">
-            <img src="<%= p.getImgURL()%>">
-            <div class="status"><%= p.getStatus() %></div>
-            <h3 class="product_name"><%= p.getProductName() %></h3>
-            <div class="price"><%= decimalFormat.format(p.getPrice()) %></div>
-        </a>
-    </div>
-    <%
-            }
-        }
-    %>
+    <c:forEach var="product" items="${products}">
+        <c:if test="${!'Ngừng bán'.equals(product.getStatus())}">
+            <div class="category">
+                <a class="product" href="product-details.jsp">
+                    <img src="<c:out value="${product.getImgURL()}" />">
+                    <div class="status"><c:out value="${product.getStatus()}" /></div>
+                    <h3 class="product_name"><c:out value="${product.getProductName()}" /></h3>
+                    <div class="price"><c:out value="${decimalFormat.format(product.getPrice())}" /></div>
+                </a>
+            </div>
+        </c:if>
+    </c:forEach>
 </div>

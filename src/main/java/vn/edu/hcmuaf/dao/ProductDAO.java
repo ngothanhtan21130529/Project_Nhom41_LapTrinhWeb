@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProductDAO implements DAOInterface<Product> {
-    public static ProductDAO getInstance() {
+    public static ProductDAO getInstance() throws SQLException {
         return new ProductDAO();
     }
 
@@ -40,37 +40,28 @@ public class ProductDAO implements DAOInterface<Product> {
         return null;
     }
 
-    public ArrayList<Product> getListProduct() {
-        ArrayList<Product> products = new ArrayList<>();
-        try {
-            // Kết nối cơ sở dữ liệu
-            Connection con = MySqlConnection.getConnection();
-            try (
-                    PreparedStatement ps = con.prepareStatement(Queries.GET_LIST_PRODUCTS);
-                    ResultSet rs = ps.executeQuery()) {
-                // Xử lý kết quả truy vấn
-                while (rs.next()) {
-                    int id = rs.getInt("id");
-                    String productName = rs.getString("product_name");
-                    int price = rs.getInt("price");
-                    String imgURL = rs.getString("img_url");
-                    int quantity = rs.getInt("quantity");
-                    String status = rs.getString("status");
-//                    String status;
-//                    if (quantity == null) {
-//                        status = "Ngừng bán";
-//                    } else {
-//                        status = (quantity >= 1) ? "Đặt hàng" : "Hết hàng";
-//                    }
+    private Connection connection;
 
-                    Product product = new Product(id, productName, price, status, imgURL);
-                    products.add(product);
-                }
-            }
+    public ProductDAO() throws SQLException {
+        this.connection = MySqlConnection.getConnection();
+    }
+
+    public ResultSet getListProductWithImage(){
+        try {
+            PreparedStatement ps = connection.prepareStatement(Queries.GET_LIST_PRODUCTS_WITH_IMAGE);
+            return ps.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return products;
+    }
+
+    public ResultSet getInventories(){
+        try {
+            PreparedStatement ps = connection.prepareStatement(Queries.GET_INVENTORIES);
+            return ps.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int count(String txtSearch) {
