@@ -1,9 +1,6 @@
 package vn.edu.hcmuaf.model;
 
-import vn.edu.hcmuaf.service.SearchService;
-
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 public class Product implements Serializable {
     private int id;
@@ -13,52 +10,12 @@ public class Product implements Serializable {
     private String status;
     private int thumbnailID;
     private String imgURL;
-    private String description;
+    private  String description;
     private String stoneType;
     private String stoneColor;
     private String weight;
-    private String size;
-    //New Product
-    private int sale;
-    private boolean hot;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
-    private Timestamp deletedAt;
-    private String opacity;
-    private int inventoriesID;
-    private Category category;
-    private String cuttingGrindingShape;
-    private String material;
-    private int quantity;
-    private int totalPrice;
-    private String categoryName;
-    public Product() {
-    }
 
-    public Product(int id, String productName, int categoryID, String imgURL,
-                   int price, int sale, boolean hot, String description,
-                   Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
-                   String stoneColor, String weight, String size, String opacity,
-                   String status, String cuttingGrindingShape, String material) {
-        this.id = id;
-        this.categoryID = categoryID;
-        this.productName = productName;
-        this.price = price;
-        this.status = status;
-        this.imgURL = imgURL;
-        this.sale = sale;
-        this.hot = hot;
-        this.description = description;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.deletedAt = deletedAt;
-        this.stoneColor = stoneColor;
-        this.weight = weight;
-        this.size = size;
-        this.opacity = opacity;
-        this.cuttingGrindingShape=cuttingGrindingShape;
-        this.material=material;
-    }
+    private String size;
 
     public Product(int id, int categoryID, String productName, int price, String status, int thumbnailID) {
         this.id = id;
@@ -69,27 +26,8 @@ public class Product implements Serializable {
         this.thumbnailID = thumbnailID;
     }
 
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public Product(int id, String productName, int price, String status, String imgURL) {
-        this.id = id;
-        this.productName = productName;
-        this.price = price;
-        this.status = status;
-        this.imgURL = imgURL;
-    }
-
-
-    public Product(int id, String productName, int price, String imgURL) {
-        this.id = id;
-
-        this.productName = productName;
+    public Product(String imgURL, String productName, int price) {
+        this.productName=productName;
         this.price = price;
         this.imgURL = imgURL;
     }
@@ -104,18 +42,14 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-
-    public Product(String productName) {
+    public Product(int productID, String productName, String imgURL, int price, String status) {
+        this.id = productID;
         this.productName = productName;
+        this.imgURL = imgURL;
+        this.price = price;
+        this.status = status;
+    }
 
-    }
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 
     public int getId() {
         return id;
@@ -213,117 +147,13 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Timestamp getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(Timestamp deletedAt) {
-        this.deletedAt = deletedAt;
-    }
-
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public int getSale() {
-        return sale;
-    }
-
-    public void setSale(int sale) {
-        this.sale = sale;
-    }
-
-    public boolean isHot() {
-        return hot;
-    }
-
-    public void setHot(boolean hot) {
-        this.hot = hot;
-    }
-
-    public String getOpacity() {
-        return opacity;
-    }
-
-    public void setOpacity(String opacity) {
-        this.opacity = opacity;
-    }
-
-    public int getInventoriesID() {
-        return inventoriesID;
-    }
-
-    public void setInventoriesID(int inventoriesID) {
-        this.inventoriesID = inventoriesID;
-    }
-
-    public String getCuttingGrindingShape() {
-        return cuttingGrindingShape;
-    }
-
-    public void setCuttingGrindingShape(String cuttingGrindingShape) {
-        this.cuttingGrindingShape = cuttingGrindingShape;
-    }
-
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(String material) {
-        this.material = material;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
-                ", productName='" + productName + '\'' +
+                "productName='" + productName + "\n" +
                 ", price=" + price +
-                ", status='" + status + '\'' +
-                ", imgURL='" + imgURL + '\'' +
-                ", description='" + description + '\'' +
-                ", stoneColor='" + stoneColor + '\'' +
-                ", weight='" + weight + '\'' +
-                ", size='" + size + '\'' +
-                ", sale=" + sale +
-                ", hot=" + hot +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", deletedAt=" + deletedAt +
-                ", opacity='" + opacity + '\'' +
-                ", inventoriesID=" + inventoriesID +
-                ", cuttingGrindingShape='" + cuttingGrindingShape + '\'' +
-                ", category=" + category +
-                ", material='" + material + '\'' +
-                '}';
+                ", thumbnail='" + imgURL + "\t" +
+                "}\n";
     }
 }
 
