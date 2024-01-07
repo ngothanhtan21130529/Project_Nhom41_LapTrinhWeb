@@ -25,13 +25,13 @@
                         <a href="${pageContext.request.contextPath}/headerController?action=home">Trang chủ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="${pageContext.request.contextPath}/headerController?action=products">Sản phẩm</a>
+                        <a href="${pageContext.request.contextPath}/products">Sản phẩm</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="${pageContext.request.contextPath}/headerController?action=products">Trang sức</a>
+                        <a href="${pageContext.request.contextPath}/products">Trang sức</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="${pageContext.request.contextPath}/headerController?action=products"> Đá quý </a>
+                        <a href="${pageContext.request.contextPath}/products"> Đá quý </a>
                         <i class="fa-solid fa-caret-down"></i>
                         <ul class="dropdown-gem">
                             <li class="dropdown-item">

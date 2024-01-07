@@ -16,8 +16,7 @@ import java.util.ArrayList;
 
 @WebServlet("/products")
 public class ProductController extends HttpServlet {
-
-    private ProductService productService = new ProductService();
+    private ProductService productService;
 
     public ProductController() throws SQLException {
         productService = new ProductService();

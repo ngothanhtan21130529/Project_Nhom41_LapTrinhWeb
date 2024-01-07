@@ -79,7 +79,7 @@
                     </select>
                 </div>
             </div>
-            <jsp:include page="<%=request.getContextPath()%>/product/products-list.jsp"/>
+            <jsp:include page="../product/products-list.jsp"/>
             <div class="pagination">
                 <a href="#">&laquo;</a>
                 <a href="#">1</a>
