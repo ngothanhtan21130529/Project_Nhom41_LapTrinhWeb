@@ -12,9 +12,12 @@
 
 </head>
 <body>
-    <div>
-        <h1>Đổi mật khẩu thành công!Vui lòng quay lại trang đăng nhập</h1>
-        <button><a href="<%=request.getContextPath()%>/views/login/login.jsp">Về trang chủ</a></button>
-    </div>
+<h1>Đổi mật khẩu thành công bạn sẽ được chuyển trang sau 3 giây</h1>
 </body>
+<script>
+    function popupnotify(){
+       window.location.replace("<%=request.getContextPath()%>/views/index.jsp");
+    }
+    setTimeout(popupnotify,3000);
+</script>
 </html>

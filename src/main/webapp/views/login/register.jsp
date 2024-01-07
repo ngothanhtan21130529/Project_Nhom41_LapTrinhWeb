@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<div><h1 style="color:red"><%=(session!=null)&&session.getAttribute("announced")!=null?session.getAttribute("announced"):""%></h1></div>
+<div><h1 style="color:red"><%=(request.getAttribute("announced")!=null?request.getAttribute("announced"):"")%></h1></div>
 <div id="container">
     <div class="img-register">
         <img src="./img/banner/TTN-2.png">
@@ -33,35 +33,35 @@
             <h2>Đăng ký</h2>
         </div>
         <div id="inform">
-            <label for="fullname">Họ và tên:</label>
-            <br>
-            <input type="text" name="fullname" placeholder="Họ tên" id="fullname">
-            <br>
+<%--            <label for="fullname">Họ và tên:</label>--%>
+<%--            <br>--%>
+<%--            <input type="text" name="fullname" placeholder="Họ tên" id="fullname">--%>
+<%--            <br>--%>
             <label for="user">Tài khoản:</label>
             <br>
-            <input type="text" name="user" placeholder="Tài khoản" id="user">
+            <input type="text" name="user" placeholder="Tài khoản" id="user" value="">
             <br>
             <label for="password">Mật khẩu:</label>
             <br>
-            <input type="password" name="pass" placeholder="Mật khẩu" id="password">
+            <input type="password" name="pass" placeholder="Mật khẩu" id="password" value="">
             <br>
             <label for="repeat">Nhập lại mật khẩu:</label>
             <br>
-            <input type="password" name="repeat" placeholder="Nhập lại mật khẩu" id="repeat">
+            <input type="password" name="repeat" placeholder="Nhập lại mật khẩu" id="repeat" value="">
             <br>
             <label for="email">Email:</label>
             <br>
-            <input type="email" name="email" placeholder="Nhập email" id="email">
+            <input type="email" name="email" placeholder="Nhập email" id="email" value="">
             <br>
-            <label for="date">Ngày sinh:</label>
-            <br>
-            <input type="date" name="date" id="date">
-            <br>
+<%--            <label for="date">Ngày sinh:</label>--%>
+<%--            <br>--%>
+<%--            <input type="date" name="date" id="date">--%>
+<%--            <br>--%>
 
-            <label for="phone">Số điện thoại:</label>
-            <br>
-            <input type="tel" name="phone" id="phone">
-            <br>
+<%--            <label for="phone">Số điện thoại:</label>--%>
+<%--            <br>--%>
+<%--            <input type="tel" name="phone" id="phone">--%>
+<%--            <br>--%>
             <div class="commit">
                 <input type="checkbox" name="policy" id="policy">Tôi cam kết đã đọc và chấp nhận tất cả điều khoản
                 và điều kiện của dịch vụ/sản phẩm này.

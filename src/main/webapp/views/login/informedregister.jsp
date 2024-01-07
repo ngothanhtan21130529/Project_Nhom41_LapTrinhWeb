@@ -10,11 +10,18 @@
 <head>
     <title>Thông báo Đăng kí</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/informedregister.css" type="text/css">
+
 </head>
 <body>
-    <div>
-       <a href="<%=request.getContextPath()%>/views/login/login.jsp"> <h1> <%=(session!=null&&session.getAttribute("informed")!=null)?session.getAttribute("informed"):""%></h1></a>
+<h1>
+    Đăng kí thành công bạn sẽ được chuyển trang sau 3 giây nữa</h1>
 
-    </div>
 </body>
+<script>
+   function notify() {
+       window.location.replace( "<%=request.getContextPath()%>/views/index.jsp") ;
+   }
+   setTimeout(notify,3000);
+
+</script>
 </html>

@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="container">
-    <div style="color:red"><%=(session != null && session.getAttribute("informed") != null ? session.getAttribute("informed") : "")%>
+    <div style="color:red"><%=(request.getAttribute("notify")!=null ? request.getAttribute("notify") : "")%>
     </div>
     <div class="img-ttn">
         <img src="./img/banner/TTN.png">
@@ -48,10 +48,10 @@
                 <a href="forgot-password.html">Quên mật khẩu ?</a>
             </div>
         </div>
-        <div id="remember">
-            <input type="checkbox" id="checkbox">
-            <h3 id="text_ghi_nho">Ghi nhớ đăng nhập</h3>
-        </div>
+<%--        <div id="remember">--%>
+<%--            <input type="checkbox" id="checkbox">--%>
+<%--            <h3 id="text_ghi_nho">Ghi nhớ đăng nhập</h3>--%>
+<%--        </div>--%>
     </form>
 </div>
 </body>

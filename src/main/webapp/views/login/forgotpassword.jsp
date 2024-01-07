@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+<div><h1 style="color: red"><%=request.getAttribute("notification")!=null?request.getAttribute("notification"):""%></h1>
 <form action="<%=request.getContextPath()%>/forgotpassword" method="post">
     <div class="title"><h1>Quên mật khẩu</h1></div>
     <div class="item">
