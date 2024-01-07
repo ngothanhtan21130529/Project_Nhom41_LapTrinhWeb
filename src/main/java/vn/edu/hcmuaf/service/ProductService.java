@@ -32,18 +32,20 @@ public class ProductService {
             }
             while (productRS.next()){
                 int productID = productRS.getInt("id");
-                String thumbnailID = productRS.getString("img_url");
-                int quantity = productQuantities.getOrDefault(productID, 0);
+                String imgURL = productRS.getString("img_url");
+                String productName = productRS.getString("product_name");
+                Integer quantity = (Integer) productQuantities.getOrDefault(productID, 0);
+                int price = productRS.getInt("price");
                 String status;
-                if (quantity == 0 ){
-                    status = "Hết hàng";
+                if (quantity == null ){
+                    status = "Ngưng bán";
                 } else if (quantity >= 1 ) {
                     status = "Đặt hàng";
                 } else {
-                    status = "Ngừng bán";
+                    status = "Hết hàng";
                 }
 
-                Product product = new Product(productID, productRS.getString("product_name"), productRS.getInt("price"), thumbnailID, status);
+                Product product = new Product(productID, productName, imgURL, price , status);
                 products.add(product);
             }
         } catch (SQLException e) {
@@ -51,4 +53,22 @@ public class ProductService {
         }
         return products;
     }
-}
+
+        public static void main(String[] args) throws SQLException {
+            ProductService productService = new ProductService();
+            try {
+                ArrayList<Product> products = productService.getListProducts();
+
+                for (Product product : products) {
+                    System.out.println("Product ID: " + product.getId());
+                    System.out.println("Product Name: " + product.getProductName());
+                    System.out.println("Price: " + product.getPrice());
+                    System.out.println("img: " + product.getImgURL());
+                    System.out.println("Status: " + product.getStatus());
+                    System.out.println("------------------------");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }

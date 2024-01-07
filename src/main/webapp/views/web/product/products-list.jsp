@@ -1,9 +1,9 @@
 <%@ page import="vn.edu.hcmuaf.model.Product" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.text.DecimalFormat" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="/common/taglib.jsp"%>
+<%@ include file="/common/taglib.jsp"%>
 <link href="../../../css/category.css" rel="stylesheet" type="text/css">
 
 <%
@@ -12,16 +12,17 @@
 %>
 
 <div class="grid-container">
-    <c:forEach var="product" items="${products}">
-        <c:if test="${!'Ngừng bán'.equals(product.getStatus())}">
-            <div class="category">
-                <a class="product" href="product-details.jsp">
-                    <img src="<c:out value="${product.getImgURL()}" />">
-                    <div class="status"><c:out value="${product.getStatus()}" /></div>
-                    <h3 class="product_name"><c:out value="${product.getProductName()}" /></h3>
-                    <div class="price"><c:out value="${decimalFormat.format(product.getPrice())}" /></div>
-                </a>
-            </div>
-        </c:if>
-    </c:forEach>
+    <% if (products != null) { %>
+    <% for (Product product : products) { %>
+    <div class="category">
+        <a class="product" href="product-details.jsp">
+            <p><b>Product Name:</b> <%= product.getProductName() %></p>
+            <p><b>Price:</b> <%= decimalFormat.format(product.getPrice()) %></p>
+            <p><b>Status:</b> <%= product.getStatus() %></p>
+        </a>
+    </div>
+    <% } %>
+    <% } else { %>
+    <p>No products available.</p>
+    <% } %>
 </div>
