@@ -1,28 +1,39 @@
 <%@ page import="vn.edu.hcmuaf.model.Product" %>
-<%@ page import="java.text.DecimalFormat" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="/common/taglib.jsp"%>
-<link href="../../../css/category.css" rel="stylesheet" type="text/css">
+<%@include file="/common/taglib.jsp" %>
+<link href="<%=request.getContextPath()%>/css/category.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/products.css" rel="stylesheet" type="text/css">
 
 <%
+    ArrayList<Product> productList = (ArrayList<Product>) request.getAttribute("productList");
     DecimalFormat decimalFormat = new DecimalFormat("###,###,### VNĐ");
-    ArrayList<Product> products = (ArrayList<Product>) request.getAttribute("products");
 %>
 
 <div class="grid-container">
-    <% if (products != null) { %>
-    <% for (Product product : products) { %>
+    <c:forEach var="product" items="${productList}">
     <div class="category">
         <a class="product" href="product-details.jsp">
-            <p><b>Product Name:</b> <%= product.getProductName() %></p>
-            <p><b>Price:</b> <%= decimalFormat.format(product.getPrice()) %></p>
-            <p><b>Status:</b> <%= product.getStatus() %></p>
+            <img src="<c:out value="${product.imgURL}" />">
+            <div class="status"><c:out value="${product.status}" /></div>
+            <h3 class="product_name"><c:out value="${product.productName}" /></h3>
+            <div class="price"><c:out value="${decimalFormat.format(product.price)}" /></div>
         </a>
     </div>
-    <% } %>
-    <% } else { %>
-    <p>No products available.</p>
-    <% } %>
+    </c:forEach>
 </div>
+
+<%--<div class="grid-container">--%>
+<%--    <div class="category">--%>
+<%--        <a href="product-details.html">--%>
+<%--            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"--%>
+<%--                 alt="ruby">--%>
+<%--            <div class="status"></div>--%>
+<%--            <h3 class="product_name">Ruby</h3>--%>
+<%--            <div class="price"></div>--%>
+<%--        </a>--%>
+<%--    </div>--%>
+<%--</div>--%>
+

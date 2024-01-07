@@ -14,7 +14,7 @@ public class Product implements Serializable {
     private String stoneType;
     private String stoneColor;
     private String weight;
-
+    private Integer quantity;
     private String size;
 
     public Product(int id, int categoryID, String productName, int price, String status, int thumbnailID) {
@@ -24,6 +24,15 @@ public class Product implements Serializable {
         this.price = price;
         this.status = status;
         this.thumbnailID = thumbnailID;
+    }
+
+    public Product(int id, String productName, int price, String imgURL, String status, Integer quantity) {
+        this.id = id;
+        this.productName = productName;
+        this.price = price;
+        this.imgURL = imgURL;
+        this.status = status;
+        this.quantity = quantity;
     }
 
     public Product(String imgURL, String productName, int price) {
@@ -145,6 +154,14 @@ public class Product implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     @Override
