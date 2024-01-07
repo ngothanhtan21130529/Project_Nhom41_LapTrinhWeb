@@ -10,57 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87b49c1-6b40-4ad0-a1d5-baf546a5ccda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/aquamarine.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/category.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/diamond.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/emerald.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/garnet.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/gemstone.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/jade.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/jewelrys.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/peridot.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/products.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/ruby.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/spinel.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/topaz.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/category/tourmarline.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/contact.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pagination.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/policy.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/jewelrys-list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/product-details.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/products-list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/products-new.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/search-result.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/banner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/fillter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/aquamarine.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/aquamarine.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/gemstone.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/gemstone.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/jewelrys.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/jewelrys.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAdmin/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/controller/controllerAdmin/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/category/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/category/products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product/jewelrys-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/jewelrys-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-new.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-new.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/search-result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/search-result.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/pagination.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/gemstone.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/gemstone.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/jewelrys.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/product-details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/products-new.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/products-new.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/product/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/product/products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/search-result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/search-result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product/products-list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,35 +63,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;211130530__PhamNhutTan&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Github/Project_Nhom41_LapTrinhWeb/src/main/webapp&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.applicationServers&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProductService.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 9.0.69.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "19130155__TranTuNguyet",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/Github/Project_Nhom41_LapTrinhWeb/src/main/webapp",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.applicationServers",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Github\Project_Nhom41_LapTrinhWeb\src\main\webapp" />
@@ -236,6 +197,13 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -275,6 +243,7 @@
       <workItem from="1702276420273" duration="644000" />
       <workItem from="1702357492360" duration="12525000" />
       <workItem from="1703672075373" duration="1450000" />
+      <workItem from="1704649637134" duration="7840000" />
     </task>
     <task id="LOCAL-00002" summary="tiếp tục làm chức năng tìm kiếm">
       <option name="closed" value="true" />
