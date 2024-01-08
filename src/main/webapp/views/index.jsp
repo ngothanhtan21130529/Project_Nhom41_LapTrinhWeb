@@ -1,11 +1,12 @@
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <title>Trang chủ</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -51,7 +52,11 @@
                         <img class="mySlides" src="../img/banner/jewelry-3.png" style="width:100%">
                     </div>
                 </div>
-                <jsp:include page="web/product/products-list.jsp"/>
+                <div class="grid-container">
+                    <c:forEach var="product" items="${jewelryList}">
+                        <%@ include file="web/product/products-list.jsp" %>
+                    </c:forEach>
+                </div>
                 <div class="pagination">
                     <a href="#">&laquo;</a>
                     <a href="#">1</a>
@@ -70,7 +75,7 @@
         </div>
     </div>
     <%--footer--%>
-    <%--    <jsp:include page="footer.jsp"></jsp:include>--%>
+    <jsp:include page="footer.jsp"></jsp:include>
 </div>
 <script>
     var myIndex = 0;

@@ -64,6 +64,25 @@ public class ProductDAO implements DAOInterface<Product> {
         }
     }
 
+    public ResultSet getListJewlryWithImage(){
+        try {
+            PreparedStatement ps =connection.prepareStatement(Queries.GET_lIST_JEWELRY);
+            return ps.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ResultSet getProductByID(int productID){
+        try {
+            PreparedStatement ps = connection.prepareStatement(Queries.GET_PRODUCT_BY_ID);
+            ps.setInt(1, productID);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public int count(String txtSearch) {
         try {
             String querry = "select count(products.id) from products where products.product_name like ?";
@@ -111,42 +130,4 @@ public class ProductDAO implements DAOInterface<Product> {
         }
         return productList;
     }
-
-    public Product getProductByID(int productId) {
-        Product product = null;
-        try {
-            String query = "SELECT p.id, p.product_name, p.price, p.status, p.description, i.img_url, inv.quantity " +
-                    "FROM products p " +
-                    "JOIN images i ON p.thumbnail_id = i.id " +
-                    "JOIN inventories inv ON p.id = inv.product_id " +
-                    "WHERE p.id = ?";
-            Connection con = MySqlConnection.getConnection();
-            try (PreparedStatement ps = con.prepareStatement(query)) {
-                ps.setInt(1, productId);
-                try (ResultSet rs = ps.executeQuery()) {
-                    if (rs.next()) {
-                        int id = rs.getInt("id");
-                        String productName = rs.getString("product_name");
-                        int price = rs.getInt("price");
-                        String status = rs.getString("status");
-                        String description = rs.getString("description");
-                        String imgURL = rs.getString("img_url");
-                        Integer quantity = (Integer) rs.getObject("quantity");
-
-                        if (quantity == null) {
-                            status = "Ngừng bán";
-                        } else {
-                            status = (quantity >= 1) ? "Đặt hàng" : "Hết hàng";
-                        }
-
-                        product = new Product(id, productName, price, status, description, imgURL);
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return product;
-    }
-
 }
