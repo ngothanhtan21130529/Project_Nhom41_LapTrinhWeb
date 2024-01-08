@@ -79,7 +79,11 @@
                     </select>
                 </div>
             </div>
-            <jsp:include page="../product/products-list.jsp"/>
+            <div class="grid-container">
+                <c:forEach var="product" items="${productList}">
+                    <%@ include file="../product/products-list.jsp" %>
+                </c:forEach>
+            </div>
             <div class="pagination">
                 <a href="#">&laquo;</a>
                 <a href="#">1</a>

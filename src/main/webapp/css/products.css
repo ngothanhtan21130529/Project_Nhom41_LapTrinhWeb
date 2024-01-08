@@ -105,9 +105,12 @@ h2{
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: rgba(164, 114, 8, 0.94);
 }
 
-.product_name {
-    color: #f3cc2c;
+ product .product_name {
+    color: #8d7313;
 }
+
+
+ 

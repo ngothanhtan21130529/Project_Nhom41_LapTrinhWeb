@@ -6,5 +6,7 @@ public class Queries {
     public static final String GET_IMAGE_BY_ID = "SELECT img_url FROM images WHERE id = ?";
     public static final String GET_LIST_PRODUCTS_WITH_IMAGE = "SELECT p.id, p.category_id, p.product_name, p.price, p.status, i.img_url, p.sale, p.hot, p.description, p.created_at, p.updated_at, p.deleted_at, p.color, p.weight, p.opacity, p.size, p.cutting_grinding_type, p.material FROM products p JOIN images i ON p.thumbnail_id = i.id";
     public static final String GET_INVENTORIES = "SELECT id, product_id, quantity FROM inventories";
+    public static final String GET_lIST_JEWELRY = "SELECT p.product_name, p.price, p.status, i.img_url, p.id FROM products p, categories c, images i WHERE p.category_id = c.id AND p.thumbnail_id = i.id AND c.category_name = 'Jewelry'";
+    public static final String GET_PRODUCT_BY_ID = "SELECT p.id, p.category_id, p.product_name, p.price, p.status, i.img_url, p.sale, p.hot, p.description, p.created_at, p.updated_at, p.deleted_at, p.color, p.weight, p.opacity, p.size, p.cutting_grinding_type, p.material FROM products p JOIN images i ON p.thumbnail_id = i.id WHERE p.id = ?";
 
 }
