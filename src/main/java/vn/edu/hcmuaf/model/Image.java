@@ -3,9 +3,15 @@ package vn.edu.hcmuaf.model;
 import java.io.Serializable;
 
 public class Image implements Serializable {
-    private int id;
-    private String imgURL;
-    private String imageName;
+    private static int id;
+    private static String imgURL;
+    private static String imageName;
+
+
+    public Image(String imgURL, String imageName) {
+        this.imgURL = imgURL;
+        this.imageName = imageName;
+    }
 
     public Image() {
     }
@@ -16,7 +22,7 @@ public class Image implements Serializable {
         this.imageName = imageName;
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
@@ -24,7 +30,7 @@ public class Image implements Serializable {
         this.id = id;
     }
 
-    public String getImgURL() {
+    public static String getImgURL() {
         return imgURL;
     }
 
@@ -32,7 +38,7 @@ public class Image implements Serializable {
         this.imgURL = imgURL;
     }
 
-    public String getImageName() {
+    public static String getImageName() {
         return imageName;
     }
 
