@@ -95,7 +95,7 @@ public class UserDAO implements DAOInterface<User> {
     }
 
     public boolean updatePassword(String username, String newpassword) throws SQLException {
-        String sql = "Update table users set password=? where username=?";
+        String sql = "Update  users set password=? where username=?";
         PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
         pr.setString(1, newpassword);
         pr.setString(2, username);
