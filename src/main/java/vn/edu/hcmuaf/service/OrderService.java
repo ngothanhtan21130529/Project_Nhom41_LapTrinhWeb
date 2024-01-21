@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 //insert data  fall down  to DAO layer
 public class OrderService {
-    public String getEmailforOrder(String email,String username) throws SQLException, SQLException {
+    public String getEmailforOrder(String email,String username) throws  SQLException {
         return UserDAO.getInstance().getEmailforOrder(email,username);
     }
 //    public boolean insertOrder(String username,String email,String address,String phone,String note,String total,String status) throws SQLException {

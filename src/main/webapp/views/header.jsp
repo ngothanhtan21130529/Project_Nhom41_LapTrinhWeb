@@ -1,3 +1,5 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.hcmuaf.model.Product" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
@@ -99,14 +101,14 @@
                         </a>
                         <!-- if card have product -> add class header__drop__empty -->
                         <div class="header__drop-list">
-                            <div class="header__mt">
-                                <img
-                                        src="./images/cart-empty.png"
-                                        alt="Giỏ hàng trống"
-                                        class="header__mt-img"
-                                />
-                                <h4 class="header__mt-msg">Chưa có sản phẩm</h4>
-                            </div>
+<%--                            <div class="header__mt">--%>
+<%--                                <img--%>
+<%--                                        src="./images/cart-empty.png"--%>
+<%--                                        alt="Giỏ hàng trống"--%>
+<%--                                        class="header__mt-img"--%>
+<%--                                />--%>
+<%--                                <h4 class="header__mt-msg">Chưa có sản phẩm</h4>--%>
+<%--                            </div>--%>
 
                             <div class="header__drop-no-mt">
                                 <p class="heading__drop__no-mt-msg">
@@ -114,77 +116,94 @@
                                 </p>
 
                                 <div class="header__product-list">
+                                <%ArrayList<Product> list=(ArrayList<Product>)session.getAttribute("list");%>
+                                <%for (Product product:list){%>
                                     <div class="header__product-item">
                                         <img
-                                                src="../img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg"
+                                                src="<%=product.getImgURL()%>"
                                                 alt="Header product card 1"
                                                 class="header__product-item-img"
                                         />
                                         <span class="header__product-item-name">
-                                                    Viên Topaz tự nhiên trắng tinh khiết - 283ct-IRTP56
+                                                    <%=product.getProductName()%>
                                                 </span>
                                         <span class="header__product-item-price">
-                                                    129.000.000
+                                                    <%=product.getPrice()%>
                                                 </span>
-                                    </div>
-                                    <div class="header__product-item">
-                                        <img
-                                                src="../img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"
-                                                alt="Header product card 1"
-                                                class="header__product-item-img"
-                                        />
-                                        <span class="header__product-item-name">
-                                                    Viên Ruby facet Lục Yên 063ct-IRRF152
-                                                </span>
-                                        <span class="header__product-item-price">
-                                                    129.000.000
-                                                </span>
-                                    </div>
-                                    <div class="header__product-item">
-                                        <img
-                                                src="../img/gemstone/jewels/Nhan-nam-Kim-Cuong-Vang-trang-Au18k-MA-K-6000000.jpg"
-                                                alt="Header product card 1"
-                                                class="header__product-item-img"
-                                        />
-                                        <span class="header__product-item-name">
-                                                    Nhẫn nam Kim Cương Vàng trắng Au18k-MA-K
-                                                </span>
-                                        <span class="header__product-item-price">
-                                                    129.000
-                                                </span>
-                                    </div>
-                                    <div class="header__product-item">
-                                        <img
-                                                src="../img/gemstone/spinel/Vien-Spinel-sac-cobalt-sieu-VIP-175ct-IRSI65-231117500000.jpg"
-                                                alt="Header product card 1"
-                                                class="header__product-item-img"
-                                        />
-                                        <span class="header__product-item-name">
-                                                    Viên Spinel sắc cobalt siêu VIP 175ct-IRSI65
-                                                </span>
-                                        <span class="header__product-item-price">
-                                                    129.000.000
-                                                </span>
-                                    </div>
-                                    <div class="header__product-item">
-                                        <img
-                                                src="../img/gemstone/diamond/Anh-dai-dien-Kim-Cuong-tu-nhien.jpg"
-                                                alt="Header product card 1"
-                                                class="header__product-item-img"
-                                        />
-                                        <span class="header__product-item-name">
-                                                    Kim cương tự nhiên
-                                                </span>
-                                        <span class="header__product-item-price">
-                                                    129.000.000
-                                                </span>
-                                    </div>
-                                </div>
-                                <div class="header__drop__bottom">
-                                    <p class="heading__drop__bottom-msg">
-                                        5 sản phẩm mới thêm vào giỏ hàng
-                                    </p>
-                                    <a href="web/cart/cart.jsp" class="header__drop__btn">
+                                    <%}%>
+
+
+<%--                                    <div class="header__product-item">--%>
+<%--                                        <img--%>
+<%--                                                src="../img/gemstone/topaz/Vien-Topaz-tu-nhien-trang-tinh-khiet-283ct-IRTP56-23928300000-1.jpg"--%>
+<%--                                                alt="Header product card 1"--%>
+<%--                                                class="header__product-item-img"--%>
+<%--                                        />--%>
+<%--                                        <span class="header__product-item-name">--%>
+<%--                                                    Viên Topaz tự nhiên trắng tinh khiết - 283ct-IRTP56--%>
+<%--                                                </span>--%>
+<%--                                        <span class="header__product-item-price">--%>
+<%--                                                    129.000.000--%>
+<%--                                                </span>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="header__product-item">--%>
+<%--                                        <img--%>
+<%--                                                src="../img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"--%>
+<%--                                                alt="Header product card 1"--%>
+<%--                                                class="header__product-item-img"--%>
+<%--                                        />--%>
+<%--                                        <span class="header__product-item-name">--%>
+<%--                                                    Viên Ruby facet Lục Yên 063ct-IRRF152--%>
+<%--                                                </span>--%>
+<%--                                        <span class="header__product-item-price">--%>
+<%--                                                    129.000.000--%>
+<%--                                                </span>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="header__product-item">--%>
+<%--                                        <img--%>
+<%--                                                src="../img/gemstone/jewels/Nhan-nam-Kim-Cuong-Vang-trang-Au18k-MA-K-6000000.jpg"--%>
+<%--                                                alt="Header product card 1"--%>
+<%--                                                class="header__product-item-img"--%>
+<%--                                        />--%>
+<%--                                        <span class="header__product-item-name">--%>
+<%--                                                    Nhẫn nam Kim Cương Vàng trắng Au18k-MA-K--%>
+<%--                                                </span>--%>
+<%--                                        <span class="header__product-item-price">--%>
+<%--                                                    129.000--%>
+<%--                                                </span>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="header__product-item">--%>
+<%--                                        <img--%>
+<%--                                                src="../img/gemstone/spinel/Vien-Spinel-sac-cobalt-sieu-VIP-175ct-IRSI65-231117500000.jpg"--%>
+<%--                                                alt="Header product card 1"--%>
+<%--                                                class="header__product-item-img"--%>
+<%--                                        />--%>
+<%--                                        <span class="header__product-item-name">--%>
+<%--                                                    Viên Spinel sắc cobalt siêu VIP 175ct-IRSI65--%>
+<%--                                                </span>--%>
+<%--                                        <span class="header__product-item-price">--%>
+<%--                                                    129.000.000--%>
+<%--                                                </span>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="header__product-item">--%>
+<%--                                        <img--%>
+<%--                                                src="../img/gemstone/diamond/Anh-dai-dien-Kim-Cuong-tu-nhien.jpg"--%>
+<%--                                                alt="Header product card 1"--%>
+<%--                                                class="header__product-item-img"--%>
+<%--                                        />--%>
+<%--                                        <span class="header__product-item-name">--%>
+<%--                                                    Kim cương tự nhiên--%>
+<%--                                                </span>--%>
+<%--                                        <span class="header__product-item-price">--%>
+<%--                                                    129.000.000--%>
+<%--                                                </span>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <div class="header__drop__bottom">--%>
+<%--                                    <p class="heading__drop__bottom-msg">--%>
+<%--                                        5 sản phẩm mới thêm vào giỏ hàng--%>
+<%--                                    </p>--%>
+                                    <a href="${pageContext.request.contextPath}/views/web/cart/cart.jsp" class="header__drop__btn">
                                         Xem giỏ hàng
                                     </a>
                                 </div>

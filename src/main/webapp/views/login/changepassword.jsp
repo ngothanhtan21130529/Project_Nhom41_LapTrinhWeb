@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="container">
-    <div><h1><%=(session!=null&&session.getAttribute("notify")!=null)?session.getAttribute("notify"):""%></h1></div>
+    <div><h1><%=request.getAttribute("notify")!=null?request.getAttribute("notify"):""%></h1></div>
     <form action="<%=request.getContextPath()%>/changepassword" method="post">
         <section id="head"><h1>Đổi mật khẩu</h1></section>
 <%--        <label for="email" class="email-label">Nhập Email</label>--%>

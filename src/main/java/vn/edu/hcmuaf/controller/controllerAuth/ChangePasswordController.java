@@ -22,24 +22,27 @@ public class ChangePasswordController extends HttpServlet {
         HttpSession session = req.getSession();
         if (session != null) {
             String username = (String) session.getAttribute("username");
-            if (!currentpassword.equals(newpassword) && newpassword.equals(repeatpassword)) {
-                try {
-                    if (changePasswordService.updatePassword(username, newpassword)) {
-                        req.setAttribute("notify", "Đổi mật khẩu thành công");
-                        req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
-                    } else {
-                        req.setAttribute("notify", "Đổi mật khẩu thất bại");
-                        req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
+            if (!currentpassword.equals(newpassword)) {
+                if (newpassword.equals(repeatpassword)) {
+                    try {
+                        if (changePasswordService.updatePassword(username, newpassword)) {
+                            req.setAttribute("notify", "Đổi mật khẩu thành công");
+                            req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
+                        } else {
+                            req.setAttribute("notify", "Đổi mật khẩu thất bại");
+                            req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
 
+                        }
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
                     }
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
                 }
+
+
             } else {
                 req.setAttribute("notify", "Mật khẩu phải trùng khớp với nhau");
                 req.getRequestDispatcher("/views/login/changepassword.jsp").forward(req, resp);
             }
-
         }
     }
 }

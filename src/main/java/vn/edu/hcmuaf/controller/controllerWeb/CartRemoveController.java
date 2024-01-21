@@ -18,16 +18,25 @@ public class CartRemoveController extends HttpServlet {
         String name = req.getParameter("name");
         String img = req.getParameter("img");
         int price = Integer.parseInt(req.getParameter("price"));
-        Product product = new Product(img, name, price);
-        HttpSession session=req.getSession();
-        if(session!=null){
-            ArrayList<Product> list=(ArrayList<Product>) session.getAttribute("list");
-            if(list!=null){
-                if(list.contains(product)){
-                    list.remove(product);
-                    session.setAttribute("list",list);
-                    resp.sendRedirect(req.getContextPath()+"/views/web/cart/cart.jsp");
+        HttpSession session = req.getSession();
+        ArrayList<Product> list = (ArrayList<Product>) session.getAttribute("list");
+        if (session != null) {
+            if (list.isEmpty()) {
+                req.setAttribute("message", "Giỏ hàng trống");
+                req.getRequestDispatcher("/views/header.jsp").forward(req, resp);
+            } else {
+                for (Product product : list) {
+                    if (product.getProductName().equalsIgnoreCase(name)) {
+                        if (product.getImgURL().equalsIgnoreCase(img)) {
+                            if (product.getPrice() == price) {
+                                list.remove(product);
+                                break;
+                            }
+                        }
+                    }
                 }
+                session.setAttribute("list", list);
+                resp.sendRedirect(req.getContextPath() + "/views/header.jsp");
             }
 
         }
