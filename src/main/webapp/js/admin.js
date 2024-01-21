@@ -26,7 +26,7 @@ function changeToCategoriesAddingTab() {
     document.querySelector('.categories-adding-tab').style.display = 'block';
     document.querySelector('.categories-adding-tab-general-infomation').style.display = 'grid';
 
-    document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị danh mục > Loại danh mục > Sửa';
+    document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Quản trị danh mục > Loại danh mục > Thêm mới';
 }
 
 function changeToProductTab() {
@@ -181,3 +181,12 @@ function scrollDownUserConfiguration() {
         }
     });
 }
+
+function showMessCategory(id) {
+    let option = confirm("Xác nhận xoá?");
+    if (option) {
+        window.location.href = 'DeleteCategory?id=' + id;
+    }
+};
+
+

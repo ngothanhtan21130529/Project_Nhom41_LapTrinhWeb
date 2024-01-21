@@ -19,19 +19,20 @@ public class Product implements Serializable {
     private String size;
 
     //New Product
-    private boolean sale;
+    private int sale;
     private boolean hot;
-    private boolean description;
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Timestamp deletedAt;
     private String color;
-    private String weight;
-    private String size;
     private String opacity;
     private int inventoriesID;
 
-    public Product(int id, int categoryID, String productName, int price, String status, String imgURL, boolean sale, boolean hot, boolean description, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String color, String weight, String opacity, String size, int inventoriesID) {
+    public Product(int id, String productName, int categoryID, String imgURL,
+                   int price, int sale, boolean hot, String description,
+                   Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
+                   String color, String weight, String size, String opacity,
+                   String status) {
         this.id = id;
         this.categoryID = categoryID;
         this.productName = productName;

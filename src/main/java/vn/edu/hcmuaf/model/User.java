@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class User implements Serializable {
     private int id;

@@ -1,7 +1,5 @@
 package vn.edu.hcmuaf.dao;
 
-import model.Image;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 

@@ -15,7 +15,7 @@ public class ProductDAO implements DAOInterface<Product> {
     }
 
     @Override
-    public int insert(Product product) throws SQLException {
+    public int insert(Product product){
         return 0;
     }
 
@@ -157,5 +157,41 @@ public class ProductDAO implements DAOInterface<Product> {
             throw new RuntimeException(e);
         }
         return product;
+    }
+    public  ArrayList<Product> getListProductFull(){
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sql = "select p.id, p.product_name, p.category_id, i.img_url, \n" +
+                    "p.price, p.sale, p.hot, p.description, p.created_at, \n" +
+                    "p.updated_at, p.deleted_at, p.color, p.weight, p.size, \n" +
+                    "p.opacity, p.status\n" +
+                    "from products p JOIN images i;";
+            Connection con = MySqlConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Product product=new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getInt(5),
+                        rs.getInt(6),
+                        rs.getBoolean(7),
+                        rs.getString(8),
+                        rs.getTimestamp(9),
+                        rs.getTimestamp(10),
+                        rs.getTimestamp(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return products;
     }
 }
