@@ -80,6 +80,7 @@ public class ProductDAO implements DAOInterface<Product> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return null;
     }
 
 
