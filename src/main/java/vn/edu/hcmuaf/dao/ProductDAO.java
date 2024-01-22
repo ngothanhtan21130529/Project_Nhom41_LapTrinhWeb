@@ -3,12 +3,14 @@ package vn.edu.hcmuaf.dao;
 import vn.edu.hcmuaf.database.MySqlConnection;
 import vn.edu.hcmuaf.database.Queries;
 import vn.edu.hcmuaf.model.Product;
+import vn.edu.hcmuaf.model.ProductDetail;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductDAO implements DAOInterface<Product> {
     public static ProductDAO getInstance() throws SQLException {
@@ -73,16 +75,30 @@ public class ProductDAO implements DAOInterface<Product> {
         }
     }
 
-    public ResultSet getProductByID(int productID){
+    public ProductDetail getProductByID(int productID){
         try {
-            PreparedStatement ps = connection.prepareStatement(Queries.GET_PRODUCT_BY_ID);
+            String sql = Queries.GET_PRODUCT_BY_ID;
+            PreparedStatement ps = connection.prepareStatement(sql );
             ps.setInt(1, productID);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                String productName = rs.getString("product_name");
+                int price = rs.getInt("price");
+                String description = rs.getString("description");
+                List<String> imgURLs = new ArrayList<>();
+                do {
+                    String imgURL = rs.getString("img_url");
+                    if(imgURL!=null){
+                        imgURLs.add(imgURL);
+                    }
+                } while (rs.next());
+                return new ProductDetail(productName, price, description, imgURLs);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return null;
     }
-
 
     public int count(String txtSearch) {
         try {
