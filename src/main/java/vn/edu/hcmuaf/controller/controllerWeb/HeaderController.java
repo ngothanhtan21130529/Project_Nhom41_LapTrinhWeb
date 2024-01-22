@@ -15,28 +15,23 @@ public class HeaderController extends HttpServlet {
 
         switch (action) {
             case "home":
-                // Redirect to the home page or include its content here
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
                 break;
             case "products":
-                // Redirect to the products page or include its content here
                 request.getRequestDispatcher("views/web/category/products.jsp").forward(request, response);
                 break;
+            case "jewelrys":
+                request.getRequestDispatcher("views/web/category/jewelrys.jsp").forward(request, response);
             case "contact":
-                // Redirect to the contact page or include its content here
                 request.getRequestDispatcher("/contact.jsp").forward(request, response);
                 break;
             case "policy":
-                // Redirect to the policy page or include its content here
                 request.getRequestDispatcher("/policy.jsp").forward(request, response);
                 break;
             case "about":
-                // Redirect to the about page or include its content here
                 request.getRequestDispatcher("/about.jsp").forward(request, response);
                 break;
-            // Add more cases as needed
             default:
-                // Handle the default case or redirect to an error page
                 response.sendRedirect(request.getContextPath() + "/error.jsp");
         }
     }
