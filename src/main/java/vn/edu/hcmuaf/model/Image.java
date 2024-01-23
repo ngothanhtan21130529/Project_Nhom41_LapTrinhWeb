@@ -7,7 +7,7 @@ public class Image implements Serializable {
     private String imgURL;
     private String imageName;
 
-    public Image(int id, String imgURL, String imageName) {
+    public Image(String imgURL, String imageName) {
         this.id = id;
         this.imgURL = imgURL;
         this.imageName = imageName;

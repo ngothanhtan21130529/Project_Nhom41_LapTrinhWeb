@@ -12,7 +12,7 @@
 %>
 
 <div class="category">
-    <a class="product" href="product-details.jsp">
+    <a class="product" href="<%=request.getContextPath()%>/product-details?id=<c:out value="${product.id}"/>">
         <img src="<c:out value="${product.imgURL}" />">
         <div class="status"><c:out value="${product.status}" /></div>
         <h3 class="product_name"><c:out value="${product.productName}" /></h3>
@@ -33,4 +33,3 @@
 <%--        </a>--%>
 <%--    </div>--%>
 <%--</div>--%>
-
