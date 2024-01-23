@@ -1,10 +1,9 @@
 package service;
 
-import DAO.CategoryDAO;
-import DAO.ImageDAO;
-import DAO.ProductDAO;
-import model.Category;
-import model.Product;
+
+import vn.edu.hcmuaf.dao.ImageDAO;
+import vn.edu.hcmuaf.dao.ProductDAO;
+import vn.edu.hcmuaf.model.Product;
 
 import java.util.ArrayList;
 
@@ -17,15 +16,16 @@ public class PrintProductService {
         this.imageDAO = imageDAO;
     }
 
-    public ArrayList<Category> getListProductFull() {
+    public ArrayList<Product> getListProductFull() {
 //        return productDAO.get();
+        return null;
     }
 
     public ArrayList<Product> printProducts(int index, int size){
-        ArrayList<Product> productArrayList = get();
-        ArrayList<Category> result=new ArrayList<>();
+        ArrayList<Product> productArrayList = getListProductFull();
+        ArrayList<Product> result=new ArrayList<>();
         for (int i = (index*size)-(size-1); i < (index*size); i++) {
-            result.add(categoryArrayList.get(i));
+            result.add(productArrayList.get(i));
         }
         return result;
     }

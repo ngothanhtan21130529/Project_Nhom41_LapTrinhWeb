@@ -164,30 +164,40 @@ public class ProductDAO implements DAOInterface<Product> {
             String sql = "select p.id, p.product_name, p.category_id, i.img_url, \n" +
                     "p.price, p.sale, p.hot, p.description, p.created_at, \n" +
                     "p.updated_at, p.deleted_at, p.color, p.weight, p.size, \n" +
-                    "p.opacity, p.status\n" +
+                    "p.opacity, p.status, p.cutting_grinding_type, p.material\n" +
                     "from products p JOIN images i;";
             Connection con = MySqlConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
+            /*
+            * Product(int id, String productName, int categoryID, String imgURL,
+                   int price, int sale, boolean hot, String description,
+                   Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
+                   String color, String weight, String size, String opacity,
+                   String status, String cuttingGrindingShape, String marterial
+            * */
             while (rs.next()) {
                 Product product=new Product(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getString(4),
-                        rs.getInt(5),
-                        rs.getInt(6),
-                        rs.getBoolean(7),
-                        rs.getString(8),
-                        rs.getTimestamp(9),
-                        rs.getTimestamp(10),
-                        rs.getTimestamp(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14),
-                        rs.getString(15),
-                        rs.getString(16)
+                        rs.getInt("id"),
+                        rs.getString("product_name"),
+                        rs.getInt("category_id"),
+                        rs.getString("img_url"),
+                        rs.getInt("price"),
+                        rs.getInt("sale"),
+                        rs.getBoolean("hot"),
+                        rs.getString("description"),
+                        rs.getTimestamp("created_at"),
+                        rs.getTimestamp("updated_at"),
+                        rs.getTimestamp("deleted_at"),
+                        rs.getString("color"),
+                        rs.getString("weight"),
+                        rs.getString("size"),
+                        rs.getString("opacity"),
+                        rs.getString("status"),
+                        rs.getString("cutting_grinding_type"),
+                        rs.getString("material")
                 );
+                products.add(product);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -15,7 +15,7 @@ public class UpdateCategoryStage1 extends HttpServlet {
     SearchService service=new SearchService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         String categoryID=request.getParameter("id");
         int id=Integer.parseInt(categoryID);
         Category category= service.findCategoryById(id);

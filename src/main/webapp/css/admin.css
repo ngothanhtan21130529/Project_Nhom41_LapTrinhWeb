@@ -1359,15 +1359,18 @@ td div {
     padding-bottom: 10px;
 }
 
-#categories-table_length {
+#categories-table_length,
+#product-table_length {
     float: none;
 }
 
-#categories-table_length label {
+#categories-table_length label,
+#product-table_length label{
     float: right;
 }
 
-#categories-table_filter {
+#categories-table_filter,
+#product-table_filter{
     float: left;
     padding-bottom: 10px;
 }
@@ -1376,12 +1379,14 @@ td div {
     padding-left: 10px;
 }
 
-#categories-table_wrapper{
+#categories-table_wrapper,
+#product-table_wrapper {
     padding-top: 10px;
     gap: 10px;
 }
 
-#categories-table{
+#categories-table,
+#product-table {
     margin-bottom: 10px;
 }
 

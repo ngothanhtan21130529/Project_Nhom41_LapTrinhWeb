@@ -30,7 +30,7 @@ public class UpdateCategoryStage2 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         String newCategoryName=request.getParameter("categories-name-input");
         String newStatus=request.getParameter("categories-status");
         String categoryID=request.getParameter("categories-order");
@@ -39,24 +39,32 @@ public class UpdateCategoryStage2 extends HttpServlet {
         Part filePart = request.getPart("category-new-img");
         String fileName = filePart.getSubmittedFileName();
         String root = getServletContext().getRealPath("/img/data/");
-        if(filePart != null && fileName.isEmpty()){
-            File currentFile=new File(category.getImgURL());
-            fileName=currentFile.getName();
-        }else{
-            File check = new File(root);
-            if (!(check.exists())) check.mkdirs();
-            if (filePart != null && !fileName.isEmpty()) {
-                filePart.write(root + fileName);
-            }
-        }
-        String newImageURL="/img/data/"+fileName;
+        String newImageURL="";
+        String imageIsNull="imageisnull";
         Image image=search.findImageById(category.getImgID());
-        image.setImageName(fileName);
-        image.setImgURL(newImageURL);
-        imageService.updateImage(image);
-        category.setCategoryName(newCategoryName);
-        category.setStatus(newStatus);
-        categoryService.updateCategory(category);
-        response.sendRedirect(request.getContextPath()+"/AdminDisplayment");
+        if(fileName.isBlank()) {
+            request.setAttribute("imageIsNull", imageIsNull);
+            response.sendRedirect(request.getContextPath()+"/UpdateCategoryStage1?id="+id+"&imgID="+category.getImgID()+"&imageIsNull="+imageIsNull);
+        }
+        else {
+            if (filePart != null && fileName.isBlank()) {
+                newImageURL = image.getImgURL();
+                fileName = image.getImageName();
+            } else {
+                File check = new File(root);
+                if (!(check.exists())) check.mkdirs();
+                if (filePart != null && !fileName.isEmpty()) {
+                    filePart.write(root + fileName);
+                    newImageURL = "/img/data/" + fileName;
+                }
+            }
+            image.setImageName(fileName);
+            image.setImgURL(newImageURL);
+            imageService.updateImage(image);
+            category.setCategoryName(newCategoryName);
+            category.setStatus(newStatus);
+            categoryService.updateCategory(category);
+            response.sendRedirect(request.getContextPath() + "/AdminDisplayment");
+        }
     }
 }

@@ -11,11 +11,10 @@ public class Product implements Serializable {
     private String status;
     private int thumbnailID;
     private String imgURL;
-    private  String description;
+    private String description;
     private String stoneType;
     private String stoneColor;
     private String weight;
-
     private String size;
 
     //New Product
@@ -27,12 +26,14 @@ public class Product implements Serializable {
     private String color;
     private String opacity;
     private int inventoriesID;
-
+    private Category category;
+    private String cuttingGrindingShape;
+    private String marterial;
     public Product(int id, String productName, int categoryID, String imgURL,
                    int price, int sale, boolean hot, String description,
                    Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
                    String color, String weight, String size, String opacity,
-                   String status) {
+                   String status, String cuttingGrindingShape, String marterial) {
         this.id = id;
         this.categoryID = categoryID;
         this.productName = productName;
@@ -49,7 +50,8 @@ public class Product implements Serializable {
         this.weight = weight;
         this.size = size;
         this.opacity = opacity;
-        this.inventoriesID = inventoriesID;
+        this.cuttingGrindingShape=cuttingGrindingShape;
+        this.marterial=marterial;
     }
 
     public Product(int id, int categoryID, String productName, int price, String status, int thumbnailID) {
@@ -70,7 +72,7 @@ public class Product implements Serializable {
     }
 
     public Product(String imgURL, String productName, int price) {
-        this.productName=productName;
+        this.productName = productName;
         this.price = price;
         this.imgURL = imgURL;
     }
@@ -83,6 +85,14 @@ public class Product implements Serializable {
         this.imgURL = imgURL;
         this.description = description;
         this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getId() {
@@ -179,6 +189,86 @@ public class Product implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Timestamp getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(Timestamp deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public int getSale() {
+        return sale;
+    }
+
+    public void setSale(int sale) {
+        this.sale = sale;
+    }
+
+    public boolean isHot() {
+        return hot;
+    }
+
+    public void setHot(boolean hot) {
+        this.hot = hot;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getOpacity() {
+        return opacity;
+    }
+
+    public void setOpacity(String opacity) {
+        this.opacity = opacity;
+    }
+
+    public int getInventoriesID() {
+        return inventoriesID;
+    }
+
+    public void setInventoriesID(int inventoriesID) {
+        this.inventoriesID = inventoriesID;
+    }
+
+    public String getCuttingGrindingShape() {
+        return cuttingGrindingShape;
+    }
+
+    public void setCuttingGrindingShape(String cuttingGrindingShape) {
+        this.cuttingGrindingShape = cuttingGrindingShape;
+    }
+
+    public String getMarterial() {
+        return marterial;
+    }
+
+    public void setMarterial(String marterial) {
+        this.marterial = marterial;
     }
 
     @Override

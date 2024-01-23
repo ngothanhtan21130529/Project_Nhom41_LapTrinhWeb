@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class MySqlConnection {
     public static Connection getConnection() throws SQLException {
         DriverManager.registerDriver(new Driver());
-        String url = "jdbc:mysql://localhost:3306/gemstore";
+        String url = "jdbc:mysql://localhost:3306/gemstore?characterEncoding=UTF-8";
         String user = "root";
         String password = "";
         return DriverManager.getConnection(url, user, password);

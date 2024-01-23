@@ -1,9 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page isELIgnored="false" %>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -201,13 +199,11 @@
                                     </td>
                                     <td>
                                         <c:choose>
-                                            <c:when test="${category.getImgURL().isEmpty()}">
+                                            <c:when test="${category.getImgURL()==null}">
                                                 Chưa có hình
                                             </c:when>
                                             <c:when test="${fn:containsIgnoreCase(category.getImgURL(), 'img/data')}">
-<%--                                                <img src="<%=request.getContextPath()%>${URLEncoder.encode(category.getImgURL(), StandardCharsets.UTF_8)}"--%>
-                                                <%=request.getContextPath()%>
-                                                ${URLEncoder.encode("/img/data/737400.jpg", StandardCharsets.UTF_8.name())}
+                                                <img src="<%=request.getContextPath()%>${category.getImgURL()}" alt="">
                                             </c:when>
                                             <c:otherwise>
                                                 <img src="${category.getImgURL()}" alt="">
@@ -233,7 +229,7 @@
                                             </c:otherwise>
                                         </c:choose>
                                     </td>
-                                    <td style="">
+                                    <td>
                                         <div>
                                             <a href="UpdateCategoryStage1?id=${category.getId()}&imgID=${category.getImgID()}">
                                                 <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
@@ -301,21 +297,6 @@
             <div class="product-tab">
                 <div class="product-main-tab content-tab">
                     <div class="product-tab-function-box function-box">
-                        <div class="searching-box box">
-                            <input type="text" placeholder="Tìm kiếm">
-                        </div>
-                        <div class="search-by-box box">
-                            <select name="search-by">
-                                <option value="">Tìm theo</option>
-                                <option value="find-by-id">Số thứ tự</option>
-                                <option value="find-by-categories">Tên sản phẩm</option>
-                            </select>
-                        </div>
-                        <div class="see-all-box box">
-                            <button class="see-all-box-content">
-                                Xem tất cả sản phẩm
-                            </button>
-                        </div>
                         <div class="adding-box box" onclick="changeToProductAddingTab()">
                             <button>
                                 <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
@@ -324,7 +305,8 @@
                         </div>
                     </div>
                     <div class="product-table" style="overflow-x: auto;">
-                        <table>
+                        <table id="product-table">
+                            <thead>
                             <tr>
                                 <th>STT</th>
                                 <th>Tiêu đề</th>
@@ -341,43 +323,99 @@
                                 <th>Trọng lượng</th>
                                 <th>Kích thước</th>
                                 <th>Độ trong suốt</th>
-                                <th>Tồn kho</th>
+                                <th>Kiểu cắt mài</th>
+                                <th>Chất liệu</th>
                                 <th>Tình trạng</th>
                                 <th>Tác vụ</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Đá quý</td>
-                                <td>Đá quý loại A</td>
-                                <td>
-                                    <img src="../img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
-                                </td>
-                                <td>12000000</td>
-                                <td><input type="checkbox" name=""></td>
-                                <td><input type="checkbox" name=""></td>
-                                <td>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dignissimos?
-                                </td>
-                                <td>16/12/2023</td>
-                                <td>16/12/2023</td>
-                                <td>16/12/2023</td>
-                                <td>Tím</td>
-                                <td>1.2 carat</td>
-                                <td>15mmx20mm</td>
-                                <td>0.5</td>
-                                <td>15</td>
-                                <td>
-                                    <select>
-                                        <option value="stocking">Còn hàng</option>
-                                        <option value="out-of-stock">Hết hàng</option>
-                                        <option value="not-sold">Không bán nữa</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
-                                    <i class="fa-solid fa-x fa-lg" style="color: #5b85cd;"></i>
-                                </td>
-                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${productArrayList}" var="product">
+                                <tr>
+                                    <td>
+                                            ${product.getId()}
+                                    </td>
+                                    <td>
+                                            ${product.getProductName()}
+                                    </td>
+                                    <td>
+                                            ${product.getCategory().getCategoryName()}
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${product.getImgURL()==null}">
+                                                Chưa có hình
+                                            </c:when>
+                                            <c:when test="${fn:containsIgnoreCase(product.getImgURL(), 'img/data')}">
+                                                <img src="<%=request.getContextPath()%>${product.getImgURL()}" alt="">
+                                            </c:when>
+                                            <c:otherwise>
+                                                <img src="${product.getImgURL()}" alt="">
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                            ${product.getPrice()}</td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${category.getStatus()==null}">
+                                                Không
+                                            </c:when>
+                                            <c:otherwise>
+                                                Có
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${category.getStatus()==null}">
+                                                Không
+                                            </c:when>
+                                            <c:otherwise>
+                                                Có
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                            ${product.getDescription()}
+                                    </td>
+                                    <td>
+                                            ${product.getCreatedAt()}
+                                    </td>
+                                    <td>
+                                            ${product.getUpdatedAt()}
+                                    </td>
+                                    <td>
+                                            ${product.getDeletedAt()}
+                                    </td>
+                                    <td>
+                                            ${product.getColor()}
+                                    </td>
+                                    <td>
+                                            ${product.getWeight()}
+                                    </td>
+                                    <td>
+                                            ${product.getSize()}
+                                    </td>
+                                    <td>
+                                            ${product.getOpacity()}
+                                    </td>
+                                    <td>
+                                            ${product.getStatus()}
+                                    </td>
+                                    <td>
+                                            ${product.getCuttingGrindingShape()}
+                                    </td>
+                                    <td>
+                                            ${product.getMarterial()}
+                                    </td>
+                                    <td>
+                                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                        <i class="fa-solid fa-x fa-lg" style="color: #5b85cd;"></i>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </div>

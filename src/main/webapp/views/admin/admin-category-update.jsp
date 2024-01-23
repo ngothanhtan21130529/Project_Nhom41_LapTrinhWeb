@@ -156,7 +156,14 @@
                                 </p>
                             </div>
                             <div class="image-current">
-                                <img src="<%=request.getContextPath()%>${category.getImgURL()}">
+                                <c:choose>
+                                    <c:when test="${category.getImgURL()==null}">
+                                        Chưa có hình
+                                    </c:when>
+                                    <c:otherwise>
+                                        <img src="<%=request.getContextPath()%>${category.getImgURL()}">
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                             <div class="img-label">
                                 <p>
@@ -167,6 +174,10 @@
                                 <input class="choosing-button" type="file" name="category-new-img" accept="image/*"
                                        style="width: 100%">
                             </div>
+                            <c:set var="imageIsNull" value="${param.imageIsNull}"/>
+                            <c:if test="${imageIsNull=='imageisnull'}">
+                                <script>alert("Vui lòng thêm hình cho danh mục");</script>
+                            </c:if>
                             <div class="categories-detail-title">
                                 <p>
                                     Tiêu đề:
@@ -192,7 +203,7 @@
                             <div class="categories-action-choose">
                                 <div>
                                     <input type="checkbox" name="categories-status"
-                                           ${category.getStatus()==null?"":"checked"}>
+                                    ${category.getStatus()==null?"":"checked"}>
                                 </div>
                                 <div class="categories-action-choose-label">
                                     Hiển thị

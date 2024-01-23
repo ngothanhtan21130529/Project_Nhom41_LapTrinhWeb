@@ -28,7 +28,7 @@ public class AddCategory extends HttpServlet {
     CategoryService categoryService = new CategoryService();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         Part filePart = request.getPart("category-img");
         String fileName = filePart.getSubmittedFileName();
         String root = getServletContext().getRealPath("/img/data/");

@@ -1,8 +1,8 @@
 package service;
 
-import DAO.CategoryDAO;
-import DAO.ImageDAO;
-import model.Category;
+import vn.edu.hcmuaf.dao.CategoryDAO;
+import vn.edu.hcmuaf.dao.ImageDAO;
+import vn.edu.hcmuaf.model.Category;
 
 import java.util.ArrayList;
 
