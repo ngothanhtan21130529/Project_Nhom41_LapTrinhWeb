@@ -1,13 +1,15 @@
 package vn.edu.hcmuaf.service;
 
 import vn.edu.hcmuaf.dao.ProductDAO;
-import vn.edu.hcmuaf.model.Inventory;
+import vn.edu.hcmuaf.model.Image;
 import vn.edu.hcmuaf.model.Product;
+import vn.edu.hcmuaf.model.ProductDetail;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProductService {
@@ -29,7 +31,6 @@ public class ProductService {
         } else {
             status = "Đặt hàng";
         }
-
         return status;
     }
 
@@ -87,25 +88,55 @@ public ArrayList<Product> getProductList(ResultSet productRS) {
         return getProductList(jewelryListRS);
     }
 
+    public ProductDetail getProductByID(int productID) {
+        ResultSet productResultSet = productDAO.getProductByID(productID);
+        ResultSet inventoriesResultSet = productDAO.getInventories();
+        ResultSet productImagesResultSet = productDAO.getProductImagesByID(productID);
+        ResultSet productCategoryName = productDAO.getProductCategoryNameByID(productID);
 
-//    public static void main(String[] args) throws SQLException {
-//        // Tạo một đối tượng của lớp chứa hàm getListProducts
-//        ProductService yourClass = new ProductService(); // Thay YourClassName bằng tên thực tế của lớp chứa đoạn mã
-//
-//        // Gọi hàm getListProducts để lấy danh sách sản phẩm
-//        ArrayList<Product> productList = yourClass.getListProducts();
-//
-//        // In ra thông tin của từng sản phẩm
-//        for (Product product : productList) {
-//            System.out.println("Product ID: " + product.getId());
-//            System.out.println("Product Name: " + product.getProductName());
-//            System.out.println("Image URL: " + product.getImgURL());
-//            System.out.println("Price: " + product.getPrice());
-//            System.out.println("Status: " + product.getStatus());
-//            System.out.println("--------------");
-//        }
-//    }
+        try {
+            if (productResultSet.next()) {
+                ProductDetail productDetail = new ProductDetail();
+                productDetail.setId(productResultSet.getInt("id"));
+                productDetail.setProductName(productResultSet.getString("product_name"));
+                productDetail.setPrice(productResultSet.getInt("price"));
+                productDetail.setStatus(classifyStatus(getQuantityFromInventories(inventoriesResultSet, productID)));
+                productDetail.setImgURL(productResultSet.getString("img_url"));
+                productDetail.setDescription(productResultSet.getString("description"));
+                productDetail.setStoneType(productCategoryName.getString("category_name"));
+                productDetail.setColor(productResultSet.getString("color"));
+                productDetail.setWeight(productResultSet.getString("weight"));
+                productDetail.setSize(productResultSet.getString("size"));
+                productDetail.setOpacity(productResultSet.getString("opacity"));
+                productDetail.getMaterial(productResultSet.getString("material"));
+                productDetail.setCuttingGrindingType(productResultSet.getString("cutting_grinding_type"));
 
+                // Lấy danh sách hình ảnh từ ResultSet và set vào productDetail
+                List<String> images = new ArrayList<>();
+                while (productImagesResultSet.next()) {
+                    String imageURL = productImagesResultSet.getString("img_url");
+                    images.add(imageURL);
+                }
+                productDetail.setImages(images);
+
+                return productDetail;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    private Integer getQuantityFromInventories(ResultSet inventoriesResultSet, int productID) throws SQLException {
+        while (inventoriesResultSet.next()) {
+            int inventoryProductID = inventoriesResultSet.getInt("product_id");
+            if (inventoryProductID == productID) {
+                return inventoriesResultSet.getInt("quantity");
+            }
+        }
+        return null;
+    }
 }
 
 

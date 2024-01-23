@@ -75,7 +75,44 @@ public class ProductDAO implements DAOInterface<Product> {
         }
     }
 
-    public ResultSet 
+    public ResultSet getListProductImage(){
+        try {
+            PreparedStatement ps = connection.prepareStatement(Queries.GET_LIST_PRODUCT_IMAGE_BY_ID);
+            return ps.executeQuery();
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ResultSet getProductByID(int productID) {
+        try {
+            PreparedStatement ps = connection.prepareStatement(Queries.GET_PRODUCT_BY_ID);
+            ps.setInt(1, productID);
+            return ps.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ResultSet getProductImagesByID(int productID){
+        try {
+            PreparedStatement ps =connection.prepareStatement(Queries.GET_LIST_PRODUCT_IMAGE_BY_ID );
+            ps.setInt(1, productID);
+            return ps.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ResultSet getProductCategoryNameByID(int productID){
+        try {
+            PreparedStatement ps = connection.prepareStatement(Queries.GET_PRODUCT_CATEGORY_NAME_BY_ID);
+            ps.setInt(1, productID);
+            return ps.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public int count(String txtSearch) {
         try {
