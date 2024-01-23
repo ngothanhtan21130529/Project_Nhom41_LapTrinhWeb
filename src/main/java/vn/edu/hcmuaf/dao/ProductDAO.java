@@ -75,30 +75,7 @@ public class ProductDAO implements DAOInterface<Product> {
         }
     }
 
-    public ProductDetail getProductByID(int productID){
-        try {
-            String sql = Queries.GET_PRODUCT_BY_ID;
-            PreparedStatement ps = connection.prepareStatement(sql );
-            ps.setInt(1, productID);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                String productName = rs.getString("product_name");
-                int price = rs.getInt("price");
-                String description = rs.getString("description");
-                List<String> imgURLs = new ArrayList<>();
-                do {
-                    String imgURL = rs.getString("img_url");
-                    if(imgURL!=null){
-                        imgURLs.add(imgURL);
-                    }
-                } while (rs.next());
-                return new ProductDetail(productName, price, description, imgURLs);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return null;
-    }
+    public ResultSet 
 
     public int count(String txtSearch) {
         try {
