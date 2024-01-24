@@ -18,6 +18,10 @@ public class Order implements Serializable {
         this.totalPrice = totalPrice;
     }
 
+    public Order() {
+
+    }
+
     public int getId() {
         return id;
     }

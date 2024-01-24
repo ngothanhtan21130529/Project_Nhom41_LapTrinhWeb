@@ -23,6 +23,7 @@
 <div class="container">
     <%--header--%>
     <jsp:include page="header.jsp"></jsp:include>
+
     <%--main--%>
     <div class="main">
         <div class="banner">

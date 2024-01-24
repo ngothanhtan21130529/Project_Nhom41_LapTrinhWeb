@@ -16,49 +16,43 @@
     <link href="../../css/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="container">
-
-        <div class="img-ttn">
-        <img src="./img/banner/TTN.png">
-        </div>
-        <form action="./lo_gin" method="post">
-            <div id="logo">
-                <img src="./img/logo.png" alt="logo">
-            </div>
-            <div id="log_in">
-                <h1>Đăng nhập</h1>
-            </div>
-            <div id="username_password">
-                <label for="username">Tài khoản:</label>
-                <input type="text" name="username" placeholder="username" value="" id="username">
-                <br>
-                <label for="password">Mật khẩu:</label>
-                <input type="password" name="password" placeholder="password" value="" id="password">
-            </div>
-
-            <div id="login">
-                <button id="submit"><h2>Đăng nhập</h2></button>
-            </div>
-
-            <div id="google">
-                <button id="google_btn">
-                    <i class="fab fa-google"></i>
-                    <h3>Đăng nhập với google</h3>
-                </button>
-            </div>
-            <div id="register_forget">
-                <div id="register">
-                    <a href="register.jsp">Đăng ký</a>
-                </div>
-                <div id="forget_pass">
-                    <a href="forgot-password.html">Quên mật khẩu ?</a>
-                </div>
-            </div>
-            <div id="remember">
-                <input type="checkbox" id="checkbox">
-                <h3 id="text_ghi_nho">Ghi nhớ đăng nhập</h3>
-            </div>
-        </form>
+<div id="container">
+    <div style="color:red"><%=(request.getAttribute("notify")!=null ? request.getAttribute("notify") : "")%>
     </div>
+    <div class="img-ttn">
+        <img src="./img/banner/TTN.png">
+    </div>
+    <form action="<%=request.getContextPath()%>/login" method="post">
+        <div id="logo">
+            <img src="./img/logo.png" alt="logo">
+        </div>
+        <div id="log_in">
+            <h1>Đăng nhập</h1>
+        </div>
+        <div id="username_password">
+            <label for="username">Tài khoản:</label>
+            <input type="text" name="username" placeholder="username" value="" id="username">
+            <br>
+            <label for="password">Mật khẩu:</label>
+            <input type="password" name="password" placeholder="password" value="" id="password">
+        </div>
+
+        <div id="login">
+            <button id="submit"><h2>Đăng nhập</h2></button>
+        </div>
+        <div id="register_forget">
+            <div id="register">
+                <a href="register.jsp">Đăng ký</a>
+            </div>
+            <div id="forget_pass">
+                <a href="forgot-password.html">Quên mật khẩu ?</a>
+            </div>
+        </div>
+<%--        <div id="remember">--%>
+<%--            <input type="checkbox" id="checkbox">--%>
+<%--            <h3 id="text_ghi_nho">Ghi nhớ đăng nhập</h3>--%>
+<%--        </div>--%>
+    </form>
+</div>
 </body>
 </html>

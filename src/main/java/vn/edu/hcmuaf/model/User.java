@@ -2,7 +2,6 @@ package vn.edu.hcmuaf.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Date;
 
 public class User implements Serializable {
     private int id;
@@ -53,13 +52,31 @@ public class User implements Serializable {
         this.password=password;
         this.role=role;
     }
-
-    public String getRoleName() {
-        return roleName;
+    public User(int id, String userName, String password, String email, Role role) {
+        this.id = id;
+        this.userName=userName;
+        this.password=password;
+        this.email=email;
+        this.role=role;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public User(String name,String userName,String password,String email,Timestamp birthday,String phone){
+        this.name=name;
+        this.userName=userName;
+        this.password=password;
+        this.email=email;
+        this.birthday=birthday;
+        this.phone=phone;
+    }
+    public User(int id,String username,String password,String name,String email,String phone,Role role,Timestamp birthday){
+        this.id=id;
+        this.userName=username;
+        this.password=password;
+        this.name=name;
+        this.email=email;
+        this.phone=phone;
+        this.role=role;
+        this.birthday=birthday;
     }
 
     public int getId() {
@@ -157,4 +174,12 @@ public class User implements Serializable {
     public void setBirthday(Timestamp birthday) {
         this.birthday = birthday;
     }
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
 }
