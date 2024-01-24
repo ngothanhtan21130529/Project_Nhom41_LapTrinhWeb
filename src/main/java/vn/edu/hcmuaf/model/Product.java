@@ -16,24 +16,22 @@ public class Product implements Serializable {
     private String stoneColor;
     private String weight;
     private String size;
-
     //New Product
     private int sale;
     private boolean hot;
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Timestamp deletedAt;
-    private String color;
     private String opacity;
     private int inventoriesID;
     private Category category;
     private String cuttingGrindingShape;
-    private String marterial;
+    private String material;
     public Product(int id, String productName, int categoryID, String imgURL,
                    int price, int sale, boolean hot, String description,
                    Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
-                   String color, String weight, String size, String opacity,
-                   String status, String cuttingGrindingShape, String marterial) {
+                   String stoneColor, String weight, String size, String opacity,
+                   String status, String cuttingGrindingShape, String material) {
         this.id = id;
         this.categoryID = categoryID;
         this.productName = productName;
@@ -46,12 +44,12 @@ public class Product implements Serializable {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
-        this.color = color;
+        this.stoneColor = stoneColor;
         this.weight = weight;
         this.size = size;
         this.opacity = opacity;
         this.cuttingGrindingShape=cuttingGrindingShape;
-        this.marterial=marterial;
+        this.material=material;
     }
 
     public Product(int id, int categoryID, String productName, int price, String status, int thumbnailID) {
@@ -231,14 +229,6 @@ public class Product implements Serializable {
         this.hot = hot;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public String getOpacity() {
         return opacity;
     }
@@ -264,20 +254,36 @@ public class Product implements Serializable {
     }
 
     public String getMarterial() {
-        return marterial;
+        return material;
     }
 
-    public void setMarterial(String marterial) {
-        this.marterial = marterial;
+    public void setMarterial(String material) {
+        this.material = material;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "productName='" + productName + "\n" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
                 ", price=" + price +
-                ", thumbnail='" + imgURL + "\t" +
-                "}\n";
+                ", status='" + status + '\'' +
+                ", imgURL='" + imgURL + '\'' +
+                ", description='" + description + '\'' +
+                ", stoneColor='" + stoneColor + '\'' +
+                ", weight='" + weight + '\'' +
+                ", size='" + size + '\'' +
+                ", sale=" + sale +
+                ", hot=" + hot +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
+                ", opacity='" + opacity + '\'' +
+                ", inventoriesID=" + inventoriesID +
+                ", cuttingGrindingShape='" + cuttingGrindingShape + '\'' +
+                ", category=" + category +
+                ", material='" + material + '\'' +
+                '}';
     }
 }
 

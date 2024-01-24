@@ -17,6 +17,7 @@ public class User implements Serializable {
     private String avatar;
     private Role role;
     private Timestamp birthday;
+    private String roleName;
 
     public User(int id, String userName, String password, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, Role role, Timestamp birthday) {
         this.id = id;
@@ -33,10 +34,32 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
+    public User(int id, String userName, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, String roleName, Timestamp birthday) {
+        this.id = id;
+        this.userName = userName;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.status = status;
+        this.avatar = avatar;
+        this.roleName=roleName;
+        this.birthday = birthday;
+    }
+
     public User(String userName,String password,Role role) {
         this.userName=userName;
         this.password=password;
         this.role=role;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public int getId() {

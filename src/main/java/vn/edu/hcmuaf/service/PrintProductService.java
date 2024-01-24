@@ -21,6 +21,6 @@ public class PrintProductService {
 
     //lấy ra toàn bộ danh sách sản phẩm
     public ArrayList<Product> getListProductFull() {
-        return productDAO.getInstance().getListProductFull();
+        return productDAO.getListProductFull();
     }
 }

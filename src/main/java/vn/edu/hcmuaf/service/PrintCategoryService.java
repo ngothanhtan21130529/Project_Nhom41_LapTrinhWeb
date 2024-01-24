@@ -21,6 +21,6 @@ public class PrintCategoryService {
 
     //lấy ra toàn bộ danh sách danh mục
     public ArrayList<Category> getListCategoryFull() {
-        return categoryDAO.getInstance().getListCategoryFull();
+        return categoryDAO.getListCategoryFull();
     }
 }

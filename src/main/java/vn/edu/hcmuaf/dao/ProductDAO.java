@@ -165,7 +165,7 @@ public class ProductDAO implements DAOInterface<Product> {
                     "p.price, p.sale, p.hot, p.description, p.created_at, \n" +
                     "p.updated_at, p.deleted_at, p.color, p.weight, p.size, \n" +
                     "p.opacity, p.status, p.cutting_grinding_type, p.material\n" +
-                    "from products p JOIN images i;";
+                    "from products p JOIN images i on p.thumbnail_id=i.id;";
             Connection con = MySqlConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
