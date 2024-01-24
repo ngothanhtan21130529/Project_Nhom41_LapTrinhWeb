@@ -18,18 +18,13 @@ public class SearchController extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         try{
             String txtSearch=request.getParameter("txtSearch");
-            int count= ProductDAO.getInstance().count(txtSearch);
-            System.out.println(count);
             String indexString=request.getParameter("index");
             int index=Integer.parseInt(indexString);
-            int pageSize=3;
+            int pageSize=2;
             int endPage=0;
-            endPage=count/pageSize;
-            if(count%pageSize!=0) endPage++;
-            List<Product>productList=ProductDAO.getInstance().search(txtSearch,index,pageSize);
             request.setAttribute("end",endPage);
-            request.setAttribute("list", productList);
             request.setAttribute("txtSearch", txtSearch);
+            request.setAttribute("index", index);
             request.getRequestDispatcher("/web/search-result.jsp").forward(request, response);
         }catch (Exception e){
             e.printStackTrace();

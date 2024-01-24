@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String avatar;
     private Role role;
     private Timestamp birthday;
+    private String roleName;
 
     public User(int id, String userName, String password, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, Role role, Timestamp birthday) {
         this.id = id;
@@ -32,6 +33,25 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
+    public User(int id, String userName, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, String roleName, Timestamp birthday) {
+        this.id = id;
+        this.userName = userName;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.status = status;
+        this.avatar = avatar;
+        this.roleName=roleName;
+        this.birthday = birthday;
+    }
+
+    public User(String userName,String password,Role role) {
+        this.userName=userName;
+        this.password=password;
+        this.role=role;
+    }
     public User(int id, String userName, String password, String email, Role role) {
         this.id = id;
         this.userName=userName;
@@ -40,15 +60,15 @@ public class User implements Serializable {
         this.role=role;
     }
 
-   public User(String name,String userName,String password,String email,Timestamp birthday,String phone){
+    public User(String name,String userName,String password,String email,Timestamp birthday,String phone){
         this.name=name;
         this.userName=userName;
         this.password=password;
         this.email=email;
         this.birthday=birthday;
         this.phone=phone;
-   }
-   public User(int id,String username,String password,String name,String email,String phone,Role role,Timestamp birthday){
+    }
+    public User(int id,String username,String password,String name,String email,String phone,Role role,Timestamp birthday){
         this.id=id;
         this.userName=username;
         this.password=password;
@@ -57,12 +77,6 @@ public class User implements Serializable {
         this.phone=phone;
         this.role=role;
         this.birthday=birthday;
-   }
-
-    public User(String username, String password, Role role) {
-        this.userName=username;
-        this.password=password;
-        this.role=role;
     }
 
     public int getId() {
@@ -160,4 +174,12 @@ public class User implements Serializable {
     public void setBirthday(Timestamp birthday) {
         this.birthday = birthday;
     }
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
 }

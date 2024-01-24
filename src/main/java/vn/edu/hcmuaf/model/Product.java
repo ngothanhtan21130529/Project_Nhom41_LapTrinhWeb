@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class Product implements Serializable {
     private int id;
@@ -10,12 +11,46 @@ public class Product implements Serializable {
     private String status;
     private int thumbnailID;
     private String imgURL;
-    private  String description;
+    private String description;
     private String stoneType;
     private String stoneColor;
     private String weight;
-
     private String size;
+    //New Product
+    private int sale;
+    private boolean hot;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
+    private String opacity;
+    private int inventoriesID;
+    private Category category;
+    private String cuttingGrindingShape;
+    private String material;
+    public Product(int id, String productName, int categoryID, String imgURL,
+                   int price, int sale, boolean hot, String description,
+                   Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
+                   String stoneColor, String weight, String size, String opacity,
+                   String status, String cuttingGrindingShape, String material) {
+        this.id = id;
+        this.categoryID = categoryID;
+        this.productName = productName;
+        this.price = price;
+        this.status = status;
+        this.imgURL = imgURL;
+        this.sale = sale;
+        this.hot = hot;
+        this.description = description;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+        this.stoneColor = stoneColor;
+        this.weight = weight;
+        this.size = size;
+        this.opacity = opacity;
+        this.cuttingGrindingShape=cuttingGrindingShape;
+        this.material=material;
+    }
 
     public Product(int id, int categoryID, String productName, int price, String status, int thumbnailID) {
         this.id = id;
@@ -35,7 +70,7 @@ public class Product implements Serializable {
     }
 
     public Product(String imgURL, String productName, int price) {
-        this.productName=productName;
+        this.productName = productName;
         this.price = price;
         this.imgURL = imgURL;
     }
@@ -48,6 +83,14 @@ public class Product implements Serializable {
         this.imgURL = imgURL;
         this.description = description;
         this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getId() {
@@ -146,13 +189,101 @@ public class Product implements Serializable {
         this.description = description;
     }
 
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Timestamp getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(Timestamp deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public int getSale() {
+        return sale;
+    }
+
+    public void setSale(int sale) {
+        this.sale = sale;
+    }
+
+    public boolean isHot() {
+        return hot;
+    }
+
+    public void setHot(boolean hot) {
+        this.hot = hot;
+    }
+
+    public String getOpacity() {
+        return opacity;
+    }
+
+    public void setOpacity(String opacity) {
+        this.opacity = opacity;
+    }
+
+    public int getInventoriesID() {
+        return inventoriesID;
+    }
+
+    public void setInventoriesID(int inventoriesID) {
+        this.inventoriesID = inventoriesID;
+    }
+
+    public String getCuttingGrindingShape() {
+        return cuttingGrindingShape;
+    }
+
+    public void setCuttingGrindingShape(String cuttingGrindingShape) {
+        this.cuttingGrindingShape = cuttingGrindingShape;
+    }
+
+    public String getMarterial() {
+        return material;
+    }
+
+    public void setMarterial(String material) {
+        this.material = material;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
-                "productName='" + productName + "\n" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
                 ", price=" + price +
-                ", thumbnail='" + imgURL + "\t" +
-                "}\n";
+                ", status='" + status + '\'' +
+                ", imgURL='" + imgURL + '\'' +
+                ", description='" + description + '\'' +
+                ", stoneColor='" + stoneColor + '\'' +
+                ", weight='" + weight + '\'' +
+                ", size='" + size + '\'' +
+                ", sale=" + sale +
+                ", hot=" + hot +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
+                ", opacity='" + opacity + '\'' +
+                ", inventoriesID=" + inventoriesID +
+                ", cuttingGrindingShape='" + cuttingGrindingShape + '\'' +
+                ", category=" + category +
+                ", material='" + material + '\'' +
+                '}';
     }
 }
 
