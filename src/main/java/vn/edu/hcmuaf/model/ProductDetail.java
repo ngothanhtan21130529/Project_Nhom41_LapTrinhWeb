@@ -19,11 +19,37 @@ public class ProductDetail {
     private String cuttingGrindingType;
     private String  material;
     private String color;
-    List<String> images;
-    String opacity;
+    private List<String> images;
+    private  String opacity;
     private int sale;
     private String hot;
 
+    public ProductDetail(int id, int categoryID, String productName, int price, String status, int thumbnailID, String imgURL, String description, String stoneType, String stoneColor, String weight, Integer quantity, String size, String cuttingGrindingType, String material, String color, List<String> images, String opacity, int sale, String hot) {
+        this.id = id;
+        this.categoryID = categoryID;
+        this.productName = productName;
+        this.price = price;
+        this.status = status;
+        this.thumbnailID = thumbnailID;
+        this.imgURL = imgURL;
+        this.description = description;
+        this.stoneType = stoneType;
+        this.stoneColor = stoneColor;
+        this.weight = weight;
+        this.quantity = quantity;
+        this.size = size;
+        this.cuttingGrindingType = cuttingGrindingType;
+        this.material = material;
+        this.color = color;
+        this.images = images;
+        this.opacity = opacity;
+        this.sale = sale;
+        this.hot = hot;
+    }
+
+    public ProductDetail() {
+
+    }
 
     public int getId() {
         return id;

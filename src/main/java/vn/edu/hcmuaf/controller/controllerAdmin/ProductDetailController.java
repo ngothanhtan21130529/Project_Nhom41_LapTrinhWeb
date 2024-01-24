@@ -24,7 +24,7 @@ public class ProductDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 // Lấy ID sản phẩm từ request (cần điều chỉnh tùy theo cách bạn truyền ID)
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        int productId = Integer.parseInt(request.getParameter("id"));
 
 // Lấy chi tiết sản phẩm dựa trên ID
         ProductDetail productDetail = productService.getProductByID(productId);
@@ -35,7 +35,7 @@ public class ProductDetailController extends HttpServlet {
 
 
         // Chuyển hướng đến trang hiển thị chi tiết sản phẩm
-        RequestDispatcher dispatcher = request.getRequestDispatcher("../webapp/views/web/product/product-details.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/web/product/product-details.jsp");
         dispatcher.forward(request, response);
         System.out.println("hihi" + productDetail.getColor());
     }
