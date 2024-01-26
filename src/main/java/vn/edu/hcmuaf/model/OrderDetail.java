@@ -12,8 +12,14 @@ public class OrderDetail implements Serializable {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private String status;
+    private  String productName;
+    private  int quantity;
+    private  int price;
     private Order order;
     private Product product;
+
+    public OrderDetail() {
+    }
     public OrderDetail(int id, int productID, int orderID, int quantityTotal, int totalPrice, Timestamp createdAt, Timestamp updatedAt, String status) {
         this.id = id;
         this.productID = productID;
@@ -24,8 +30,45 @@ public class OrderDetail implements Serializable {
         this.updatedAt = updatedAt;
         this.status = status;
     }
+    public OrderDetail(int id, int orderID, String productName, int price, int quantity, int totalPrice){
+        this.id=id;
+        this.orderID=orderID;
+        this.productName=productName;
+        this.price=price;
+        this.quantity=quantity;
+        this.totalPrice=totalPrice;
+    }
 
-    //model for access data
+    public OrderDetail(int quantityTotal, String productName, int quantity, int price) {
+        this.quantityTotal = quantityTotal;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
     public OrderDetail(int id, int productID, int orderID, int quantityTotal, int totalPrice, Timestamp createdAt, String status, Order order, Product product) {
         this.id = id;
         this.productID = productID;
@@ -37,7 +80,6 @@ public class OrderDetail implements Serializable {
         this.order = order;
         this.product = product;
     }
-
     public int getId() {
         return id;
     }
@@ -101,7 +143,6 @@ public class OrderDetail implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-
     @Override
     public String toString() {
         return "OrderDetail{" +

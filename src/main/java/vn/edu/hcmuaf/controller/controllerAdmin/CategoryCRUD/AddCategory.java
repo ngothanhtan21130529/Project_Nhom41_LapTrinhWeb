@@ -1,11 +1,6 @@
 package vn.edu.hcmuaf.controller.controllerAdmin.CategoryCRUD;
 
-import vn.edu.hcmuaf.dao.CategoryDAO;
-import vn.edu.hcmuaf.dao.ImageDAO;
-import vn.edu.hcmuaf.model.Category;
-import vn.edu.hcmuaf.model.Image;
-import vn.edu.hcmuaf.service.CategoryService;
-import vn.edu.hcmuaf.service.ImageService;
+import vn.edu.hcmuaf.service.AddingService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -24,8 +19,11 @@ import java.io.IOException;
         maxRequestSize = 1024 * 1024 * 100 //100 MB
 )
 public class AddCategory extends HttpServlet {
-    ImageService imageService = new ImageService();
-    CategoryService categoryService = new CategoryService();
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    }
+
+    AddingService addingService =new AddingService();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -34,8 +32,6 @@ public class AddCategory extends HttpServlet {
         String root = getServletContext().getRealPath("/img/data/");
         String imageURL="";
         if(filePart != null && fileName.isEmpty()){
-//            File currentFile=new File(category.getImgURL());
-//            fileName=currentFile.getName();
             imageURL=null;
         }else{
             File check = new File(root);
@@ -46,11 +42,8 @@ public class AddCategory extends HttpServlet {
             }
         }
         String categoriesName = request.getParameter("categories-name-input");
-        String displayment = request.getParameter("categories-displayment");
-        Image image = new Image(imageService.getMaxID(), imageURL, fileName);
-        Category category = new Category(categoryService.getMaxID(), categoriesName, displayment, image.getId());
-        imageService.addImage(image);
-        categoryService.addCategory(category);
-        response.sendRedirect(request.getContextPath() + "/AdminDisplayment");
+        String status = request.getParameter("categories-displayment");
+        addingService.CategoryAdding(categoriesName, status, imageURL, fileName);
+        response.sendRedirect(request.getContextPath() + "/admin");
     }
 }

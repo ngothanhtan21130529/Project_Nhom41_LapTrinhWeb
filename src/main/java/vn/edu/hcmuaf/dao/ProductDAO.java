@@ -151,4 +151,10 @@ public class ProductDAO implements DAOInterface<Product> {
         System.out.println(productDAO.getThumbnail("VIÊN SPINEL HỒNG DÂU LỤC YÊN 3,56CT"));
 
     }
+    public ResultSet getProductQuantity() throws SQLException {
+        String sql = "select p.id, p.product_name, p.price from products p";
+        PreparedStatement ps = MySqlConnection.getConnection().prepareStatement(sql);
+
+        return ps.executeQuery();
+    }
 }

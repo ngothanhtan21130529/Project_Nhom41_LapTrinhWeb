@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="css/admin.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
@@ -233,7 +233,7 @@
                                     </td>
                                     <td>
                                         <div>
-                                            <a href="UpdateCategoryStage1?id=${category.getId()}&imgID=${category.getImgID()}">
+                                            <a href="getCategory?id=${category.getId()}&imgID=${category.getImgID()}">
                                                 <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
                                             </a>
                                             <a href="#" onclick="showMessCategory(${category.getId()})">
@@ -1053,74 +1053,47 @@
             </div>
             <div class="information-management">
                 <div class="order-list content-tab">
-                    <div class="order-list-function-box function-box">
-                        <div class="searching-box box">
-                            <input type="text" placeholder="Tìm kiếm">
-                        </div>
-                        <div class="search-by-box box">
-                            <select name="search-by">
-                                <option value="">Tìm theo</option>
-                                <option value="find-by-id">Số thứ tự</option>
-                                <option value="find-by-categories">Tên danh mục</option>
-                                <option value="find-by-categories">Tên sản phẩm</option>
-                            </select>
-                        </div>
-                        <div class="adding-box box">
-                            <button>
-                                <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
-                                Thêm mới
-                            </button>
-                        </div>
-                    </div>
                     <div class="order-list-table">
-                        <table>
+<%--                        <select>--%>
+<%--                            <option value="Confirm-Waiting">Đang chờ xác nhận</option>--%>
+<%--                            <option value="Confirmed">Đã xác nhận</option>--%>
+<%--                            <option value="Receive-Waiting">Đang chờ nhận hàng</option>--%>
+<%--                            <option value="Received">Đã nhận hàng</option>--%>
+<%--                        </select>--%>
+                        <table id="order-list-table">
+                            <thead>
                             <tr>
                                 <th>Mã đơn hàng</th>
-                                <th>Tên sản phẩm</th>
                                 <th>Tên khách hàng</th>
-                                <th>Số lượng</th>
-                                <th>Tổng giá sản phẩm</th>
                                 <th>Tổng giá hoá đơn</th>
                                 <th>Ngày tạo</th>
                                 <th>Ngày sửa</th>
                                 <th>Tình trạng</th>
-                                <th>Tác vụ</th>
+                                <th>Xem chi tiết hoá đơn</th>
                             </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${orderArrayList}" var="order">
                             <tr>
-                                <td>1</td>
-                                <td>Spinel tím</td>
-                                <td>Nhựt Tân</td>
-                                <td>21-3-2021</td>
-                                <td>5</td>
-                                <td>1,000,000 đ</td>
-                                <td>16-12-2023</td>
-                                <td>16-12-2023</td>
+                                <td>${order.getId()}</td>
+                                <td>${order.getFullName()}</td>
+                                <td>${order.getTotalPrice()}</td>
+                                <td>${order.getCreatedAt()}</td>
+                                <td>${order.getUpdatedAt()}</td>
+                                <td>${order.getStatus()}</td>
                                 <td>
-                                    <select>
-                                        <option value="Confirm-Waiting">Đang chờ xác nhận</option>
-                                        <option value="Confirmed">Đã xác nhận</option>
-                                        <option value="Receive-Waiting">Đang chờ nhận hàng</option>
-                                        <option value="Received">Đã nhận hàng</option>
-                                    </select>
+                                    <a href="getOderDetails?id=${order.getId()}">
+                                        Xem chi tiết
+                                    </a>
                                 </td>
-                                <td><i class="fa-solid fa-x fa-sm" style="color: #5b78a9;"></i></td>
                             </tr>
+                            </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="customer-contact content-tab">
                     <div class="customer-contact-function-box function-box">
-                        <div class="searching-box box">
-                            <input type="text" placeholder="Tìm kiếm">
-                        </div>
-                        <div class="search-by-box box">
-                            <select name="search-by">
-                                <option value="">Tìm theo</option>
-                                <option value="find-by-id">Số thứ tự</option>
-                                <option value="find-by-name">Tên khách hàng</option>
-                                <option value="find-by-keywords">Từ khóa</option>
-                            </select>
-                        </div>
                         <div class="adding-box box">
                             <button>
                                 <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
@@ -1130,26 +1103,24 @@
                     </div>
                     <div class="customer-contact-table">
                         <table id="customer-contact-table">
-                            <%--                            <thead>--%>
+                            <thead>
                             <tr>
-                                <th><input type="checkbox" name=""></th>
                                 <th>Mã liên hệ</th>
                                 <th>Tên khách hàng</th>
                                 <th>Ngày liên hệ</th>
                                 <th>Nội dung</th>
                                 <th>Tác vụ</th>
                             </tr>
-                            <%--                            </thead>--%>
-                            <%--                            <tbody>--%>
+                            </thead>
+                            <tbody>
                             <tr>
-                                <td><input type="checkbox" name=""></td>
                                 <td>1</td>
                                 <td>Nhựt Tân</td>
                                 <td>21-3-2021</td>
                                 <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, nostrum.</td>
                                 <td><i class="fa-solid fa-x fa-sm" style="color: #5b78a9;"></i></td>
                             </tr>
-                            <%--                            </tbody>--%>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -1174,31 +1145,31 @@
                         </thead>
                         <tbody>
                         <c:forEach items="${userArrayList}" var="user">
-                        <tr>
-                            <td>${user.getId()}</td>
-                            <td>${user.getUserName()}</td>
-                            <td>${user.getName()==null?"chưa có":user.getName()}</td>
-                            <td>${user.getEmail()}</td>
-                            <td>${user.getPhone()==null?"chưa có":user.getPhone()}</td>
-                            <td>${user.getBirthday()==null?"chưa có":user.getBirthday()}</td>
-                            <td>${user.getCreatedAt()==null?"chưa có":user.getCreatedAt()}</td>
-                            <td>${user.getUpdatedAt()==null?"chưa có":user.getUpdatedAt()}</td>
-                            <td>
-                                <c:choose>
-                                    <c:when test="${user.getAvatar()==null}">
-                                        Chưa có hình
-                                    </c:when>
-                                    <c:otherwise>
-                                        <img src="<%=request.getContextPath()%>${category.getImgURL()}" alt="">
-                                    </c:otherwise>
-                                </c:choose>
-                            </td>
-                            <td>${user.getRoleName()}</td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square fa-sm" style="color: #5b85cd;"></i>
-                                <i class="fa-solid fa-x fa-lg" style="color: #394760;"></i>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>${user.getId()}</td>
+                                <td>${user.getUserName()}</td>
+                                <td>${user.getName()==null?"chưa có":user.getName()}</td>
+                                <td>${user.getEmail()}</td>
+                                <td>${user.getPhone()==null?"chưa có":user.getPhone()}</td>
+                                <td>${user.getBirthday()==null?"chưa có":user.getBirthday()}</td>
+                                <td>${user.getCreatedAt()==null?"chưa có":user.getCreatedAt()}</td>
+                                <td>${user.getUpdatedAt()==null?"chưa có":user.getUpdatedAt()}</td>
+                                <td>
+                                    <c:choose>
+                                        <c:when test="${user.getAvatar()==null}">
+                                            Chưa có hình
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img src="<%=request.getContextPath()%>${category.getImgURL()}" alt="">
+                                        </c:otherwise>
+                                    </c:choose>
+                                </td>
+                                <td>${user.getRoleName()}</td>
+                                <td>
+                                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                    <i class="fa-solid fa-x fa-lg" style="color: #394760;"></i>
+                                </td>
+                            </tr>
                         </c:forEach>
                         </tbody>
                     </table>
@@ -1251,14 +1222,6 @@
                 </div>
                 <div class="retype-account-password-input">
                     <input type="text" value="">
-                </div>
-                <div class="visible-label">
-                    <p>
-                        Hiển thị
-                    </p>
-                </div>
-                <div class="visible-checkbox">
-                    <input type="checkbox" name="" id="">
                 </div>
                 <div class="save-or-exit-box">
                     <button class="save-button">
