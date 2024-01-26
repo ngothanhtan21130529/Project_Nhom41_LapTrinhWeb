@@ -9,6 +9,8 @@ public class Order implements Serializable {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private int totalPrice;
+    private String fullName;
+    private String status;
 
     public Order(int id, int userID, Timestamp createdAt, Timestamp updatedAt, int totalPrice) {
         this.id = id;
@@ -20,6 +22,30 @@ public class Order implements Serializable {
 
     public Order() {
 
+    }
+    public Order(int id, String fullName, int totalPrice, Timestamp createdAt, Timestamp updatedAt, String status){
+        this.id=id;
+        this.fullName=fullName;
+        this.totalPrice=totalPrice;
+        this.createdAt=createdAt;
+        this.updatedAt=updatedAt;
+        this.status=status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getId() {
@@ -60,5 +86,18 @@ public class Order implements Serializable {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", userID=" + userID +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", totalPrice=" + totalPrice +
+                ", fullName='" + fullName + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

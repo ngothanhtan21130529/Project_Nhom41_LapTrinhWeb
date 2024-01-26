@@ -181,7 +181,8 @@ table tr th, table tr td {
     height: 10%;
 }
 
-.product-table, .order-list-table, .categories-table {
+.product-table, .order-list-table, .categories-table,
+.user-management-table, .customer-contact-table, .categories-table {
     overflow: auto;
 }
 
@@ -1361,19 +1362,25 @@ td div {
 
 #categories-table_length,
 #product-table_length,
-#user-management-table_length{
+#user-management-table_length,
+#customer-contact-table_length,
+#order-list-table_length {
     float: none;
 }
 
 #categories-table_length label,
 #product-table_length label,
-#user-management-table_length label{
+#user-management-table_length label,
+#customer-contact-table_length label,
+#order-list-table_length label {
     float: right;
 }
 
 #categories-table_filter,
 #product-table_filter,
-#user-management-table_filter{
+#user-management-table_filter,
+#customer-contact-table_filter,
+#order-list-table_filter {
     float: left;
     padding-bottom: 10px;
 }
@@ -1384,14 +1391,18 @@ td div {
 
 #categories-table_wrapper,
 #product-table_wrapper,
-#user-management-table_wrapper{
+#user-management-table_wrapper,
+#customer-contact-table_wrapper,
+#order-list-table_wrapper {
     padding-top: 10px;
     gap: 10px;
 }
 
 #categories-table,
 #product-table,
-#user-management-table {
+#user-management-table,
+#customer-contact-table,
+#order-list-table {
     margin-bottom: 10px;
 }
 

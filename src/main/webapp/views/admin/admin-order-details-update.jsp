@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/admin-category-update.css" type="text/css">
+    <link rel="stylesheet" href="css/admin-order-details-update.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -143,80 +143,72 @@
         </div>
         <div class="content-bar">
             <div class="categories-tab">
-                <div class="categories-adding-tab content-tab">
-                    <form method="post" action="<%=request.getContextPath()%>/updateCategory"
-                          enctype="multipart/form-data">
-                        <div class="categories-adding-tab-general-infomation">
-                            <div class="general-infomation-label">
-                                THÔNG TIN CHUNG
-                            </div>
-                            <div class="img-current-label">
-                                <p>
-                                    Hình ảnh hiện tại:
-                                </p>
-                            </div>
-                            <div class="image-current">
-                                <c:choose>
-                                    <c:when test="${category.getImgURL()==null}">
-                                        Chưa có hình
-                                    </c:when>
-                                    <c:otherwise>
-                                        <img src="<%=request.getContextPath()%>${category.getImgURL()}">
-                                    </c:otherwise>
-                                </c:choose>
-                            </div>
-                            <div class="img-label">
-                                <p>
-                                    Hình ảnh mới:
-                                </p>
-                            </div>
-                            <div class="img-input input-box" style="width: 100%">
-                                <input class="choosing-button" type="file" name="category-new-img" accept="image/*"
-                                       style="width: 100%">
-                            </div>
-                            <c:set var="imageIsNull" value="${param.imageIsNull}"/>
-                            <c:if test="${imageIsNull=='imageisnull'}">
-                                <script>alert("Vui lòng thêm hình cho danh mục");</script>
-                            </c:if>
-                            <div class="categories-detail-title">
-                                <p>
-                                    Tiêu đề:
-                                </p>
-                            </div>
-                            <div class="categories-detail-title-input-box">
-                                <input class="input-box" name="categories-name-input"
-                                       value="${category.getCategoryName()}">
-                            </div>
-                            <div class="numerial-order-label">
-                                <p>
-                                    Số thứ tự:
-                                </p>
-                            </div>
-                            <div class="numerial-order-input input-box">
-                                <input type="text" name="categories-order" value="${category.getId()}" readonly>
-                            </div>
-                            <div class="categories-action-label">
-                                <p>
-                                    Tác vụ:
-                                </p>
-                            </div>
-                            <div class="categories-action-choose">
-                                <div>
-                                    <input type="checkbox" name="categories-status"
-                                    ${category.getStatus()==null?"":"checked"}>
-                                </div>
-                                <div class="categories-action-choose-label">
-                                    Hiển thị
-                                </div>
-                            </div>
-                            <div class="save-or-exit-box">
-                                <button class="save-button" type="submit">
-                                    Lưu
-                                </button>
-                                <button class="exit-button">
-                                    Thoát
-                                </button>
-                            </div>
+                <div class="user-information content-tab">
+                    <form method="post" action="<%=request.getContextPath()%>/updateOrderDetails">
+                        <div class="user-information-label">
+                            Thông tin chi tiết đơn hàng
+                        </div>
+                        <input type="hidden" value="${orderArrayList}" name="order_detail_id">
+                        <div class="account-role-label">
+                            <p>
+                                Mã đơn hàng:
+                            </p>
+                        </div>
+                        <div class="account-role-select">
+                            <input type="text" value="" readonly>
+                        </div>
+                        <div class="account-username-label">
+                            <p>
+                                Tên sản phẩm
+                            </p>
+                        </div>
+                        <div class="account-username">
+                            <input type="text" value="" readonly>
+                        </div>
+                        <div class="account-fullname-label">
+                            <p>
+                                Giá thành
+                            </p>
+                        </div>
+                        <div class="account-fullname-input">
+                            <input type="text" name="" value="" readonly>
+                        </div>
+                        <div class="account-password-label">
+                            <p>
+                                Số lượng
+                            </p>
+                        </div>
+                        <div class="account-password-input">
+                            <input type="text" value="" readonly>
+                        </div>
+                        <div class="retype-account-password-label">
+                            <p>
+                                Tổng giá sản phẩm:
+                            </p>
+                        </div>
+                        <div class="retype-account-password-input">
+                            <input type="text" value="" readonly>
+                        </div>
+                        <div class="retype-account-password-label">
+                            <p>
+                                Trạng thái:
+                            </p>
+                        </div>
+                        <div class="retype-account-password-input">
+                            <select name="">
+                                <option value="Confirm-Waiting">Đang chờ xác nhận</option>
+                                <option value="Confirmed">Đã xác nhận</option>
+                                <option value="doing">Đang vận chuyển</option>
+                                <option value="done">Đang giao hàng</option>
+                            </select>
+                        </div>
+                        <div class="save-or-exit-box">
+                            <button class="save-button">
+                                Lưu
+                            </button>
+                            <button class="exit-button" onclick="changeToHomepage()">
+                                Thoát
+                            </button>
                         </div>
                     </form>
                 </div>

@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/admin-category-update.css" type="text/css">
+    <link rel="stylesheet" href="css/admin-order-details.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -21,8 +21,16 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet">
+    </script>
+    <%--    jQuerry--%>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <%--    Data Table--%>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" type="text/css">
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <%--    JavaScript--%>
+    <script src="<%=request.getContextPath()%>/js/adminDataTable.js"></script>
 </head>
-
 <body>
 <div class="container">
     <div class="top-bar">
@@ -142,83 +150,44 @@
             </div>
         </div>
         <div class="content-bar">
-            <div class="categories-tab">
-                <div class="categories-adding-tab content-tab">
-                    <form method="post" action="<%=request.getContextPath()%>/updateCategory"
-                          enctype="multipart/form-data">
-                        <div class="categories-adding-tab-general-infomation">
-                            <div class="general-infomation-label">
-                                THÔNG TIN CHUNG
-                            </div>
-                            <div class="img-current-label">
-                                <p>
-                                    Hình ảnh hiện tại:
-                                </p>
-                            </div>
-                            <div class="image-current">
-                                <c:choose>
-                                    <c:when test="${category.getImgURL()==null}">
-                                        Chưa có hình
-                                    </c:when>
-                                    <c:otherwise>
-                                        <img src="<%=request.getContextPath()%>${category.getImgURL()}">
-                                    </c:otherwise>
-                                </c:choose>
-                            </div>
-                            <div class="img-label">
-                                <p>
-                                    Hình ảnh mới:
-                                </p>
-                            </div>
-                            <div class="img-input input-box" style="width: 100%">
-                                <input class="choosing-button" type="file" name="category-new-img" accept="image/*"
-                                       style="width: 100%">
-                            </div>
-                            <c:set var="imageIsNull" value="${param.imageIsNull}"/>
-                            <c:if test="${imageIsNull=='imageisnull'}">
-                                <script>alert("Vui lòng thêm hình cho danh mục");</script>
-                            </c:if>
-                            <div class="categories-detail-title">
-                                <p>
-                                    Tiêu đề:
-                                </p>
-                            </div>
-                            <div class="categories-detail-title-input-box">
-                                <input class="input-box" name="categories-name-input"
-                                       value="${category.getCategoryName()}">
-                            </div>
-                            <div class="numerial-order-label">
-                                <p>
-                                    Số thứ tự:
-                                </p>
-                            </div>
-                            <div class="numerial-order-input input-box">
-                                <input type="text" name="categories-order" value="${category.getId()}" readonly>
-                            </div>
-                            <div class="categories-action-label">
-                                <p>
-                                    Tác vụ:
-                                </p>
-                            </div>
-                            <div class="categories-action-choose">
-                                <div>
-                                    <input type="checkbox" name="categories-status"
-                                    ${category.getStatus()==null?"":"checked"}>
-                                </div>
-                                <div class="categories-action-choose-label">
-                                    Hiển thị
-                                </div>
-                            </div>
-                            <div class="save-or-exit-box">
-                                <button class="save-button" type="submit">
-                                    Lưu
-                                </button>
-                                <button class="exit-button">
-                                    Thoát
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <div class="information-management">
+                <div class="order-list content-tab">
+                    <div class="order-list-table">
+                        <%--                        <select>--%>
+                        <%--                            <option value="Confirm-Waiting">Đang chờ xác nhận</option>--%>
+                        <%--                            <option value="Confirmed">Đã xác nhận</option>--%>
+                        <%--                            <option value="Receive-Waiting">Đang chờ nhận hàng</option>--%>
+                        <%--                            <option value="Received">Đã nhận hàng</option>--%>
+                        <%--                        </select>--%>
+                        <table id="order-list-table">
+                            <thead>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá thành</th>
+                                <th>Số lượng</th>
+                                <th>Tổng giá sản phẩm</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${orderDetailArrayList}" var="orderDetails">
+                            <tr>
+                                <td>${orderDetails.getOrderID()}</td>
+                                <td>${orderDetails.getProductName()}</td>
+                                <td>${orderDetails.getPrice()}</td>
+                                <td>${orderDetails.getQuantity()}</td>
+                                <td>${orderDetails.getTotalPrice()}</td>
+                                <td>
+                                    <a href="getInforOrderDetails?id=${orderDetails.getId()}">
+                                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

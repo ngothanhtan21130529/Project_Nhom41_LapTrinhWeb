@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UpdateCategoryStage1", value = "/UpdateCategoryStage1")
+@WebServlet(name = "UpdateCategoryStage1", value = "/getCategory")
 public class UpdateCategoryStage1 extends HttpServlet {
     SearchService service=new SearchService();
     @Override

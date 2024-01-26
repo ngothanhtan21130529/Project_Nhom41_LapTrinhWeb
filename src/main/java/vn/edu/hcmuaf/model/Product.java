@@ -27,6 +27,33 @@ public class Product implements Serializable {
     private Category category;
     private String cuttingGrindingShape;
     private String material;
+    private int quantity;
+    private int totalPrice;
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public Product(int id, String productName, int categoryID, String imgURL,
                    int price, int sale, boolean hot, String description,
                    Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,

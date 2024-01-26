@@ -156,4 +156,10 @@ public class ProductDAO implements DAOInterface<Product> {
         }
         return products;
     }
+    public ResultSet getProductQuantity() throws SQLException {
+        String sql = "select p.id, p.product_name, p.price from products p";
+        PreparedStatement ps = MySqlConnection.getConnection().prepareStatement(sql);
+
+        return ps.executeQuery();
+    }
 }

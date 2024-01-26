@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input, textarea, select, option {
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+}
+
+.top-bar {
+    display: flex;
+    background-color: black;
+    color: rgb(180, 180, 180);
+}
+
+.top-bar-element:hover {
+    background-color: rgb(53, 49, 49);
+}
+
+.left-top-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.left-top-bar ul li {
+    padding: 15px 35px 15px 35px;
+    font-size: 18px;
+}
+
+.left-top-bar ul li a {
+    padding: 15px 20px 15px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(180, 180, 180);
+}
+
+.right-top-bar {
+    margin-left: auto;
+    padding: 15px 35px 15px 35px;
+    font-size: 18px;
+}
+
+.nav-bar div ul li div {
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #bfbfbf;
+    font-size: 18px;
+}
+
+.gray-color {
+    background-color: #f5f5f5;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #bfbfbf;
+}
+
+.nav-bar .gray-color:hover {
+    background-color: #868686;
+    color: white;
+}
+
+.element:hover {
+    background-color: #707070;
+    color: white;
+}
+
+.hompage-admin,
+.homepage-website {
+    width: 100%;
+    font-size: 22px;
+}
+
+.homepage-website {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+* > .ui {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 100vh;
+}
+
+.nav-bar {
+    grid-column: 1/2;
+    border: 1px solid #bfbfbf;
+    box-shadow: 3px 0px 5px #c1c1c1;
+}
+
+.nav-bar div button,
+.nav-bar div ul .element {
+    cursor: pointer;
+}
+
+.content-bar .content-tab {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+table tr td img {
+    width: 50%;
+    height: 50%;
+}
+
+table tr th, table tr td {
+    height: 10%;
+}
+
+.product-table, .order-list-table, .categories-table,
+.user-management-table, .customer-contact-table, .categories-table {
+    overflow: auto;
+}
+
+table, th, td {
+    border: 1px solid #bfbfbf;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.product-table table tr th,
+.order-list-table table tr th {
+    min-width: 10vw;
+    max-width: 10vw;
+}
+
+table {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+#categories-table_length,
+#product-table_length,
+#user-management-table_length,
+#customer-contact-table_length,
+#order-list-table_length {
+    float: none;
+}
+
+#categories-table_length label,
+#product-table_length label,
+#user-management-table_length label,
+#customer-contact-table_length label,
+#order-list-table_length label {
+    float: right;
+}
+
+#categories-table_filter,
+#product-table_filter,
+#user-management-table_filter,
+#customer-contact-table_filter,
+#order-list-table_filter {
+    float: left;
+    padding-bottom: 10px;
+}
+
+.dataTables_length {
+    padding-left: 10px;
+}
+
+#categories-table_wrapper,
+#product-table_wrapper,
+#user-management-table_wrapper,
+#customer-contact-table_wrapper,
+#order-list-table_wrapper {
+    padding-top: 10px;
+    gap: 10px;
+}
+
+#categories-table,
+#product-table,
+#user-management-table,
+#customer-contact-table,
+#order-list-table {
+    margin-bottom: 10px;
+}
+
+.categories-main-tab,
+.categories-adding-tab,
+.product-main-tab,
+.product-adding-tab,
+.online-support-tab,
+.information-tab,
+.information-management .customer-contact,
+.user-management-tab,
+.user-information,
+.product-slide-show.content-tab,
+.jewelry-slide-show.content-tab,
+.gem-slide-show.content-tab,
+.homepage-slide-show.content-tab,
+.categories-tab-element,
+.ui-tab-element,
+.infor-tab-element,
+.user-config-element {
+    display: none;
+}
+

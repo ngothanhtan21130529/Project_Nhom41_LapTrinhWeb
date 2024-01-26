@@ -2,14 +2,16 @@ package vn.edu.hcmuaf.dao;
 
 import vn.edu.hcmuaf.database.MySqlConnection;
 import vn.edu.hcmuaf.model.Order;
+import vn.edu.hcmuaf.model.OrderDetail;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderDAO {
+public class OrderDAO implements DAOInterface<Order>{
     public static OrderDAO getInstance() {
         return new OrderDAO();
     }
@@ -30,5 +32,69 @@ public class OrderDAO {
             orderlist.add(order);
         }
         return orderlist;
+    }
+
+    @Override
+    public int insert(Order order) {
+        try {
+            Connection con = MySqlConnection.getConnection();
+            String sql = "insert into orders (id, user_id , created_at, updated_at, total_price)" +
+                    "values(?,?,CURRENT_TIMESTAMP,null,?)";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, order.getId());
+            ps.setInt(2, order.getUserID());
+            ps.setInt(3, order.getTotalPrice());
+            int res = ps.executeUpdate();
+            ps.close();
+            con.close();
+            return res;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public int update(Order order) {
+        return 0;
+    }
+
+    @Override
+    public int delete(Order order) {
+        return 0;
+    }
+
+    @Override
+    public Order selectById(Order order) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Order> selectByCondition(String condition) {
+        return null;
+    }
+    public ArrayList<Order> getListDistinctOrderFull() {
+        ArrayList<Order> orders = new ArrayList<>();
+        try {
+            String query = "select DISTINCT o.id, u.username, o.total_price, o.created_at, " +
+                    "o.updated_at, od.status from orders o join users u on o.user_id=u.id " +
+                    "join order_details od on od.order_id=o.id;";
+            Connection con = MySqlConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Order order = new Order(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getTimestamp(4),
+                        rs.getTimestamp(5),
+                        rs.getString(6)
+                );
+                orders.add(order);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return orders;
     }
 }

@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class FeedbackDAO implements DAOInterface<Feedback> {
+public class FeedbackDAO{
     public static FeedbackDAO getInstance() {
         return new FeedbackDAO();
     }
@@ -43,30 +43,5 @@ public class FeedbackDAO implements DAOInterface<Feedback> {
             res=rs.getInt("id");
         }
         return res;
-    }
-
-    @Override
-    public int insert(Feedback feedback) throws SQLException {
-        return 0;
-    }
-
-    @Override
-    public int update(Feedback feedback) {
-        return 0;
-    }
-
-    @Override
-    public int delete(Feedback feedback) {
-        return 0;
-    }
-
-    @Override
-    public Feedback selectById(Feedback feedback) {
-        return null;
-    }
-
-    @Override
-    public ArrayList<Feedback> selectByCondition(String condition) {
-        return null;
     }
 }
