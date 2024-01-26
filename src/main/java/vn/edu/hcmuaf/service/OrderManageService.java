@@ -9,9 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-//get ordered details
+//insert order details
 public class OrderManageService {
-    public ResultSet getListOrders(OrderDAO orderDAO) throws SQLException {
-        return OrderDetailDAO.getInstance().getListOrderDetails(orderDAO);
-    }
+public void insertOrderDetail(int productid, int orderid, int quantity_total, int total_price, String status,String address,String phone) throws SQLException{
+    OrderDetailDAO.getInstance().insertOrderDetail(productid,orderid,quantity_total,total_price,status,address,phone);
+}
 }

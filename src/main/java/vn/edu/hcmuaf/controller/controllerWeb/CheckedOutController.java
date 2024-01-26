@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 //this page for checking user confirms login or not login to order
-@WebServlet(value = "/orderdetails")
-public class PrintOrderController extends HttpServlet {
+@WebServlet(value = "/order")
+public class CheckedOutController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
@@ -42,7 +42,7 @@ public class PrintOrderController extends HttpServlet {
                 dispatcher.forward(req, resp);
             } else {
                 req.setAttribute("notify", "Bạn cần đăng nhập để thực hiện chức năng này");
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/views/login/login.jsp");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/login");
                 dispatcher.forward(req, resp);
             }
 

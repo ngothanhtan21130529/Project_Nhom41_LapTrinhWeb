@@ -28,6 +28,7 @@ public class CartAddController extends HttpServlet {
                 Product product=new Product(productService.getProductid(productName),productName,productPrice,productService.getProductImg(productName));
                 CartService.addProduct(product);
                 session.setAttribute("list", Cart.products);
+                request.getRequestDispatcher("/views/web/cart/cart.jsp").forward(request,response);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

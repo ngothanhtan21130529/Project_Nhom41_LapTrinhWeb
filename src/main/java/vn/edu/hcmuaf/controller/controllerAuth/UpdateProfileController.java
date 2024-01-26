@@ -17,6 +17,11 @@ public class UpdateProfileController extends HttpServlet {
     private UpdateProfileService updateProfileService = new UpdateProfileService();
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/views/web/profile.jsp").forward(req, resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String phone = req.getParameter("phone");
         String birthday = req.getParameter("birthday");
@@ -81,7 +86,8 @@ public class UpdateProfileController extends HttpServlet {
 
                 }
             } else {
-                resp.sendRedirect(req.getContextPath() + "/views/login/login.jsp");
+//                resp.sendRedirect(req.getContextPath() + "/views/login/login.jsp");
+                req.getRequestDispatcher("/views/login/login.jsp").forward(req, resp);
             }
         }
     }

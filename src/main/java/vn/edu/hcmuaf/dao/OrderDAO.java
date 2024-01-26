@@ -10,7 +10,6 @@ public class OrderDAO {
     public static OrderDAO getInstance() {
         return new OrderDAO();
     }
-
     public int getMaxId() throws SQLException {
         String sql = "select max(id) from orders";
         PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);

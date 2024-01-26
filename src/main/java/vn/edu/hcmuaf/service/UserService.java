@@ -10,4 +10,7 @@ public class UserService {
         return userDAO.getUserid(username);
 
     }
+    public UserDAO getUserDAO(){
+        return UserDAO.getInstance();
+    }
 }

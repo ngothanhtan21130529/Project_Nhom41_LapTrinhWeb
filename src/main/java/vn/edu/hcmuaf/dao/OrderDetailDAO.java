@@ -26,15 +26,18 @@ public class OrderDetailDAO {
         return max;
     }
 
-    public void insertOrderDetail(int productid, int orderid, int quantity_total, int total_price, String status) throws SQLException {
-        String sql = "insert into order_details(id,product_id,order_id,quantity_total,total_price,status) values(?,?,?,?,?,?)";
+    public void insertOrderDetail(int productid, int orderid, int quantity_total, int total_price, String status,String address,String phone) throws SQLException {
+        String sql = "insert into order_details(id,product_id,order_id,quantity_total,total_price,status,address,phone) values(?,?,?,?,?,?,?,?)";
         PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
-        pr.setInt(1, productid);
-        pr.setInt(2, orderid);
-        pr.setInt(3, quantity_total);
-        pr.setInt(4, total_price);
-        pr.setString(5, status);
-        pr.setInt(6, getMaxid() + 1);
+       pr.setInt(1, getMaxid() + 1);
+        pr.setInt(2, productid);
+        pr.setInt(3, orderid);
+        pr.setInt(4, quantity_total);
+        pr.setInt(5, total_price);
+        pr.setString(6, status);
+        pr.setString(7,address);
+        pr.setString(8,phone);
+
         pr.executeUpdate();
     }
 

@@ -25,7 +25,7 @@ import java.util.Properties;
 @WebServlet("/checkorder")
 public class CheckOrderController extends HttpServlet {
     private OrderService orderService = new OrderService();
-
+    private OrderManageService orderManageService = new OrderManageService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String fullname = req.getParameter("fullname");
@@ -33,28 +33,22 @@ public class CheckOrderController extends HttpServlet {
         String phone = req.getParameter("phone");
         HttpSession session = req.getSession();
         Map<String, Product> orders = (HashMap<String, Product>) req.getSession().getAttribute("listorders");
-
+        int total = (int) req.getSession().getAttribute("totalprice");
         if (session != null) {
             if (session.getAttribute("username") != null) {
                 try {
                     if (orderService.getEmailforOrder(session.getAttribute("username").toString()) != null) {
-                        sendEmail(req, resp, orderService.getEmailforOrder(session.getAttribute("username").toString()));
+                        sendEmail(req, resp, orderService.getEmailforOrder(session.getAttribute("username").toString()), orders,total);
                         UserService userService = new UserService();
                         int userid = userService.getUserId(session.getAttribute("username").toString());
-                        OrderService orderService = new OrderService();
-//                            orderService.insertOrder(userid);
-                        for(Map.Entry<String, Product> entry : orders.entrySet()) {
+                        for (Map.Entry<String, Product> entry : orders.entrySet()) {
                             String key = entry.getKey();
                             Product value = entry.getValue();
-                            orderService.insertOrder(orderService.getMaxId(),value.getId(),Integer.parseInt(key));
+                            orderService.insertOrder(userService.getUserDAO(),session.getAttribute("username").toString(),total);
+                           orderManageService.insertOrderDetail(value.getId(),orderService.getMaxId(),Integer.parseInt(key),total,"pending",address,phone);
                         }
-                        OrderManageService orderManageService = new OrderManageService();
-//                            orderManageService.insertOrderDetail(orderService.getMaxId());
-                        for(Map.Entry<String, Product> entry : orders.entrySet()) {
-                            String key = entry.getKey();
-                            Product value = entry.getValue();
-                            orderManageService.insertOrderDetail(orderService.getMaxId(),value.getId(),Integer.parseInt(key));
-                        }
+
+
                         PrintWriter pr = resp.getWriter();
                         pr.println("Thêm thành công");
                     }
@@ -66,7 +60,7 @@ public class CheckOrderController extends HttpServlet {
     }
 
 
-    protected void sendEmail(HttpServletRequest request, HttpServletResponse response, String email) {
+    protected void sendEmail(HttpServletRequest request, HttpServletResponse response, String email, Map<String, Product> orders,int total) {
         try {
             final String HOST_NAME = "smtp.gmail.com";
             final int SSL_PORT = 465; // Port for SSL
@@ -93,11 +87,22 @@ public class CheckOrderController extends HttpServlet {
             try {
                 MimeMessage message = new MimeMessage(session);
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
-//                String url="<a href=\"http://localhost:8080/Project_Nhom_41_war/verifyregister\">Click vào đây để xác nhận</a>";
 
+                // Subject and content of the email
                 message.setSubject("Chúc mừng! Bạn đã đặt hàng thành công");
-                message.setText("Bạn đã đặt hàng thành công," +
-                        "Đơn hàng của bạn bao gồm các sản phẩm sau: " + request.getSession().getAttribute("listorders") );
+
+                // Construct HTML content with product information and total
+                StringBuilder content = new StringBuilder();
+                content.append("<p>Bạn đã đặt hàng thành công. Đơn hàng của bạn bao gồm các sản phẩm sau:</p>");
+                for (Map.Entry<String, Product> entry : orders.entrySet()) {
+                    Product product = entry.getValue();
+                    content.append("<p>").append(product.getProductName()).append(" - ").append(product.getPrice()).append("</p>");
+                }
+
+                content.append("<p>Tổng số tiền: ").append(total).append("</p>");
+
+                message.setContent(content.toString(), "text/html, charset=utf-8");
+
                 // send message
                 Transport.send(message);
 
@@ -108,4 +113,8 @@ public class CheckOrderController extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+
 }
+
+

@@ -15,7 +15,7 @@
 </body>
 <script>
     setTimeout(function () {
-        window.location.replace("<%=request.getContextPath()%>/views/login/login.jsp")
+        window.location.replace("<%=request.getContextPath()%>/views/login")
     }, 3000);
 </script>
 </html>

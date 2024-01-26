@@ -19,7 +19,7 @@
 </body>
 <script>
    function notify() {
-       window.location.replace( "<%=request.getContextPath()%>/views/index.jsp") ;
+       window.location.replace( "<%=request.getContextPath()%>/login") ;
    }
    setTimeout(notify,3000);
 

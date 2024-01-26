@@ -45,15 +45,15 @@
                 <br>
                 <label for="phone">Số điện thoại:</label>
                 <br>
-                <input type="text" id="phone">
+                <input type="text" id="phone" name="phone">
                 <br>
                 <label for="email">Email:</label>
                 <br>
-                <input type="email" id="email">
+                <input type="email" id="email" name="email">
                 <br>
                 <label for="address">Địa chỉ:</label>
                 <br>
-                <input type="address" id="address">
+                <input type="address" id="address" name="address">
                 <br>
                 <label for="gender" class="gender-label">Giới tính:</label>
                 <br>
@@ -64,10 +64,8 @@
                 </div>
                 <div class="date">
                     <label for="date">Ngày sinh:</label>
-                    <input type="date" id="date">
+                    <input type="date" id="date" name="date">
                 </div>
-
-
                 <button id="btn-change">
                     <i class="fa-solid fa-key fa-5xs"></i>
                     Đổi mật khẩu
@@ -76,7 +74,6 @@
                     Lưu thay đổi
                 </button>
             </div>
-
         </form>
     </div>
 </div>

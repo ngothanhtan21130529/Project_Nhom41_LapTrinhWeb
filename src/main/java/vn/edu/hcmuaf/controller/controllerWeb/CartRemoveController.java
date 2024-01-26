@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.controller.controllerWeb;
 
+import vn.edu.hcmuaf.model.Cart;
 import vn.edu.hcmuaf.model.Product;
 import vn.edu.hcmuaf.service.CartService;
 import vn.edu.hcmuaf.service.ProductService;
@@ -24,13 +25,12 @@ public class CartRemoveController extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         HttpSession session = req.getSession();
         ProductService productService = new ProductService();
-        ArrayList<Product> list = (ArrayList<Product>) session.getAttribute("list");
         if (session != null) {
             try {
                 Product product = new Product(productService.getProductid(productName), productName, productPrice, productService.getProductImg(productName));
                 CartService.removeProduct(product);
-                session.setAttribute("list", list);
-                req.getRequestDispatcher("/web/cart.jsp").forward(req, resp);
+                session.setAttribute("list", Cart.products);
+                req.getRequestDispatcher("/views/web/cart/cart.jsp").forward(req, resp);
         } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

@@ -24,9 +24,11 @@ public class FeedBackController extends HttpServlet {
         Feedback feedback=new Feedback(fullname,email,phone,title,content);
         try {
             if(feedBackService.insertFeedBack(feedback)){
-                resp.sendRedirect(req.getContextPath()+"/views/web/success.jsp");
+//                resp.sendRedirect(req.getContextPath()+"/views/contact.jsp");
+                req.getRequestDispatcher("/views/contact.jsp").forward(req,resp);
             }else{
-                resp.sendRedirect(req.getContextPath()+"/views/web/success.jsp");
+//                resp.sendRedirect(req.getContextPath()+"/views/contact.jsp");
+                req.getRequestDispatcher("/views/contact.jsp").forward(req,resp);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

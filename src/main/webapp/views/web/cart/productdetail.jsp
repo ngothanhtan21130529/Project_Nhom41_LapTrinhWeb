@@ -13,27 +13,35 @@
 </head>
 <body>
 <div>
-    <h1><%="Item_1"%>
+    <h1><%="VIÊN SPINEL HỒNG DÂU LỤC YÊN 3,56CT"%>
     </h1>
-    <img src="https://iruby.vn/wp-content/uploads/2023/10/Vien-Peridot-xanh-la-ma-chieu-dep-407ct-IRPD36-231040700000.jpg"
+    <img src="https://iruby.vn/wp-content/uploads/2023/12/Vien-Spinel-hong-dau-Luc-Yen-356ct-IRSI76-231235600000.jpg"
          width="100px" height="100px">
     <p><%=2%>
     </p>
     <button style="background: #3d8c18; width: 50px; height: 50px; cursor: pointer">
-        <a href="${pageContext.request.contextPath}/addproducts?name=<%="Item_1"%>&img=<%="https://iruby.vn/wp-content/uploads/2023/10/Vien-Peridot-xanh-la-ma-chieu-dep-407ct-IRPD36-231040700000.jpg"%>&price=<%=2%>">Mua
+        <a href="${pageContext.request.contextPath}/addproducts?name=<%="VIÊN SPINEL HỒNG DÂU LỤC YÊN 3,56CT"%>&img=<%="https://iruby.vn/wp-content/uploads/2023/12/Vien-Spinel-hong-dau-Luc-Yen-356ct-IRSI76-231235600000.jpg"%>&price=<%=2%>">Mua
             hàng</a>
     </button>
+    <h1><%="VIÊN SPINEL ĐỎ RỰC LỬA CHIẾU TOÀN VIÊN 2,56CT"%>
+    </h1>
+    <img src="https://iruby.vn/wp-content/uploads/2023/12/Vien-Spinel-do-ruc-lua-chieu-toan-vien-256ct-IRSI75-231225600000-1.jpg"
+         width="100px" height="100px">
+    <p><%=2%>
+    </p>
     <button style="background: #3d8c18; width: 50px; height: 50px; cursor: pointer">
-        <a href="${pageContext.request.contextPath}/removeproducts?name=<%="Item_1"%>&img=<%="https://iruby.vn/wp-content/uploads/2023/10/Vien-Peridot-xanh-la-ma-chieu-dep-407ct-IRPD36-231040700000.jpg"%>&price=<%=2%>">Xóa
+        <a href="${pageContext.request.contextPath}/addproducts?name=<%="VIÊN SPINEL ĐỎ RỰC LỬA CHIẾU TOÀN VIÊN 2,56CT"%>&img=<%="https://iruby.vn/wp-content/uploads/2023/12/Vien-Spinel-do-ruc-lua-chieu-toan-vien-256ct-IRSI75-231225600000-1.jpg"%>&price=<%=2%>">Mua
             hàng</a>
     </button>
-    <form action="${pageContext.request.contextPath}/orderdetails" method="post">
-        <input type="number" name="quantity" width="500px">
-        <button style="background: #3d8c18; width: 50px; height: 50px; cursor: pointer">
-            Thanh toán
-        </button>
-    </form>
-
+<%--    <button style="background: #3d8c18; width: 50px; height: 50px; cursor: pointer">--%>
+<%--        <a href="${pageContext.request.contextPath}/removeproducts?name=<%="VIÊN SPINEL HỒNG DÂU LỤC YÊN 3,56CT"%>&img=<%="https://iruby.vn/wp-content/uploads/2023/12/Vien-Spinel-hong-dau-Luc-Yen-356ct-IRSI76-231235600000.jpg"%>&price=<%=2%>">Xóa--%>
+<%--            hàng</a>--%>
+<%--    </button>--%>
+<%--    <form action="${pageContext.request.contextPath}/orderdetails" method="post">--%>
+<%--        <input type="number" name="quantity" width="500px">--%>
+<%--        <button style="background: #3d8c18; width: 50px; height: 50px; cursor: pointer">--%>
+<%--            Thanh toán--%>
+<%--        </button>--%>
 </div>
 
 </body>
