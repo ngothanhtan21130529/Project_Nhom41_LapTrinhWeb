@@ -15,10 +15,9 @@ public class FeedbackDAO implements DAOInterface<Feedback> {
     }
 
     public boolean insertFeedback(Feedback feedback) throws SQLException {
-
         String sql = "Insert into feedbacks(id,full_name,email,phone,title,feedback_content,created_at) values(?,?,?,?,?,?,CURRENT_TIMESTAMP)";
         PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
-        pr.setInt(1,this.getMaxID());
+        pr.setInt(1,getMaxID()+1);
         pr.setString(2, feedback.getFullName());
         pr.setString(3,feedback.getEmail());
         pr.setString(4,feedback.getPhone());
@@ -34,16 +33,19 @@ public class FeedbackDAO implements DAOInterface<Feedback> {
         }
     }
 
-    public  int getMaxID() throws SQLException {
-        String sql = "Select max(id) from feedbacks";
-        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
-        ResultSet rs = pr.executeQuery();
-        int res=0;
-        while (rs.next()) {
-            res=rs.getInt("id");
+    public int getMaxID() throws SQLException {
+        String sql = "SELECT MAX(id) AS max_id FROM feedbacks";
+        try (PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+             ResultSet rs = pr.executeQuery()) {
+
+            int res = 0;
+            while (rs.next()) {
+                res = rs.getInt("max_id"); // Sử dụng tên cột được đặt bởi AS
+            }
+            return res;
         }
-        return res;
     }
+
 
     @Override
     public int insert(Feedback feedback) throws SQLException {
@@ -69,4 +71,15 @@ public class FeedbackDAO implements DAOInterface<Feedback> {
     public ArrayList<Feedback> selectByCondition(String condition) {
         return null;
     }
+
+    public static void main(String[] args) {
+        FeedbackDAO feedbackDAO=new FeedbackDAO();
+        try {
+            System.out.println(feedbackDAO.getMaxID());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+

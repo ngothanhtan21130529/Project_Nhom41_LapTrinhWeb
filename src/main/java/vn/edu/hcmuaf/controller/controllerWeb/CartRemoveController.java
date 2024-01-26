@@ -1,6 +1,9 @@
 package vn.edu.hcmuaf.controller.controllerWeb;
 
+import vn.edu.hcmuaf.model.Cart;
 import vn.edu.hcmuaf.model.Product;
+import vn.edu.hcmuaf.service.CartService;
+import vn.edu.hcmuaf.service.ProductService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,37 +12,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 @WebServlet(name = "CartRemoveController", value = "/removeproducts")
 public class CartRemoveController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String img = req.getParameter("img");
-        int price = Integer.parseInt(req.getParameter("price"));
+        String productImage = req.getParameter("img");
+        String productName = req.getParameter("name");
+        int productPrice = Integer.parseInt(req.getParameter("price"));
+        int id = Integer.parseInt(req.getParameter("id"));
         HttpSession session = req.getSession();
-        ArrayList<Product> list = (ArrayList<Product>) session.getAttribute("list");
+        ProductService productService = new ProductService();
         if (session != null) {
-            if (list.isEmpty()) {
-                req.setAttribute("message", "Giỏ hàng trống");
-                req.getRequestDispatcher("/views/header.jsp").forward(req, resp);
-            } else {
-                for (Product product : list) {
-                    if (product.getProductName().equalsIgnoreCase(name)) {
-                        if (product.getImgURL().equalsIgnoreCase(img)) {
-                            if (product.getPrice() == price) {
-                                list.remove(product);
-                                break;
-                            }
-                        }
-                    }
-                }
-                session.setAttribute("list", list);
-                resp.sendRedirect(req.getContextPath() + "/views/header.jsp");
+            try {
+                Product product = new Product(productService.getProductid(productName), productName, productPrice, productService.getProductImg(productName));
+                CartService.removeProduct(product);
+                session.setAttribute("list", Cart.products);
+                req.getRequestDispatcher("/views/web/cart/cart.jsp").forward(req, resp);
+        } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
 
         }
 
-    }
+}
 }

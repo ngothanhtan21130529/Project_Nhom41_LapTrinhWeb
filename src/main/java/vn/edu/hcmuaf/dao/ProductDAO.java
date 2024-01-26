@@ -110,50 +110,45 @@ public class ProductDAO implements DAOInterface<Product> {
         }
         return product;
     }
-    public  ArrayList<Product> getListProductFull(){
-        ArrayList<Product> products = new ArrayList<>();
-        try {
-            String sql = "select p.id, p.product_name, p.category_id, i.img_url, \n" +
-                    "p.price, p.sale, p.hot, p.description, p.created_at, \n" +
-                    "p.updated_at, p.deleted_at, p.color, p.weight, p.size, \n" +
-                    "p.opacity, p.status, p.cutting_grinding_type, p.material\n" +
-                    "from products p JOIN images i on p.thumbnail_id=i.id;";
-            Connection con = MySqlConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            /*
-            * Product(int id, String productName, int categoryID, String imgURL,
-                   int price, int sale, boolean hot, String description,
-                   Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
-                   String color, String weight, String size, String opacity,
-                   String status, String cuttingGrindingShape, String marterial
-            * */
-            while (rs.next()) {
-                Product product=new Product(
-                        rs.getInt("id"),
-                        rs.getString("product_name"),
-                        rs.getInt("category_id"),
-                        rs.getString("img_url"),
-                        rs.getInt("price"),
-                        rs.getInt("sale"),
-                        rs.getBoolean("hot"),
-                        rs.getString("description"),
-                        rs.getTimestamp("created_at"),
-                        rs.getTimestamp("updated_at"),
-                        rs.getTimestamp("deleted_at"),
-                        rs.getString("color"),
-                        rs.getString("weight"),
-                        rs.getString("size"),
-                        rs.getString("opacity"),
-                        rs.getString("status"),
-                        rs.getString("cutting_grinding_type"),
-                        rs.getString("material")
-                );
-                products.add(product);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+
+
+    public void getListProducts() throws SQLException {
+        String sql = "select products.product_name from products join order_details on products.id=order_details.product_id";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        ResultSet rs = pr.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString("products.product_name"));
         }
-        return products;
+    }
+
+    public int findIdProduct(String productname) throws SQLException {
+        String sql = "select id from  products  where products.product_name=?";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1, productname);
+        ResultSet rs = pr.executeQuery();
+
+        int id = 0;
+        while (rs.next()) {
+            id = rs.getInt("id");
+        }
+        return id;
+    }
+
+    public String getThumbnail(String productname) throws SQLException {
+        String sql = "select img_url from images join products on images.id=products.thumbnail_id where products.product_name=?";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1, productname);
+        ResultSet rs = pr.executeQuery();
+        String img = "";
+        while (rs.next()) {
+            img = rs.getString("img_url");
+        }
+        return img;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        ProductDAO productDAO = new ProductDAO();
+        System.out.println(productDAO.getThumbnail("VIÊN SPINEL HỒNG DÂU LỤC YÊN 3,56CT"));
+
     }
 }

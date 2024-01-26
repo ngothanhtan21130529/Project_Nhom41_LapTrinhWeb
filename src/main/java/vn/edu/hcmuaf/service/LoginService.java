@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class LoginService {
     public ArrayList<User> getAllUser() throws SQLException {
-   ArrayList<User> listuser= UserDAO.getInstance().getUsernameandPassword();
-     return listuser;
+        ArrayList<User> listuser= UserDAO.getInstance().getUsernameandPassword();
+        return listuser;
     }
     public String getEmail(String username) throws SQLException {
         String email= UserDAO.getInstance().getEmailforLogin(username);

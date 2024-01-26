@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,17 +15,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link href="../../css/login.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 <body>
 <div id="container">
-    <div style="color:red"><%=(request.getAttribute("notify")!=null ? request.getAttribute("notify") : "")%>
+    <div style="color:red"><%=(request.getAttribute("notify") != null ? request.getAttribute("notify") : "")%>
     </div>
     <div class="img-ttn">
-        <img src="./img/banner/TTN.png">
+        <img src="${pageContext.request.contextPath}/img/banner/TTN.png">
     </div>
     <form action="<%=request.getContextPath()%>/login" method="post">
         <div id="logo">
-            <img src="./img/logo.png" alt="logo">
+            <img src="${pageContext.request.contextPath}/img/logo.png" alt="logo">
         </div>
         <div id="log_in">
             <h1>Đăng nhập</h1>
@@ -38,7 +42,9 @@
         </div>
 
         <div id="login">
-            <button id="submit"><h2>Đăng nhập</h2></button>
+            <button id="submit">
+                <h3>Đăng nhập</h3>
+            </button>
         </div>
         <div id="register_forget">
             <div id="register">
@@ -48,11 +54,10 @@
                 <a href="forgot-password.html">Quên mật khẩu ?</a>
             </div>
         </div>
-<%--        <div id="remember">--%>
-<%--            <input type="checkbox" id="checkbox">--%>
-<%--            <h3 id="text_ghi_nho">Ghi nhớ đăng nhập</h3>--%>
-<%--        </div>--%>
     </form>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </html>

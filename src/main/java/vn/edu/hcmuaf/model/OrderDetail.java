@@ -12,7 +12,8 @@ public class OrderDetail implements Serializable {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private String status;
-
+    private Order order;
+    private Product product;
     public OrderDetail(int id, int productID, int orderID, int quantityTotal, int totalPrice, Timestamp createdAt, Timestamp updatedAt, String status) {
         this.id = id;
         this.productID = productID;
@@ -22,6 +23,19 @@ public class OrderDetail implements Serializable {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.status = status;
+    }
+
+    //model for access data
+    public OrderDetail(int id, int productID, int orderID, int quantityTotal, int totalPrice, Timestamp createdAt, String status, Order order, Product product) {
+        this.id = id;
+        this.productID = productID;
+        this.orderID = orderID;
+        this.quantityTotal = quantityTotal;
+        this.totalPrice = totalPrice;
+        this.createdAt = createdAt;
+        this.status = status;
+        this.order = order;
+        this.product = product;
     }
 
     public int getId() {
@@ -86,5 +100,19 @@ public class OrderDetail implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderDetail{" +
+                "id=" + id +
+                ", productID=" + productID +
+                ", orderID=" + orderID +
+                ", quantityTotal=" + quantityTotal +
+                ", totalPrice=" + totalPrice +
+                ", createdAt=" + createdAt +
+                ", status='" + status + '\'' +
+                ", order=" + order +
+                '}';
     }
 }

@@ -1,34 +1,47 @@
 package vn.edu.hcmuaf.dao;
 
 import vn.edu.hcmuaf.database.MySqlConnection;
-import vn.edu.hcmuaf.model.Order;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class OrderDAO {
     public static OrderDAO getInstance() {
         return new OrderDAO();
     }
-    public boolean insertOrder() {
-        return true;
-    }
-    public List<Order> getOrderDetails() throws SQLException {
-        List<Order> orderlist=new ArrayList<>();
-        String sql="select * from order_details";
-        PreparedStatement preparedStatement= MySqlConnection.getConnection().prepareStatement(sql);
-        ResultSet resultSet=preparedStatement.executeQuery();
-        while (resultSet.next()){
-            Order order=new Order();
-//            order.setOrderID(resultSet.getInt("order_id"));
-//            order.setProductID(resultSet.getInt("product_id"));
-//            order.setAmount(resultSet.getInt("amount"));
-//            order.setPrice(resultSet.getInt("price"));
-            orderlist.add(order);
+    public int getMaxId() throws SQLException {
+        String sql = "select max(id) from orders";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        ResultSet rs = pr.executeQuery();
+        int res = 0;
+        while (rs.next()) {
+            res = rs.getInt(1);
         }
-        return orderlist;
+        return res;
+    }
+
+    public void insertOrder(UserDAO userDAO,String username,int total_price) throws SQLException {
+        String sql = "insert into orders (id,user_id,created_at,total_price) values (?,?,CURRENT_TIMESTAMP,?)";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setInt(1, getMaxId() + 1);
+        pr.setInt(2, userDAO.getUserid(username));
+        pr.setInt(3, total_price);
+        pr.executeUpdate();
+        pr.close();
+        MySqlConnection.getConnection().close();
+    }
+
+    public ResultSet getOrder() throws SQLException {
+        String sql = "select orders.id,orders.user_id,orders.created_at,orders.total_price,users.id,users.username from orders inner join users on orders.user_id=users.id";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        ResultSet rs = pr.executeQuery();
+        return rs;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        OrderDAO orderDAO = OrderDAO.getInstance();
+        System.out.println(orderDAO.getOrder());
+
     }
 }

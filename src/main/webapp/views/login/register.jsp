@@ -22,12 +22,12 @@
 <div><h1 style="color:red"><%=(request.getAttribute("announced")!=null?request.getAttribute("announced"):"")%></h1></div>
 <div id="container">
     <div class="img-register">
-        <img src="./img/banner/TTN-2.png">
+        <img src="${pageContext.request.contextPath}/img/banner/TTN-2.png">
     </div>
     <form action="<%=request.getContextPath()%>/register" method="post">
 
         <div class="logo">
-            <img src="img/logo.png">
+            <img src="${pageContext.request.contextPath}/img/logo.png">
         </div>
         <div id="register">
             <h2>Đăng ký</h2>

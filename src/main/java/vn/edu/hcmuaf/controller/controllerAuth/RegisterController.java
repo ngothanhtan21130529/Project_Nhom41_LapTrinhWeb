@@ -90,17 +90,17 @@ public class RegisterController extends HttpServlet {
 
     protected void checkRegister(HttpServletRequest servletRequest, HttpServletResponse servletResponse, String username, String password, String repeat, String email, String policy, String passwordRegex, String usernameRegex, String emailRegex, RegisterService registerService) throws ServletException, IOException {
         // Case 1: All fields are empty
-        if (username.equals("") && password.equals("") && repeat.equals("") && email.equals("") && policy == null) {
-            servletRequest.setAttribute("announced", "Lam on dien tat ca cac truong thong tin");
+        if (username==null && password==null && repeat==null && email==null && policy == null) {
+            servletRequest.setAttribute("announced", "Làm ơn điền đầy đủ thông tin");
             RequestDispatcher requestDispatcher = servletRequest.getRequestDispatcher("/views/login/register.jsp");
             requestDispatcher.forward(servletRequest, servletResponse);
             // Case 2: Two or more fields are empty
-        } else if (username.equals("") || password.equals("") || repeat.equals("") || email.equals("") || policy == null) {
-            servletRequest.setAttribute("announced", "Mot hoac nhieu truong thong tin chua duoc dien");
+        } else if (username==null || password==null || repeat==null || email==null|| policy == null) {
+            servletRequest.setAttribute("announced", "Một hoặc nhiều thông tin chưa được điền");
             RequestDispatcher requestDispatcher = servletRequest.getRequestDispatcher("/views/login/register.jsp");
             requestDispatcher.forward(servletRequest, servletResponse);
             // Case 3: All fields are filled out
-        } else if (!username.equals("") && !password.equals("") && !repeat.equals("") && !email.equals("") && policy != null) {
+        } else if (username!=null && password!=null && repeat!=null && email!=null && policy != null) {
             int invalid = 0;
             if (!username.matches(usernameRegex)) {
                 invalid++;

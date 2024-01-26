@@ -13,15 +13,16 @@ import java.util.ArrayList;
 @WebServlet("/product")
 public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductDAO productDAO = new ProductDAO();
-        ArrayList<Product> products = productDAO.getListProduct();
-        request.setAttribute("products", products);
-
-        request.getRequestDispatcher("jewelrys-list.jsp").forward(request, response);
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String productName = request.getParameter("product");
-    response.sendRedirect(request.getContextPath() + "/product");
+//        ProductDAO productDAO = new ProductDAO();
+////        ArrayList<Product> products = productDAO.getListProduct();
+//        request.setAttribute("products", products);
+//
+//        request.getRequestDispatcher("jewelrys-list.jsp").forward(request, response);
+//    }
+//
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        String productName = request.getParameter("product");
+//    response.sendRedirect(request.getContextPath() + "/product");
+//    }
     }
 }

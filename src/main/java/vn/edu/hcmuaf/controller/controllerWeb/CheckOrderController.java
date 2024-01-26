@@ -3,9 +3,11 @@ package vn.edu.hcmuaf.controller.controllerWeb;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import vn.edu.hcmuaf.model.Product;
+import vn.edu.hcmuaf.service.OrderManageService;
 import vn.edu.hcmuaf.service.OrderService;
+import vn.edu.hcmuaf.service.UserService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,42 +15,52 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 //check user type right information or not to order
 @WebServlet("/checkorder")
 public class CheckOrderController extends HttpServlet {
     private OrderService orderService = new OrderService();
-
+    private OrderManageService orderManageService = new OrderManageService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String fullname = req.getParameter("fullname");
         String address = req.getParameter("address");
         String phone = req.getParameter("phone");
-        String email = req.getParameter("email");
         HttpSession session = req.getSession();
-        String regexphone = "^0[0-9]{10}$";
+        Map<String, Product> orders = (HashMap<String, Product>) req.getSession().getAttribute("listorders");
+        int total = (int) req.getSession().getAttribute("totalprice");
         if (session != null) {
             if (session.getAttribute("username") != null) {
                 try {
-                    if (orderService.getEmailforOrder(email, session.getAttribute("username").toString()) != null) {
-                        if (phone.matches(regexphone)) {
-                            req.getRequestDispatcher("/views/web/order/ordersuccess.jsp").forward(req, resp);
-                            sendEmail(req, resp, email);
+                    if (orderService.getEmailforOrder(session.getAttribute("username").toString()) != null) {
+                        sendEmail(req, resp, orderService.getEmailforOrder(session.getAttribute("username").toString()), orders,total);
+                        UserService userService = new UserService();
+                        int userid = userService.getUserId(session.getAttribute("username").toString());
+                        for (Map.Entry<String, Product> entry : orders.entrySet()) {
+                            String key = entry.getKey();
+                            Product value = entry.getValue();
+                            orderService.insertOrder(userService.getUserDAO(),session.getAttribute("username").toString(),total);
+                           orderManageService.insertOrderDetail(value.getId(),orderService.getMaxId(),Integer.parseInt(key),total,"pending",address,phone);
                         }
 
-                    } else {
-                        req.setAttribute("notify", "Email ban nhập vào không trùng với tài khoản đã đăng kí trước đó");
-                        req.getRequestDispatcher("/views/web/order/order.jsp").forward(req, resp);
+
+                        PrintWriter pr = resp.getWriter();
+                        pr.println("Thêm thành công");
                     }
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         }
     }
-    protected void sendEmail(HttpServletRequest request,HttpServletResponse response,String email){
+
+
+    protected void sendEmail(HttpServletRequest request, HttpServletResponse response, String email, Map<String, Product> orders,int total) {
         try {
             final String HOST_NAME = "smtp.gmail.com";
             final int SSL_PORT = 465; // Port for SSL
@@ -75,10 +87,21 @@ public class CheckOrderController extends HttpServlet {
             try {
                 MimeMessage message = new MimeMessage(session);
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
-                String url="<a href=\"http://localhost:8080/Project_Nhom_41_war/verifyregister\">Click vào đây để xác nhận</a>";
 
-                message.setSubject("Chúc mừng! Bạn đã đăng ký thành công");
-                message.setContent("<h1>Chúc mừng! Bạn đã đăng ký thành công</h1>"+url, "text/html;charset=utf-8");
+                // Subject and content of the email
+                message.setSubject("Chúc mừng! Bạn đã đặt hàng thành công");
+
+                // Construct HTML content with product information and total
+                StringBuilder content = new StringBuilder();
+                content.append("<p>Bạn đã đặt hàng thành công. Đơn hàng của bạn bao gồm các sản phẩm sau:</p>");
+                for (Map.Entry<String, Product> entry : orders.entrySet()) {
+                    Product product = entry.getValue();
+                    content.append("<p>").append(product.getProductName()).append(" - ").append(product.getPrice()).append("</p>");
+                }
+
+                content.append("<p>Tổng số tiền: ").append(total).append("</p>");
+
+                message.setContent(content.toString(), "text/html, charset=utf-8");
 
                 // send message
                 Transport.send(message);
@@ -90,4 +113,8 @@ public class CheckOrderController extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+
 }
+
+

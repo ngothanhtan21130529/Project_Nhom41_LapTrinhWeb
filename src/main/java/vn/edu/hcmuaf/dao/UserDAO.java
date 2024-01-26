@@ -60,7 +60,7 @@ public class UserDAO implements DAOInterface<User> {
     public ArrayList<User> selectByCondition(String condition) {
         return null;
     }
-    public String getEmailforOrder(String email,String username) throws SQLException {
+    public String getEmailforOrder(String username) throws SQLException {
         String sql="Select email from users where username=?";
         PreparedStatement pr=MySqlConnection.getConnection().prepareStatement(sql);
         pr.setString(1,username);
@@ -291,9 +291,20 @@ public class UserDAO implements DAOInterface<User> {
         rs.close();
         return avatar;
     }
+    public int getUserid(String username) throws SQLException {
+        String sql="Select id from users where username=?";
+        PreparedStatement pr= MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1,username);
+        ResultSet rs=pr.executeQuery();
+        int userid=0;
+        while(rs.next()){
+                userid=rs.getInt("id");
+        }
+        return userid;
+    }
     public static void main(String[] args) throws SQLException, ParseException {
         UserDAO userDAO=UserDAO.getInstance();
-        System.out.println(userDAO.UpdateBirthday("casterlongan123","1999-12-12"));
+        System.out.println(userDAO.getUserid("tantt121"));
     }
     public  ArrayList<User> getListUserFull(){
         ArrayList<User> users = new ArrayList<>();

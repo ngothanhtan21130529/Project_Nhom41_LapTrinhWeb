@@ -69,7 +69,10 @@ public class Product implements Serializable {
         this.imgURL = imgURL;
     }
 
-    public Product(String imgURL, String productName, int price) {
+
+    public Product(int id, String productName, int price, String imgURL) {
+        this.id = id;
+
         this.productName = productName;
         this.price = price;
         this.imgURL = imgURL;
@@ -85,12 +88,10 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Category getCategory() {
-        return category;
-    }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public Product(String productName) {
+        this.productName = productName;
+
     }
 
     public int getId() {
