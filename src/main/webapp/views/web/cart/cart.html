@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Giỏ hàng</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="font/fontawesome-free-6.4.2/css/all.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../css/cart.css">
 </head>
 <body>
 <header class="header">
@@ -75,6 +75,9 @@
                     <li class="navigation-item">
                         <a href="policy.html">Chính sách</a>
                     </li>
+                    <li class="navigation-item">
+                        <a href="about.html">Giới thiệu</a>
+                    </li>
                 </ul>
             </nav>
             <div class="header-btn">
@@ -94,8 +97,8 @@
                         </form>
                     </li>
                     <li class="header-item header__drop">
-                        <a href="/cart.html">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                        <a href="cart.html">
+                            <i class="fa-solid fa-cart-shopping" ></i>
                         </a>
                         <!-- if card have product -> add class header__drop__empty -->
                         <div class="header__drop-list">
@@ -184,14 +187,14 @@
                                     <p class="heading__drop__bottom-msg">
                                         5 sản phẩm mới thêm vào giỏ hàng
                                     </p>
-                                    <a href="/cart.html" class="header__drop__btn">
+                                    <a href="cart.html" class="header__drop__btn">
                                         Xem giỏ hàng
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="header-item sign-in"><a href="">Đăng nhập</a></li>
+                    <li class="header-item sign-in"><a href="login.html">Đăng nhập</a></li>
                 </ul>
             </div>
         </div>
@@ -216,6 +219,7 @@
                 <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
             </div>
             <div class="product-details">
+                <input type="hidden" value="" name="id">
                 <div class="product-title">Kim cương</div>
                 <p class="product-description">dafsd</p>
             </div>
@@ -270,7 +274,7 @@
             </div>
         </div>
 
-        <button class="checkout">Thanh toán</button>
+        <button class="checkout"><a href="checkout.html">Thanh toán</a></button>
 
     </div>
 </main>

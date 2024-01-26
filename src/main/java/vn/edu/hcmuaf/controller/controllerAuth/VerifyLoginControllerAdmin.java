@@ -14,7 +14,7 @@ public class VerifyLoginControllerAdmin extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         if (session != null) {
-            resp.sendRedirect(resp.encodeURL(req.getContextPath() + "/views/admin/admin.jsp"));
+          req.getRequestDispatcher("/views/admin/admin.jsp").forward(req, resp);
         }
     }
 }

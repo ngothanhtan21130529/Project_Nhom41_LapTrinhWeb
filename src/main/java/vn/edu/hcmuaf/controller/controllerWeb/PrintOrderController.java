@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 //this page for checking user confirms login or not login to order
 @WebServlet(value = "/orderdetails")
-public class OrderDetailsController extends HttpServlet {
+public class PrintOrderController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();

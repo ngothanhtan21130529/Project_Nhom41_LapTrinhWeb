@@ -39,8 +39,8 @@ public class LoginController extends HttpServlet {
         ArrayList<User> list = loginService.getAllUser();
         HttpSession session=request.getSession();
         if (username.equals("")|| pass.equals("")) {
-                request.setAttribute("notify", "Vui lòng nhập đầy đủ thông tin");
-                request.getRequestDispatcher("/views/login/login.jsp").forward(request, response);
+            request.setAttribute("notify", "Vui lòng nhập đầy đủ thông tin");
+            request.getRequestDispatcher("/views/login/login.jsp").forward(request, response);
         } else {
             boolean isvalid = false;
             User user = null;
@@ -159,6 +159,3 @@ public class LoginController extends HttpServlet {
         }
     }
 }
-
-
-

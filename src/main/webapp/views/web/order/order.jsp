@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: nttan
@@ -15,19 +16,20 @@
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/checkorder" method="post">
+ <%=session.getAttribute("listorders")%>
+    <c:set var="items" value="${sessionScope.listorders}"/>
+    <c:forEach var="entry" items="${items}">
+        <c:out value="${entry.key}"/>
+        <c:out value="${entry.value}"/>
+    </c:forEach>
     <label for="fullname">Họ tên</label>
     <input type="text" id="fullname" name="fullname">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email">
     <label for="phone">Số điện thoại</label>
     <input type="tel" name="phone" id="phone">
     <label for="address">Địa chỉ</label>
     <input type="text" name="address" id="address">
     <input type="submit" value="Đặt hàng" id="submit">
 </form>
-<div id="note">
-    <h2>Lưu ý:Vui lòng nhập đúng email mà bạn đã đăng ký với tài khoản trước đó</h2>
-</div>
 </body>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </html>

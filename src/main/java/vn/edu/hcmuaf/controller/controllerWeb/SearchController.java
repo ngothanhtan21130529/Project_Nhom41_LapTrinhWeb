@@ -26,9 +26,9 @@ public class SearchController extends HttpServlet {
             int endPage=0;
             endPage=count/pageSize;
             if(count%pageSize!=0) endPage++;
-            List<Product>productList=ProductDAO.getInstance().search(txtSearch,index,pageSize);
+//            List<Product>productList=ProductDAO.getInstance().search(txtSearch,index,pageSize);
             request.setAttribute("end",endPage);
-            request.setAttribute("list", productList);
+//            request.setAttribute("list", productList);
             request.setAttribute("txtSearch", txtSearch);
             request.getRequestDispatcher("/web/search-result.jsp").forward(request, response);
         }catch (Exception e){

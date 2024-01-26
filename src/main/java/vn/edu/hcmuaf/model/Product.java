@@ -10,7 +10,7 @@ public class Product implements Serializable {
     private String status;
     private int thumbnailID;
     private String imgURL;
-    private  String description;
+    private String description;
     private String stoneType;
     private String stoneColor;
     private String weight;
@@ -34,8 +34,9 @@ public class Product implements Serializable {
         this.imgURL = imgURL;
     }
 
-    public Product(String imgURL, String productName, int price) {
-        this.productName=productName;
+    public Product(int id, String productName, int price, String imgURL) {
+        this.id = id;
+        this.productName = productName;
         this.price = price;
         this.imgURL = imgURL;
     }
@@ -48,6 +49,10 @@ public class Product implements Serializable {
         this.imgURL = imgURL;
         this.description = description;
         this.price = price;
+    }
+
+    public Product(String productName) {
+        this.productName = productName;
     }
 
     public int getId() {

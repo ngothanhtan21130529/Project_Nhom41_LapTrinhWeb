@@ -31,7 +31,10 @@ public class User implements Serializable {
         this.role=role;
         this.birthday = birthday;
     }
-
+    public User(int id,String userName){
+        this.id=id;
+        this.userName=userName;
+    }
     public User(int id, String userName, String password, String email, Role role) {
         this.id = id;
         this.userName=userName;
@@ -160,4 +163,13 @@ public class User implements Serializable {
     public void setBirthday(Timestamp birthday) {
         this.birthday = birthday;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                '}';
+    }
 }
+

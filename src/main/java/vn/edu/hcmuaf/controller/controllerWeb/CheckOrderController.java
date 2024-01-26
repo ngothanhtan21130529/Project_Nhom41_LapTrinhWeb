@@ -3,9 +3,11 @@ package vn.edu.hcmuaf.controller.controllerWeb;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import vn.edu.hcmuaf.model.Product;
+import vn.edu.hcmuaf.service.OrderManageService;
 import vn.edu.hcmuaf.service.OrderService;
+import vn.edu.hcmuaf.service.UserService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 //check user type right information or not to order
@@ -26,29 +31,42 @@ public class CheckOrderController extends HttpServlet {
         String fullname = req.getParameter("fullname");
         String address = req.getParameter("address");
         String phone = req.getParameter("phone");
-        String email = req.getParameter("email");
         HttpSession session = req.getSession();
-        String regexphone = "^0[0-9]{10}$";
+        Map<String, Product> orders = (HashMap<String, Product>) req.getSession().getAttribute("listorders");
+
         if (session != null) {
             if (session.getAttribute("username") != null) {
                 try {
-                    if (orderService.getEmailforOrder(email, session.getAttribute("username").toString()) != null) {
-                        if (phone.matches(regexphone)) {
-                            req.getRequestDispatcher("/views/web/order/ordersuccess.jsp").forward(req, resp);
-                            sendEmail(req, resp, email);
+                    if (orderService.getEmailforOrder(session.getAttribute("username").toString()) != null) {
+                        sendEmail(req, resp, orderService.getEmailforOrder(session.getAttribute("username").toString()));
+                        UserService userService = new UserService();
+                        int userid = userService.getUserId(session.getAttribute("username").toString());
+                        OrderService orderService = new OrderService();
+//                            orderService.insertOrder(userid);
+                        for(Map.Entry<String, Product> entry : orders.entrySet()) {
+                            String key = entry.getKey();
+                            Product value = entry.getValue();
+                            orderService.insertOrder(orderService.getMaxId(),value.getId(),Integer.parseInt(key));
                         }
-
-                    } else {
-                        req.setAttribute("notify", "Email ban nhập vào không trùng với tài khoản đã đăng kí trước đó");
-                        req.getRequestDispatcher("/views/web/order/order.jsp").forward(req, resp);
+                        OrderManageService orderManageService = new OrderManageService();
+//                            orderManageService.insertOrderDetail(orderService.getMaxId());
+                        for(Map.Entry<String, Product> entry : orders.entrySet()) {
+                            String key = entry.getKey();
+                            Product value = entry.getValue();
+                            orderManageService.insertOrderDetail(orderService.getMaxId(),value.getId(),Integer.parseInt(key));
+                        }
+                        PrintWriter pr = resp.getWriter();
+                        pr.println("Thêm thành công");
                     }
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         }
     }
-    protected void sendEmail(HttpServletRequest request,HttpServletResponse response,String email){
+
+
+    protected void sendEmail(HttpServletRequest request, HttpServletResponse response, String email) {
         try {
             final String HOST_NAME = "smtp.gmail.com";
             final int SSL_PORT = 465; // Port for SSL
@@ -75,11 +93,11 @@ public class CheckOrderController extends HttpServlet {
             try {
                 MimeMessage message = new MimeMessage(session);
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECEIVE_EMAIL));
-                String url="<a href=\"http://localhost:8080/Project_Nhom_41_war/verifyregister\">Click vào đây để xác nhận</a>";
+//                String url="<a href=\"http://localhost:8080/Project_Nhom_41_war/verifyregister\">Click vào đây để xác nhận</a>";
 
-                message.setSubject("Chúc mừng! Bạn đã đăng ký thành công");
-                message.setContent("<h1>Chúc mừng! Bạn đã đăng ký thành công</h1>"+url, "text/html;charset=utf-8");
-
+                message.setSubject("Chúc mừng! Bạn đã đặt hàng thành công");
+                message.setText("Bạn đã đặt hàng thành công," +
+                        "Đơn hàng của bạn bao gồm các sản phẩm sau: " + request.getSession().getAttribute("listorders") );
                 // send message
                 Transport.send(message);
 

@@ -12,9 +12,9 @@ import java.io.IOException;
 public class VerifyLoginControllerUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession httpSession = req.getSession();
-        if (httpSession != null) {
-            resp.sendRedirect(resp.encodeURL(req.getContextPath() + "/views/index.jsp"));
+        HttpSession session = req.getSession();
+        if (session != null) {
+           req.getRequestDispatcher("/views/user/user.jsp").forward(req, resp);
         }
     }
 }

@@ -14,9 +14,10 @@ public class VerifyRegisterController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session=req.getSession();
-        if(session!=null){
-            resp.sendRedirect(req.getContextPath()+"/views/login/informedregister.jsp");
+        HttpSession session = req.getSession();
+        if (session != null) {
+//            resp.sendRedirect(req.getContextPath()+"/views/login/informedregister.jsp");
+            req.getRequestDispatcher("/views/login/informedregister.jsp").forward(req, resp);
         }
     }
 }

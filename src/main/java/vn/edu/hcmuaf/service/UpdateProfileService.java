@@ -22,16 +22,4 @@ public class UpdateProfileService {
             return false;
         }
     }
-    public boolean updateImg(String username, String avatar) throws SQLException {
-        UserDAO userDAO=UserDAO.getInstance();
-        if(userDAO.uploadImg(username,avatar)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    public String getAvatar(String username) throws SQLException {
-        UserDAO userDAO=UserDAO.getInstance();
-        return userDAO.getAvatar(username);
-    }
 }
