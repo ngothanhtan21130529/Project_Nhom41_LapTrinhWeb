@@ -13,6 +13,31 @@ public class Category implements Serializable {
     private int imgID;
     private String imgURL;
 
+    public Category(int id, String categoryName, String status, String imgURL) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.status = status;
+        this.imgURL = imgURL;
+    }
+
+    public Category(int id, String categoryName, String status, int imgID) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.status = status;
+        this.imgID = imgID;
+    }
+
+    public Category(int id, String categoryName, String imgURL, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, int imgID) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+        this.status = status;
+        this.imgURL = imgURL;
+        this.imgID = imgID;
+    }
+
     public Category(int id, String categoryName, Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt, String status, int imgID) {
         this.id = id;
         this.categoryName = categoryName;
@@ -26,12 +51,12 @@ public class Category implements Serializable {
     public Category(int id, String categoryName, String imgURL) {
         this.id = id;
         this.categoryName = categoryName;
-        this. imgURL = imgURL;
+        this.imgURL = imgURL;
     }
 
     public Category(int id, String categoryName) {
-        this.id=id;
-        this.categoryName=categoryName;
+        this.id = id;
+        this.categoryName = categoryName;
     }
 
     public int getId() {
@@ -96,5 +121,19 @@ public class Category implements Serializable {
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
+                ", status='" + status + '\'' +
+                ", imgID=" + imgID +
+                ", imgURL='" + imgURL + '\'' +
+                '}';
     }
 }

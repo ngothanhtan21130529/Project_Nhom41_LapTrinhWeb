@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String avatar;
     private Role role;
     private Timestamp birthday;
+    private String roleName;
 
     public User(int id, String userName, String password, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, Role role, Timestamp birthday) {
         this.id = id;
@@ -31,9 +32,11 @@ public class User implements Serializable {
         this.role=role;
         this.birthday = birthday;
     }
+
     public User(int id,String userName){
         this.id=id;
         this.userName=userName;
+
     }
     public User(int id, String userName, String password, String email, Role role) {
         this.id = id;
@@ -43,15 +46,15 @@ public class User implements Serializable {
         this.role=role;
     }
 
-   public User(String name,String userName,String password,String email,Timestamp birthday,String phone){
+    public User(String name,String userName,String password,String email,Timestamp birthday,String phone){
         this.name=name;
         this.userName=userName;
         this.password=password;
         this.email=email;
         this.birthday=birthday;
         this.phone=phone;
-   }
-   public User(int id,String username,String password,String name,String email,String phone,Role role,Timestamp birthday){
+    }
+    public User(int id,String username,String password,String name,String email,String phone,Role role,Timestamp birthday){
         this.id=id;
         this.userName=username;
         this.password=password;
@@ -60,12 +63,6 @@ public class User implements Serializable {
         this.phone=phone;
         this.role=role;
         this.birthday=birthday;
-   }
-
-    public User(String username, String password, Role role) {
-        this.userName=username;
-        this.password=password;
-        this.role=role;
     }
 
     public int getId() {
@@ -164,12 +161,13 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                '}';
+    public String getRoleName() {
+        return roleName;
     }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
 }
 
