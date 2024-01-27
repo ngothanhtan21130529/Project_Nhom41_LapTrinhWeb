@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.service;
 
+import vn.edu.hcmuaf.dao.CategoryDAO;
 import vn.edu.hcmuaf.dao.ProductDAO;
+import vn.edu.hcmuaf.model.Category;
 import vn.edu.hcmuaf.model.Image;
 import vn.edu.hcmuaf.model.Product;
 import vn.edu.hcmuaf.model.ProductDetail;
@@ -13,29 +15,18 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductService {
-    private static ProductDAO productDAO;
+    private ProductDAO productDAO;
     private Map<Integer, String> productStatus = new HashMap<>();
 
     public ProductService() throws SQLException {
         this.productDAO = ProductDAO.getInstance();
     }
 
-    //    quy ước trạng thái sản phẩm tự động
-    public String classifyStatus(Integer quantity) {
-        String status;
-
-        if (quantity == null) {
-            status = "Ngưng bán";
-        } else if (quantity == 0) {
-            status = "Hết hàng";
-        } else {
-            status = "Đặt hàng";
-        }
-        return status;
+    public ProductService(ProductDAO productDAO) {
+        this.productDAO = productDAO;
     }
 
-
-    //    lấy danh sách sản phẩm
+    //lấy danh sách sản phẩm
     public ArrayList<Product> getProductList(ResultSet productRS) {
         ArrayList<Product> productList = new ArrayList<>();
         try {
@@ -88,6 +79,25 @@ public class ProductService {
         return getProductList(jewelryListRS);
     }
 
+    public ArrayList<Product> getListProductNotJewelry() {
+        ResultSet notJewerlyRS = productDAO.getListProductNotJewerly();
+        return getProductList(notJewerlyRS);
+    }
+
+    //    quy ước trạng thái sản phẩm tự động
+    public String classifyStatus(Integer quantity) {
+        String status;
+
+        if (quantity == null) {
+            status = "Ngưng bán";
+        } else if (quantity == 0) {
+            status = "Hết hàng";
+        } else {
+            status = "Đặt hàng";
+        }
+        return status;
+    }
+
     public ProductDetail getProductByID(int productID) {
         ResultSet productResultSet = productDAO.getProductByID(productID);
         ResultSet inventoriesResultSet = productDAO.getInventories();
@@ -105,6 +115,12 @@ public class ProductService {
                 int sale = productResultSet.getInt("sale");
                 String description = productResultSet.getString("description");
                 String imgURL = productResultSet.getString("img_url");
+                String material = productResultSet.getString("material");
+                String color = productResultSet.getString("color");
+                String size = productResultSet.getString("size");
+                String cuttingType = productResultSet.getString("cutting_grinding_type");
+                String weight = productResultSet.getString("weight");
+                String opacity = productResultSet.getString("opacity");
 
                 // Đọc dữ liệu từ ResultSet inventoriesResultSet
                 int quantity = getQuantityFromInventories(inventoriesResultSet, id);
@@ -126,6 +142,12 @@ public class ProductService {
                 productDetail.setStatus(classifyStatus(quantity));
                 productDetail.setStoneType(stoneType);
                 productDetail.setImages(images);
+                productDetail.setMaterial(material);
+                productDetail.setColor(color);
+                productDetail.setSize(size);
+                productDetail.setCuttingGrindingType(cuttingType);
+                productDetail.setWeight(weight);
+                productDetail.setOpacity(opacity);
             }
 
             return productDetail;
@@ -134,23 +156,6 @@ public class ProductService {
             e.printStackTrace();
         }
         return null;
-    }
-
-    private int getQuantityFromInventories(ResultSet inventoriesResultSet, int productID) throws SQLException {
-        while (inventoriesResultSet.next()) {
-            int inventoryProductID = inventoriesResultSet.getInt("product_id");
-            if (inventoryProductID == productID) {
-                return inventoriesResultSet.getInt("quantity");
-            }
-        }
-        return 0; // Hoặc giá trị mặc định khác tùy vào yêu cầu của bạn
-    }
-
-    private String getStoneType(ResultSet productCategoryNameResultSet) throws SQLException {
-        if (productCategoryNameResultSet.next()) {
-            return productCategoryNameResultSet.getString("category_name");
-        }
-        return null; // Hoặc giá trị mặc định khác tùy vào yêu cầu của bạn
     }
 
     private List<String> getImages(ResultSet productImagesResultSet) throws SQLException {
@@ -162,44 +167,80 @@ public class ProductService {
         return images;
     }
 
+    private int getQuantityFromInventories(ResultSet inventoriesResultSet, int productID) throws SQLException {
+        while (inventoriesResultSet.next()) {
+            int inventoryProductID = inventoriesResultSet.getInt("product_id");
+            if (inventoryProductID == productID) {
+                return inventoriesResultSet.getInt("quantity");
+            }
+        }
+        return 0;
+    }
 
-    public static void main(String[] args) throws SQLException {
-        ProductService productService = new ProductService();
+    private String getStoneType(ResultSet productCategoryNameResultSet) throws SQLException {
+        if (productCategoryNameResultSet.next()) {
+            return productCategoryNameResultSet.getString("category_name");
+        }
+        return null; // Hoặc giá trị mặc định khác tùy vào yêu cầu của bạn
+    }
 
-        // ID của sản phẩm cần hiển thị thông tin
-        int productId = 2;
+    public ArrayList<Product> getListProductWithImageByCategoryID(int categoryId) throws SQLException {
+        if (productDAO == null) {
+            this.productDAO = new ProductDAO();
+        }
+        ArrayList<Product> products = new ArrayList<>();
 
-        // Gọi phương thức getProductByID từ lớp ProductService
-        ProductDetail productDetail = productService.getProductByID(productId);
+        try {
+            // Gọi phương thức từ DAO để lấy danh sách sản phẩm với hình ảnh dựa trên ID của danh mục
+            ResultSet resultSet = productDAO.getListProductWithImageByCategoryID(categoryId);
 
-        // Kiểm tra nếu productDetail không null thì hiển thị thông tin
-        if (productDetail != null) {
-            System.out.println("Thông tin sản phẩm:");
-            System.out.println("ID: " + productDetail.getId());
-            System.out.println("Tên sản phẩm: " + productDetail.getProductName());
-            System.out.println("Giá: " + productDetail.getPrice());
-            System.out.println("Trạng thái: " + productDetail.getStatus());
-            System.out.println("Ảnh URL: " + productDetail.getImgURL());
-            System.out.println("Sale: " + productDetail.getSale());
-            System.out.println("loại: " + productDetail.getStoneType());
-            System.out.println("Mô tả: " + productDetail.getDescription());
+            // Chuyển đổi ResultSet thành danh sách đối tượng Product
+            while (resultSet.next()) {
+                Product product = new Product();
+                product.setId(resultSet.getInt("id"));
+                product.setCategoryID(resultSet.getInt("category_id"));
+                product.setProductName(resultSet.getString("product_name"));
+                product.setImgURL(resultSet.getString("img_url"));
+                int price = resultSet.getInt("price");
+                product.setPrice(resultSet.getInt("price"));
+                // Lấy số lượng từ bảng inventories
+                int productID = resultSet.getInt("id");
+                ResultSet inventoriesResultSet = productDAO.getInventories();
+                int quantity = getQuantityFromInventories(inventoriesResultSet, productID);
 
-            // Hiển thị danh sách hình ảnh
-            List<String> images = productDetail.getImages();
-            if (images != null && !images.isEmpty()) {
-                System.out.println("Danh sách hình ảnh:");
-                for (String imageURL : images) {
-                    System.out.println(imageURL);
-                }
-            } else {
-                System.out.println("Không có hình ảnh.");
+                // Xử lý thuộc tính trạng thái
+                product.setStatus(classifyStatus(quantity));
+
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            // Xử lý exception nếu cần thiết
+            e.printStackTrace();
+        }
+
+        return products;
+    }
+    public static void main(String[] args) {
+        try {
+            // Tạo đối tượng ProductService
+            ProductService productService = new ProductService();
+
+            // Gọi phương thức để lấy danh sách sản phẩm theo categoryId
+            int categoryId = 2;
+            ArrayList<Product> productList = productService.getListProductWithImageByCategoryID(categoryId);
+
+            // In ra thông tin của từng sản phẩm
+            for (Product product : productList) {
+                System.out.println("Product ID: " + product.getId());
+                System.out.println("Product Name: " + product.getProductName());
+                System.out.println("Price: " + product.getPrice());
+                System.out.println("Status: " + product.getStatus());
+                System.out.println("Status: " + product.getCategoryID());
+                System.out.println("------------------------------");
             }
 
-            // Thêm hiển thị các thuộc tính khác theo cần thiết
-        } else {
-            System.out.println("Không tìm thấy thông tin sản phẩm có ID = " + productId);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
-
-

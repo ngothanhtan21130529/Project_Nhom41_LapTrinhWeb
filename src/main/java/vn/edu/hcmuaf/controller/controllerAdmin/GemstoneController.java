@@ -22,7 +22,12 @@ public class GemstoneController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<Category> categories = categoryService.getAllCategories();
+        ArrayList<Category> categories = null;
+        try {
+            categories = categoryService.getAllGemCategories();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         req.setAttribute("categoryList", categories);
 

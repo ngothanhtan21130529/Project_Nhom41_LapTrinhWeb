@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../font/fontawesome-free-6.4.2/css/all.css">
 <link href="<%=request.getContextPath()%>/css/header.css" rel="stylesheet" type="text/css">
 
-<header class="header">
+<header class="header non-light-box">
     <div class="container">
         <div class="box">
             <div class="logo">
@@ -25,45 +25,23 @@
                         <a href="${pageContext.request.contextPath}/headerController?action=home">Trang chủ</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="${pageContext.request.contextPath}/products">Sản phẩm</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=all-products">Sản phẩm</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="${pageContext.request.contextPath}/products">Trang sức</a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=jewelry">Trang sức</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="${pageContext.request.contextPath}/products"> Đá quý </a>
+                        <a href="${pageContext.request.contextPath}/headerController?action=gemstone"> Đá quý </a>
                         <i class="fa-solid fa-caret-down"></i>
                         <ul class="dropdown-gem">
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Spinel</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Kim cương</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Ruby</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Hổ phách</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Topaz</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Aquamarine</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Tourmaline</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Jade</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="${pageContext.request.contextPath}/headerController?action=products">Emerald</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <<a href="${pageContext.request.contextPath}/headerController?action=products">Garnet</a>
-                            </li>
+                            <c:set var="categories" value="${requestScope.categoryList}"></c:set>
+                            <c:forEach var="gemCategory" items="${categories}">
+                                <li class="dropdown-item">
+                                    <a href="${pageContext.request.contextPath}/headerController?action=products&categoryId=${gemCategory.id}">
+                                            ${gemCategory.categoryName}
+                                    </a>
+                                </li>
+                            </c:forEach>
                         </ul>
                     </li>
                     <li class="navigation-item">
@@ -192,7 +170,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="header-item sign-in"><a href="<%=request.getContextPath()%>/login/login.jsp">Đăng nhập</a></li>
+                    <li class="header-item sign-in"><a href="<%=request.getContextPath()%>/login">Đăng nhập</a></li>
                 </ul>
             </div>
         </div>

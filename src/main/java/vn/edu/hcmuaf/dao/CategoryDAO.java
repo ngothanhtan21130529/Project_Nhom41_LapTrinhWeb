@@ -42,9 +42,11 @@ private Connection connection;
         this.connection = MySqlConnection.getConnection();
     }
 
+
+
     public ArrayList<Category> getAllCategories() {
         ArrayList<Category> categories = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(Queries.GET_ALL_CATEGORIES);
+        try (PreparedStatement ps = connection.prepareStatement(Queries.GET_CATEGORIES_WITH_IMAGES);
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
@@ -60,6 +62,8 @@ private Connection connection;
         }
         return categories;
     }
+
+
 
     public ArrayList<String> getAllCategoryNames() {
         ArrayList<String> categoryNames = new ArrayList<>();
@@ -95,5 +99,21 @@ private Connection connection;
     }
 
 
+    public ResultSet getCategoriesWithImage() {
+    try {
+        PreparedStatement ps = connection.prepareStatement(Queries.GET_CATEGORIES_WITH_IMAGES);
+        return ps.executeQuery();
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
+    }
 
+    public int getMaxID() {
+        return 0;
+    }
+
+    public ResultSet getCategoryNames() throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(Queries.GET_CATEGORY_NAMES);
+        return ps.executeQuery();
+    }
 }
