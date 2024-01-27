@@ -1,12 +1,7 @@
 package vn.edu.hcmuaf.controller.controllerAdmin;
 
-import vn.edu.hcmuaf.dao.CategoryDAO;
-import vn.edu.hcmuaf.model.Category;
-import vn.edu.hcmuaf.model.Product;
-import vn.edu.hcmuaf.model.User;
-import vn.edu.hcmuaf.service.PrintCategoryService;
-import vn.edu.hcmuaf.service.PrintProductService;
-import vn.edu.hcmuaf.service.PrintUserService;
+import vn.edu.hcmuaf.model.*;
+import vn.edu.hcmuaf.service.PrintService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,37 +11,29 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "AdminDisplayment", value = "/AdminDisplayment")
+@WebServlet(name = "AdminDisplayment", value = "/admin")
 public class AdminDisplayment extends HttpServlet {
-    PrintCategoryService printCategoryService = new PrintCategoryService();
-    PrintProductService printProductService = new PrintProductService();
-    PrintUserService printUserService = new PrintUserService();
-
+    PrintService printService = new PrintService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            ArrayList<Category> categoryArrayList = printCategoryService.getListCategoryFull();
-            ArrayList<Product> productArrayList = printProductService.getListProductFull();
-            ArrayList<User> userArrayList = printUserService.getListUserFull();
+            ArrayList<Category> categoryArrayList = printService.getListCategoryFull();
+            ArrayList<Product> productArrayList = printService.getListProductFull();
+            ArrayList<Order> orderArrayList=printService.getListDistinctOrderFull();
+            ArrayList<Feedback> feedbackArrayList=printService.getFullListFeedBack();
+            ArrayList<User> userArrayList = printService.getListUserFull();
+            ArrayList<Product> productWithInventories = printService.getProductWithInventories();
             request.setAttribute("categoryArrayList", categoryArrayList);
             request.setAttribute("productArrayList", productArrayList);
+            request.setAttribute("orderArrayList", orderArrayList);
+            request.setAttribute("feedbackArrayList", feedbackArrayList);
             request.setAttribute("userArrayList", userArrayList);
+            request.setAttribute("productWithInventories", productWithInventories);
             request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        ArrayList<Product> productArrayList = new AdminDisplayment().printProductService.getListProductFull();
-        int count = 0;
-        System.out.println(count);
-        for (Product p : productArrayList) {
-            System.out.println(p);
-            count++;
-        }
-        System.out.println(count);
     }
 }

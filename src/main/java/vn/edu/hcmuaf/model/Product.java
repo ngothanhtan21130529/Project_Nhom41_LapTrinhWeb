@@ -1,5 +1,7 @@
 package vn.edu.hcmuaf.model;
 
+import vn.edu.hcmuaf.service.SearchService;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -27,6 +29,12 @@ public class Product implements Serializable {
     private Category category;
     private String cuttingGrindingShape;
     private String material;
+    private int quantity;
+    private int totalPrice;
+    private String categoryName;
+    public Product() {
+    }
+
     public Product(int id, String productName, int categoryID, String imgURL,
                    int price, int sale, boolean hot, String description,
                    Timestamp createdAt, Timestamp updatedAt, Timestamp deletedAt,
@@ -61,6 +69,14 @@ public class Product implements Serializable {
         this.thumbnailID = thumbnailID;
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
     public Product(int id, String productName, int price, String status, String imgURL) {
         this.id = id;
         this.productName = productName;
@@ -92,6 +108,13 @@ public class Product implements Serializable {
     public Product(String productName) {
         this.productName = productName;
 
+    }
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getId() {
@@ -254,12 +277,28 @@ public class Product implements Serializable {
         this.cuttingGrindingShape = cuttingGrindingShape;
     }
 
-    public String getMarterial() {
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getMaterial() {
         return material;
     }
 
-    public void setMarterial(String material) {
+    public void setMaterial(String material) {
         this.material = material;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override

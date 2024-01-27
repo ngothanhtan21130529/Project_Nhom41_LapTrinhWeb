@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
-  User: nttan
-  Date: 1/24/2024
-  Time: 12:45 PM
+  User: trant
+  Date: 12/19/2023
+  Time: 5:36 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Liên hệ</title>
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/contact.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -116,19 +116,18 @@
                 </div>
             </div>
         </div>
-        <form action="${pageContext.request.contextPath}/feedback" method="post">
+        <form method="post" action="<%=request.getContextPath()+"/feedback"%>" method="post">
             <div class="contact-us-right-box">
                 <div class="contact-us-label">
                     LIÊN HỆ VỚI CHÚNG TÔI
                 </div>
-
                 <input type="text" class="full-name input-box" placeholder="Họ tên(*)" name="fullname">
                 <input type="text" class="phone-num input-box" placeholder="Số điện thoại(*)" name="phone">
                 <input type="text" class="email input-box" placeholder="Email" name="email">
                 <input type="text" class="title input-box" placeholder="Tiêu đề" name="phone">
                 <textarea name="content" id="content" class="content input-box" cols="30" rows="10"
                           placeholder="Nội dung" name="content"></textarea>
-                <button class="sending">
+                <button class="sending" type="submit">
                     Gửi
                 </button>
             </div>

@@ -8,8 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/admin.css" type="text/css">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/admin.css?v=95" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -17,7 +17,7 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet">
-    <script src="<%=request.getContextPath()%>/js/admin.js" type="text/javascript">
+    <script src="<%=request.getContextPath()%>/js/admin.js?v=264" type="text/javascript">
     </script>
     <%--    jQuerry--%>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" type="text/css">
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <%--    JavaScript--%>
-    <script src="<%=request.getContextPath()%>/js/adminDataTable.js"></script>
+    <script src="<%=request.getContextPath()%>/js/adminDataTable.js?v=522"></script>
 </head>
 <body>
 <div class="container">
@@ -37,13 +37,13 @@
                     Administrator
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="index.html">
+                    <a href="<%=request.getContextPath()%>/home">
                         <i class="fa-solid fa-tent-arrow-turn-left fa-sm" style="color: #B4B4B4 ;"></i>
                         Vào trang web
                     </a>
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="contact.html">
+                    <a href="<%=request.getContextPath()%>/feedback">
                         Liên hệ
                     </a>
                 </li>
@@ -128,7 +128,7 @@
                         <div>Quản lý người dùng</div>
                     </li>
                     <li class="element user-config-element" onclick="changeToUserInformationTab()">
-                        <div>Thông tin người dùng</div>
+                        <div>Quản lý số lượng tồn kho</div>
                     </li>
                     <li class="element user-config-element">
                         <div>Thoát</div>
@@ -233,7 +233,7 @@
                                     </td>
                                     <td>
                                         <div>
-                                            <a href="UpdateCategoryStage1?id=${category.getId()}&imgID=${category.getImgID()}">
+                                            <a href="getCategory?id=${category.getId()}&imgID=${category.getImgID()}">
                                                 <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
                                             </a>
                                             <a href="#" onclick="showMessCategory(${category.getId()})">
@@ -299,10 +299,13 @@
             <div class="product-tab">
                 <div class="product-main-tab content-tab">
                     <div class="product-tab-function-box function-box">
-                        <div class="adding-box box" onclick="changeToProductAddingTab()">
+                        <div class="adding-box box">
                             <button>
-                                <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
-                                Thêm mới
+                                <a href="<%=request.getContextPath()%>/goToAddingProduct"
+                                   style="color: white; text-decoration: none">
+                                    <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
+                                    Thêm mới
+                                </a>
                             </button>
                         </div>
                     </div>
@@ -343,198 +346,108 @@
                                     <td>
                                             ${product.getProductName()}
                                     </td>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getCategory().getCategoryName()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                        <c:choose>--%>
-                                        <%--                                            <c:when test="${product.getImgURL()==null}">--%>
-                                        <%--                                                Chưa có hình--%>
-                                        <%--                                            </c:when>--%>
-                                        <%--                                            <c:when test="${fn:containsIgnoreCase(product.getImgURL(), 'img/data')}">--%>
-                                        <%--                                                <img src="<%=request.getContextPath()%>${product.getImgURL()}" alt="">--%>
-                                        <%--                                            </c:when>--%>
-                                        <%--                                            <c:otherwise>--%>
-                                        <%--                                                <img src="${product.getImgURL()}" alt="">--%>
-                                        <%--                                            </c:otherwise>--%>
-                                        <%--                                        </c:choose>--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getPrice()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                        <c:choose>--%>
-                                        <%--                                            <c:when test="${product.getSale()==1}">--%>
-                                        <%--                                                Có--%>
-                                        <%--                                            </c:when>--%>
-                                        <%--                                            <c:otherwise>--%>
-                                        <%--                                                Không--%>
-                                        <%--                                            </c:otherwise>--%>
-                                        <%--                                        </c:choose>--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                        <c:choose>--%>
-                                        <%--                                            <c:when test="${category.isHot()==true}">--%>
-                                        <%--                                                Có--%>
-                                        <%--                                            </c:when>--%>
-                                        <%--                                            <c:otherwise>--%>
-                                        <%--                                                Không--%>
-                                        <%--                                            </c:otherwise>--%>
-                                        <%--                                        </c:choose>--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getDescription()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                        <c:choose>--%>
-                                        <%--                                            <c:when test="${product.getCreatedAt()==null}">--%>
-                                        <%--                                                chưa có--%>
-                                        <%--                                            </c:when>--%>
-                                        <%--                                            <c:otherwise>--%>
-                                        <%--                                                ${product.getCreatedAt()}--%>
-                                        <%--                                            </c:otherwise>--%>
-                                        <%--                                        </c:choose>--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                        <c:choose>--%>
-                                        <%--                                            <c:when test="${product.getUpdatedAt()==null}">--%>
-                                        <%--                                                chưa có--%>
-                                        <%--                                            </c:when>--%>
-                                        <%--                                            <c:otherwise>--%>
-                                        <%--                                                ${product.getUpdatedAt()}--%>
-                                        <%--                                            </c:otherwise>--%>
-                                        <%--                                        </c:choose>--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                        <c:choose>--%>
-                                        <%--                                            <c:when test="${product.getDeletedAt()==null}">--%>
-                                        <%--                                                chưa có--%>
-                                        <%--                                            </c:when>--%>
-                                        <%--                                            <c:otherwise>--%>
-                                        <%--                                                ${product.getDeletedAt()}--%>
-                                        <%--                                            </c:otherwise>--%>
-                                        <%--                                        </c:choose>--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.Color}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getWeight()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getSize()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getOpacity()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getStatus()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getCuttingGrindingShape()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                            ${product.getMarterial()}--%>
-                                        <%--                                    </td>--%>
-                                        <%--                                    <td>--%>
-                                        <%--                                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>--%>
-                                        <%--                                        <i class="fa-solid fa-x fa-lg" style="color: #5b85cd;"></i>--%>
-                                        <%--                                    </td>--%>
+                                    <td>
+                                            ${product.getCategoryName()}
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${product.getImgURL()==null}">
+                                                Chưa có hình
+                                            </c:when>
+                                            <c:when test="${fn:containsIgnoreCase(product.getImgURL(), 'img/data')}">
+                                                <img src="<%=request.getContextPath()%>${product.getImgURL()}" alt="">
+                                            </c:when>
+                                            <c:otherwise>
+                                                <img src="${product.getImgURL()}" alt="">
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                            ${product.getPrice()}
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${product.getSale()==1}">
+                                                Có
+                                            </c:when>
+                                            <c:otherwise>
+                                                Không
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${category.isHot()==true}">
+                                                Có
+                                            </c:when>
+                                            <c:otherwise>
+                                                Không
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                            ${product.getDescription()}
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${product.getCreatedAt()==null}">
+                                                chưa có
+                                            </c:when>
+                                            <c:otherwise>
+                                                ${product.getCreatedAt()}
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${product.getUpdatedAt()==null}">
+                                                chưa có
+                                            </c:when>
+                                            <c:otherwise>
+                                                ${product.getUpdatedAt()}
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${product.getDeletedAt()==null}">
+                                                chưa có
+                                            </c:when>
+                                            <c:otherwise>
+                                                ${product.getDeletedAt()}
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>
+                                            ${product.getStoneColor()}
+                                    </td>
+                                    <td>
+                                            ${product.getWeight()}
+                                    </td>
+                                    <td>
+                                            ${product.getSize()}
+                                    </td>
+                                    <td>
+                                            ${product.getOpacity()}
+                                    </td>
+                                    <td>
+                                            ${product.getCuttingGrindingShape()}
+                                    </td>
+                                    <td>
+                                            ${product.getMaterial()}
+                                    </td>
+                                    <td>
+                                            ${product.getStatus()}
+                                    </td>
+                                    <td>
+                                        <a href="<%=request.getContextPath()%>/getProducts?id=${product.getId()}">
+                                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-                <div class="product-adding-tab content-tab">
-                    <div class="product-adding-tab-general-infomation">
-                        <div class="general-infomation-label">
-                            THÔNG TIN CHUNG
-                        </div>
-                        <div class="img-current-label">
-                            <p>
-                                Hình ảnh:
-                            </p>
-                        </div>
-                        <div class="img-current-url">
-                            <img src="../img/SPINEL-TIM-ANH-KIM-768x768.jpg" alt="">
-                        </div>
-                        <div class="img-adding-label">
-                            Hình ảnh:
-                        </div>
-                        <form action="" class="img-adding-url">
-                            <input class="choosing-button" type="file" name="img" accept="image/*">
-                        </form>
-                        <div class="categories-product-label">
-                            Danh mục
-                        </div>
-                        <div class="categories-product-input">
-                            <select>
-                                <option value=""></option>
-                                <option value="gem">Đá quý</option>
-                                <option value="jewelry">Trang sức</option>
-                            </select>
-                        </div>
-                        <div class="product-code-label">
-                            Mã sản phẩm
-                        </div>
-                        <div class="product-code-input">
-                            <input type="text">
-                        </div>
-                        <div class="product-price-label">
-                            <p>
-                                Giá
-                            </p>
-                        </div>
-                        <div class="product-price-input-output">
-                            <div class="product-price-input">
-                                <input type="text">
-                            </div>
-                            <div class="product-price-output">
-                                50.000 đ
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-tab-detail-information">
-                        <div class="details-infomation-label">
-                            THÔNG TIN CHI TIẾT
-                        </div>
-                        <div class="title-product">
-                            Tiêu đề:
-                        </div>
-                        <div class="title-input-box">
-                            <input type="text">
-                        </div>
-                        <div class="product-description-label">
-                            Mô tả:
-                        </div>
-                        <div class="product-description-input">
-                            <input type="text" placeholder="Nhập dòng mô tả ngắn sản phẩm, bài viết tại khung này">
-                        </div>
-                        <div class="product-content-information-label">
-                            Thông tin nội dung:
-                        </div>
-                        <div class="product-description-input">
-                                <textarea name="" cols="30" rows="10"
-                                          placeholder="Nhập thông tin sản phẩm chi tiết tại đây"></textarea>
-                        </div>
-                        <div class="product-action-label">
-                            Tác vụ:
-                        </div>
-                        <div class="product-action-choose">
-                            <input type="checkbox" name="">
-                            <div class="product-action-choose-label">
-                                Hiển thị
-                            </div>
-                        </div>
-                        <div class="save-or-exit-box">
-                            <button class="save-button">
-                                Lưu
-                            </button>
-                            <button class="exit-button">
-                                Thoát
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1053,103 +966,76 @@
             </div>
             <div class="information-management">
                 <div class="order-list content-tab">
-                    <div class="order-list-function-box function-box">
-                        <div class="searching-box box">
-                            <input type="text" placeholder="Tìm kiếm">
-                        </div>
-                        <div class="search-by-box box">
-                            <select name="search-by">
-                                <option value="">Tìm theo</option>
-                                <option value="find-by-id">Số thứ tự</option>
-                                <option value="find-by-categories">Tên danh mục</option>
-                                <option value="find-by-categories">Tên sản phẩm</option>
-                            </select>
-                        </div>
-                        <div class="adding-box box">
-                            <button>
-                                <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
-                                Thêm mới
-                            </button>
-                        </div>
-                    </div>
                     <div class="order-list-table">
-                        <table>
+                        <table id="order-list-table">
+                            <thead>
                             <tr>
                                 <th>Mã đơn hàng</th>
-                                <th>Tên sản phẩm</th>
                                 <th>Tên khách hàng</th>
-                                <th>Số lượng</th>
-                                <th>Tổng giá sản phẩm</th>
+                                <th>Địa chỉ</th>
+                                <th>Số điện thoại</th>
                                 <th>Tổng giá hoá đơn</th>
                                 <th>Ngày tạo</th>
                                 <th>Ngày sửa</th>
                                 <th>Tình trạng</th>
-                                <th>Tác vụ</th>
+                                <th>Xem chi tiết hoá đơn</th>
+                                <th>Chỉnh sữa hoá đơn</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Spinel tím</td>
-                                <td>Nhựt Tân</td>
-                                <td>21-3-2021</td>
-                                <td>5</td>
-                                <td>1,000,000 đ</td>
-                                <td>16-12-2023</td>
-                                <td>16-12-2023</td>
-                                <td>
-                                    <select>
-                                        <option value="Confirm-Waiting">Đang chờ xác nhận</option>
-                                        <option value="Confirmed">Đã xác nhận</option>
-                                        <option value="Receive-Waiting">Đang chờ nhận hàng</option>
-                                        <option value="Received">Đã nhận hàng</option>
-                                    </select>
-                                </td>
-                                <td><i class="fa-solid fa-x fa-sm" style="color: #5b78a9;"></i></td>
-                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${orderArrayList}" var="order">
+                                <tr>
+                                    <td>${order.getId()}</td>
+                                    <td>${order.getFullName()}</td>
+                                    <td>${order.getAddress()}</td>
+                                    <td>${order.getPhone()}</td>
+                                    <td>${order.getTotalPrice()}</td>
+                                    <td>${order.getCreatedAt()}</td>
+                                    <td>${order.getUpdatedAt()}</td>
+                                    <td>${order.getStatus()}</td>
+                                    <td>
+                                        <a href="getOderDetails?id=${order.getId()}">
+                                            Xem chi tiết
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="getInforOrderDetails?id=${order.getId()}">
+                                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="customer-contact content-tab">
-                    <div class="customer-contact-function-box function-box">
-                        <div class="searching-box box">
-                            <input type="text" placeholder="Tìm kiếm">
-                        </div>
-                        <div class="search-by-box box">
-                            <select name="search-by">
-                                <option value="">Tìm theo</option>
-                                <option value="find-by-id">Số thứ tự</option>
-                                <option value="find-by-name">Tên khách hàng</option>
-                                <option value="find-by-keywords">Từ khóa</option>
-                            </select>
-                        </div>
-                        <div class="adding-box box">
-                            <button>
-                                <i class="fa-solid fa-plus fa-sm" style="color: white;"></i>
-                                Thêm mới
-                            </button>
-                        </div>
-                    </div>
                     <div class="customer-contact-table">
                         <table id="customer-contact-table">
-                            <%--                            <thead>--%>
+                            <thead>
                             <tr>
-                                <th><input type="checkbox" name=""></th>
-                                <th>Mã liên hệ</th>
+                                <th>STT</th>
                                 <th>Tên khách hàng</th>
-                                <th>Ngày liên hệ</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Title</th>
+                                <th>Ngày tạo feedback</th>
                                 <th>Nội dung</th>
-                                <th>Tác vụ</th>
                             </tr>
-                            <%--                            </thead>--%>
-                            <%--                            <tbody>--%>
-                            <tr>
-                                <td><input type="checkbox" name=""></td>
-                                <td>1</td>
-                                <td>Nhựt Tân</td>
-                                <td>21-3-2021</td>
-                                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, nostrum.</td>
-                                <td><i class="fa-solid fa-x fa-sm" style="color: #5b78a9;"></i></td>
-                            </tr>
-                            <%--                            </tbody>--%>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${feedbackArrayList}" var="feedback">
+                                <tr>
+                                    <td>${feedback.getId()}</td>
+                                    <td>${feedback.getFullName()}</td>
+                                    <td>${feedback.getEmail()}</td>
+                                    <td>${feedback.getPhone()}</td>
+                                    <td>${feedback.getTitle()}</td>
+                                    <td>${feedback.getCreatedAt()}</td>
+                                    <td>${feedback.getContent()}</td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -1174,99 +1060,65 @@
                         </thead>
                         <tbody>
                         <c:forEach items="${userArrayList}" var="user">
-                        <tr>
-                            <td>${user.getId()}</td>
-                            <td>${user.getUserName()}</td>
-                            <td>${user.getName()==null?"chưa có":user.getName()}</td>
-                            <td>${user.getEmail()}</td>
-                            <td>${user.getPhone()==null?"chưa có":user.getPhone()}</td>
-                            <td>${user.getBirthday()==null?"chưa có":user.getBirthday()}</td>
-                            <td>${user.getCreatedAt()==null?"chưa có":user.getCreatedAt()}</td>
-                            <td>${user.getUpdatedAt()==null?"chưa có":user.getUpdatedAt()}</td>
-                            <td>
-                                <c:choose>
-                                    <c:when test="${user.getAvatar()==null}">
-                                        Chưa có hình
-                                    </c:when>
-                                    <c:otherwise>
-                                        <img src="<%=request.getContextPath()%>${category.getImgURL()}" alt="">
-                                    </c:otherwise>
-                                </c:choose>
-                            </td>
-                            <td>${user.getRoleName()}</td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square fa-sm" style="color: #5b85cd;"></i>
-                                <i class="fa-solid fa-x fa-lg" style="color: #394760;"></i>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>${user.getId()}</td>
+                                <td>${user.getUserName()}</td>
+                                <td>${user.getName()==null?"chưa có":user.getName()}</td>
+                                <td>${user.getEmail()}</td>
+                                <td>${user.getPhone()==null?"chưa có":user.getPhone()}</td>
+                                <td>${user.getBirthday()==null?"chưa có":user.getBirthday()}</td>
+                                <td>${user.getCreatedAt()==null?"chưa có":user.getCreatedAt()}</td>
+                                <td>${user.getUpdatedAt()==null?"chưa có":user.getUpdatedAt()}</td>
+                                <td>
+                                    <c:choose>
+                                        <c:when test="${user.getAvatar()==null}">
+                                            Chưa có hình
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img src="<%=request.getContextPath()%>${category.getImgURL()}" alt="">
+                                        </c:otherwise>
+                                    </c:choose>
+                                </td>
+                                <td>${user.getRoleName()}</td>
+                                <td>
+                                    <a href="getUserInfo?id=${user.getId()}">
+                                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                    </a>
+                                </td>
+                            </tr>
                         </c:forEach>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="user-information content-tab">
-                <div class="user-information-label">
-                    Thông tin người dùng
-                </div>
-                <div class="account-role-label">
-                    <p>
-                        Chức vụ:
-                    </p>
-                </div>
-                <div class="account-role-select">
-                    <select name="">
-                        <option value=""></option>
-                        <option value="admin">Quản trị viên</option>
-                        <option value="user">Người dùng</option>
-                    </select>
-                </div>
-                <div class="account-username-label">
-                    <p>
-                        Tên tài khoản:
-                    </p>
-                </div>
-                <div class="account-username">
-                    <input type="text" value="">
-                </div>
-                <div class="account-fullname-label">
-                    <p>
-                        Họ tên:
-                    </p>
-                </div>
-                <div class="account-fullname-input">
-                    <input type="text" name="" value="">
-                </div>
-                <div class="account-password-label">
-                    <p>
-                        Mật khẩu:
-                    </p>
-                </div>
-                <div class="account-password-input">
-                    <input type="text" value="">
-                </div>
-                <div class="retype-account-password-label">
-                    <p>
-                        Nhập lại mật khẩu:
-                    </p>
-                </div>
-                <div class="retype-account-password-input">
-                    <input type="text" value="">
-                </div>
-                <div class="visible-label">
-                    <p>
-                        Hiển thị
-                    </p>
-                </div>
-                <div class="visible-checkbox">
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div class="save-or-exit-box">
-                    <button class="save-button">
-                        Lưu
-                    </button>
-                    <button class="exit-button" onclick="changeToHomepage()">
-                        Thoát
-                    </button>
+            <div class="inventories-management content-tab">
+                <div class="inventories-management-table">
+                    <table id="inventories-management-table" style="width: 100%">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ngày tạo</th>
+                            <th>Tồn kho</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${productWithInventories}" var="inventories">
+                            <tr>
+                                <td>${inventories.getId()}</td>
+                                <td>${inventories.getProductName()}</td>
+                                <td>${inventories.getCreatedAt()}</td>
+                                <td>${inventories.getQuantity()}</td>
+                                <td>
+                                    <a href="getInvenInfo?id=${inventories.getId()}">
+                                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

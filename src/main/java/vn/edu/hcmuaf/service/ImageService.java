@@ -11,22 +11,18 @@ public class ImageService {
     public ImageService() {
         this.dao=new ImageDAO();
     }
-
     public ImageService(ImageDAO dao) {
         this.dao = dao;
     }
-
     public void addImage(Image image){
         dao.insert(image);
     }
-
     public void deleteImage(Image image){
         dao.delete(image);
     }
     public void updateImage(Image image){
         dao.update(image);
     }
-
     public int getMaxID(){
         return dao.getMaxID()+1;
     }

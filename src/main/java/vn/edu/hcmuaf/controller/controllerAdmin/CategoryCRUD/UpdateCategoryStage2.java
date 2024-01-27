@@ -17,7 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "UpdateCategoryStage2", value = "/UpdateCategoryStage2")
+@WebServlet(name = "UpdateCategoryStage2", value = "/updateCategory")
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 20, //1 MB
         maxFileSize = 1024 * 1024 * 20, //20 MB
@@ -64,7 +64,7 @@ public class UpdateCategoryStage2 extends HttpServlet {
             category.setCategoryName(newCategoryName);
             category.setStatus(newStatus);
             categoryService.updateCategory(category);
-            response.sendRedirect(request.getContextPath() + "/AdminDisplayment");
+            response.sendRedirect(request.getContextPath() + "/admin");
         }
     }
 }

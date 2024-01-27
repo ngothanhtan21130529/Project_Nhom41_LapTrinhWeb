@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cập nhật loại sản phẩm</title>
     <link rel="stylesheet" href="css/admin-category-update.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
@@ -32,13 +32,13 @@
                     Administrator
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="<%=request.getContextPath()%>/views/index.jsp">
+                    <a href="<%=request.getContextPath()%>/home">
                         <i class="fa-solid fa-tent-arrow-turn-left fa-sm" style="color: #B4B4B4 ;"></i>
                         Vào trang web
                     </a>
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="<%=request.getContextPath()%>/views/contact.jsp">
+                    <a href="<%=request.getContextPath()%>/feedback">
                         Liên hệ
                     </a>
                 </li>
@@ -55,7 +55,7 @@
         <div class="nav-bar">
             <div class="go-to-homepage-admin gray-color">
                 <div class="hompage-admin">
-                    <a href="<%=request.getContextPath()%>/AdminDisplayment">
+                    <a href="<%=request.getContextPath()%>/admin">
                         <i class="fa-solid fa-house fa-sm" style="color: #428bca;"></i>
                         Trang chủ admin
                     </a>
@@ -63,88 +63,41 @@
             </div>
             <div class="categories-management">
                 <button class="categories-management-button gray-color">
-                    <a href="<%=request.getContextPath()%>/AdminDisplayment">
+                    <a href="<%=request.getContextPath()%>/admin">
                         <i class="fa-solid fa-table-cells-large fa-sm" style="color: #428bca;"></i>
                         Quản trị danh mục
                     </a>
                 </button>
-                <ul>
-                    <li class="element categories-tab-element">
-                        <div class="category-type">Loại danh mục</div>
-                    </li>
-                    <li class="element categories-tab-element">
-                        <div class="category-product">Sản phẩm</div>
-                    </li>
-                </ul>
             </div>
             <div class="ui-management">
                 <button class="ui-management-button gray-color">
-                    <a href="<%=request.getContextPath()%>/AdminDisplayment">
+                    <a href="<%=request.getContextPath()%>/admin">
                         <i class="fa-solid fa-list fa-sm" style="color: #428bca;"></i>
                         Quản trị giao diện
                     </a>
                 </button>
-                <ul>
-                    <li class="element ui-tab-element">
-                        <div>Slide show sản phẩm</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show trang sức</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show đá quý</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show trang chủ</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Hỗ trợ trực tuyến</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Thông tin</div>
-                    </li>
-                </ul>
             </div>
             <div class="information-management">
                 <button class="information-management-button gray-color">
-                    <a href="<%=request.getContextPath()%>/AdminDisplayment">
+                    <a href="<%=request.getContextPath()%>/admin">
                         <i class="fa-solid fa-dollar-sign fa-sm" style="color: #428bca;"></i>
                         Quản trị thông tin
                     </a>
                 </button>
-                <ul>
-                    <li class="element infor-tab-element">
-                        <div>Danh sách đơn hàng</div>
-                    </li>
-                    <li class="element infor-tab-element">
-                        <div>Khách hàng liên hệ</div>
-                    </li>
-                </ul>
             </div>
             <div class="user-configuration">
                 <button class="user-configuration-button gray-color">
-                    <a href="<%=request.getContextPath()%>/AdminDisplayment">
+                    <a href="<%=request.getContextPath()%>/admin">
                         <i class="fa-solid fa-user fa-sm" style="color: #428bca;"></i>
                         Cấu hình người dùng
                     </a>
                 </button>
-                <ul>
-                    <li class="element user-config-element">
-                        <div>Quản lý người dùng</div>
-                    </li>
-                    <li class="element user-config-element">
-                        <div>Thông tin người dùng</div>
-                    </li>
-                    <li class="element user-config-element">
-                        <div>Thoát</div>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="content-bar">
             <div class="categories-tab">
                 <div class="categories-adding-tab content-tab">
-                    <form method="post" action="<%=request.getContextPath()%>/UpdateCategoryStage2"
+                    <form method="post" action="<%=request.getContextPath()%>/updateCategory"
                           enctype="multipart/form-data">
                         <div class="categories-adding-tab-general-infomation">
                             <div class="general-infomation-label">
@@ -176,7 +129,7 @@
                             </div>
                             <c:set var="imageIsNull" value="${param.imageIsNull}"/>
                             <c:if test="${imageIsNull=='imageisnull'}">
-                                <script>alert("Vui lòng thêm hình cho danh mục");</script>
+                                <script>alert("Vui lòng thêm hình cho phân loại");</script>
                             </c:if>
                             <div class="categories-detail-title">
                                 <p>

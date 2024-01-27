@@ -1,13 +1,15 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.place{
+
+.place {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-left: 13vw;
@@ -16,15 +18,18 @@ a{
     padding-bottom: 30px;
     margin-top: 130px;
 }
-.place-img img{
+
+.place-img img {
     width: 100%;
     height: 100%;
 }
-.place-map iframe{
+
+.place-map iframe {
     width: 100%;
     height: 100%;
 }
-.contact-number-choosing{
+
+.contact-number-choosing {
     padding-left: 13vw;
     padding-right: 12vw;
     display: flex;
@@ -32,7 +37,8 @@ a{
     align-items: center;
     margin-top: 30px;
 }
-.landline,.hotline,.counselors,.chat-zalo-whatapp-wechat{
+
+.landline, .hotline, .counselors, .chat-zalo-whatapp-wechat {
     font-size: 18px;
     background-color: #f8f8f8;
     width: 100%;
@@ -42,32 +48,39 @@ a{
     align-items: center;
     flex-direction: column;
 }
-.landline,.hotline,.counselors{
+
+.landline, .hotline, .counselors {
     border-right: 2px solid white;
 }
-.landline,.hotline,.counselors,.chat-zalo-whatapp-wechat{
+
+.landline, .hotline, .counselors, .chat-zalo-whatapp-wechat {
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.contact-number-choosing :hover{
+
+.contact-number-choosing :hover {
     background-color: #333333;
     color: white;
 }
-.landline-label,.hotline-label,.counselors-label,.chat-zalo-whatapp-wechat-label{
+
+.landline-label, .hotline-label, .counselors-label, .chat-zalo-whatapp-wechat-label {
     font-size: 15px;
     padding-bottom: 10px;
 }
-.landline-num,.hotline-num,.counselors-num,.chat-zalo-whatapp-wechat-num{
+
+.landline-num, .hotline-num, .counselors-num, .chat-zalo-whatapp-wechat-num {
     font-weight: bold;
 }
-.time-line{
+
+.time-line {
     font-size: 12px;
     padding-top: 5px;
 }
-.contact-us{
+
+.contact-us {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,22 +91,26 @@ a{
     gap: 40px;
     margin-bottom: 20px;
 }
-.normal-text{
+
+.normal-text {
     font-size: 14px;
     font-weight: bold;
 }
-.small-text{
+
+.small-text {
     font-size: 14px;
     font-weight: 300;
     padding-top: 10px;
     padding-left: 30px;
     padding-right: 30px;
 }
-.contact-label{
+
+.contact-label {
     text-align: center;
     font-size: 30px;
 }
-.all-store-and-showroom{
+
+.all-store-and-showroom {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -102,27 +119,33 @@ a{
     gap: 40px;
     width: 100%;
 }
-.showroom, .store-1, .store-2, .store-3{
+
+.showroom, .store-1, .store-2, .store-3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.showroom{
+
+.showroom {
     border-right: 1px solid #d9d8d8;
 }
-.store-1{
+
+.store-1 {
     border-bottom: 1px solid #d9d8d8;
     padding-bottom: 20px;
 }
-.store-2{
+
+.store-2 {
     border-top: 1px solid #d9d8d8;
     padding-top: 20px;
 }
-.store-3{
+
+.store-3 {
     border-left: 1px solid #d9d8d8;
 }
-.contact-us-right-box{
+
+.contact-us-right-box {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -130,38 +153,46 @@ a{
     column-gap: 20px;
     row-gap: 10px;
 }
-.contact-us-label{
+
+.contact-us-label {
     font-size: 20px;
     font-weight: 400;
     grid-column: 1/3;
 }
-.input-box{
+
+.input-box {
     padding: 15px;
     font-size: 15px;
     border-radius: 3px;
     border: 1px solid #d9d8d8;
 }
-.input-box:hover{
+
+.input-box:hover {
     border-color: #e2c16c;
 }
-.input-box:focus{
+
+.input-box:focus {
     border-color: #e2c16c;
     transition: 2s;
 }
-.full-name{
+
+.full-name {
     grid-column: 1/2;
 }
-.sending{
+
+.sending {
     grid-row: 6/7;
     border: 0px;
     width: 30%;
     background-color: #e2c16c;
 }
-.sending:hover{
+
+.sending:hover {
     background-color: #77622d;
     color: white;
 }
-.content{
+
+.content {
     grid-column: 1/3;
     grid-row: 4/6;
 }
