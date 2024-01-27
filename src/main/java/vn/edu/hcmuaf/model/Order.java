@@ -11,7 +11,8 @@ public class Order implements Serializable {
     private int totalPrice;
     private String fullName;
     private String status;
-
+    private String phone;
+    private String address;
     public Order(int id, int userID, Timestamp createdAt, Timestamp updatedAt, int totalPrice) {
         this.id = id;
         this.userID = userID;
@@ -30,6 +31,14 @@ public class Order implements Serializable {
         this.createdAt=createdAt;
         this.updatedAt=updatedAt;
         this.status=status;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getStatus() {
@@ -86,6 +95,14 @@ public class Order implements Serializable {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override

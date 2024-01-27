@@ -1,9 +1,6 @@
 package vn.edu.hcmuaf.controller.controllerAdmin;
 
-import vn.edu.hcmuaf.model.Category;
-import vn.edu.hcmuaf.model.Order;
-import vn.edu.hcmuaf.model.Product;
-import vn.edu.hcmuaf.model.User;
+import vn.edu.hcmuaf.model.*;
 import vn.edu.hcmuaf.service.PrintService;
 
 import javax.servlet.ServletException;
@@ -25,11 +22,15 @@ public class AdminDisplayment extends HttpServlet {
             ArrayList<Category> categoryArrayList = printService.getListCategoryFull();
             ArrayList<Product> productArrayList = printService.getListProductFull();
             ArrayList<Order> orderArrayList=printService.getListDistinctOrderFull();
+            ArrayList<Feedback> feedbackArrayList=printService.getFullListFeedBack();
             ArrayList<User> userArrayList = printService.getListUserFull();
+            ArrayList<Product> productWithInventories = printService.getProductWithInventories();
             request.setAttribute("categoryArrayList", categoryArrayList);
             request.setAttribute("productArrayList", productArrayList);
             request.setAttribute("orderArrayList", orderArrayList);
+            request.setAttribute("feedbackArrayList", feedbackArrayList);
             request.setAttribute("userArrayList", userArrayList);
+            request.setAttribute("productWithInventories", productWithInventories);
             request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();

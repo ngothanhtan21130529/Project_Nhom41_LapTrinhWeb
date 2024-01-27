@@ -1,14 +1,9 @@
 package vn.edu.hcmuaf.service;
 
-import vn.edu.hcmuaf.dao.CategoryDAO;
-import vn.edu.hcmuaf.dao.OrderDAO;
-import vn.edu.hcmuaf.dao.ProductDAO;
-import vn.edu.hcmuaf.dao.UserDAO;
-import vn.edu.hcmuaf.model.Category;
-import vn.edu.hcmuaf.model.Order;
-import vn.edu.hcmuaf.model.Product;
-import vn.edu.hcmuaf.model.User;
+import vn.edu.hcmuaf.dao.*;
+import vn.edu.hcmuaf.model.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PrintService {
@@ -16,13 +11,8 @@ public class PrintService {
     private ProductDAO productDAO = new ProductDAO();
     private UserDAO userDAO = new UserDAO();
     private OrderDAO orderDAO=new OrderDAO();
+    private FeedbackDAO feedbackDAO=new FeedbackDAO();
 
-    public PrintService() {
-        this.categoryDAO = new CategoryDAO();
-        this.productDAO = new ProductDAO();
-        this.userDAO = new UserDAO();
-        this.orderDAO= new OrderDAO();
-    }
 
     //lấy ra danh sách toàn bộ người dùng
     public ArrayList<User> getListUserFull() {
@@ -38,7 +28,20 @@ public class PrintService {
     public ArrayList<Category> getListCategoryFull() {
         return categoryDAO.getListCategoryFull();
     }
+    //lấy ra danh sách hoá đơn độc nhất
     public ArrayList<Order> getListDistinctOrderFull(){
         return orderDAO.getListDistinctOrderFull();
+    }
+    //lấy ra danh sách nhận xét
+    public ArrayList<Feedback> getFullListFeedBack() throws SQLException {
+        return feedbackDAO.getFullListFeedBack();
+    }
+    //lấy ra danh sách tên phân loại
+    public ArrayList<Category> getNameCategory(){
+        return categoryDAO.getNameCategory();
+    }
+    //lấy ra danh sách tồn kho của sản phẩm
+    public ArrayList<Product> getProductWithInventories() throws SQLException {
+        return productDAO.getProductWithInventories();
     }
 }

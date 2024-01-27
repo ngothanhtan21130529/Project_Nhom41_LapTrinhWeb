@@ -34,21 +34,7 @@ public class OrderDetailsDAO implements DAOInterface<OrderDetail> {
 
     @Override
     public int update(OrderDetail orderDetail) {
-        try {
-            Connection con = MySqlConnection.getConnection();
-            String sql = "update orders_details o set " +
-                    "o.updated_at=CURRENT_TIMESTAMP, c.status=? " +
-                    "where o.id=?;";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, orderDetail.getStatus());
-            ps.setInt(2, orderDetail.getId());
-            int res = ps.executeUpdate();
-            ps.close();
-            con.close();
-            return res;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return 0;
     }
 
     @Override

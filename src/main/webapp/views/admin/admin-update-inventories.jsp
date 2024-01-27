@@ -1,19 +1,24 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: ACER
+  Date: 26/01/2024
+  Time: 10:32 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="vn.edu.hcmuaf.model.Category" %>
-<%@ page import="java.text.DecimalFormat" %>
-<%@ page import="vn.edu.hcmuaf.dao.ProductDAO" %>
-<%@ page import="vn.edu.hcmuaf.dao.CategoryDAO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="vn.edu.hcmuaf.model.Product" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page isELIgnored="false" %>
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cập nhật hoá đơn chi tiết</title>
-    <link rel="stylesheet" href="css/admin-order-details-update.css?v=123" type="text/css">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/admin-adding-product.css?v=234" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -21,8 +26,17 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet">
+    <script src="<%=request.getContextPath()%>/js/admin.js" type="text/javascript">
+    </script>
+    <%--    jQuerry--%>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <%--    Data Table--%>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" type="text/css">
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <%--    JavaScript--%>
+    <script src="<%=request.getContextPath()%>/js/adminDataTable.js"></script>
 </head>
-
 <body>
 <div class="container">
     <div class="top-bar">
@@ -32,13 +46,13 @@
                     Administrator
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="<%=request.getContextPath()%>/views/index.jsp">
+                    <a href="<%=request.getContextPath()%>/home">
                         <i class="fa-solid fa-tent-arrow-turn-left fa-sm" style="color: #B4B4B4 ;"></i>
                         Vào trang web
                     </a>
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="<%=request.getContextPath()%>/views/contact.jsp">
+                    <a href="<%=request.getContextPath()%>/feedback">
                         Liên hệ
                     </a>
                 </li>
@@ -68,14 +82,6 @@
                         Quản trị danh mục
                     </a>
                 </button>
-                <ul>
-                    <li class="element categories-tab-element">
-                        <div class="category-type">Loại danh mục</div>
-                    </li>
-                    <li class="element categories-tab-element">
-                        <div class="category-product">Sản phẩm</div>
-                    </li>
-                </ul>
             </div>
             <div class="ui-management">
                 <button class="ui-management-button gray-color">
@@ -84,26 +90,6 @@
                         Quản trị giao diện
                     </a>
                 </button>
-                <ul>
-                    <li class="element ui-tab-element">
-                        <div>Slide show sản phẩm</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show trang sức</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show đá quý</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show trang chủ</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Hỗ trợ trực tuyến</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Thông tin</div>
-                    </li>
-                </ul>
             </div>
             <div class="information-management">
                 <button class="information-management-button gray-color">
@@ -112,14 +98,6 @@
                         Quản trị thông tin
                     </a>
                 </button>
-                <ul>
-                    <li class="element infor-tab-element">
-                        <div>Danh sách đơn hàng</div>
-                    </li>
-                    <li class="element infor-tab-element">
-                        <div>Khách hàng liên hệ</div>
-                    </li>
-                </ul>
             </div>
             <div class="user-configuration">
                 <button class="user-configuration-button gray-color">
@@ -128,95 +106,62 @@
                         Cấu hình người dùng
                     </a>
                 </button>
-                <ul>
-                    <li class="element user-config-element">
-                        <div>Quản lý người dùng</div>
-                    </li>
-                    <li class="element user-config-element">
-                        <div>Thông tin người dùng</div>
-                    </li>
-                    <li class="element user-config-element">
-                        <div>Thoát</div>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="content-bar">
-            <div class="categories-tab">
-                <div class="user-information content-tab">
-                    <form method="post" action="<%=request.getContextPath()%>/updateOrderDetails">
+            <div class="product-tab">
+                <form method="post" action="<%=request.getContextPath()%>/updateInventories">
+                    <div class="user-information content-tab">
                         <div class="user-information-label">
-                            Thông tin chi tiết đơn hàng
-                        </div>
-                        <input type="hidden" value="${orderDetailUpdate.getId()}" name="order_detail_id">
-                        <div class="account-role-label">
-                            <p>
-                                Mã đơn hàng:
-                            </p>
-                        </div>
-                        <div class="account-role-select">
-                            <input type="text" value="${orderDetailUpdate.getOrderID()}" readonly>
+                            Số lượng sản phẩm tồn kho
                         </div>
                         <div class="account-username-label">
                             <p>
-                                Tên sản phẩm
+                                Mã sản phẩm:
                             </p>
                         </div>
                         <div class="account-username">
-                            <input type="text" value="${orderDetailUpdate.getProductName()}" readonly>
+                            <input type="text" name="id" value="${inventories.getId()}" readonly>
                         </div>
                         <div class="account-fullname-label">
                             <p>
-                                Giá thành
+                                Tên sản phẩm:
                             </p>
                         </div>
                         <div class="account-fullname-input">
-                            <input type="text" name="" value="${orderDetailUpdate.getPrice()}" readonly>
+                            <input type="text" name="name" value="${inventories.getProductName()}" readonly>
                         </div>
                         <div class="account-password-label">
                             <p>
-                                Số lượng
+                                Ngày tạo:
                             </p>
                         </div>
                         <div class="account-password-input">
-                            <input type="text" value="${orderDetailUpdate.getQuantity()}" readonly>
+                            <input type="text" value="${inventories.getCreatedAt()}" name="create-at" readonly>
                         </div>
-                        <div class="retype-account-password-label">
+                        <div class="account-password-label">
                             <p>
-                                Tổng giá sản phẩm:
+                                Còn lại:
                             </p>
                         </div>
-                        <div class="retype-account-password-input">
-                            <input type="text" value="${orderDetailUpdate.getTotalPrice()}" readonly>
-                        </div>
-                        <div class="retype-account-password-label">
-                            <p>
-                                Trạng thái:
-                            </p>
-                        </div>
-                        <div class="retype-account-password-input">
-                            <select name="order_details_status">
-                                <option value="Confirm-Waiting">Đang chờ xác nhận</option>
-                                <option value="Confirmed">Đã xác nhận</option>
-                                <option value="Transporting">Đang chờ nhận hàng</option>
-                                <option value="Received">Đã nhận</option>
-                                <option value="Cancel">Đã huỷ</option>
-                            </select>
+                        <div class="account-password-input">
+                            <input type="text" value="${inventories.getQuantity()}" name="quantity">
                         </div>
                         <div class="save-or-exit-box">
                             <button class="save-button">
                                 Lưu
                             </button>
-                            <button class="exit-button" onclick="changeToHomepage()">
-                                Thoát
+                            <button class="exit-button">
+                                <a href="<%=request.getContextPath()%>/admin">
+                                    Thoát
+                                </a>
                             </button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 </body>
-
 </html>

@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hoá đơn chi tiết</title>
     <link rel="stylesheet" href="css/admin-order-details.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
@@ -153,12 +153,6 @@
             <div class="information-management">
                 <div class="order-list content-tab">
                     <div class="order-list-table">
-                        <%--                        <select>--%>
-                        <%--                            <option value="Confirm-Waiting">Đang chờ xác nhận</option>--%>
-                        <%--                            <option value="Confirmed">Đã xác nhận</option>--%>
-                        <%--                            <option value="Receive-Waiting">Đang chờ nhận hàng</option>--%>
-                        <%--                            <option value="Received">Đã nhận hàng</option>--%>
-                        <%--                        </select>--%>
                         <table id="order-list-table">
                             <thead>
                             <tr>
@@ -167,7 +161,6 @@
                                 <th>Giá thành</th>
                                 <th>Số lượng</th>
                                 <th>Tổng giá sản phẩm</th>
-                                <th>Tác vụ</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -178,11 +171,6 @@
                                 <td>${orderDetails.getPrice()}</td>
                                 <td>${orderDetails.getQuantity()}</td>
                                 <td>${orderDetails.getTotalPrice()}</td>
-                                <td>
-                                    <a href="getInforOrderDetails?id=${orderDetails.getId()}">
-                                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #5b85cd;"></i>
-                                    </a>
-                                </td>
                             </tr>
                             </c:forEach>
                             </tbody>

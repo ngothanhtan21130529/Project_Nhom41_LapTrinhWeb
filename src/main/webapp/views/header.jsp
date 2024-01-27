@@ -13,7 +13,7 @@
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../font/fontawesome-free-6.4.2/css/all.css">
 <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet" type="text/css">
-<c:if test="${1<2 && 2>3}"></c:if>
+
 <header class="header">
     <div class="container">
         <div class="box">
@@ -117,20 +117,20 @@
 
                                 <div class="header__product-list">
                                 <%ArrayList<Product> list=(ArrayList<Product>)session.getAttribute("list");%>
-                                <%for (Product product:list){%>
-                                    <div class="header__product-item">
-                                        <img
-                                                src="<%=product.getImgURL()%>"
-                                                alt="Header product card 1"
-                                                class="header__product-item-img"
-                                        />
-                                        <span class="header__product-item-name">
-                                                    <%=product.getProductName()%>
-                                                </span>
-                                        <span class="header__product-item-price">
-                                                    <%=product.getPrice()%>
-                                                </span>
-                                    <%}%>
+<%--                                <%for (Product product:list){%>--%>
+<%--                                    <div class="header__product-item">--%>
+<%--                                        <img--%>
+<%--                                                src="<%=product.getImgURL()%>"--%>
+<%--                                                alt="Header product card 1"--%>
+<%--                                                class="header__product-item-img"--%>
+<%--                                        />--%>
+<%--                                        <span class="header__product-item-name">--%>
+<%--                                                    <%=product.getProductName()%>--%>
+<%--                                                </span>--%>
+<%--                                        <span class="header__product-item-price">--%>
+<%--                                                    <%=product.getPrice()%>--%>
+<%--                                                </span>--%>
+<%--                                    <%}%>--%>
 
 
 <%--                                    <div class="header__product-item">--%>

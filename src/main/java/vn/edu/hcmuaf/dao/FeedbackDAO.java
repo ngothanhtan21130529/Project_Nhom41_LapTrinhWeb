@@ -13,12 +13,12 @@ public class FeedbackDAO{
     public static FeedbackDAO getInstance() {
         return new FeedbackDAO();
     }
-
     public boolean insertFeedback(Feedback feedback) throws SQLException {
 
-        String sql = "Insert into feedbacks(id,full_name,email,phone,title,feedback_content,created_at) values(?,?,?,?,?,?,CURRENT_TIMESTAMP)";
+        String sql = "Insert into feedbacks(id,full_name,email,phone,title,feedback_content,created_at, updated_at) " +
+                "values(?,?,?,?,?,?,CURRENT_TIMESTAMP, null)";
         PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
-        pr.setInt(1,this.getMaxID());
+        pr.setInt(1,feedback.getId());
         pr.setString(2, feedback.getFullName());
         pr.setString(3,feedback.getEmail());
         pr.setString(4,feedback.getPhone());
@@ -42,6 +42,25 @@ public class FeedbackDAO{
         while (rs.next()) {
             res=rs.getInt("id");
         }
+        if(res==0) return 1;
         return res;
+    }
+    public ArrayList<Feedback> getFullListFeedBack() throws SQLException {
+        String sql="select f.id, f.full_name, f.email, f.phone, f.title, f.feedback_content, f.created_at from feedbacks f;";
+        PreparedStatement ps=MySqlConnection.getConnection().prepareStatement(sql);
+        ArrayList<Feedback>feedbackArrayList=new ArrayList<>();
+        ResultSet rs=ps.executeQuery();
+        while(rs.next()){
+            Feedback feedback=new Feedback();
+            feedback.setId(rs.getInt("id"));
+            feedback.setFullName(rs.getString("full_name"));
+            feedback.setEmail(rs.getString("email"));
+            feedback.setPhone(rs.getString("phone"));
+            feedback.setTitle(rs.getString("title"));
+            feedback.setContent(rs.getString("feedback_content"));
+            feedback.setCreatedAt(rs.getTimestamp("created_at"));
+            feedbackArrayList.add(feedback);
+        }
+        return feedbackArrayList;
     }
 }

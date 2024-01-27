@@ -19,13 +19,9 @@ import java.io.IOException;
         maxRequestSize = 1024 * 1024 * 100 //100 MB
 )
 public class AddCategory extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    }
-
     AddingService addingService =new AddingService();
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         Part filePart = request.getPart("category-img");
         String fileName = filePart.getSubmittedFileName();

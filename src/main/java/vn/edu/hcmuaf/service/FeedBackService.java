@@ -4,6 +4,7 @@ import vn.edu.hcmuaf.dao.FeedbackDAO;
 import vn.edu.hcmuaf.model.Feedback;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class FeedBackService {
     public  boolean insertFeedBack(Feedback feedback) throws SQLException {
@@ -13,6 +14,5 @@ public class FeedBackService {
         }else{
             return false;
         }
-
     }
 }

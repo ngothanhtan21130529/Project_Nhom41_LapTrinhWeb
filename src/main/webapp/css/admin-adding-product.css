@@ -4,9 +4,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-a{
-    text-decoration: none;
-}
+
 input, textarea, select, option {
     padding: 5px;
     font-size: 15px;
@@ -18,6 +16,11 @@ input, textarea, select, option {
     display: flex;
     background-color: black;
     color: rgb(180, 180, 180);
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .top-bar-element:hover {
@@ -184,8 +187,7 @@ table tr th, table tr td {
 }
 
 .product-table, .order-list-table, .categories-table,
-.user-management-table, .customer-contact-table, .categories-table,
-.inventories-management-table{
+.user-management-table, .customer-contact-table, .categories-table {
     overflow: auto;
 }
 
@@ -1181,17 +1183,187 @@ td div {
     padding-bottom: 10px;
 }
 
-/*.inventories-management {*/
-/*    padding: 15px 30px 15px 30px;*/
-/*    font-size: 23px;*/
-/*}*/
+.user-information {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    border: 1px solid #bfbfbf;
+    background-color: #f2f2f2;
+    padding: 15px 30px 15px 30px;
+    font-size: 23px;
+    margin: 20px;
+}
+
+.user-information .user-information-label {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: #16479c;
+}
+
+.user-information .account-role-label {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-role-label p {
+    font-weight: 500;
+    color: #16479c;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-information .account-role-select {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-username-label {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-username-label p {
+    font-weight: 500;
+    color: #16479c;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-information .account-username {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-username input {
+    width: 40%;
+}
+
+.user-information .account-fullname-label {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-fullname-label p {
+    font-weight: 500;
+    color: #16479c;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-information .account-fullname-input {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-fullname-input input {
+    width: 40%;
+}
+
+.user-information .account-password-label {
+    grid-column: 1/2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-password-label p {
+    font-weight: 500;
+    color: #16479c;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-information .account-password-input {
+    grid-column: 2/3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .account-password-input input {
+    width: 40%;
+}
+
+.user-information .retype-account-password-label {
+    grid-column: 1/2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .retype-account-password-label p {
+    font-weight: 500;
+    color: #16479c;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-information .retype-account-password-input {
+    grid-column: 2/3;
+    grid-row: 6/7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .retype-account-password-input input {
+    width: 40%;
+}
+
+.user-information .visible-label {
+    grid-column: 1/2;
+    grid-row: 7/8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .visible-label p {
+    font-weight: 500;
+    color: #16479c;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-information .visible-checkbox {
+    grid-column: 2/3;
+    grid-row: 7/8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-information .visible-checkbox input {
+    width: 20px;
+    height: 20px;
+}
+
+.user-information .save-or-exit-box {
+    grid-column: 2/3;
+    grid-row: 8/9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 #categories-table_length,
 #product-table_length,
 #user-management-table_length,
 #customer-contact-table_length,
-#order-list-table_length,
-#inventories-management-table_length {
+#order-list-table_length {
     float: none;
 }
 
@@ -1199,8 +1371,7 @@ td div {
 #product-table_length label,
 #user-management-table_length label,
 #customer-contact-table_length label,
-#order-list-table_length label,
-#inventories-management-table_length label{
+#order-list-table_length label {
     float: right;
 }
 
@@ -1208,8 +1379,7 @@ td div {
 #product-table_filter,
 #user-management-table_filter,
 #customer-contact-table_filter,
-#order-list-table_filter,
-#inventories-management-table_filter {
+#order-list-table_filter {
     float: left;
     padding-bottom: 10px;
 }
@@ -1222,8 +1392,7 @@ td div {
 #product-table_wrapper,
 #user-management-table_wrapper,
 #customer-contact-table_wrapper,
-#order-list-table_wrapper,
-#inventories-management-table_wrapper {
+#order-list-table_wrapper {
     padding-top: 10px;
     gap: 10px;
 }
@@ -1232,21 +1401,18 @@ td div {
 #product-table,
 #user-management-table,
 #customer-contact-table,
-#order-list-table,
-#inventories-management-table{
+#order-list-table {
     margin-bottom: 10px;
 }
 
 .categories-main-tab,
 .categories-adding-tab,
 .product-main-tab,
-.product-adding-tab,
 .online-support-tab,
 .information-tab,
 .information-management .order-list,
 .information-management .customer-contact,
 .user-management-tab,
-.inventories-management,
 .product-slide-show.content-tab,
 .jewelry-slide-show.content-tab,
 .gem-slide-show.content-tab,

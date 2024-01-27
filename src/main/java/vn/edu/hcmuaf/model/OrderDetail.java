@@ -132,4 +132,21 @@ public class OrderDetail implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "OrderDetail{" +
+                "id=" + id +
+                ", productID=" + productID +
+                ", orderID=" + orderID +
+                ", quantityTotal=" + quantityTotal +
+                ", totalPrice=" + totalPrice +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", status='" + status + '\'' +
+                ", productName='" + productName + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
 }

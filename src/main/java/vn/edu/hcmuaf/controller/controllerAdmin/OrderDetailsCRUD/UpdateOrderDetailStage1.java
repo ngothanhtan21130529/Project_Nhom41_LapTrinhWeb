@@ -22,8 +22,8 @@ public class UpdateOrderDetailStage1 extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String orderId = req.getParameter("id");
         int id = Integer.parseInt(orderId);
-        ArrayList<OrderDetail> orderDetailArrayList = service.GetOrderDetailsListByID(id);
-        req.setAttribute("orderDetailArrayList", orderDetailArrayList);
+        OrderDetail orderDetailUpdate=service.getOrderDetailsByID(id);
+        req.setAttribute("orderDetailUpdate", orderDetailUpdate);
         req.getRequestDispatcher("/views/admin/admin-order-details-update.jsp").forward(req, resp);
     }
 }

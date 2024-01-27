@@ -15,14 +15,64 @@ public class ProductDAO implements DAOInterface<Product> {
     }
 
     @Override
-    public int insert(Product product){
-        return 0;
+    public int insert(Product product) {
+        String sql = "insert into products (id, category_id, product_name, " +
+                "price, status, thumbnail_id, sale, hot, description, " +
+                "created_at, updated_at, deleted_at, color, weight, opacity, " +
+                "size, cutting_grinding_type, material) " +
+                "values(?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP,null,null,?,?,?,?,?,?)";
+        try {
+            PreparedStatement ps = MySqlConnection.getConnection().prepareStatement(sql);
+            ps.setInt(1, product.getId());
+            ps.setInt(2, product.getCategoryID());
+            ps.setString(3, product.getProductName());
+            ps.setInt(4, product.getPrice());
+            ps.setString(5, product.getStatus());
+            ps.setInt(6, product.getThumbnailID());
+            ps.setInt(7, product.getSale());
+            ps.setBoolean(8, product.isHot());
+            ps.setString(9, product.getDescription());
+            ps.setString(10, product.getStoneColor());
+            ps.setString(11, product.getWeight());
+            ps.setString(12, product.getOpacity());
+            ps.setString(13, product.getSize());
+            ps.setString(14, product.getCuttingGrindingShape());
+            ps.setString(15, product.getMaterial());
+            return ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public int update(Product product) {
-        return 0;
+        String sql = "update products set category_id=?, product_name=?,  price=?, status=?, " +
+                "thumbnail_id=?, sale=?, hot=?, description=?,  updated_at=CURRENT_TIME, " +
+                "color=?, weight=?, opacity=?,  size=?, " +
+                "cutting_grinding_type=?, material=? where id=?;";
+        try {
+            PreparedStatement ps = MySqlConnection.getConnection().prepareStatement(sql);
+            ps.setInt(1, product.getCategoryID());
+            ps.setString(2, product.getProductName());
+            ps.setInt(3, product.getPrice());
+            ps.setString(4, product.getStatus());
+            ps.setInt(5, product.getThumbnailID());
+            ps.setInt(6, product.getSale());
+            ps.setBoolean(7, product.isHot());
+            ps.setString(8, product.getDescription());
+            ps.setString(9, product.getStoneColor());
+            ps.setString(10, product.getWeight());
+            ps.setString(11, product.getOpacity());
+            ps.setString(12, product.getSize());
+            ps.setString(13, product.getCuttingGrindingShape());
+            ps.setString(14, product.getMaterial());
+            ps.setInt(15, product.getId());
+            return ps.executeUpdate();
+            } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
     }
+
 
     @Override
     public int delete(Product product) {
@@ -113,10 +163,10 @@ public class ProductDAO implements DAOInterface<Product> {
     public  ArrayList<Product> getListProductFull(){
         ArrayList<Product> products = new ArrayList<>();
         try {
-            String sql = "select p.id, p.product_name, p.category_id, i.img_url, \n" +
-                    "p.price, p.sale, p.hot, p.description, p.created_at, \n" +
-                    "p.updated_at, p.deleted_at, p.color, p.weight, p.size, \n" +
-                    "p.opacity, p.status, p.cutting_grinding_type, p.material\n" +
+            String sql = "select p.id, p.product_name, p.category_id, i.img_url, " +
+                    "p.price, p.sale, p.hot, p.description, p.created_at, p.updated_at, " +
+                    "p.deleted_at, p.color, p.weight, p.size, p.opacity, p.status, " +
+                    "p.cutting_grinding_type, p.material " +
                     "from products p JOIN images i on p.thumbnail_id=i.id;";
             Connection con = MySqlConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
@@ -129,26 +179,25 @@ public class ProductDAO implements DAOInterface<Product> {
                    String status, String cuttingGrindingShape, String marterial
             * */
             while (rs.next()) {
-                Product product=new Product(
-                        rs.getInt("id"),
-                        rs.getString("product_name"),
-                        rs.getInt("category_id"),
-                        rs.getString("img_url"),
-                        rs.getInt("price"),
-                        rs.getInt("sale"),
-                        rs.getBoolean("hot"),
-                        rs.getString("description"),
-                        rs.getTimestamp("created_at"),
-                        rs.getTimestamp("updated_at"),
-                        rs.getTimestamp("deleted_at"),
-                        rs.getString("color"),
-                        rs.getString("weight"),
-                        rs.getString("size"),
-                        rs.getString("opacity"),
-                        rs.getString("status"),
-                        rs.getString("cutting_grinding_type"),
-                        rs.getString("material")
-                );
+                Product product=new Product();
+                product.setId(rs.getInt("id"));
+                product.setProductName(rs.getString("product_name"));
+                product.setCategoryID(rs.getInt("category_id"));
+                product.setImgURL(rs.getString("img_url"));
+                product.setPrice(rs.getInt("price"));
+                product.setSale(rs.getInt("sale"));
+                product.setHot(rs.getBoolean("hot"));
+                product.setDescription(rs.getString("description"));
+                product.setCreatedAt(rs.getTimestamp("created_at"));
+                product.setUpdatedAt(rs.getTimestamp("updated_at"));
+                product.setDeletedAt(rs.getTimestamp("deleted_at"));
+                product.setStoneColor(rs.getString("color"));
+                product.setWeight(rs.getString("weight"));
+                product.setSize(rs.getString("size"));
+                product.setOpacity(rs.getString("opacity"));
+                product.setStatus(rs.getString("status"));
+                product.setCuttingGrindingShape(rs.getString("cutting_grinding_type"));
+                product.setMaterial(rs.getString("material"));
                 products.add(product);
             }
         } catch (Exception e) {
@@ -159,7 +208,33 @@ public class ProductDAO implements DAOInterface<Product> {
     public ResultSet getProductQuantity() throws SQLException {
         String sql = "select p.id, p.product_name, p.price from products p";
         PreparedStatement ps = MySqlConnection.getConnection().prepareStatement(sql);
-
         return ps.executeQuery();
+    }
+    public int getMaxID() throws SQLException {
+        int max=0;
+        String sql="SELECT count(p.id) from products p;";
+        PreparedStatement ps=MySqlConnection.getConnection().prepareStatement(sql);
+        ResultSet rs=ps.executeQuery();
+        while (rs.next()){
+            max=rs.getInt(1);
+        }
+        return max;
+    }
+    public ArrayList<Product>getProductWithInventories() throws SQLException {
+        String sql="select p.id, p.product_name, p.created_at, " +
+                "i.quantity from products p join " +
+                "inventories i on p.id=i.product_id;";
+        PreparedStatement ps=MySqlConnection.getConnection().prepareStatement(sql);
+        ArrayList<Product>products=new ArrayList<>();
+        ResultSet rs=ps.executeQuery();
+        while (rs.next()){
+            Product product=new Product();
+            product.setId(rs.getInt("id"));
+            product.setProductName(rs.getString("product_name"));
+            product.setCreatedAt(rs.getTimestamp("created_at"));
+            product.setQuantity(rs.getInt("quantity"));
+            products.add(product);
+        }
+        return products;
     }
 }
