@@ -2,16 +2,19 @@
   Created by IntelliJ IDEA.
   User: trant
   Date: 12/15/2023
-  Time: 11:50 PM
+  Time: 10:00 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
-    <title>Trang sức</title>
+    <title>Trang sức</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,15 +27,16 @@
     <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath()%>/css/banner.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath()%>/css/products.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/css/banner.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-<jsp:include page="/views/header.jsp" ></jsp:include>
+<jsp:include page="../../header.jsp" />
 <div class="main">
     <div class="banner">
         <img class="background-image" src="../../../img/banner/banner.png" alt="Background Image">
         <div class="content">
-            <h1 class="title-name"> TRANG SỨC </h1>
+            <h1 class="title-name"> ĐÁ QUÝ </h1>
             <p class="intro">TTN Shop tự hào là điểm đến lý tưởng cho những người yêu thích đá quý. Với một bộ sưu tập
                 đa dạng, chúng tôi cung cấp những sản phẩm chất lượng cao, từ đá quý tự nhiên đến các mảnh nghệ thuật
                 thủ công tinh tế. Khám phá sự đẹp tinh khôi của tự nhiên tại TTN Shop ngay hôm nay!</p>
@@ -75,7 +79,11 @@
                 </select>
             </div>
         </div>
-        <jsp:include page="/product/jewelrys-list.jsp"></jsp:include>
+        <div class="grid-container">
+            <c:forEach var="product" items="${jewelryList}">
+                <%@ include file="web/product/products-list.jsp" %>
+            </c:forEach>
+        </div>
         <div class="pagination">
             <a href="#">&laquo;</a>
             <a href="#">1</a>
@@ -88,6 +96,6 @@
         </div>
     </div>
 </div>
-<jsp:include page="/views/footer.jsp"></jsp:include>
+<jsp:include page="../../footer.jsp"/>
 </body>
 </html>

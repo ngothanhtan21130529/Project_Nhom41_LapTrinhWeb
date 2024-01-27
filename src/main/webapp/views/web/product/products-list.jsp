@@ -1,54 +1,25 @@
 <%@ page import="vn.edu.hcmuaf.model.Product" %>
-<%@ page import="vn.edu.hcmuaf.dao.ProductDAO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.text.DecimalFormat" %><%--
-  Created by IntelliJ IDEA.
-  User: trant
-  Date: 11/21/2023
-  Time: 5:37 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link href="../../../css/category.css" rel="stylesheet" type="text/css">
-
-<%--<%--%>
-<%--    DecimalFormat decimalFormat = new DecimalFormat("###,###,### VNĐ");--%>
-<%--%>--%>
-
-<%--<div class="grid-container">--%>
-<%--    <% ArrayList<Product> productDAO = new ProductDAO().getListProduct();--%>
-<%--        for (Product p : productDAO) { %>--%>
-<%--    <div class="category">--%>
-<%--        <a class="product" href="product-details.jsp">--%>
-<%--            <img src="<%= p.getImgURL()%>">--%>
-<%--            <div class="status"><%= p.getStatus() %></div>--%>
-<%--            <h3 class="product_name"><%= p.getProductName() %></h3>--%>
-<%--            <div class="price"><%= decimalFormat.format(p.getPrice()) %></div>--%>
-<%--        </a>--%>
-<%--    </div>--%>
-<%--    <% } %>--%>
-<%--</div>--%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="/common/taglib.jsp" %>
+<link href="<%=request.getContextPath()%>/css/category.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/products.css" rel="stylesheet" type="text/css">
 
 <%
-    DecimalFormat decimalFormat = new DecimalFormat("###,###,### VNĐ");
+    ArrayList<Product> productList = (ArrayList<Product>) request.getAttribute("productList");
 %>
 
-<div class="grid-container">
-    <%
-        ArrayList<Product> productDAO = new ProductDAO().getListProduct();
-        for (Product p : productDAO) {
-            if (!"Ngừng bán".equals(p.getStatus())) {
-    %>
-    <div class="category">
-        <a class="product" href="product-details.jsp">
-            <img src="<%= p.getImgURL()%>">
-            <div class="status"><%= p.getStatus() %></div>
-            <h3 class="product_name"><%= p.getProductName() %></h3>
-            <div class="price"><%= decimalFormat.format(p.getPrice()) %></div>
+<div class="category">
+    <c:forEach items="${productList}" var="product">
+        <a class="product" href="<%=request.getContextPath()%>/productDetail?id=<c:out value="${product.id}"/>">
+            <img src="<c:out value="${product.imgURL}" />">
+            <div class="status"><c:out value="${product.status}" /></div>
+            <h3 class="product_name"><c:out value="${product.productName}" /></h3>
+            <div class="price">
+                <fmt:formatNumber pattern="###,###,### VNĐ" value="${product.price}" />
+            </div>
         </a>
-    </div>
-    <%
-            }
-        }
-    %>
+    </c:forEach>
 </div>

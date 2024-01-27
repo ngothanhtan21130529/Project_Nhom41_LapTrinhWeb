@@ -1,77 +1,33 @@
 package vn.edu.hcmuaf.dao;
 
 import vn.edu.hcmuaf.database.MySqlConnection;
+import vn.edu.hcmuaf.database.Queries;
 import vn.edu.hcmuaf.model.Category;
-import vn.edu.hcmuaf.service.SearchService;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
-public class CategoryDAO implements DAOInterface<Category> {
-    public static CategoryDAO getInstance(){
-        return new CategoryDAO();
-    }
+public class CategoryDAO implements DAOInterface {
+
     @Override
-    public int insert(Category c) {
-        try {
-            Connection con = MySqlConnection.getConnection();
-            String sql = "insert into categories (id, category_name, created_at, updated_at, deleted_at, status, img_id)" +
-                    "values(?,?,CURRENT_TIMESTAMP,null,null,?,?)";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, c.getId());
-            ps.setString(2, c.getCategoryName());
-            ps.setString(3, c.getStatus());
-            ps.setInt(4, c.getImgID());
-            int res = ps.executeUpdate();
-            ps.close();
-            con.close();
-            return res;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int insert(Object o) throws SQLException {
+        return 0;
     }
 
     @Override
-    public int update(Category c) {
-        try {
-            Connection con = MySqlConnection.getConnection();
-            String sql = "update categories c set c.category_name=?, " +
-                    "c.updated_at=CURRENT_TIMESTAMP, c.status=? " +
-                    "where c.id=?;";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, c.getCategoryName());
-            ps.setString(2, c.getStatus());
-            ps.setInt(3, c.getId());
-            int res = ps.executeUpdate();
-            ps.close();
-            con.close();
-            return res;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int update(Object o) {
+        return 0;
     }
 
     @Override
-    public int delete(Category c) {
-        try {
-            Connection con = MySqlConnection.getConnection();
-            String sql = "delete from categories where id=?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, c.getId());
-            int res = ps.executeUpdate();
-            ps.close();
-            con.close();
-            return res;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int delete(Object o) {
+        return 0;
     }
 
     @Override
-    public Category selectById(Category category) {
+    public Object selectById(Object o) {
         return null;
     }
 
@@ -80,102 +36,84 @@ public class CategoryDAO implements DAOInterface<Category> {
         return null;
     }
 
-    public static ArrayList<Category> getListCategory() {
+private Connection connection;
+
+    public CategoryDAO() throws SQLException {
+        this.connection = MySqlConnection.getConnection();
+    }
+
+
+
+    public ArrayList<Category> getAllCategories() {
         ArrayList<Category> categories = new ArrayList<>();
-        try {
-            Connection con = MySqlConnection.getConnection();
-            String sql = "SELECT c.id, c.category_name, i.img_url FROM categories c " +
-                    "JOIN images i ON c.img_id = i.id";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery(sql);
+        try (PreparedStatement ps = connection.prepareStatement(Queries.GET_CATEGORIES_WITH_IMAGES);
+             ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String categoryName = rs.getString("category_name");
-                String imgURL = rs.getString("img_url");
+                Category category = new Category();
+                category.setId(rs.getInt("id"));
+                category.setCategoryName(rs.getString("category_name"));
+                category.setImgURL(rs.getString("img_url"));
 
-                Category category = new Category(id, categoryName, imgURL);
                 categories.add(category);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return categories;
     }
 
-    public static ArrayList<Category> getNameCategory() {
-        ArrayList<Category> categoriesName = new ArrayList<>();
-        try {
-            Connection con = MySqlConnection.getConnection();
-            String sql = "SELECT c.id, c.category_name FROM categories c ";
-            try (
-                    PreparedStatement ps = con.prepareStatement(sql);
-                    ResultSet rs = ps.executeQuery(sql)) {
 
-                while (rs.next()) {
-                    int id = rs.getInt("id");
-                    String categoryName = rs.getString("category_name");
-                    Category category = new Category(id, categoryName);
-                    categoriesName.add(category);
+
+    public ArrayList<String> getAllCategoryNames() {
+        ArrayList<String> categoryNames = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(Queries.GET_CATEGORY_NAMES);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                String categoryName = rs.getString("category_name");
+                categoryNames.add(categoryName);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return categoryNames;
+    }
+
+    public String getImage(int categoryId) {
+        String imgURL = null;
+
+        try (PreparedStatement ps = connection.prepareStatement(Queries.GET_IMAGE_BY_ID)) {
+            ps.setInt(1, categoryId);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    imgURL = rs.getString("img_url");
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return categoriesName;
-    }
-    public int count() {
-        try {
-            String query = "select count(categories.id) from categories;";
-            Connection con = MySqlConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                return rs.getInt(1);
-            }
-        } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return imgURL;
+    }
+
+
+    public ResultSet getCategoriesWithImage() {
+    try {
+        PreparedStatement ps = connection.prepareStatement(Queries.GET_CATEGORIES_WITH_IMAGES);
+        return ps.executeQuery();
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
+    }
+
+    public int getMaxID() {
         return 0;
     }
-    public ArrayList<Category> getListCategoryFull() {
-        ArrayList<Category> categories = new ArrayList<>();
-        try {
-            String query = "select c.id, c.category_name, i.img_url, c.created_at, c.updated_at, c.deleted_at, c.status, i.id from categories c join images i on c.img_id=i.id;";
-            Connection con = MySqlConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Category category = new Category(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getTimestamp(4),
-                        rs.getTimestamp(5),
-                        rs.getTimestamp(6),
-                        rs.getString(7),
-                        rs.getInt(8)
-                );
-                categories.add(category);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return categories;
-    }
-    public int getMaxID(){
-        int max=0;
-        try {
-            String sql = "SELECT MAX(c.id) FROM categories c;";
-            Connection con = MySqlConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs=ps.executeQuery();
-            while (rs.next()){
-                max=rs.getInt(1);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return max;
+
+    public ResultSet getCategoryNames() throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(Queries.GET_CATEGORY_NAMES);
+        return ps.executeQuery();
     }
 }
