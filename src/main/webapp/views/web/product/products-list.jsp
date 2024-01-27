@@ -12,24 +12,14 @@
 %>
 
 <div class="category">
-    <a class="product" href="<%=request.getContextPath()%>/product-details?id=<c:out value="${product.id}"/>">
-        <img src="<c:out value="${product.imgURL}" />">
-        <div class="status"><c:out value="${product.status}" /></div>
-        <h3 class="product_name"><c:out value="${product.productName}" /></h3>
-        <div class="price">
-            <fmt:formatNumber pattern="###,###,### VNĐ" value="${product.price}" />
-        </div>
-    </a>
+    <c:forEach items="${productList}" var="product">
+        <a class="product" href="<%=request.getContextPath()%>/productDetail?id=<c:out value="${product.id}"/>">
+            <img src="<c:out value="${product.imgURL}" />">
+            <div class="status"><c:out value="${product.status}" /></div>
+            <h3 class="product_name"><c:out value="${product.productName}" /></h3>
+            <div class="price">
+                <fmt:formatNumber pattern="###,###,### VNĐ" value="${product.price}" />
+            </div>
+        </a>
+    </c:forEach>
 </div>
-
-<%--<div class="grid-container">--%>
-<%--    <div class="category">--%>
-<%--        <a href="product-details.html">--%>
-<%--            <img src="./img/gemstone/ruby/Vien-Ruby-facet-Luc-Yen-063ct-IRRF152-231006300000.jpg"--%>
-<%--                 alt="ruby">--%>
-<%--            <div class="status"></div>--%>
-<%--            <h3 class="product_name">Ruby</h3>--%>
-<%--            <div class="price"></div>--%>
-<%--        </a>--%>
-<%--    </div>--%>
-<%--</div>--%>

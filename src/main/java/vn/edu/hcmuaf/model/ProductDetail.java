@@ -47,6 +47,25 @@ public class ProductDetail {
         this.hot = hot;
     }
 
+    public ProductDetail(int id, String productName, int sale, int price, String imgURL, String status, String stoneType,List<String> images, String material, String color, String size, String cuttingGrindingType, String opacity, String weight, String description  ) {
+        this.id = id;
+        this.productName = productName;
+        this.price = price;
+        this.status = status;
+        this.imgURL = imgURL;
+        this.description = description;
+        this.stoneType = stoneType;
+        this.weight = weight;
+        this.size = size;
+        this.cuttingGrindingType = cuttingGrindingType;
+        this.material = material;
+        this.color = color;
+        this.images = images;
+        this.opacity = opacity;
+        this.sale = sale;
+        this.description=description;
+    }
+
     public ProductDetail() {
 
     }
@@ -182,6 +201,10 @@ public class ProductDetail {
 
     public List<String> getImages() {
         return images;
+    }
+
+    public String getMaterial() {
+        return material;
     }
 
     public void setImages(List<String> images) {

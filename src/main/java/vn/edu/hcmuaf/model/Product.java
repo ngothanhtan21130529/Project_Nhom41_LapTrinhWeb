@@ -59,6 +59,10 @@ public class Product implements Serializable {
         this.status = status;
     }
 
+    public Product() {
+
+    }
+
 
     public int getId() {
         return id;
