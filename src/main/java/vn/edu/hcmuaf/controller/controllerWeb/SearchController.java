@@ -21,13 +21,9 @@ public class SearchController extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         try{
             String txtSearch=request.getParameter("txtSearch");
-            String indexString=request.getParameter("index");
-            int index=Integer.parseInt(indexString);
-            int pageSize=2;
-            int endPage=0;
-            request.setAttribute("end",endPage);
+            ArrayList<Product> product=service.searchProduct(txtSearch);
             request.setAttribute("txtSearch", txtSearch);
-            request.setAttribute("index", index);
+            request.setAttribute("productListSearch", product);
             request.getRequestDispatcher("/web/search-result.jsp").forward(request, response);
         }catch (Exception e){
             e.printStackTrace();
