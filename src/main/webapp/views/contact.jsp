@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Liên hệ</title>
-    <link rel="stylesheet" href="css/contact.css?v=123">
+    <link rel="stylesheet" href="css/contact.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link

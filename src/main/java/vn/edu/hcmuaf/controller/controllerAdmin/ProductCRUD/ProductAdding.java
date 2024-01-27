@@ -42,6 +42,9 @@ public class ProductAdding extends HttpServlet {
              * */
             req.setCharacterEncoding("UTF-8");
             String category = req.getParameter("category");
+            if(category==null){
+                category = "1";
+            }
             int categoryId = Integer.parseInt(category);
             String price = req.getParameter("price");
             int productPrice = Integer.parseInt(price);

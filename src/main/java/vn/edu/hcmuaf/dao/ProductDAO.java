@@ -162,11 +162,12 @@ public class ProductDAO implements DAOInterface<Product> {
     public  ArrayList<Product> getListProductFull(){
         ArrayList<Product> products = new ArrayList<>();
         try {
-            String sql = "select p.id, p.product_name, p.category_id, i.img_url, " +
-                    "p.price, p.sale, p.hot, p.description, p.created_at, p.updated_at, " +
-                    "p.deleted_at, p.color, p.weight, p.size, p.opacity, p.status, " +
-                    "p.cutting_grinding_type, p.material " +
-                    "from products p JOIN images i on p.thumbnail_id=i.id;";
+            String sql = "select p.id, p.product_name, c.category_name, " +
+                    "i.img_url, p.price, p.sale, p.hot, p.description, p.created_at, " +
+                    "p.updated_at, p.deleted_at, p.color, p.weight, p.size, " +
+                    "p.opacity, p.status, p.cutting_grinding_type, p.material " +
+                    "from products p JOIN images i on p.thumbnail_id=i.id " +
+                    "join categories c on p.category_id=c.id;";
             Connection con = MySqlConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -181,7 +182,7 @@ public class ProductDAO implements DAOInterface<Product> {
                 Product product=new Product();
                 product.setId(rs.getInt("id"));
                 product.setProductName(rs.getString("product_name"));
-                product.setCategoryID(rs.getInt("category_id"));
+                product.setCategoryName(rs.getString("category_name"));
                 product.setImgURL(rs.getString("img_url"));
                 product.setPrice(rs.getInt("price"));
                 product.setSale(rs.getInt("sale"));
@@ -209,12 +210,6 @@ public class ProductDAO implements DAOInterface<Product> {
         System.out.println(productDAO.getThumbnail("VIÊN SPINEL HỒNG DÂU LỤC YÊN 3,56CT"));
 
     }
-
-    public static void main(String[] args) throws SQLException {
-        ProductDAO productDAO = new ProductDAO();
-        System.out.println(productDAO.getThumbnail("VIÊN SPINEL HỒNG DÂU LỤC YÊN 3,56CT"));
-
-    }
     public ResultSet getProductQuantity() throws SQLException {
         String sql = "select p.id, p.product_name, p.price from products p";
         PreparedStatement ps = MySqlConnection.getConnection().prepareStatement(sql);
@@ -223,7 +218,7 @@ public class ProductDAO implements DAOInterface<Product> {
     }
     public int getMaxID() throws SQLException {
         int max=0;
-        String sql="SELECT count(p.id) from products p;";
+        String sql="SELECT MAX(p.id) from products p;";
         PreparedStatement ps=MySqlConnection.getConnection().prepareStatement(sql);
         ResultSet rs=ps.executeQuery();
         while (rs.next()){
@@ -247,5 +242,28 @@ public class ProductDAO implements DAOInterface<Product> {
             products.add(product);
         }
         return products;
+    }
+    public int findIdProduct(String productname) throws SQLException {
+        String sql = "select id from  products  where products.product_name=?";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1, productname);
+        ResultSet rs = pr.executeQuery();
+
+        int id = 0;
+        while (rs.next()) {
+            id = rs.getInt("id");
+        }
+        return id;
+    }
+    public String getThumbnail(String productname) throws SQLException {
+        String sql = "select img_url from images join products on images.id=products.thumbnail_id where products.product_name=?";
+        PreparedStatement pr = MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1, productname);
+        ResultSet rs = pr.executeQuery();
+        String img = "";
+        while (rs.next()) {
+            img = rs.getString("img_url");
+        }
+        return img;
     }
 }

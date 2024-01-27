@@ -68,8 +68,12 @@ public class AddingService {
         inventory.setId(inventoriesDAO.getMaxID()+1);
         inventory.setProductId(productId);
         inventory.setQuantity(quantity);
-        inventoriesDAO.insert(inventory);
         productService.addProduct(product);
+        inventoriesDAO.insert(inventory);
         return product;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        System.out.println(new ProductService().getMaxID());
     }
 }

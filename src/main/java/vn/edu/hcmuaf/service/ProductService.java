@@ -28,4 +28,5 @@ public class ProductService {
     public String getProductImg(String productname) throws SQLException {
         return ProductDAO.getInstance().getThumbnail(productname);
     }
+
 }

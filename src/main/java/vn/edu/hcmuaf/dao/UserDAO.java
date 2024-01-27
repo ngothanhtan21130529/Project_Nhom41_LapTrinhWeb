@@ -75,6 +75,21 @@ public class UserDAO implements DAOInterface<User> {
         return emailres;
 
     }
+    public String getEmailforOrder(String username) throws SQLException {
+        String sql="Select email from users where username=?";
+        PreparedStatement pr=MySqlConnection.getConnection().prepareStatement(sql);
+        pr.setString(1,username);
+        ResultSet rs=pr.executeQuery();
+        String emailres=null;
+        while(rs.next()){
+            emailres=rs.getString("email");
+        }
+        pr.close();
+        MySqlConnection.getConnection().close();
+        rs.close();
+        return emailres;
+
+    }
     public ArrayList<User> getUsernameandPassword() throws SQLException {
         ArrayList<User> listuser = new ArrayList<>();
         String sql = "Select username,password,role_name from users join roles on users.roles_id=roles.id";

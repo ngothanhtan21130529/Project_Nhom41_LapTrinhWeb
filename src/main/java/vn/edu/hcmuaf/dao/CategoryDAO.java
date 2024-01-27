@@ -141,9 +141,7 @@ public class CategoryDAO implements DAOInterface<Category> {
     public ArrayList<Category> getListCategoryFull() {
         ArrayList<Category> categories = new ArrayList<>();
         try {
-            String query = "select c.id, c.category_name, i.img_url, c.created_at,\n" +
-                    "c.updated_at, c.deleted_at, c.status, i.id\n" +
-                    "from categories c join images i on c.img_id=i.id;";
+            String query = "select c.id, c.category_name, i.img_url, c.created_at, c.updated_at, c.deleted_at, c.status, i.id from categories c join images i on c.img_id=i.id;";
             Connection con = MySqlConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();

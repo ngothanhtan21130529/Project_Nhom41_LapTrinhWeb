@@ -21,7 +21,7 @@ import java.io.IOException;
 public class AddCategory extends HttpServlet {
     AddingService addingService =new AddingService();
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         Part filePart = request.getPart("category-img");
         String fileName = filePart.getSubmittedFileName();

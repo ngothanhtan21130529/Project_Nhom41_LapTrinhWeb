@@ -48,7 +48,7 @@ public class FeedbackDAO implements DAOInterface<Feedback> {
 
 
     @Override
-    public int insert(Feedback feedback) throws SQLException {
+    public int insert(Feedback feedback) {
         return 0;
     }
 
@@ -80,7 +80,24 @@ public class FeedbackDAO implements DAOInterface<Feedback> {
             e.printStackTrace();
         }
     }
-    
+    public ArrayList<Feedback> getFullListFeedBack() throws SQLException {
+        String sql="select f.id, f.full_name, f.email, f.phone, f.title, f.feedback_content, f.created_at from feedbacks f;";
+        PreparedStatement ps=MySqlConnection.getConnection().prepareStatement(sql);
+        ArrayList<Feedback>feedbackArrayList=new ArrayList<>();
+        ResultSet rs=ps.executeQuery();
+        while(rs.next()){
+            Feedback feedback=new Feedback();
+            feedback.setId(rs.getInt("id"));
+            feedback.setFullName(rs.getString("full_name"));
+            feedback.setEmail(rs.getString("email"));
+            feedback.setPhone(rs.getString("phone"));
+            feedback.setTitle(rs.getString("title"));
+            feedback.setContent(rs.getString("feedback_content"));
+            feedback.setCreatedAt(rs.getTimestamp("created_at"));
+            feedbackArrayList.add(feedback);
+        }
+        return feedbackArrayList;
+    }
 }
 
 
