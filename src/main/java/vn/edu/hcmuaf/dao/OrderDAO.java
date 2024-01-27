@@ -54,7 +54,21 @@ public class OrderDAO implements DAOInterface<Order>{
 
     @Override
     public int update(Order order) {
-        return 0;
+        try {
+            Connection con = MySqlConnection.getConnection();
+            String sql = "update orders o set " +
+                    "o.updated_at=CURRENT_TIMESTAMP, o.status=? " +
+                    "where o.id=?;";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, order.getStatus());
+            ps.setInt(2, order.getId());
+            int res = ps.executeUpdate();
+            ps.close();
+            con.close();
+            return res;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -74,21 +88,22 @@ public class OrderDAO implements DAOInterface<Order>{
     public ArrayList<Order> getListDistinctOrderFull() {
         ArrayList<Order> orders = new ArrayList<>();
         try {
-            String query = "select DISTINCT o.id, u.username, o.total_price, o.created_at, " +
-                    "o.updated_at, od.status from orders o join users u on o.user_id=u.id " +
-                    "join order_details od on od.order_id=o.id;";
+            String query = "select distinct o.id, u.full_name, u.phone, u.address, " +
+                    "o.total_price, o.created_at, o.updated_at, o.status from " +
+                    "orders o join users u on o.user_id=u.id;";
             Connection con = MySqlConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Order order = new Order(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getTimestamp(4),
-                        rs.getTimestamp(5),
-                        rs.getString(6)
-                );
+                Order order=new Order();
+                order.setId(rs.getInt(1));
+                order.setFullName(rs.getString(2));
+                order.setPhone(rs.getString(3));
+                order.setAddress(rs.getString(4));
+                order.setTotalPrice(rs.getInt(5));
+                order.setCreatedAt(rs.getTimestamp(6));
+                order.setUpdatedAt(rs.getTimestamp(7));
+                order.setStatus(rs.getString(8));
                 orders.add(order);
             }
         } catch (Exception e) {

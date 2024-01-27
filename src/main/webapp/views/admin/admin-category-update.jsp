@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cập nhật loại sản phẩm</title>
     <link rel="stylesheet" href="css/admin-category-update.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
@@ -32,13 +32,13 @@
                     Administrator
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="<%=request.getContextPath()%>/views/index.jsp">
+                    <a href="<%=request.getContextPath()%>/home">
                         <i class="fa-solid fa-tent-arrow-turn-left fa-sm" style="color: #B4B4B4 ;"></i>
                         Vào trang web
                     </a>
                 </li>
                 <li style="border-right: 1px solid #939393;" class="top-bar-element">
-                    <a href="<%=request.getContextPath()%>/views/contact.jsp">
+                    <a href="<%=request.getContextPath()%>/feedback">
                         Liên hệ
                     </a>
                 </li>
@@ -68,14 +68,6 @@
                         Quản trị danh mục
                     </a>
                 </button>
-                <ul>
-                    <li class="element categories-tab-element">
-                        <div class="category-type">Loại danh mục</div>
-                    </li>
-                    <li class="element categories-tab-element">
-                        <div class="category-product">Sản phẩm</div>
-                    </li>
-                </ul>
             </div>
             <div class="ui-management">
                 <button class="ui-management-button gray-color">
@@ -84,26 +76,6 @@
                         Quản trị giao diện
                     </a>
                 </button>
-                <ul>
-                    <li class="element ui-tab-element">
-                        <div>Slide show sản phẩm</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show trang sức</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show đá quý</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Slide show trang chủ</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Hỗ trợ trực tuyến</div>
-                    </li>
-                    <li class="element ui-tab-element">
-                        <div>Thông tin</div>
-                    </li>
-                </ul>
             </div>
             <div class="information-management">
                 <button class="information-management-button gray-color">
@@ -112,14 +84,6 @@
                         Quản trị thông tin
                     </a>
                 </button>
-                <ul>
-                    <li class="element infor-tab-element">
-                        <div>Danh sách đơn hàng</div>
-                    </li>
-                    <li class="element infor-tab-element">
-                        <div>Khách hàng liên hệ</div>
-                    </li>
-                </ul>
             </div>
             <div class="user-configuration">
                 <button class="user-configuration-button gray-color">
@@ -128,17 +92,6 @@
                         Cấu hình người dùng
                     </a>
                 </button>
-                <ul>
-                    <li class="element user-config-element">
-                        <div>Quản lý người dùng</div>
-                    </li>
-                    <li class="element user-config-element">
-                        <div>Thông tin người dùng</div>
-                    </li>
-                    <li class="element user-config-element">
-                        <div>Thoát</div>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="content-bar">
@@ -176,7 +129,7 @@
                             </div>
                             <c:set var="imageIsNull" value="${param.imageIsNull}"/>
                             <c:if test="${imageIsNull=='imageisnull'}">
-                                <script>alert("Vui lòng thêm hình cho danh mục");</script>
+                                <script>alert("Vui lòng thêm hình cho phân loại");</script>
                             </c:if>
                             <div class="categories-detail-title">
                                 <p>

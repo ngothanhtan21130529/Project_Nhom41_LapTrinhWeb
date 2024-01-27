@@ -133,8 +133,8 @@ function changeToUserInformationTab() {
     contentTab.forEach(e => {
         e.style.display = 'none';
     });
-    document.querySelector('.user-information').style.display = 'grid';
-    document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Cấu hình người dùng > Thông tin người dùng';
+    document.querySelector('.inventories-management').style.display = 'block';
+    document.querySelector('.homepage-website-text').innerHTML = 'Trang chủ > Cấu hình người dùng > Quản lý số lượng tồn kho';
 }
 
 

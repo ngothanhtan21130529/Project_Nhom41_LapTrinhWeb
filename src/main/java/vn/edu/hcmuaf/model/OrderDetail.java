@@ -20,6 +20,7 @@ public class OrderDetail implements Serializable {
 
     public OrderDetail() {
     }
+
     public OrderDetail(int id, int productID, int orderID, int quantityTotal, int totalPrice, Timestamp createdAt, Timestamp updatedAt, String status) {
         this.id = id;
         this.productID = productID;

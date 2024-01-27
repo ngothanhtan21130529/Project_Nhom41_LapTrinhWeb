@@ -60,7 +60,7 @@ public class UserDAO implements DAOInterface<User> {
     public ArrayList<User> selectByCondition(String condition) {
         return null;
     }
-    public String getEmailforOrder(String username) throws SQLException {
+    public String getEmailforOrder(String email,String username) throws SQLException {
         String sql="Select email from users where username=?";
         PreparedStatement pr=MySqlConnection.getConnection().prepareStatement(sql);
         pr.setString(1,username);
@@ -298,13 +298,13 @@ public class UserDAO implements DAOInterface<User> {
         ResultSet rs=pr.executeQuery();
         int userid=0;
         while(rs.next()){
-                userid=rs.getInt("id");
+            userid=rs.getInt("id");
         }
         return userid;
     }
     public static void main(String[] args) throws SQLException, ParseException {
         UserDAO userDAO=UserDAO.getInstance();
-        System.out.println(userDAO.getUserid("tantt121"));
+        System.out.println(userDAO.UpdateBirthday("casterlongan123","1999-12-12"));
     }
     public  ArrayList<User> getListUserFull(){
         ArrayList<User> users = new ArrayList<>();
@@ -322,19 +322,19 @@ public class UserDAO implements DAOInterface<User> {
             *       String status, String avatar, String roleName, Timestamp birthday)
             * */
             while (rs.next()) {
-                User user=new User(
-                        rs.getInt("id"),
-                        rs.getString("username"),
-                        rs.getString("full_name"),
-                        rs.getString("email"),
-                        rs.getString("phone"),
-                        rs.getTimestamp("created_at"),
-                        rs.getTimestamp("updated_at"),
-                        rs.getString("status"),
-                        rs.getString("avatar"),
-                        rs.getString("role_name"),
-                        rs.getTimestamp("birthday")
-                );
+                User user=new User();
+                user.setId(rs.getInt("id"));
+                user.setUserName(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setName(rs.getString("full_name"));
+                user.setEmail(rs.getString("email"));
+                user.setPhone(rs.getString("phone"));
+                user.setCreatedAt(rs.getTimestamp("created_at"));
+                user.setUpdatedAt(rs.getTimestamp("updated_at"));
+                user.setStatus(rs.getString("status"));
+                user.setAvatar(rs.getString("avatar"));
+                user.setRoleName(rs.getString("role_name"));
+                user.setBirthday(rs.getTimestamp("birthday"));
                 users.add(user);
             }
         } catch (Exception e) {

@@ -29,29 +29,7 @@ public class Product implements Serializable {
     private String material;
     private int quantity;
     private int totalPrice;
-
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(String material) {
-        this.material = material;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public Product() {
     }
 
     public Product(int id, String productName, int categoryID, String imgURL,
@@ -281,12 +259,28 @@ public class Product implements Serializable {
         this.cuttingGrindingShape = cuttingGrindingShape;
     }
 
-    public String getMarterial() {
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getMaterial() {
         return material;
     }
 
-    public void setMarterial(String material) {
+    public void setMaterial(String material) {
         this.material = material;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override

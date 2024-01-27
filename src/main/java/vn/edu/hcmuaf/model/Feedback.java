@@ -14,6 +14,9 @@ public class Feedback implements Serializable {
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
+    public Feedback() {
+    }
+
     public Feedback(int id, String fullName, String email, String phone, String title, String content, String status, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.fullName = fullName;
@@ -26,15 +29,13 @@ public class Feedback implements Serializable {
         this.updatedAt = updatedAt;
     }
 
-    public Feedback(int id, String fullName, String email, String phone, String title, String content, String status, Timestamp createdAt) {
+    public Feedback(int id, String fullName, String email, String phone, String title, String content) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.title = title;
         this.content = content;
-        this.status = status;
-        this.createdAt = createdAt;
     }
 
     public Feedback(String fullName, String email, String phone, String title, String content) {

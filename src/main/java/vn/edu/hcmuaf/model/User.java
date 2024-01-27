@@ -18,6 +18,9 @@ public class User implements Serializable {
     private Timestamp birthday;
     private String roleName;
 
+    public User() {
+    }
+
     public User(int id, String userName, String password, String name, String email, String phone, Timestamp createdAt, Timestamp updatedAt, String status, String avatar, Role role, Timestamp birthday) {
         this.id = id;
         this.userName = userName;
